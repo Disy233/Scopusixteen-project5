@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journal | Scopusixteen Publishing</title>
+
+<meta name="description" content="Journal information, aims and scope, editorial board, articles, issues and submission information from Scopusixteen Publishing.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --primary-dark:#082943;
+    --secondary:#1677b8;
+    --accent:#f4b400;
+    --light:#f5f8fb;
+    --lighter:#fafcfe;
+    --text:#17212b;
+    --muted:#687785;
+    --border:#dce5ec;
+    --white:#ffffff;
+    --success:#16835b;
+    --shadow:0 8px 28px rgba(15,45,70,.08);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--primary-dark);
+    color:#dceaf5;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+/* HEADER */
+
+header{
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-mark{
+    width:43px;
+    height:43px;
+    border-radius:9px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    font-weight:800;
+}
+
+.logo-text strong{
+    display:block;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:23px;
+}
+
+.nav-links a{
+    color:#314452;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.nav-btn{
+    background:var(--primary);
+    color:white !important;
+    padding:11px 17px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:transparent;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.journal-hero{
+    background:linear-gradient(120deg,#082943,#145b8e);
+    color:white;
+    padding:55px 5%;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#c8d9e7;
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.journal-label{
+    display:inline-block;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 11px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.journal-hero h1{
+    max-width:900px;
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:14px;
+}
+
+.journal-description{
+    max-width:850px;
+    color:#e3edf5;
+    font-size:17px;
+}
+
+.journal-meta{
+    margin-top:27px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.meta-box{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    padding:12px 16px;
+    border-radius:7px;
+    min-width:155px;
+}
+
+.meta-box small{
+    display:block;
+    color:#bcd0df;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.meta-box strong{
+    font-size:14px;
+}
+
+.hero-actions{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 19px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:700;
+    border:1px solid transparent;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:white;
+    color:var(--primary);
+}
+
+.btn-outline{
+    border-color:rgba(255,255,255,.45);
+    color:white;
+    background:transparent;
+}
+
+/* LAYOUT */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:45px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 310px;
+    gap:30px;
+}
+
+.main-content{
+    min-width:0;
+}
+
+/* SECTION */
+
+.section{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:29px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+}
+
+.section h2{
+    color:var(--primary);
+    font-size:23px;
+    margin-bottom:13px;
+}
+
+.section h3{
+    color:#1b405f;
+    margin-top:20px;
+    margin-bottom:7px;
+}
+
+.section p{
+    color:#52616d;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.section ul{
+    margin:12px 0 15px 22px;
+    color:#52616d;
+}
+
+.section li{
+    margin-bottom:7px;
+}
+
+/* NOTICE */
+
+.demo-notice{
+    background:#fff8e6;
+    border:1px solid #f2d58a;
+    color:#715715;
+    border-radius:8px;
+    padding:15px 17px;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+/* ARTICLES */
+
+.article-search{
+    display:flex;
+    gap:10px;
+    margin:18px 0 22px;
+}
+
+.article-search input{
+    flex:1;
+    border:1px solid var(--border);
+    padding:12px 14px;
+    border-radius:6px;
+    outline:none;
+}
+
+.article-search input:focus{
+    border-color:var(--secondary);
+}
+
+.search-btn{
+    border:0;
+    background:var(--primary);
+    color:white;
+    padding:0 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.article-card{
+    padding:19px 0;
+    border-top:1px solid var(--border);
+}
+
+.article-card:first-of-type{
+    border-top:0;
+}
+
+.article-type{
+    color:var(--secondary);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+}
+
+.article-card h3{
+    margin:5px 0 7px;
+    font-size:18px;
+    color:#163e5d;
+}
+
+.article-card h3 a:hover{
+    color:var(--secondary);
+}
+
+.article-authors{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.article-info{
+    margin-top:8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    font-size:12px;
+    color:#71808c;
+}
+
+.article-link{
+    display:inline-block;
+    margin-top:10px;
+    color:var(--secondary);
+    font-size:13px;
+    font-weight:700;
+}
+
+/* ISSUE */
+
+.issue-box{
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:20px;
+    background:var(--lighter);
+}
+
+.issue-box h3{
+    margin-top:0;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.issue-meta{
+    font-size:13px;
+    color:var(--muted);
+    margin:7px 0 15px;
+}
+
+/* EDITORIAL BOARD */
+
+.editor-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:18px;
+}
+
+.editor{
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:17px;
+}
+
+.editor strong{
+    color:#1a3f5d;
+    display:block;
+}
+
+.editor span{
+    font-size:13px;
+    color:var(--muted);
+}
+
+/* SIDEBAR */
+
+.sidebar-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:var(--shadow);
+}
+
+.sidebar-card h3{
+    color:var(--primary);
+    font-size:17px;
+    margin-bottom:14px;
+}
+
+.side-list{
+    list-style:none;
+}
+
+.side-list li{
+    border-bottom:1px solid var(--border);
+}
+
+.side-list li:last-child{
+    border-bottom:0;
+}
+
+.side-list a{
+    display:block;
+    padding:11px 0;
+    font-size:14px;
+    color:#435866;
+}
+
+.side-list a:hover{
+    color:var(--secondary);
+}
+
+.metrics{
+    display:grid;
+    gap:10px;
+}
+
+.metric{
+    background:var(--lighter);
+    border:1px solid var(--border);
+    padding:13px;
+    border-radius:7px;
+}
+
+.metric strong{
+    display:block;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.metric span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* SUBMISSION */
+
+.submit-box{
+    background:linear-gradient(120deg,#eef6fc,#f8fbfd);
+    border:1px solid #cfe1ee;
+    border-radius:9px;
+    padding:25px;
+}
+
+.submit-box h2{
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071f33;
+    color:#b9cbd8;
+    margin-top:20px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:42px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+.footer-brand strong{
+    color:white;
+    font-size:20px;
+}
+
+.footer-brand p{
+    margin-top:10px;
+    font-size:13px;
+    max-width:400px;
+}
+
+.footer-column h4{
+    color:white;
+    margin-bottom:12px;
+    font-size:14px;
+}
+
+.footer-column a{
+    display:block;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:17px 5%;
+    text-align:center;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        padding:20px 5%;
+        flex-direction:column;
+        align-items:stretch;
+        border-bottom:1px solid var(--border);
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+        align-items:start;
+    }
+
+    .sidebar-card{
+        margin-bottom:0;
+    }
+
+    .footer-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    .topbar-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
+    .top-links{
+        display:none;
+    }
+
+    .journal-hero{
+        padding:38px 5%;
+    }
+
+    .journal-hero h1{
+        font-size:30px;
+    }
+
+    .journal-description{
+        font-size:15px;
+    }
+
+    .container{
+        padding:30px 4%;
+    }
+
+    .section{
+        padding:21px;
+    }
+
+    .editor-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:block;
+    }
+
+    .sidebar-card{
+        margin-bottom:18px;
+    }
+
+    .article-search{
+        flex-direction:column;
+    }
+
+    .search-btn{
+        padding:11px;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <div>Scopusixteen Publishing — Academic Research &amp; Scholarly Communication</div>
+
+        <div class="top-links">
+            <a href="author-guidelines.html">Author Guidelines</a>
+            <a href="publication-ethics.html">Publication Ethics</a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+
+<header>
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <div class="logo-mark">S16</div>
+
+            <div class="logo-text">
+                <strong>Scopusixteen</strong>
+                <span>Academic Publishing</span>
+            </div>
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="journals.html">Journals</a>
+            <a href="author-dashboard.html">Author Portal</a>
+            <a href="subscription.html">Subscriptions</a>
+            <a href="administration.html">Administration</a>
+            <a href="submit-manuscript.html" class="nav-btn">Submit Manuscript</a>
+        </div>
+
+    </nav>
+</header>
+
+<!-- JOURNAL HERO -->
+
+<section class="journal-hero">
+
+    <div class="hero-inner">
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> /
+            <a href="journals.html">Journals</a> /
+            Journal
+        </div>
+
+        <span class="journal-label">SCOPUSIXTEEN JOURNAL</span>
+
+        <h1 id="journalTitle">
+            Journal of Digital Education
+        </h1>
+
+        <p class="journal-description" id="journalDescription">
+            An interdisciplinary journal focused on emerging technologies,
+            digital learning, educational innovation and the transformation
+            of teaching and learning through technology.
+        </p>
+
+        <div class="journal-meta">
+
+            <div class="meta-box">
+                <small>ISSN</small>
+                <strong>Pending</strong>
+            </div>
+
+            <div class="meta-box">
+                <small>Publishing Model</small>
+                <strong>Hybrid</strong>
+            </div>
+
+            <div class="meta-box">
+                <small>Publication Frequency</small>
+                <strong>Quarterly</strong>
+            </div>
+
+            <div class="meta-box">
+                <small>DOI</small>
+                <strong>Pending / To be assigned</strong>
+            </div>
+
+        </div>
+
+        <div class="hero-actions">
+            <a href="submit-manuscript.html" class="btn btn-primary">
+                Submit Manuscript
+            </a>
+
+            <a href="#latest" class="btn btn-outline">
+                View Articles
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <div class="layout">
+
+        <div class="main-content">
+
+            <!-- DEMO NOTICE -->
+
+            <div class="demo-notice">
+                <strong>Publication information notice:</strong>
+                This page is currently a website demonstration. ISSN,
+                indexing status, editorial appointments, DOI information,
+                publication metrics and other official journal credentials
+                should only be displayed as confirmed after formal
+                establishment and verification.
+            </div>
+
+            <!-- ABOUT -->
+
+            <section class="section">
+
+                <h2>About the Journal</h2>
+
+                <p>
+                    The <strong>Journal of Digital Education</strong> provides
+                    a scholarly platform for research examining the use,
+                    development and impact of digital technologies in
+                    education.
+                </p>
+
+                <p>
+                    The journal welcomes original research, systematic
+                    reviews, conceptual studies, case studies and other
+                    scholarly contributions that advance understanding of
+                    technology-enabled education.
+                </p>
+
+            </section>
+
+            <!-- AIMS -->
+
+            <section class="section">
+
+                <h2>Aims &amp; Scope</h2>
+
+                <p>
+                    The journal aims to encourage rigorous research into
+                    contemporary digital education and emerging approaches
+                    to teaching, learning and educational management.
+                </p>
+
+                <h3>Topics of interest include:</h3>
+
+                <ul>
+                    <li>Artificial intelligence in education</li>
+                    <li>Digital learning and e-learning</li>
+                    <li>Learning management systems</li>
+                    <li>Educational technology</li>
+                    <li>Online and blended learning</li>
+                    <li>Digital assessment and evaluation</li>
+                    <li>Learning analytics</li>
+                    <li>Virtual and augmented reality in education</li>
+                    <li>Teacher digital competencies</li>
+                    <li>Technology-enhanced higher education</li>
+                    <li>Educational innovation and policy</li>
+                    <li>Digital inclusion and accessibility</li>
+                </ul>
+
+            </section>
+
+            <!-- LATEST ARTICLES -->
+
+            <section class="section" id="latest">
+
+                <h2>Latest Articles</h2>
+
+                <p>
+                    Explore recently published and forthcoming research
+                    associated with this journal.
+                </p>
+
+                <div class="article-search">
+
+                    <input
+                        type="text"
+                        id="articleSearch"
+                        placeholder="Search articles by title or author..."
+                        onkeyup="searchArticles()"
+                    >
+
+                    <button class="search-btn" onclick="searchArticles()">
+                        Search
+                    </button>
+
+                </div>
+
+                <div id="articleList">
+
+                    <article class="article-card">
+
+                        <span class="article-type">
+                            Research Article
+                        </span>
+
+                        <h3>
+                            <a href="article.html">
+                                Integrating Artificial Intelligence Tools
+                                in Computer Education
+                            </a>
+                        </h3>
+
+                        <div class="article-authors">
+                            Author Name, Co-author Name
+                        </div>
+
+                        <div class="article-info">
+                            <span>Published: Pending</span>
+                            <span>DOI: Pending</span>
+                            <span>Pages: Pending</span>
+                        </div>
+
+                        <a href="article.html" class="article-link">
+                            View Article →
+                        </a>
+
+                    </article>
+
+
+                    <article class="article-card">
+
+                        <span class="article-type">
+                            Review Article
+                        </span>
+
+                        <h3>
+                            <a href="article.html">
+                                Digital Transformation and the Future
+                                of Higher Education
+                            </a>
+                        </h3>
+
+                        <div class="article-authors">
+                            Author Name, Co-author Name
+                        </div>
+
+                        <div class="article-info">
+                            <span>Published: Pending</span>
+                            <span>DOI: Pending</span>
+                            <span>Pages: Pending</span>
+                        </div>
+
+                        <a href="article.html" class="article-link">
+                            View Article →
+                        </a>
+
+                    </article>
+
+
+                    <article class="article-card">
+
+                        <span class="article-type">
+                            Research Article
+                        </span>
+
+                        <h3>
+                            <a href="article.html">
+                                Learning Analytics for Student
+                                Engagement and Academic Performance
+                            </a>
+                        </h3>
+
+                        <div class="article-authors">
+                            Author Name, Co-author Name
+                        </div>
+
+                        <div class="article-info">
+                            <span>Published: Pending</span>
+                            <span>DOI: Pending</span>
+                            <span>Pages: Pending</span>
+                        </div>
+
+                        <a href="article.html" class="article-link">
+                            View Article →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- CURRENT ISSUE -->
+
+            <section class="section">
+
+                <h2>Current Issue</h2>
+
+                <div class="issue-box">
+
+                    <h3>
+                        Volume 1, Issue 1
+                    </h3>
+
+                    <div class="issue-meta">
+                        Publication date: Forthcoming
+                    </div>
+
+                    <p>
+                        The first issue will contain peer-reviewed research
+                        articles selected in accordance with the journal's
+                        editorial and peer-review policies.
+                    </p>
+
+                    <a href="#latest" class="article-link">
+                        View articles in this issue →
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ARCHIVES -->
+
+            <section class="section">
+
+                <h2>Journal Archives</h2>
+
+                <p>
+                    Browse previous issues, volumes and published articles.
+                    Archive content will become available as issues are
+                    formally published.
+                </p>
+
+                <div class="issue-box">
+
+                    <h3>Volume 1</h3>
+
+                    <div class="issue-meta">
+                        2026 — Current Volume
+                    </div>
+
+                    <p>
+                        Issue 1 — Forthcoming
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- EDITORIAL BOARD -->
+
+            <section class="section">
+
+                <h2>Editorial Board</h2>
+
+                <p>
+                    Editorial appointments shown below are demonstration
+                    placeholders and should be replaced with formally
+                    confirmed editorial information.
+                </p>
+
+                <div class="editor-grid">
+
+                    <div class="editor">
+                        <strong>Editor-in-Chief</strong>
+                        <span>Editorial appointment — To be confirmed</span>
+                    </div>
+
+                    <div class="editor">
+                        <strong>Associate Editor</strong>
+                        <span>Editorial appointment — To be confirmed</span>
+                    </div>
+
+                    <div class="editor">
+                        <strong>Managing Editor</strong>
+                        <span>Editorial appointment — To be confirmed</span>
+                    </div>
+
+                    <div class="editor">
+                        <strong>Editorial Board Member</strong>
+                        <span>Appointment — To be confirmed</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SUBMISSION -->
+
+            <section class="section">
+
+                <div class="submit-box">
+
+                    <h2>Submit Your Research</h2>
+
+                    <p>
+                        Authors interested in submitting a manuscript should
+                        review the journal's submission requirements and
+                        publication policies before submission.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="submit-manuscript.html"
+                           class="btn"
+                           style="background:#123b63;color:white;">
+                            Submit Manuscript
+                        </a>
+
+                        <a href="author-guidelines.html"
+                           class="btn"
+                           style="border:1px solid #b9cfdf;color:#123b63;">
+                            Author Guidelines
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-card">
+
+                <h3>Journal Information</h3>
+
+                <ul class="side-list">
+
+                    <li>
+                        <a href="#about">
+                            About the Journal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#latest">
+                            Latest Articles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#latest">
+                            Current Issue
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#latest">
+                            Archives
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>For Authors</h3>
+
+                <ul class="side-list">
+
+                    <li>
+                        <a href="submit-manuscript.html">
+                            Submit Manuscript
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="author-guidelines.html">
+                            Author Guidelines
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="peer-review.html">
+                            Peer Review Process
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="publication-ethics.html">
+                            Publication Ethics
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Journal Metrics</h3>
+
+                <div class="metrics">
+
+                    <div class="metric">
+                        <strong>Pending</strong>
+                        <span>Articles published</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>Pending</strong>
+                        <span>Citations</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>Pending</strong>
+                        <span>Acceptance rate</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>Pending</strong>
+                        <span>Impact metrics</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Publishing Model</h3>
+
+                <p style="font-size:13px;color:#63727d;">
+                    This demonstration journal uses a hybrid publishing
+                    model. The final publishing model and applicable fees
+                    should be confirmed in the official journal policies.
+                </p>
+
+                <a href="hybrid.html"
+                   class="article-link">
+                    Learn about Hybrid Publishing →
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>Scopusixteen Publishing</strong>
+
+            <p>
+                A professional academic publishing platform designed to
+                support researchers, authors, editors and scholarly
+                communication.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Publishing</h4>
+
+            <a href="journals.html">Journals</a>
+            <a href="submit-manuscript.html">Submit Manuscript</a>
+            <a href="author-guidelines.html">Author Guidelines</a>
+            <a href="peer-review.html">Peer Review</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Policies</h4>
+
+            <a href="publication-ethics.html">Publication Ethics</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="apc.html">APC Information</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="author-dashboard.html">Author Portal</a>
+            <a href="subscription.html">Subscriptions</a>
+            <a href="administration.html">Administration</a>
+            <a href="index.html">Home</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Scopusixteen Publishing. All rights reserved.
+    </div>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+
+/* ARTICLE SEARCH */
+
+function searchArticles(){
+
+    const input =
+        document.getElementById("articleSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const articles =
+        document.querySelectorAll(".article-card");
+
+    articles.forEach(article => {
+
+        const text =
+            article.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            article.style.display = "block";
+        }else{
+            article.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function(){
+
+        document.getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
