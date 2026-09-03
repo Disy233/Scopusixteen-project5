@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Publication Ethics | Scopusixteen Publishing</title>
+
+<meta name="description" content="Publication ethics, research integrity, authorship, peer review, corrections and responsible publishing principles for Scopusixteen Publishing.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:#071b3a;
+    color:#dce7f5;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+/* HEADER */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e2e7ee;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#082b63;
+}
+
+.logo span{
+    color:#1683c7;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:#26364f;
+}
+
+.nav-links a:hover{
+    color:#0b78bc;
+}
+
+.nav-btn{
+    background:#0b78bc;
+    color:#fff !important;
+    padding:11px 17px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#071b3a,#0a3f76);
+    color:white;
+    padding:65px 5%;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#bdd1e8;
+    margin-bottom:20px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.hero-label{
+    display:inline-block;
+    background:rgba(255,255,255,.11);
+    border:1px solid rgba(255,255,255,.23);
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:17px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#d8e6f5;
+    font-size:17px;
+}
+
+/* LAYOUT */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:45px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:1fr 310px;
+    gap:30px;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#fff8e8;
+    border:1px solid #efd58b;
+    border-left:5px solid #e1ad20;
+    border-radius:7px;
+    padding:18px 20px;
+    margin-bottom:25px;
+}
+
+.notice strong{
+    color:#745400;
+}
+
+.notice p{
+    color:#665d4b;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* CONTENT */
+
+.card{
+    background:#fff;
+    border:1px solid #e1e6ed;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:24px;
+}
+
+.section{
+    padding:30px 35px;
+    border-bottom:1px solid #e6eaf0;
+}
+
+.section:last-child{
+    border-bottom:0;
+}
+
+.section h2{
+    color:#0a356b;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.section h3{
+    color:#1c456f;
+    font-size:18px;
+    margin:22px 0 9px;
+}
+
+.section p{
+    color:#526174;
+    margin-bottom:15px;
+}
+
+.section p:last-child{
+    margin-bottom:0;
+}
+
+.section ul{
+    margin:10px 0 15px 21px;
+    color:#526174;
+}
+
+.section li{
+    margin-bottom:8px;
+}
+
+/* PRINCIPLES */
+
+.principles{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+    margin-top:18px;
+}
+
+.principle{
+    background:#f5f8fb;
+    border:1px solid #dfe7ee;
+    padding:17px;
+    border-radius:7px;
+}
+
+.principle strong{
+    display:block;
+    color:#0a477c;
+    margin-bottom:5px;
+}
+
+.principle span{
+    color:#667487;
+    font-size:13px;
+}
+
+/* SIDE BAR */
+
+.sidebar-card{
+    background:white;
+    border:1px solid #e1e6ed;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:22px;
+}
+
+.sidebar-title{
+    background:#f1f5f8;
+    color:#0a356b;
+    font-weight:bold;
+    padding:16px 18px;
+}
+
+.sidebar-body{
+    padding:18px;
+}
+
+.side-link{
+    display:block;
+    color:#3e536b;
+    padding:10px 0;
+    border-bottom:1px solid #edf0f3;
+    font-size:14px;
+}
+
+.side-link:last-child{
+    border-bottom:0;
+}
+
+.side-link:hover{
+    color:#0875b5;
+}
+
+.side-btn{
+    display:block;
+    background:#0b78bc;
+    color:white;
+    text-align:center;
+    padding:12px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.side-btn.secondary{
+    background:white;
+    color:#0b6fae;
+    border:1px solid #0b78bc;
+}
+
+.side-btn:last-child{
+    margin-bottom:0;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    gap:12px;
+    margin-top:18px;
+}
+
+.process-step{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    padding:15px;
+    background:#f7f9fb;
+    border:1px solid #e2e7ec;
+    border-radius:7px;
+}
+
+.step-number{
+    min-width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#0b78bc;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.step-content strong{
+    color:#173f68;
+    display:block;
+    margin-bottom:3px;
+}
+
+.step-content span{
+    color:#68778a;
+    font-size:13px;
+}
+
+/* CTA */
+
+.cta{
+    background:#0a3269;
+    color:white;
+    border-radius:10px;
+    padding:34px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.cta h2{
+    margin-bottom:6px;
+}
+
+.cta p{
+    color:#d1e0f2;
+    font-size:14px;
+}
+
+.cta-btn{
+    background:#1683c7;
+    color:white;
+    padding:13px 20px;
+    border-radius:6px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071b3a;
+    color:#d8e3ef;
+    margin-top:30px;
+}
+
+.footer-main{
+    max-width:1250px;
+    margin:auto;
+    padding:50px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    color:white;
+    margin-bottom:12px;
+}
+
+.footer-brand h2 span{
+    color:#43a8df;
+}
+
+.footer-brand p{
+    color:#a9bbd0;
+    max-width:420px;
+    font-size:14px;
+}
+
+.footer-col h3{
+    color:white;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#a9bbd0;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+    padding:18px 5%;
+    color:#95a8bd;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        border-bottom:1px solid #ddd;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:9px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:30px 5%;
+    }
+
+    .section{
+        padding:23px 20px;
+    }
+
+    .principles{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing • Research Integrity & Scholarly Communication
+        </div>
+
+        <div class="top-links">
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Scopus<span>ixteen</span>
+        </a>
+
+        <button class="menu-btn"
+                onclick="toggleMenu()"
+                aria-label="Open navigation">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html"
+               class="nav-btn">
+                Administration
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">Home</a>
+            /
+            Publication Ethics
+
+        </div>
+
+        <span class="hero-label">
+            RESEARCH INTEGRITY
+        </span>
+
+        <h1>
+            Publication Ethics
+        </h1>
+
+        <p>
+            Principles and procedures designed to promote responsible
+            research, transparent scholarly communication and integrity
+            throughout the publication process.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<div class="container">
+
+
+    <div class="notice">
+
+        <strong>Policy status notice</strong>
+
+        <p>
+            This page provides a publication-ethics framework for the
+            Scopusixteen Publishing website prototype. Before the platform
+            operates as a real publisher, these policies should be formally
+            adopted, reviewed and implemented by the responsible publisher
+            and editorial teams.
+        </p>
+
+    </div>
+
+
+    <div class="layout">
+
+
+        <!-- MAIN -->
+
+        <main>
+
+
+            <!-- INTRODUCTION -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Our Commitment to Research Integrity
+                    </h2>
+
+                    <p>
+                        Scopusixteen Publishing is designed around the
+                        principle that scholarly communication should be
+                        conducted with accuracy, transparency, fairness and
+                        respect for research participants, authors, reviewers,
+                        editors and readers.
+                    </p>
+
+                    <p>
+                        Authors, editors, reviewers and publishing personnel
+                        should act responsibly throughout manuscript
+                        preparation, peer review, editorial decision-making,
+                        publication and post-publication activities.
+                    </p>
+
+                    <div class="principles">
+
+                        <div class="principle">
+                            <strong>Integrity</strong>
+                            <span>
+                                Research and publication records should be
+                                accurate and trustworthy.
+                            </span>
+                        </div>
+
+                        <div class="principle">
+                            <strong>Transparency</strong>
+                            <span>
+                                Relevant methods, funding, conflicts and
+                                declarations should be disclosed.
+                            </span>
+                        </div>
+
+                        <div class="principle">
+                            <strong>Fairness</strong>
+                            <span>
+                                Editorial and peer-review decisions should be
+                                based on appropriate scholarly criteria.
+                            </span>
+                        </div>
+
+                        <div class="principle">
+                            <strong>Accountability</strong>
+                            <span>
+                                Concerns about published research should be
+                                investigated through appropriate procedures.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AUTHOR RESPONSIBILITIES -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        1. Authors' Responsibilities
+                    </h2>
+
+                    <p>
+                        Authors are responsible for ensuring that manuscripts
+                        submitted for publication accurately represent their
+                        research and comply with applicable ethical and
+                        scholarly requirements.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Submit original and appropriately attributed work.
+                        </li>
+
+                        <li>
+                            Provide accurate descriptions of methods,
+                            analyses and results.
+                        </li>
+
+                        <li>
+                            Avoid fabrication, falsification and manipulation
+                            of research data.
+                        </li>
+
+                        <li>
+                            Properly acknowledge sources and contributions.
+                        </li>
+
+                        <li>
+                            Ensure that all listed authors have made appropriate
+                            contributions.
+                        </li>
+
+                        <li>
+                            Obtain necessary research ethics approvals where
+                            applicable.
+                        </li>
+
+                        <li>
+                            Disclose relevant conflicts of interest and
+                            funding.
+                        </li>
+
+                        <li>
+                            Avoid submitting the same manuscript simultaneously
+                            to multiple journals unless expressly permitted.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- PLAGIARISM -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        2. Plagiarism and Improper Attribution
+                    </h2>
+
+                    <p>
+                        Plagiarism includes presenting another person's
+                        intellectual work, words, ideas, data, images or other
+                        material as one's own without appropriate attribution.
+                    </p>
+
+                    <p>
+                        Manuscripts may be subject to appropriate similarity
+                        screening or editorial assessment. A similarity
+                        percentage by itself does not necessarily establish
+                        plagiarism; editors should consider the context and
+                        source material.
+                    </p>
+
+                    <p>
+                        Where credible concerns arise, the publisher may seek
+                        clarification from authors and take appropriate
+                        editorial action.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- DUPLICATE -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        3. Duplicate and Redundant Publication
+                    </h2>
+
+                    <p>
+                        Authors should not submit substantially identical
+                        manuscripts to multiple journals at the same time.
+                    </p>
+
+                    <p>
+                        Material that substantially overlaps with previously
+                        published or submitted work should be transparently
+                        identified and explained.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- FABRICATION -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        4. Fabrication and Falsification
+                    </h2>
+
+                    <p>
+                        Fabrication refers to making up research data,
+                        observations or results. Falsification includes
+                        manipulating research materials, processes, images,
+                        datasets or results in a manner that misrepresents
+                        the research record.
+                    </p>
+
+                    <p>
+                        Credible allegations of serious research misconduct
+                        should be assessed through an appropriate investigation
+                        process.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- AUTHORSHIP -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        5. Authorship and Contributorship
+                    </h2>
+
+                    <p>
+                        Authorship should reflect meaningful scholarly
+                        contribution to the research and manuscript.
+                    </p>
+
+                    <p>
+                        All authors should have an opportunity to review and
+                        approve the submitted version and should accept
+                        appropriate responsibility for their contribution.
+                    </p>
+
+                    <h3>
+                        Authorship disputes
+                    </h3>
+
+                    <p>
+                        If a dispute concerning authorship arises, editorial
+                        teams may request documentation or clarification.
+                        Where appropriate, unresolved disputes may need to be
+                        referred to the relevant institution or organization
+                        responsible for the research.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONFLICT -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        6. Conflicts of Interest
+                    </h2>
+
+                    <p>
+                        Authors, reviewers and editors should disclose
+                        relationships or circumstances that could reasonably
+                        be perceived as influencing their judgement.
+                    </p>
+
+                    <p>
+                        A conflict does not necessarily mean that research
+                        cannot be published. Appropriate disclosure and
+                        management are important parts of transparent
+                        scholarly communication.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- FUNDING -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        7. Funding and Financial Disclosure
+                    </h2>
+
+                    <p>
+                        Authors should disclose relevant sources of financial
+                        support for the research and, where appropriate, the
+                        role of funders in study design, data collection,
+                        analysis, interpretation and publication.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ETHICS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        8. Research Ethics
+                    </h2>
+
+                    <p>
+                        Research involving human participants, animals,
+                        sensitive information or other regulated activities
+                        should comply with applicable ethical requirements and
+                        institutional or regulatory approvals.
+                    </p>
+
+                    <p>
+                        Where relevant, manuscripts should include appropriate
+                        information about ethics approval, informed consent,
+                        participant privacy and other safeguards.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- DATA -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        9. Data Integrity and Availability
+                    </h2>
+
+                    <p>
+                        Authors should maintain accurate research records and
+                        report methods and results honestly.
+                    </p>
+
+                    <p>
+                        Where appropriate and ethically permissible, authors
+                        should provide information about data availability,
+                        supporting materials, datasets or analytical resources.
+                    </p>
+
+                    <p>
+                        Privacy, confidentiality, intellectual property and
+                        applicable legal restrictions should be considered
+                        before research data are shared.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        10. Responsible Use of Artificial Intelligence
+                    </h2>
+
+                    <p>
+                        Artificial intelligence tools may be used in scholarly
+                        workflows where permitted, but authors remain
+                        responsible for the accuracy, originality, integrity
+                        and appropriate attribution of their work.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            AI systems should not be treated as accountable
+                            authors.
+                        </li>
+
+                        <li>
+                            Authors should verify AI-generated information,
+                            references and claims.
+                        </li>
+
+                        <li>
+                            Material use of AI tools should be disclosed when
+                            required by the applicable journal policy.
+                        </li>
+
+                        <li>
+                            Authors should not upload confidential or
+                            sensitive research information to external AI
+                            services without appropriate authorization.
+                        </li>
+
+                    </ul>
+
+                    <p>
+                        The final AI-use requirements should be specified in
+                        the formal policy adopted by each journal.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- REVIEWERS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        11. Reviewers' Responsibilities
+                    </h2>
+
+                    <ul>
+
+                        <li>
+                            Treat manuscripts as confidential documents.
+                        </li>
+
+                        <li>
+                            Provide objective and constructive assessments.
+                        </li>
+
+                        <li>
+                            Declare potential conflicts of interest.
+                        </li>
+
+                        <li>
+                            Avoid using unpublished information for personal
+                            advantage.
+                        </li>
+
+                        <li>
+                            Identify relevant concerns about methodology,
+                            originality or research integrity.
+                        </li>
+
+                        <li>
+                            Complete reviews within agreed timelines where
+                            reasonably possible.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- EDITORS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        12. Editors' Responsibilities
+                    </h2>
+
+                    <p>
+                        Editors should make decisions based on scholarly
+                        considerations and should manage manuscripts fairly
+                        and confidentially.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Assess manuscripts appropriately.
+                        </li>
+
+                        <li>
+                            Select suitable reviewers where external review
+                            is required.
+                        </li>
+
+                        <li>
+                            Manage conflicts of interest.
+                        </li>
+
+                        <li>
+                            Protect confidential manuscript information.
+                        </li>
+
+                        <li>
+                            Investigate credible publication-ethics concerns.
+                        </li>
+
+                        <li>
+                            Maintain appropriate separation between editorial
+                            decisions and commercial considerations.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- MISCONDUCT -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        13. Research and Publication Misconduct
+                    </h2>
+
+                    <p>
+                        Potential misconduct may include plagiarism,
+                        fabrication, falsification, inappropriate authorship,
+                        undisclosed conflicts, manipulation of peer review,
+                        duplicate publication or other serious breaches of
+                        research integrity.
+                    </p>
+
+                    <p>
+                        Allegations should be handled carefully and fairly.
+                        Where necessary, authors may be given an opportunity
+                        to respond and relevant institutions may be contacted.
+                    </p>
+
+                    <div class="process">
+
+                        <div class="process-step">
+
+                            <div class="step-number">1</div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Concern received
+                                </strong>
+
+                                <span>
+                                    A potential integrity issue is reported
+                                    or identified.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <div class="step-number">2</div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Preliminary assessment
+                                </strong>
+
+                                <span>
+                                    The concern is assessed to determine
+                                    whether further action is appropriate.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <div class="step-number">3</div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Author response
+                                </strong>
+
+                                <span>
+                                    Relevant authors may be invited to provide
+                                    clarification or supporting information.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <div class="step-number">4</div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Investigation or referral
+                                </strong>
+
+                                <span>
+                                    Serious matters may require additional
+                                    investigation or institutional referral.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <div class="step-number">5</div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Editorial action
+                                </strong>
+
+                                <span>
+                                    Appropriate action may include correction,
+                                    withdrawal, rejection or other measures.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CORRECTIONS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        14. Corrections, Retractions and Withdrawals
+                    </h2>
+
+                    <p>
+                        The integrity of the scholarly record is important.
+                        Where a published article contains a significant error
+                        or integrity concern, an appropriate post-publication
+                        notice may be considered.
+                    </p>
+
+                    <h3>
+                        Corrections
+                    </h3>
+
+                    <p>
+                        Minor or significant errors that do not invalidate the
+                        overall research may be addressed through an
+                        appropriate correction.
+                    </p>
+
+                    <h3>
+                        Retractions
+                    </h3>
+
+                    <p>
+                        A retraction may be appropriate where serious errors,
+                        unreliable findings or research-integrity concerns
+                        materially affect the publication record.
+                    </p>
+
+                    <h3>
+                        Withdrawals
+                    </h3>
+
+                    <p>
+                        Before publication, a manuscript may be withdrawn
+                        according to the applicable journal and publisher
+                        procedures.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- COMPLAINTS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        15. Complaints and Appeals
+                    </h2>
+
+                    <p>
+                        Authors may raise legitimate concerns regarding
+                        editorial decisions or publication processes through
+                        the publisher's designated complaint or appeal
+                        procedure.
+                    </p>
+
+                    <p>
+                        Complaints should provide sufficient information for
+                        the matter to be assessed fairly. The final complaint
+                        and appeals process should be established by the
+                        responsible publisher and editorial leadership.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- POST PUBLICATION -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        16. Post-Publication Concerns
+                    </h2>
+
+                    <p>
+                        Readers and researchers may raise concerns about a
+                        published article when they identify credible issues
+                        relating to accuracy, research integrity, authorship,
+                        conflicts or other matters affecting the scholarly
+                        record.
+                    </p>
+
+                    <p>
+                        Such concerns should be reviewed responsibly and,
+                        where necessary, addressed through an appropriate
+                        correction, editorial notice, investigation or other
+                        action.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        17. Ethics Contact
+                    </h2>
+
+                    <p>
+                        A production publisher should provide a monitored
+                        contact channel for publication-ethics concerns,
+                        research-integrity reports and formal complaints.
+                    </p>
+
+                    <p>
+                        Before launch, replace this section with the verified
+                        ethics contact information and formal procedure used
+                        by Scopusixteen Publishing.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CTA -->
+
+            <section class="cta">
+
+                <div>
+
+                    <h2>
+                        Preparing a manuscript?
+                    </h2>
+
+                    <p>
+                        Review the author requirements before submitting your
+                        research.
+                    </p>
+
+                </div>
+
+                <a href="submit-manuscript.html"
+                   class="cta-btn">
+
+                    Submit Manuscript
+
+                </a>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    On This Page
+                </div>
+
+                <div class="sidebar-body">
+
+                    <a href="#"
+                       class="side-link">
+                        Research Integrity
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Authors' Responsibilities
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Plagiarism
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Authorship
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Conflicts of Interest
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        AI Use
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Peer Review
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Corrections & Retractions
+                    </a>
+
+                    <a href="#"
+                       class="side-link">
+                        Complaints & Appeals
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    Publishing Resources
+                </div>
+
+                <div class="sidebar-body">
+
+                    <a href="author-guidelines.html"
+                       class="side-btn">
+
+                        Author Guidelines
+
+                    </a>
+
+                    <a href="peer-review.html"
+                       class="side-btn secondary">
+
+                        Peer Review
+
+                    </a>
+
+                    <a href="journals.html"
+                       class="side-btn secondary">
+
+                        Browse Journals
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    Important
+                </div>
+
+                <div class="sidebar-body">
+
+                    <p style="font-size:13px;color:#68778a;">
+
+                        Ethical policies should be formally adopted and
+                        implemented before this prototype is used as an
+                        operational publishing system.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Scopus<span>ixteen</span>
+            </h2>
+
+            <p>
+                A professional publishing website prototype designed to
+                support scholarly communication, manuscript submission,
+                peer-review workflows and responsible academic publishing.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Publishing
+            </h3>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Policies
+            </h3>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="apc.html">
+                APC Information
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Scopusixteen Publishing.
+        Prototype website. Publication policies are subject to formal
+        adoption and implementation.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
