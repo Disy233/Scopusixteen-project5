@@ -1,186 +1,1556 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles – Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    .article-card {
-      background: white;
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 24px;
-      align-items: start;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Article | Scopusixteen Publishing</title>
+
+<meta name="description"
+content="Read scholarly research articles published through Scopusixteen Publishing.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --dark:#082943;
+    --blue:#1677b8;
+    --light:#f5f8fb;
+    --lighter:#fafcfe;
+    --text:#17212b;
+    --muted:#687785;
+    --border:#dce5ec;
+    --white:#fff;
+    --green:#16835b;
+    --shadow:0 7px 25px rgba(15,45,70,.07);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--dark);
+    color:#dbe9f3;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+/* NAVIGATION */
+
+header{
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-mark{
+    width:43px;
+    height:43px;
+    border-radius:9px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.logo-text strong{
+    display:block;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#304654;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.nav-btn{
+    background:var(--primary);
+    color:white!important;
+    padding:11px 16px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:26px;
+}
+
+/* ARTICLE HEADER */
+
+.article-header{
+    background:white;
+    border-bottom:1px solid var(--border);
+    padding:42px 5% 35px;
+}
+
+.article-header-inner{
+    max-width:1100px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.breadcrumb a{
+    color:var(--blue);
+}
+
+.article-type{
+    display:inline-block;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    margin-bottom:10px;
+}
+
+.article-title{
+    font-size:42px;
+    line-height:1.18;
+    color:#123b63;
+    max-width:1050px;
+    margin-bottom:18px;
+}
+
+.article-authors{
+    color:#425865;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.article-authors strong{
+    color:#1c405c;
+}
+
+.article-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding-top:17px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:13px;
+}
+
+.article-meta span strong{
+    color:#304c60;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 285px;
+    gap:30px;
+}
+
+.main{
+    min-width:0;
+}
+
+/* NOTICE */
+
+.demo-notice{
+    background:#fff8e5;
+    border:1px solid #efd28a;
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:24px;
+    color:#6e5715;
+    font-size:13px;
+}
+
+/* ARTICLE CONTENT */
+
+.content-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    box-shadow:var(--shadow);
+    padding:32px;
+    margin-bottom:25px;
+}
+
+.content-card h2{
+    color:var(--primary);
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.content-card h3{
+    color:#1b405f;
+    margin:22px 0 8px;
+}
+
+.content-card p{
+    color:#4e606c;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.content-card ul{
+    margin:10px 0 15px 22px;
+    color:#4e606c;
+}
+
+.content-card li{
+    margin-bottom:7px;
+}
+
+/* ABSTRACT */
+
+.abstract{
+    font-size:16px!important;
+    color:#354b59!important;
+}
+
+/* KEYWORDS */
+
+.keywords{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.keyword{
+    border:1px solid #cddde8;
+    background:#f5f9fc;
+    padding:6px 10px;
+    border-radius:5px;
+    color:#31566e;
+    font-size:12px;
+}
+
+/* ARTICLE ACTIONS */
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0;
+}
+
+.btn{
+    border:0;
+    padding:11px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-light{
+    background:#edf4f8;
+    color:#21445d;
+    border:1px solid #d4e1e9;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+/* CITATION BOX */
+
+.citation-box{
+    background:var(--lighter);
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:16px;
+    font-size:13px;
+    color:#536672;
+    overflow-wrap:anywhere;
+}
+
+/* REFERENCES */
+
+.reference{
+    border-top:1px solid var(--border);
+    padding:13px 0;
+    font-size:14px;
+    color:#536672;
+}
+
+.reference:first-child{
+    border-top:0;
+}
+
+/* SIDEBAR */
+
+.sidebar-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:var(--shadow);
+}
+
+.sidebar-card h3{
+    color:var(--primary);
+    font-size:17px;
+    margin-bottom:14px;
+}
+
+.side-links{
+    list-style:none;
+}
+
+.side-links li{
+    border-bottom:1px solid var(--border);
+}
+
+.side-links li:last-child{
+    border-bottom:0;
+}
+
+.side-links a{
+    display:block;
+    padding:10px 0;
+    font-size:13px;
+    color:#435967;
+}
+
+.side-links a:hover{
+    color:var(--blue);
+}
+
+.info-row{
+    padding:10px 0;
+    border-bottom:1px solid var(--border);
+    font-size:13px;
+}
+
+.info-row:last-child{
+    border-bottom:0;
+}
+
+.info-row span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    margin-bottom:2px;
+}
+
+.info-row strong{
+    color:#2c485b;
+}
+
+/* RELATED ARTICLES */
+
+.related{
+    display:grid;
+    gap:12px;
+}
+
+.related-card{
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:13px;
+}
+
+.related-card strong{
+    display:block;
+    color:#214964;
+    font-size:13px;
+}
+
+.related-card span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071f33;
+    color:#b9cbd8;
+    margin-top:25px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:42px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer-brand strong{
+    color:white;
+    font-size:20px;
+}
+
+.footer-brand p{
+    font-size:13px;
+    margin-top:10px;
+    max-width:400px;
+}
+
+.footer-column h4{
+    color:white;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.footer-column a{
+    display:block;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    padding:17px 5%;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px 5%;
+        border-bottom:1px solid var(--border);
+        box-shadow:var(--shadow);
     }
-    .article-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #0f172a, #1e40af);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 18px;
+
+    .nav-links.active{
+        display:flex;
     }
-    .article-card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      line-height: 1.4;
+
+    .menu-btn{
+        display:block;
     }
-    .article-meta {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 12px;
+
+    .layout{
+        grid-template-columns:1fr;
     }
-    .article-meta span {
-      margin-right: 16px;
+
+    .article-title{
+        font-size:33px;
     }
-    @media (max-width: 600px) {
-      .article-card {
-        grid-template-columns: 1fr;
-      }
-      .article-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 16px;
-      }
+
+    .footer-inner{
+        grid-template-columns:repeat(2,1fr);
     }
-  </style>
+}
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .article-header{
+        padding:32px 5%;
+    }
+
+    .article-title{
+        font-size:28px;
+    }
+
+    .container{
+        padding:28px 4%;
+    }
+
+    .content-card{
+        padding:22px;
+    }
+
+    .article-meta{
+        gap:10px;
+        flex-direction:column;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <span>support@scopusixteen.com</span>
-      <div>
-        <a href="login.html">Author Login</a>
-        <a href="login.html">Reviewer Login</a>
-        <a href="login.html">Editor Login</a>
-        <a href="login.html">Admin Login</a>
-      </div>
-    </div>
-  </div>
+<!-- TOP BAR -->
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
-      
-      <nav class="nav">
-        <a href="journals.html">Journals</a>
-        <a href="articles.html" class="active">Articles</a>
-        <a href="about.html">About</a>
-        <a href="submit.html">For Authors</a>
-        <a href="#">For Reviewers</a>
-      </nav>
+<div class="topbar">
 
-      <div class="header-actions">
-        <a href="login.html" class="btn btn-outline">Login</a>
-        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
-        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-      </div>
-    </div>
+    <div class="topbar-inner">
 
-    <!-- Mobile Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="journals.html">Journals</a>
-      <a href="articles.html">Articles</a>
-      <a href="about.html">About</a>
-      <a href="submit.html">For Authors</a>
-      <a href="login.html">Login</a>
-      <a href="dashboard.html">Author Dashboard</a>
-      <a href="submit.html">Submit Manuscript</a>
-    </div>
-  </header>
-
-  <!-- Page Header -->
-  <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:50px 0;">
-    <div class="container">
-      <h1 style="font-size:32px; margin-bottom:8px;">Latest Research</h1>
-      <p style="color:#94a3b8;">Recently published peer-reviewed articles</p>
-    </div>
-  </section>
-
-  <!-- Articles List -->
-  <section class="section">
-    <div class="container">
-
-      <div class="article-card">
-        <div class="article-icon">ML</div>
         <div>
-          <h3>Machine Learning Approaches for Predicting Protein Structures: A Review</h3>
-          <div class="article-meta">
-            <span>A. Jana, R. K. Singh, P. Verma</span>
-            <span>Journal of Engineering and Applied Sciences</span>
-            <span>May 20, 2026</span>
-          </div>
-          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">This review examines recent advances in machine learning methods for protein structure prediction, including AlphaFold and emerging transformer-based architectures...</p>
-          <a href="article.html" class="section-link">Read Full Article →</a>
+            Scopusixteen Publishing — Scholarly Research Platform
         </div>
-      </div>
 
-      <div class="article-card">
-        <div class="article-icon">BIO</div>
-        <div>
-          <h3>Impact of Climate Change on Vector-Borne Diseases: A Global Perspective</h3>
-          <div class="article-meta">
-            <span>S. Patel, M. Okonkwo, L. Chen</span>
-            <span>International Journal of Medical and Health Research</span>
-            <span>April 12, 2026</span>
-          </div>
-          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">Climate change is altering the distribution and seasonality of vector-borne diseases. This study analyzes global trends and projects future risk zones...</p>
-          <a href="article.html" class="section-link">Read Full Article →</a>
+        <div class="top-links">
+            <a href="author-guidelines.html">Author Guidelines</a>
+            <a href="publication-ethics.html">Publication Ethics</a>
         </div>
-      </div>
-
-      <div class="article-card">
-        <div class="article-icon">BUS</div>
-        <div>
-          <h3>Sustainable Business Models in Emerging Markets: Evidence from Sub-Saharan Africa</h3>
-          <div class="article-meta">
-            <span>K. Adeyemi, J. Mwangi</span>
-            <span>Journal of Business, Management & Economics</span>
-            <span>March 28, 2026</span>
-          </div>
-          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">This paper investigates how firms in emerging markets are integrating sustainability into their core business models while remaining competitive...</p>
-          <a href="article.html" class="section-link">Read Full Article →</a>
-        </div>
-      </div>
-
-      <div class="article-card">
-        <div class="article-icon">ENV</div>
-        <div>
-          <h3>Deep Learning for Real-Time Environmental Monitoring Using Satellite Data</h3>
-          <div class="article-meta">
-            <span>R. Thompson, A. Silva, N. Kim</span>
-            <span>Advances in Environmental Science & Sustainability</span>
-            <span>March 5, 2026</span>
-          </div>
-          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">We present a novel deep learning pipeline for processing multi-spectral satellite imagery to detect deforestation and water quality changes in near real-time...</p>
-          <a href="article.html" class="section-link">Read Full Article →</a>
-        </div>
-      </div>
 
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-mark">
+                S16
+            </div>
+
+            <div class="logo-text">
+                <strong>Scopusixteen</strong>
+                <span>Academic Publishing</span>
+            </div>
+
+        </a>
+
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+
+            <a href="journals.html">Journals</a>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="submit-manuscript.html"
+               class="nav-btn">
+                Submit Manuscript
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ARTICLE HEADER -->
+
+<section class="article-header">
+
+    <div class="article-header-inner">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">Home</a>
+            /
+            <a href="journals.html">Journals</a>
+            /
+            <a href="journal.html">
+                Journal of Digital Education
+            </a>
+            /
+            Article
+
+        </div>
+
+
+        <span class="article-type">
+            Research Article
+        </span>
+
+
+        <h1 class="article-title">
+            Integrating Artificial Intelligence Tools in Computer Education
+        </h1>
+
+
+        <div class="article-authors">
+
+            <strong>Author Name</strong>,
+            Co-author Name,
+            Co-author Name
+
+        </div>
+
+
+        <div class="article-meta">
+
+            <span>
+                <strong>Journal:</strong>
+                Journal of Digital Education
+            </span>
+
+            <span>
+                <strong>Received:</strong>
+                Pending
+            </span>
+
+            <span>
+                <strong>Accepted:</strong>
+                Pending
+            </span>
+
+            <span>
+                <strong>Published:</strong>
+                Forthcoming
+            </span>
+
+            <span>
+                <strong>DOI:</strong>
+                Pending
+
+            </span>
+
+        </div>
+
     </div>
-  </footer>
 
-  <script src="app.js"></script>
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+    <div class="layout">
+
+
+        <div class="main">
+
+
+            <!-- NOTICE -->
+
+            <div class="demo-notice">
+
+                <strong>Demonstration article:</strong>
+                This article page is currently part of the
+                Scopusixteen Publishing website prototype.
+                The author names, dates, DOI, publication status,
+                citations and other bibliographic information are
+                placeholders until a genuine article is formally
+                processed and published.
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="content-card">
+
+                <div class="actions">
+
+                    <button class="btn btn-primary"
+                            onclick="showMessage('The PDF function will be connected when a final article file is available.')">
+                        View PDF
+                    </button>
+
+                    <button class="btn btn-light"
+                            onclick="copyCitation()">
+                        Copy Citation
+                    </button>
+
+                    <button class="btn btn-light"
+                            onclick="window.print()">
+                        Print Article
+                    </button>
+
+                    <button class="btn btn-light"
+                            onclick="shareArticle()">
+                        Share
+                    </button>
+
+                </div>
+
+                <div id="message"
+                     style="display:none;
+                            margin-top:10px;
+                            padding:10px;
+                            background:#edf8f3;
+                            border:1px solid #c8e7d8;
+                            color:#176446;
+                            border-radius:6px;
+                            font-size:13px;">
+                </div>
+
+            </div>
+
+
+            <!-- ABSTRACT -->
+
+            <section class="content-card">
+
+                <h2>Abstract</h2>
+
+                <p class="abstract">
+
+                    Artificial intelligence is increasingly influencing
+                    educational practices, curriculum development and
+                    digital learning environments. This article examines
+                    the potential role of artificial intelligence tools
+                    in computer education, with particular attention to
+                    teaching effectiveness, personalised learning,
+                    student engagement and assessment.
+
+                </p>
+
+                <p class="abstract">
+
+                    The study considers opportunities and challenges
+                    associated with incorporating AI-supported tools
+                    into computer education and discusses implications
+                    for educators, students and educational institutions.
+
+                </p>
+
+            </section>
+
+
+            <!-- KEYWORDS -->
+
+            <section class="content-card">
+
+                <h2>Keywords</h2>
+
+                <div class="keywords">
+
+                    <span class="keyword">
+                        Artificial Intelligence
+                    </span>
+
+                    <span class="keyword">
+                        Computer Education
+                    </span>
+
+                    <span class="keyword">
+                        Digital Learning
+                    </span>
+
+                    <span class="keyword">
+                        Educational Technology
+                    </span>
+
+                    <span class="keyword">
+                        AI Tools
+                    </span>
+
+                    <span class="keyword">
+                        Higher Education
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ARTICLE INFORMATION -->
+
+            <section class="content-card">
+
+                <h2>Article Information</h2>
+
+                <div class="info-row">
+                    <span>Article type</span>
+                    <strong>Research Article</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Journal</span>
+                    <strong>
+                        Journal of Digital Education
+                    </strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Volume</span>
+                    <strong>1</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Issue</span>
+                    <strong>1</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Pages</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>DOI</span>
+                    <strong>Pending</strong>
+                </div>
+
+            </section>
+
+
+            <!-- INTRODUCTION -->
+
+            <section class="content-card">
+
+                <h2>1. Introduction</h2>
+
+                <p>
+
+                    Digital technologies have become an increasingly
+                    important component of contemporary education.
+                    Universities, colleges and schools are adopting
+                    digital platforms to improve access to learning
+                    resources and facilitate communication between
+                    educators and students.
+
+                </p>
+
+                <p>
+
+                    The emergence of artificial intelligence has expanded
+                    these possibilities by introducing systems capable
+                    of supporting content generation, personalised
+                    learning, automated feedback and educational
+                    analytics.
+
+                </p>
+
+                <p>
+
+                    Despite these opportunities, the adoption of AI in
+                    education also raises questions relating to academic
+                    integrity, data protection, transparency, bias and
+                    the changing role of educators.
+
+                </p>
+
+            </section>
+
+
+            <!-- DISCUSSION -->
+
+            <section class="content-card">
+
+                <h2>2. Discussion</h2>
+
+                <p>
+
+                    AI-supported educational technologies can provide
+                    students with additional opportunities for
+                    personalised learning. Adaptive systems may help
+                    learners access resources according to their
+                    individual needs and progress.
+
+                </p>
+
+                <p>
+
+                    Educators may also use AI tools to support lesson
+                    planning, formative assessment and the identification
+                    of areas where students require additional assistance.
+
+                </p>
+
+                <h3>2.1 Opportunities</h3>
+
+                <ul>
+
+                    <li>
+                        Personalised learning experiences
+                    </li>
+
+                    <li>
+                        Automated formative feedback
+                    </li>
+
+                    <li>
+                        Improved access to educational resources
+                    </li>
+
+                    <li>
+                        Support for educators
+                    </li>
+
+                    <li>
+                        Enhanced learning analytics
+                    </li>
+
+                </ul>
+
+
+                <h3>2.2 Challenges</h3>
+
+                <ul>
+
+                    <li>
+                        Academic integrity
+                    </li>
+
+                    <li>
+                        Data privacy and security
+                    </li>
+
+                    <li>
+                        Algorithmic bias
+                    </li>
+
+                    <li>
+                        Digital inequality
+                    </li>
+
+                    <li>
+                        Dependence on automated systems
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- CONCLUSION -->
+
+            <section class="content-card">
+
+                <h2>3. Conclusion</h2>
+
+                <p>
+
+                    Artificial intelligence has the potential to
+                    contribute significantly to the development of
+                    computer education. However, effective adoption
+                    requires appropriate institutional policies,
+                    educator training and responsible use of technology.
+
+                </p>
+
+                <p>
+
+                    Future research should examine how AI-supported
+                    educational tools influence learning outcomes,
+                    student behaviour, academic integrity and teaching
+                    practices across different educational contexts.
+
+                </p>
+
+            </section>
+
+
+            <!-- DECLARATIONS -->
+
+            <section class="content-card">
+
+                <h2>Declarations</h2>
+
+                <h3>Funding</h3>
+
+                <p>
+                    Funding information: To be provided by the authors.
+                </p>
+
+                <h3>Conflict of Interest</h3>
+
+                <p>
+                    Conflict of interest statement: To be provided
+                    by the authors.
+                </p>
+
+                <h3>Ethics Approval</h3>
+
+                <p>
+                    Ethics information: Where applicable, details
+                    should be provided by the authors.
+                </p>
+
+                <h3>Data Availability</h3>
+
+                <p>
+                    Data availability statement: To be provided
+                    by the authors.
+                </p>
+
+            </section>
+
+
+            <!-- REFERENCES -->
+
+            <section class="content-card">
+
+                <h2>References</h2>
+
+                <div class="reference">
+                    1. Reference information will appear here when
+                    the final article manuscript is processed.
+                </div>
+
+                <div class="reference">
+                    2. Reference information will appear here when
+                    the final article manuscript is processed.
+                </div>
+
+                <div class="reference">
+                    3. Reference information will appear here when
+                    the final article manuscript is processed.
+                </div>
+
+            </section>
+
+
+            <!-- CITATION -->
+
+            <section class="content-card">
+
+                <h2>How to Cite</h2>
+
+                <div class="citation-box" id="citationText">
+
+                    Author Name, Co-author Name.
+                    "Integrating Artificial Intelligence Tools in
+                    Computer Education."
+                    Journal of Digital Education,
+                    Volume 1, Issue 1, 2026.
+                    DOI: Pending.
+
+                </div>
+
+                <div class="actions">
+
+                    <button class="btn btn-primary"
+                            onclick="copyCitation()">
+                        Copy Citation
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- RELATED -->
+
+            <section class="content-card">
+
+                <h2>Related Articles</h2>
+
+                <div class="related">
+
+                    <a href="article.html"
+                       class="related-card">
+
+                        <strong>
+                            Digital Transformation and the Future
+                            of Higher Education
+                        </strong>
+
+                        <span>
+                            Review Article · DOI Pending
+                        </span>
+
+                    </a>
+
+
+                    <a href="article.html"
+                       class="related-card">
+
+                        <strong>
+                            Learning Analytics for Student
+                            Engagement and Academic Performance
+                        </strong>
+
+                        <span>
+                            Research Article · DOI Pending
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+
+            <div class="sidebar-card">
+
+                <h3>Article Menu</h3>
+
+                <ul class="side-links">
+
+                    <li>
+                        <a href="#abstract">
+                            Abstract
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#keywords">
+                            Keywords
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#references">
+                            References
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#citation">
+                            How to Cite
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Article Details</h3>
+
+                <div class="info-row">
+                    <span>Article type</span>
+                    <strong>Research Article</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Publication status</span>
+                    <strong>Forthcoming</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>DOI</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Journal</h3>
+
+                <ul class="side-links">
+
+                    <li>
+                        <a href="journal.html">
+                            Journal Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="journals.html">
+                            All Journals
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="author-guidelines.html">
+                            Author Guidelines
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="peer-review.html">
+                            Peer Review
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Submit Research</h3>
+
+                <p style="font-size:13px;color:#687785;margin-bottom:13px;">
+
+                    Ready to submit your research?
+
+                </p>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-primary"
+                   style="display:block;text-align:center;">
+
+                    Submit Manuscript
+
+                </a>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>
+                Scopusixteen Publishing
+            </strong>
+
+            <p>
+
+                A professional academic publishing platform
+                supporting researchers, authors, editors and
+                scholarly communication.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Publishing</h4>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Policies</h4>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="apc.html">
+                APC Information
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Scopusixteen Publishing.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+
+/* MESSAGE */
+
+function showMessage(text){
+
+    const message =
+        document.getElementById("message");
+
+    message.innerText = text;
+
+    message.style.display = "block";
+
+    setTimeout(function(){
+
+        message.style.display = "none";
+
+    },5000);
+
+}
+
+
+/* COPY CITATION */
+
+function copyCitation(){
+
+    const citation =
+        document.getElementById("citationText").innerText;
+
+    if(navigator.clipboard){
+
+        navigator.clipboard.writeText(citation)
+        .then(function(){
+
+            showMessage(
+                "Citation copied to your clipboard."
+            );
+
+        });
+
+    }else{
+
+        showMessage(
+            "Please select and copy the citation manually."
+        );
+
+    }
+
+}
+
+
+/* SHARE */
+
+function shareArticle(){
+
+    const shareData = {
+
+        title:
+        "Integrating Artificial Intelligence Tools in Computer Education",
+
+        text:
+        "Read this article on Scopusixteen Publishing.",
+
+        url:
+        window.location.href
+
+    };
+
+
+    if(navigator.share){
+
+        navigator.share(shareData);
+
+    }else{
+
+        copyCurrentUrl();
+
+    }
+
+}
+
+
+/* COPY URL */
+
+function copyCurrentUrl(){
+
+    if(navigator.clipboard){
+
+        navigator.clipboard.writeText(
+            window.location.href
+        )
+        .then(function(){
+
+            showMessage(
+                "Article link copied to your clipboard."
+            );
+
+        });
+
+    }else{
+
+        showMessage(
+            "Copy the article URL from your browser."
+        );
+
+    }
+
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
