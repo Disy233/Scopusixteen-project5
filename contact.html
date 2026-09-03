@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact & Support | Scopusixteen Publishing</title>
+
+<meta name="description" content="Contact Scopusixteen Publishing for author support, editorial enquiries, manuscript submissions, subscriptions, payments and technical assistance.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071b3a;
+    color:#dce7f5;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+.top-links a:hover{
+    color:white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    border-bottom:1px solid #e2e7ee;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#082b63;
+}
+
+.logo span{
+    color:#1683c7;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:#26364f;
+}
+
+.nav-links a:hover{
+    color:#0b78bc;
+}
+
+.nav-btn{
+    background:#0b78bc;
+    color:white !important;
+    padding:11px 17px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:27px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:linear-gradient(135deg,#071b3a,#0a3f76);
+    color:white;
+    padding:65px 5%;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.breadcrumb{
+    color:#bdd2e8;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.hero-label{
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:7px 13px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:43px;
+    line-height:1.15;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#d8e6f5;
+    font-size:17px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:45px 5%;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.35fr;
+    gap:30px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:white;
+    border:1px solid #e1e6ed;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.card-header{
+    background:#f1f5f8;
+    padding:18px 23px;
+    color:#0a356b;
+    font-weight:bold;
+    font-size:17px;
+}
+
+.card-body{
+    padding:25px;
+}
+
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.intro{
+    color:#526174;
+    margin-bottom:23px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    padding:17px 0;
+    border-bottom:1px solid #edf0f3;
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-icon{
+    width:42px;
+    height:42px;
+    min-width:42px;
+    border-radius:8px;
+    background:#eaf4fa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+}
+
+.contact-item h3{
+    font-size:15px;
+    color:#173e67;
+    margin-bottom:3px;
+}
+
+.contact-item p{
+    color:#627184;
+    font-size:13px;
+}
+
+.contact-item a{
+    color:#0b78bc;
+    font-weight:600;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    color:#243b57;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.required{
+    color:#d33b3b;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    border:1px solid #d5dde6;
+    border-radius:6px;
+    padding:12px 13px;
+    color:#26384e;
+    background:white;
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#0b78bc;
+    box-shadow:0 0 0 3px rgba(11,120,188,.08);
+}
+
+textarea{
+    min-height:155px;
+    resize:vertical;
+}
+
+.help-text{
+    color:#788697;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.submit-btn{
+    width:100%;
+    border:0;
+    background:#0b78bc;
+    color:white;
+    padding:14px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.submit-btn:hover{
+    background:#075f94;
+}
+
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e8;
+    border:1px solid #efd58b;
+    border-left:5px solid #e0aa20;
+    border-radius:7px;
+    padding:17px 20px;
+    margin-bottom:20px;
+}
+
+.notice strong{
+    color:#745400;
+}
+
+.notice p{
+    color:#675d4a;
+    font-size:13px;
+    margin-top:4px;
+}
+
+
+/* =========================
+   DEPARTMENT CARDS
+========================= */
+
+.departments{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.department{
+    border:1px solid #e0e6ed;
+    border-radius:8px;
+    padding:17px;
+    background:#fff;
+}
+
+.department h3{
+    color:#153d67;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.department p{
+    color:#667487;
+    font-size:13px;
+}
+
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.quick-links{
+    display:grid;
+    gap:10px;
+}
+
+.quick-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:13px 15px;
+    border:1px solid #e0e6ed;
+    border-radius:7px;
+    color:#34516e;
+    font-size:14px;
+}
+
+.quick-link:hover{
+    border-color:#0b78bc;
+    color:#0b78bc;
+}
+
+.arrow{
+    font-size:18px;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    border-bottom:1px solid #e4e9ef;
+    padding:16px 0;
+}
+
+.faq:last-child{
+    border-bottom:0;
+}
+
+.faq h3{
+    font-size:15px;
+    color:#173e67;
+    margin-bottom:5px;
+}
+
+.faq p{
+    color:#637185;
+    font-size:13px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:#0a3269;
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    margin-top:5px;
+}
+
+.cta h2{
+    margin-bottom:7px;
+}
+
+.cta p{
+    color:#d4e1ef;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.cta-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.cta-btn{
+    display:inline-block;
+    background:#1683c7;
+    color:white;
+    padding:11px 16px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.cta-btn.secondary{
+    background:white;
+    color:#0a3269;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#d7e2ee;
+    margin-top:35px;
+}
+
+.footer-main{
+    max-width:1250px;
+    margin:auto;
+    padding:50px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    color:white;
+    margin-bottom:12px;
+}
+
+.footer-brand h2 span{
+    color:#43a8df;
+}
+
+.footer-brand p{
+    color:#a9bbd0;
+    font-size:14px;
+    max-width:420px;
+}
+
+.footer-col h3{
+    color:white;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#a9bbd0;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:18px 5%;
+    text-align:center;
+    color:#95a8bd;
+    font-size:12px;
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success{
+    display:none;
+    background:#eaf8ef;
+    border:1px solid #b9dfc6;
+    border-left:5px solid #2e9d54;
+    padding:16px;
+    border-radius:7px;
+    margin-bottom:20px;
+}
+
+.success strong{
+    color:#20743b;
+}
+
+.success p{
+    color:#466052;
+    font-size:13px;
+    margin-top:3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        border-bottom:1px solid #ddd;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:9px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:30px 5%;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .departments{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing • Academic Publishing Services
+        </div>
+
+        <div class="top-links">
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Scopus<span>ixteen</span>
+        </a>
+
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+
+            ☰
+
+        </button>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html"
+               class="nav-btn">
+
+                Administration
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            /
+
+            Contact & Support
+
+        </div>
+
+
+        <span class="hero-label">
+            SUPPORT CENTRE
+        </span>
+
+
+        <h1>
+            Contact & Support
+        </h1>
+
+
+        <p>
+            Get assistance with manuscript submissions, journals,
+            editorial processes, subscriptions, publishing charges and
+            technical questions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+
+    <div class="contact-grid">
+
+
+        <!-- =====================
+             LEFT COLUMN
+        ====================== -->
+
+        <div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+                    Contact Scopusixteen
+                </div>
+
+                <div class="card-body">
+
+                    <p class="intro">
+
+                        Choose the appropriate support area or send us a
+                        general enquiry using the contact form.
+
+                    </p>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                General Support
+                            </h3>
+
+                            <p>
+                                <a href="mailto:support@scopusixteen.com">
+                                    support@scopusixteen.com
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manuscript Support
+                            </h3>
+
+                            <p>
+                                Questions about submissions, revisions,
+                                author information and manuscript status.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ⚖
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Editorial & Ethics
+                            </h3>
+
+                            <p>
+                                Questions concerning peer review, editorial
+                                decisions, research integrity and
+                                publication ethics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            💳
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Subscriptions & Payments
+                            </h3>
+
+                            <p>
+                                Questions about subscription plans, APCs,
+                                invoices and payment-related matters.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🔧
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Technical Support
+                            </h3>
+
+                            <p>
+                                Assistance with website access, accounts and
+                                technical issues.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEPARTMENTS -->
+
+            <div class="card">
+
+                <div class="card-header">
+                    Support Areas
+                </div>
+
+                <div class="card-body">
+
+                    <div class="departments">
+
+
+                        <div class="department">
+
+                            <h3>
+                                Author Services
+                            </h3>
+
+                            <p>
+                                Submission guidance, revisions and author
+                                portal assistance.
+                            </p>
+
+                        </div>
+
+
+                        <div class="department">
+
+                            <h3>
+                                Editorial
+                            </h3>
+
+                            <p>
+                                Editorial workflow and journal-related
+                                enquiries.
+                            </p>
+
+                        </div>
+
+
+                        <div class="department">
+
+                            <h3>
+                                Publication Ethics
+                            </h3>
+
+                            <p>
+                                Research integrity, authorship and ethics
+                                concerns.
+                            </p>
+
+                        </div>
+
+
+                        <div class="department">
+
+                            <h3>
+                                Billing
+                            </h3>
+
+                            <p>
+                                Subscription, APC and payment enquiries.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="card">
+
+                <div class="card-header">
+                    Helpful Resources
+                </div>
+
+                <div class="card-body">
+
+                    <div class="quick-links">
+
+
+                        <a href="author-guidelines.html"
+                           class="quick-link">
+
+                            <span>
+                                Author Guidelines
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a href="peer-review.html"
+                           class="quick-link">
+
+                            <span>
+                                Peer Review Process
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a href="publication-ethics.html"
+                           class="quick-link">
+
+                            <span>
+                                Publication Ethics
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a href="apc.html"
+                           class="quick-link">
+
+                            <span>
+                                Article Processing Charges
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a href="privacy.html"
+                           class="quick-link">
+
+                            <span>
+                                Privacy Policy
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a href="terms.html"
+                           class="quick-link">
+
+                            <span>
+                                Terms & Conditions
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================
+             RIGHT COLUMN
+        ====================== -->
+
+        <div>
+
+
+            <div class="notice">
+
+                <strong>
+                    Prototype contact form
+                </strong>
+
+                <p>
+                    This form currently demonstrates the user interface.
+                    Messages are not automatically delivered to a support
+                    inbox until a backend or form-processing service is
+                    connected.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+                    Send an Enquiry
+                </div>
+
+                <div class="card-body">
+
+
+                    <div class="success"
+                         id="successMessage">
+
+                        <strong>
+                            Demo enquiry submitted
+                        </strong>
+
+                        <p>
+                            Your message has been processed by this
+                            prototype interface. No message has been sent to
+                            a live support system.
+                        </p>
+
+                    </div>
+
+
+                    <form id="contactForm">
+
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Full Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="department"
+                                    name="department"
+                                    required>
+
+                                    <option value="">
+                                        Select department
+                                    </option>
+
+                                    <option>
+                                        Author Services
+                                    </option>
+
+                                    <option>
+                                        Editorial
+                                    </option>
+
+                                    <option>
+                                        Publication Ethics
+                                    </option>
+
+                                    <option>
+                                        Subscriptions & Billing
+                                    </option>
+
+                                    <option>
+                                        Technical Support
+                                    </option>
+
+                                    <option>
+                                        General Enquiry
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="subject">
+                                    Subject
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Enter your subject"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="manuscript">
+                                    Manuscript ID
+                                    <span style="font-weight:normal;color:#788697;">
+                                        (optional)
+                                    </span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="manuscript"
+                                    name="manuscript"
+                                    placeholder="Example: SCP-MAN-2026-001">
+
+                                <div class="help-text">
+                                    If your enquiry concerns a submission,
+                                    include its reference number where
+                                    available.
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="message">
+                                    Message
+                                    <span class="required">*</span>
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Describe your enquiry..."
+                                    required></textarea>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            Submit Enquiry
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ -->
+
+            <div class="card">
+
+                <div class="card-header">
+                    Frequently Asked Questions
+                </div>
+
+                <div class="card-body">
+
+
+                    <div class="faq">
+
+                        <h3>
+                            How do I submit a manuscript?
+                        </h3>
+
+                        <p>
+                            Use the Submit Manuscript option in the Author
+                            Portal and follow the journal's submission
+                            requirements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Does submitting guarantee publication?
+                        </h3>
+
+                        <p>
+                            No. Submission does not guarantee acceptance or
+                            publication. Manuscripts may be subject to
+                            editorial screening and peer review.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Can I ask about an existing manuscript?
+                        </h3>
+
+                        <p>
+                            Yes. Include the manuscript reference number in
+                            your enquiry where one has been issued.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Is the payment system currently live?
+                        </h3>
+
+                        <p>
+                            Payment interfaces displayed on the current
+                            prototype should not be interpreted as proof of
+                            live payment processing.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- CTA -->
+
+            <div class="cta">
+
+                <h2>
+                    Ready to Submit?
+                </h2>
+
+                <p>
+                    Review the author requirements and submit your manuscript
+                    through the Author Portal.
+                </p>
+
+                <div class="cta-links">
+
+                    <a href="author-guidelines.html"
+                       class="cta-btn secondary">
+
+                        Author Guidelines
+
+                    </a>
+
+                    <a href="submit-manuscript.html"
+                       class="cta-btn">
+
+                        Submit Manuscript
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Scopus<span>ixteen</span>
+            </h2>
+
+            <p>
+                A professional academic publishing website prototype
+                designed to support scholarly communication, manuscript
+                submission, editorial workflows and publishing services.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Publishing
+            </h3>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Policies
+            </h3>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="apc.html">
+                APC Information
+            </a>
+
+            <a href="hybrid.html">
+                Hybrid Publishing
+            </a>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="contact.html">
+                Contact Support
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Scopusixteen Publishing.
+        Prototype website. Services and contact processing should be
+        connected to appropriate production systems before launch.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   CONTACT FORM DEMO
+========================= */
+
+document
+    .getElementById("contactForm")
+    .addEventListener("submit",function(event){
+
+        event.preventDefault();
+
+        const success =
+            document.getElementById("successMessage");
+
+        success.style.display = "block";
+
+        success.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+        this.reset();
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
