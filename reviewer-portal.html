@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Author Login & Registration | Scopusixteen Publishing</title>
+
+<meta name="description" content="Author login and registration portal for Scopusixteen Publishing.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --navy:#071b3a;
+    --navy2:#0d2d5f;
+    --blue:#1769e0;
+    --light:#f4f7fb;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#667085;
+    --border:#dfe5ee;
+    --success:#087443;
+    --danger:#c62828;
+    --shadow:0 15px 45px rgba(7,27,58,.12);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--navy);
+    color:#fff;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* HEADER */
+
+header{
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.06);
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:18px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+    color:var(--navy);
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+nav{
+    display:flex;
+    gap:24px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#26344a;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:var(--blue);
+}
+
+.nav-btn{
+    background:var(--blue);
+    color:#fff !important;
+    padding:11px 18px;
+    border-radius:7px;
+}
+
+.menu{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,var(--navy),#174c96);
+    color:#fff;
+    padding:65px 5%;
+}
+
+.hero-inner{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#dce9ff;
+    font-size:17px;
+}
+
+/* NOTICE */
+
+.notice{
+    max-width:1050px;
+    margin:30px auto 0;
+    padding:17px 20px;
+    border-radius:10px;
+    background:#fff8e6;
+    border:1px solid #f0d58c;
+    color:#705200;
+    font-size:14px;
+}
+
+/* AUTH AREA */
+
+.auth-section{
+    padding:55px 5%;
+}
+
+.auth-container{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:30px;
+}
+
+/* LEFT */
+
+.auth-info{
+    background:linear-gradient(160deg,var(--navy),var(--navy2));
+    color:#fff;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+.auth-info h2{
+    font-size:29px;
+    margin-bottom:15px;
+}
+
+.auth-info p{
+    color:#dce6f8;
+    margin-bottom:25px;
+}
+
+.info-list{
+    list-style:none;
+}
+
+.info-list li{
+    margin:17px 0;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.check{
+    width:25px;
+    height:25px;
+    background:#1769e0;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+/* AUTH CARD */
+
+.auth-card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-bottom:1px solid var(--border);
+}
+
+.tab{
+    padding:18px;
+    border:none;
+    background:#f8fafc;
+    cursor:pointer;
+    font-weight:700;
+    font-size:15px;
+    color:#667085;
+}
+
+.tab.active{
+    background:#fff;
+    color:var(--blue);
+    border-bottom:3px solid var(--blue);
+}
+
+.form-area{
+    padding:35px;
+}
+
+.form-panel{
+    display:none;
+}
+
+.form-panel.active{
+    display:block;
+}
+
+.form-title{
+    margin-bottom:6px;
+    font-size:25px;
+}
+
+.form-subtitle{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    font-size:14px;
+    outline:none;
+    background:#fff;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(23,105,224,.08);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    padding-right:70px;
+}
+
+.show-password{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.form-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:5px 0 20px;
+    font-size:13px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.form-options a{
+    color:var(--blue);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin:15px 0;
+    font-size:13px;
+    color:#555;
+}
+
+.checkbox input{
+    margin-top:5px;
+}
+
+.checkbox a{
+    color:var(--blue);
+    text-decoration:none;
+}
+
+.primary-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.primary-btn:hover{
+    background:#0d56c4;
+}
+
+.secondary-btn{
+    width:100%;
+    padding:13px;
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--navy);
+    font-weight:700;
+    border-radius:7px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.small-note{
+    text-align:center;
+    color:#777;
+    font-size:12px;
+    margin-top:18px;
+}
+
+/* LINKS */
+
+.quick-links{
+    max-width:1050px;
+    margin:0 auto 60px;
+}
+
+.quick-links h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.link-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.quick-card{
+    background:#fff;
+    padding:22px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    text-align:center;
+    text-decoration:none;
+    color:var(--text);
+    transition:.2s;
+}
+
+.quick-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.quick-card strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.quick-card span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:3000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    background:#fff;
+    border-radius:15px;
+    padding:35px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:12px;
+    border:none;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-box h2{
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.success{
+    padding:15px;
+    background:#eaf8f1;
+    border:1px solid #b9e4cd;
+    color:var(--success);
+    border-radius:8px;
+    margin-bottom:20px;
+    display:none;
+}
+
+.demo-warning{
+    background:#eef5ff;
+    border:1px solid #c9dcfa;
+    color:#244d84;
+    padding:13px;
+    border-radius:8px;
+    font-size:13px;
+    margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--navy);
+    color:#fff;
+    padding:45px 5% 25px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#b9c7dc;
+    font-size:14px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:9px 0;
+}
+
+footer a{
+    color:#c9d6e8;
+    text-decoration:none;
+    font-size:14px;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:30px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:13px;
+    color:#aebdd1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .topbar-inner{
+        flex-direction:column;
+        text-align:center;
+        gap:3px;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        padding:20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .auth-container{
+        grid-template-columns:1fr;
+    }
+
+    .link-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:550px){
+
+    .navbar{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .auth-section{
+        padding:35px 4%;
+    }
+
+    .auth-info,
+    .form-area{
+        padding:25px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .link-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <span>Scopusixteen Publishing</span>
+        <span>Academic Publishing • Research • Scholarly Communication</span>
+    </div>
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+    Scopus<span>ixteen</span>
+</a>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="journals.html">Journals</a>
+    <a href="author-guidelines.html">Author Guidelines</a>
+    <a href="ai-assistant.html">AI Assistant</a>
+    <a href="subscription.html">Subscriptions</a>
+    <a href="contact.html">Contact</a>
+    <a href="administration.html" class="nav-btn">Administration</a>
+</nav>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<h1>Author Account</h1>
+
+<p>
+Create an author profile, access your manuscript workspace,
+prepare submissions and manage your publishing activities.
+</p>
+
+</div>
+
+</section>
+
+<!-- DEMO NOTICE -->
+
+<div class="notice">
+
+<strong>Prototype Notice:</strong>
+This authentication page is currently a frontend demonstration.
+It does not create real accounts, transmit passwords, verify email
+addresses or provide secure authentication. A production version
+will require a secure backend or authentication provider.
+
+</div>
+
+<!-- AUTH SECTION -->
+
+<section class="auth-section">
+
+<div class="auth-container">
+
+<!-- INFORMATION -->
+
+<div class="auth-info">
+
+<h2>Welcome to the Author Portal</h2>
+
+<p>
+Use your author account to manage your research publishing workflow
+from manuscript preparation through editorial communication.
+</p>
+
+<ul class="info-list">
+
+<li>
+<span class="check">✓</span>
+<span>Prepare and submit manuscripts online.</span>
+</li>
+
+<li>
+<span class="check">✓</span>
+<span>Track your submission workflow.</span>
+</li>
+
+<li>
+<span class="check">✓</span>
+<span>Manage your author profile and affiliations.</span>
+</li>
+
+<li>
+<span class="check">✓</span>
+<span>Access research and writing assistance.</span>
+</li>
+
+<li>
+<span class="check">✓</span>
+<span>Review author guidelines and publication policies.</span>
+</li>
+
+</ul>
+
+<div class="demo-warning">
+
+<strong>Development version</strong><br>
+The buttons on this page demonstrate the intended user experience.
+No real authentication service is connected yet.
+
+</div>
+
+</div>
+
+<!-- AUTH CARD -->
+
+<div class="auth-card">
+
+<div class="tabs">
+
+<button class="tab active" onclick="showTab('login',this)">
+    Sign In
+</button>
+
+<button class="tab" onclick="showTab('register',this)">
+    Create Account
+</button>
+
+</div>
+
+<div class="form-area">
+
+<!-- LOGIN -->
+
+<div class="form-panel active" id="loginPanel">
+
+<h2 class="form-title">Sign in</h2>
+
+<p class="form-subtitle">
+Access your Scopusixteen author workspace.
+</p>
+
+<form onsubmit="demoLogin(event)">
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="you@example.com"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+required>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('loginPassword',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+<div class="form-options">
+
+<label class="remember">
+<input type="checkbox">
+Remember me
+</label>
+
+<a href="#" onclick="openModal('forgotModal');return false;">
+Forgot password?
+</a>
+
+</div>
+
+<button class="primary-btn" type="submit">
+Sign In
+</button>
+
+</form>
+
+<p class="small-note">
+Prototype only — no password is transmitted or stored.
+</p>
+
+</div>
+
+<!-- REGISTER -->
+
+<div class="form-panel" id="registerPanel">
+
+<h2 class="form-title">Create Author Account</h2>
+
+<p class="form-subtitle">
+Create your author profile for the publishing platform.
+</p>
+
+<form onsubmit="demoRegister(event)">
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Full name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Country</label>
+
+<select id="country" required>
+
+<option value="">Select country</option>
+<option>Nigeria</option>
+<option>Ghana</option>
+<option>Kenya</option>
+<option>South Africa</option>
+<option>India</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>Germany</option>
+<option>Canada</option>
+<option>Australia</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="author@example.com"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Institution / Affiliation</label>
+
+<input
+type="text"
+id="institution"
+placeholder="University, organisation or institution">
+
+</div>
+
+<div class="form-group">
+
+<label>Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Create a password"
+required>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('registerPassword',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Confirm Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm password"
+required>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('confirmPassword',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+<div class="checkbox">
+
+<input type="checkbox" id="termsCheck" required>
+
+<label for="termsCheck">
+
+I agree to the
+<a href="terms.html">Terms & Conditions</a>
+and
+<a href="privacy.html">Privacy Policy</a>.
+
+</label>
+
+</div>
+
+<button class="primary-btn" type="submit">
+Create Author Account
+</button>
+
+</form>
+
+<p class="small-note">
+Demo only. Real account creation requires secure authentication.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK LINKS -->
+
+<section class="quick-links">
+
+<h2>Author Resources</h2>
+
+<div class="link-grid">
+
+<a href="author-dashboard.html" class="quick-card">
+
+<strong>Author Dashboard</strong>
+
+<span>
+Manage your publishing workspace
+</span>
+
+</a>
+
+<a href="submit-manuscript.html" class="quick-card">
+
+<strong>Submit Manuscript</strong>
+
+<span>
+Start a new submission
+</span>
+
+</a>
+
+<a href="ai-assistant.html" class="quick-card">
+
+<strong>AI Assistant</strong>
+
+<span>
+Research and writing assistance
+</span>
+
+</a>
+
+<a href="author-guidelines.html" class="quick-card">
+
+<strong>Author Guidelines</strong>
+
+<span>
+Prepare your manuscript correctly
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- FORGOT PASSWORD MODAL -->
+
+<div class="modal" id="forgotModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('forgotModal')">
+×
+</button>
+
+<h2>Reset Password</h2>
+
+<p>
+Enter your email address below. In a production system,
+a secure password-reset email would be sent to the verified address.
+</p>
+
+<div class="success" id="resetSuccess">
+Demo password-reset request completed.
+No email was actually sent.
+</div>
+
+<form onsubmit="demoReset(event)">
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+<button class="primary-btn" type="submit">
+Request Password Reset
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- VERIFICATION MODAL -->
+
+<div class="modal" id="verifyModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('verifyModal')">
+×
+</button>
+
+<h2>Email Verification</h2>
+
+<p>
+A production version of Scopusixteen would send a verification
+message to your registered email address.
+</p>
+
+<div class="success" style="display:block">
+
+Demo verification interface activated.
+No real verification email has been sent.
+
+</div>
+
+<button
+class="primary-btn"
+onclick="closeModal('verifyModal')">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PROFILE SETUP MODAL -->
+
+<div class="modal" id="profileModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('profileModal')">
+×
+</button>
+
+<h2>Author Profile Setup</h2>
+
+<p>
+Your production author account would continue to a profile setup
+screen where you could provide additional academic information.
+</p>
+
+<div class="form-group">
+
+<label>Research Interest</label>
+
+<input
+type="text"
+placeholder="e.g. Artificial Intelligence">
+
+</div>
+
+<div class="form-group">
+
+<label>Academic Role</label>
+
+<select>
+
+<option>Researcher</option>
+<option>Lecturer</option>
+<option>Professor</option>
+<option>Student</option>
+<option>Independent Researcher</option>
+<option>Industry Professional</option>
+
+</select>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="finishProfile()">
+
+Complete Demo Profile
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Scopusixteen Publishing</h3>
+
+<p>
+A professional publishing platform prototype designed to support
+researchers, authors, reviewers and academic publishing workflows.
+</p>
+
+<p style="margin-top:15px;">
+Email: support@scopusixteen.com
+</p>
+
+</div>
+
+<div>
+
+<h3>Publishing</h3>
+
+<ul>
+
+<li><a href="journals.html">Journals</a></li>
+<li><a href="author-guidelines.html">Author Guidelines</a></li>
+<li><a href="peer-review.html">Peer Review</a></li>
+<li><a href="publication-ethics.html">Publication Ethics</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Authors</h3>
+
+<ul>
+
+<li><a href="author-login.html">Author Account</a></li>
+<li><a href="author-dashboard.html">Author Dashboard</a></li>
+<li><a href="submit-manuscript.html">Submit Manuscript</a></li>
+<li><a href="ai-assistant.html">AI Assistant</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Information</h3>
+
+<ul>
+
+<li><a href="subscription.html">Subscriptions</a></li>
+<li><a href="apc.html">APC</a></li>
+<li><a href="hybrid.html">Hybrid Publishing</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms & Conditions</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<span>
+© 2026 Scopusixteen Publishing. All rights reserved.
+</span>
+
+<span>
+Prototype platform — authentication and backend services not yet connected.
+</span>
+
+</div>
+
+</footer>
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document.getElementById("mainNav").classList.toggle("show");
+
+}
+
+
+/* AUTH TABS */
+
+function showTab(tab,button){
+
+    document.querySelectorAll(".tab").forEach(function(item){
+        item.classList.remove("active");
+    });
+
+    document.querySelectorAll(".form-panel").forEach(function(item){
+        item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    if(tab === "login"){
+        document.getElementById("loginPanel").classList.add("active");
+    }
+
+    if(tab === "register"){
+        document.getElementById("registerPanel").classList.add("active");
+    }
+
+}
+
+
+/* SHOW PASSWORD */
+
+function togglePassword(id,button){
+
+    const input = document.getElementById(id);
+
+    if(input.type === "password"){
+
+        input.type = "text";
+        button.textContent = "Hide";
+
+    }else{
+
+        input.type = "password";
+        button.textContent = "Show";
+
+    }
+
+}
+
+
+/* DEMO LOGIN */
+
+function demoLogin(event){
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail").value;
+
+    if(!email){
+        return;
+    }
+
+    alert(
+        "Demo sign-in successful.\n\n" +
+        "No real authentication has occurred.\n\n" +
+        "You will now be taken to the prototype Author Dashboard."
+    );
+
+    window.location.href = "author-dashboard.html";
+
+}
+
+
+/* DEMO REGISTRATION */
+
+function demoRegister(event){
+
+    event.preventDefault();
+
+    const password =
+        document.getElementById("registerPassword").value;
+
+    const confirm =
+        document.getElementById("confirmPassword").value;
+
+    if(password !== confirm){
+
+        alert("Passwords do not match.");
+
+        return;
+
+    }
+
+    openModal("verifyModal");
+
+}
+
+
+/* RESET PASSWORD */
+
+function demoReset(event){
+
+    event.preventDefault();
+
+    document.getElementById("resetSuccess").style.display = "block";
+
+}
+
+
+/* MODALS */
+
+function openModal(id){
+
+    document.getElementById(id).classList.add("show");
+
+}
+
+function closeModal(id){
+
+    document.getElementById(id).classList.remove("show");
+
+}
+
+
+/* COMPLETE PROFILE */
+
+function finishProfile(){
+
+    closeModal("profileModal");
+
+    alert(
+        "Demo profile setup completed.\n\n" +
+        "In the production version, your profile would be saved securely."
+    );
+
+}
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+window.addEventListener("click",function(event){
+
+    document.querySelectorAll(".modal").forEach(function(modal){
+
+        if(event.target === modal){
+
+            modal.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
