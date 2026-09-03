@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hybrid Publishing | Scopusixteen Publishing</title>
+
+<meta name="description" content="Learn about the hybrid publishing model, subscription access and optional open access publishing at Scopusixteen Publishing.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071b3a;
+    color:#dce7f5;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+.top-links a:hover{
+    color:white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    border-bottom:1px solid #e2e7ee;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#082b63;
+}
+
+.logo span{
+    color:#1683c7;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:#26364f;
+}
+
+.nav-links a:hover{
+    color:#0b78bc;
+}
+
+.nav-btn{
+    background:#0b78bc;
+    color:white !important;
+    padding:11px 17px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    font-size:27px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:linear-gradient(135deg,#071b3a,#0a3f76);
+    color:white;
+    padding:70px 5%;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#bdd2e8;
+    margin-bottom:20px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.hero-label{
+    display:inline-block;
+    padding:7px 13px;
+    border-radius:20px;
+    background:rgba(255,255,255,.11);
+    border:1px solid rgba(255,255,255,.22);
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:44px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#d8e6f5;
+    font-size:17px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:45px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:1fr 310px;
+    gap:30px;
+}
+
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e8;
+    border:1px solid #efd58b;
+    border-left:5px solid #e0aa20;
+    border-radius:7px;
+    padding:18px 20px;
+    margin-bottom:25px;
+}
+
+.notice strong{
+    color:#745400;
+}
+
+.notice p{
+    color:#675d4a;
+    font-size:14px;
+    margin-top:5px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:white;
+    border:1px solid #e1e6ed;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.section{
+    padding:30px 35px;
+    border-bottom:1px solid #e6eaf0;
+}
+
+.section:last-child{
+    border-bottom:0;
+}
+
+.section h2{
+    color:#0a356b;
+    font-size:24px;
+    margin-bottom:16px;
+}
+
+.section h3{
+    color:#1b456e;
+    font-size:18px;
+    margin:22px 0 9px;
+}
+
+.section p{
+    color:#526174;
+    margin-bottom:15px;
+}
+
+.section ul{
+    margin:10px 0 15px 22px;
+    color:#526174;
+}
+
+.section li{
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   MODEL GRID
+========================= */
+
+.model-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:25px;
+}
+
+.model-card{
+    border:1px solid #dce4eb;
+    border-radius:9px;
+    padding:24px;
+    background:#f9fbfc;
+}
+
+.model-card.active{
+    border:2px solid #0b78bc;
+    background:#f4f9fc;
+}
+
+.model-icon{
+    width:46px;
+    height:46px;
+    border-radius:8px;
+    background:#e8f3f9;
+    color:#0b78bc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.model-card h3{
+    color:#0b3e70;
+    font-size:19px;
+    margin:0 0 9px;
+}
+
+.model-card p{
+    font-size:13px;
+    color:#657488;
+    margin-bottom:0;
+}
+
+
+/* =========================
+   COMPARISON
+========================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    border:1px solid #dfe5eb;
+    padding:14px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#f1f5f8;
+    color:#243d59;
+}
+
+td{
+    color:#566477;
+}
+
+.check{
+    font-weight:bold;
+    color:#0b78bc;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.steps{
+    display:grid;
+    gap:12px;
+    margin-top:20px;
+}
+
+.step{
+    display:flex;
+    gap:15px;
+    padding:16px;
+    border:1px solid #e1e7ed;
+    border-radius:7px;
+    background:#f8fafb;
+}
+
+.step-number{
+    min-width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#0b78bc;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.step-content strong{
+    display:block;
+    color:#173e67;
+    margin-bottom:3px;
+}
+
+.step-content span{
+    color:#69778a;
+    font-size:13px;
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.benefit{
+    padding:19px;
+    border:1px solid #e0e6ec;
+    border-radius:8px;
+    background:#fafcfd;
+}
+
+.benefit h3{
+    font-size:16px;
+    margin:0 0 7px;
+    color:#16446e;
+}
+
+.benefit p{
+    font-size:13px;
+    margin:0;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar-card{
+    background:white;
+    border:1px solid #e1e6ed;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:22px;
+}
+
+.sidebar-title{
+    background:#f1f5f8;
+    color:#0a356b;
+    padding:16px 18px;
+    font-weight:bold;
+}
+
+.sidebar-body{
+    padding:18px;
+}
+
+.side-link{
+    display:block;
+    padding:10px 0;
+    border-bottom:1px solid #edf0f3;
+    color:#4b5d71;
+    font-size:14px;
+}
+
+.side-link:last-child{
+    border-bottom:0;
+}
+
+.side-link:hover{
+    color:#0b75b4;
+}
+
+.side-btn{
+    display:block;
+    text-align:center;
+    background:#0b78bc;
+    color:white;
+    padding:12px;
+    border-radius:6px;
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.side-btn.secondary{
+    background:white;
+    color:#0b6fae;
+    border:1px solid #0b78bc;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    border-bottom:1px solid #e5e9ee;
+    padding:18px 0;
+}
+
+.faq:last-child{
+    border-bottom:0;
+}
+
+.faq h3{
+    margin:0 0 7px;
+    font-size:16px;
+}
+
+.faq p{
+    font-size:14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:#0a3269;
+    color:white;
+    border-radius:10px;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.cta h2{
+    margin-bottom:7px;
+}
+
+.cta p{
+    color:#d2e1f2;
+    font-size:14px;
+}
+
+.cta-btn{
+    background:#1683c7;
+    color:white;
+    padding:13px 20px;
+    border-radius:6px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#d7e2ee;
+    margin-top:30px;
+}
+
+.footer-main{
+    max-width:1250px;
+    margin:auto;
+    padding:50px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    color:white;
+    margin-bottom:12px;
+}
+
+.footer-brand h2 span{
+    color:#43a8df;
+}
+
+.footer-brand p{
+    color:#a9bbd0;
+    font-size:14px;
+    max-width:420px;
+}
+
+.footer-col h3{
+    color:white;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#a9bbd0;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:18px 5%;
+    text-align:center;
+    color:#95a8bd;
+    font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        border-bottom:1px solid #ddd;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:9px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .model-grid{
+        grid-template-columns:1fr;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:30px 5%;
+    }
+
+    .section{
+        padding:23px 20px;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing • Academic Publishing Services
+        </div>
+
+        <div class="top-links">
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Scopus<span>ixteen</span>
+        </a>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+
+            ☰
+
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html"
+               class="nav-btn">
+
+                Administration
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            /
+
+            Hybrid Publishing
+
+        </div>
+
+
+        <span class="hero-label">
+            PUBLISHING MODEL
+        </span>
+
+
+        <h1>
+            Hybrid Publishing
+        </h1>
+
+
+        <p>
+            A publishing model that can combine subscription-based access
+            with an optional open-access route for eligible articles.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+    <div class="notice">
+
+        <strong>
+            Prototype publishing information
+        </strong>
+
+        <p>
+            This page describes a proposed publishing model for the
+            Scopusixteen website prototype. Individual journals may adopt
+            different publishing models, fees, licences and access policies
+            once formally established.
+        </p>
+
+    </div>
+
+
+    <div class="layout">
+
+
+        <!-- MAIN -->
+
+        <main>
+
+
+            <!-- INTRODUCTION -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        What Is Hybrid Publishing?
+                    </h2>
+
+                    <p>
+                        Hybrid publishing generally refers to a journal model
+                        in which a journal operates primarily through a
+                        subscription or other access model while providing an
+                        option for individual articles to be made openly
+                        accessible when the applicable conditions are met.
+                    </p>
+
+                    <p>
+                        Under such a model, authors may have an open-access
+                        option for an eligible article, potentially subject
+                        to an Article Processing Charge (APC) and the
+                        journal's applicable licensing and copyright
+                        arrangements.
+                    </p>
+
+                    <p>
+                        The exact availability of hybrid publishing should
+                        always be confirmed on the individual journal's
+                        official information page.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- THREE MODELS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Understanding the Publishing Models
+                    </h2>
+
+                    <div class="model-grid">
+
+
+                        <div class="model-card active">
+
+                            <div class="model-icon">
+                                H
+                            </div>
+
+                            <h3>
+                                Hybrid
+                            </h3>
+
+                            <p>
+                                A journal may combine subscription access with
+                                an optional open-access route for selected
+                                articles.
+                            </p>
+
+                        </div>
+
+
+                        <div class="model-card">
+
+                            <div class="model-icon">
+                                O
+                            </div>
+
+                            <h3>
+                                Open Access
+                            </h3>
+
+                            <p>
+                                Articles are made openly accessible according
+                                to the journal's open-access policy and
+                                applicable licence.
+                            </p>
+
+                        </div>
+
+
+                        <div class="model-card">
+
+                            <div class="model-icon">
+                                S
+                            </div>
+
+                            <h3>
+                                Subscription
+                            </h3>
+
+                            <p>
+                                Access is provided through subscriptions,
+                                institutional arrangements or other permitted
+                                access routes.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COMPARISON -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Publishing Model Comparison
+                    </h2>
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Feature
+                                    </th>
+
+                                    <th>
+                                        Hybrid
+                                    </th>
+
+                                    <th>
+                                        Open Access
+                                    </th>
+
+                                    <th>
+                                        Subscription
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        Subscription access
+                                    </td>
+
+                                    <td class="check">
+                                        Possible
+                                    </td>
+
+                                    <td>
+                                        Generally not the primary model
+                                    </td>
+
+                                    <td class="check">
+                                        Yes
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Open-access option
+                                    </td>
+
+                                    <td class="check">
+                                        Possible
+                                    </td>
+
+                                    <td class="check">
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                        Depends on policy
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        APC may apply
+                                    </td>
+
+                                    <td class="check">
+                                        Possible
+                                    </td>
+
+                                    <td class="check">
+                                        Possible
+                                    </td>
+
+                                    <td>
+                                        Depends on policy
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Peer review
+                                    </td>
+
+                                    <td>
+                                        According to journal policy
+                                    </td>
+
+                                    <td>
+                                        According to journal policy
+                                    </td>
+
+                                    <td>
+                                        According to journal policy
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Access conditions
+                                    </td>
+
+                                    <td>
+                                        Depend on article and journal
+                                    </td>
+
+                                    <td>
+                                        Open-access policy applies
+                                    </td>
+
+                                    <td>
+                                        Subscription/access policy applies
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HOW IT WORKS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        How the Hybrid Route Can Work
+                    </h2>
+
+                    <p>
+                        A typical workflow can involve the following stages.
+                        The exact process may vary by journal.
+                    </p>
+
+
+                    <div class="steps">
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                1
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Select a journal
+                                </strong>
+
+                                <span>
+                                    Review the journal's aims, scope,
+                                    publishing model and author requirements.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                2
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Submit your manuscript
+                                </strong>
+
+                                <span>
+                                    Submit the manuscript through the
+                                    applicable submission process.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                3
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Editorial and peer review
+                                </strong>
+
+                                <span>
+                                    The manuscript undergoes the applicable
+                                    editorial assessment and review process.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                4
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Editorial decision
+                                </strong>
+
+                                <span>
+                                    The journal makes an editorial decision
+                                    according to its policy.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                5
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Select an available access route
+                                </strong>
+
+                                <span>
+                                    Where the journal provides a hybrid
+                                    option, eligible authors may choose the
+                                    applicable access route.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                6
+                            </div>
+
+                            <div class="step-content">
+
+                                <strong>
+                                    Production and publication
+                                </strong>
+
+                                <span>
+                                    The accepted article proceeds through the
+                                    applicable production and publication
+                                    process.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BENEFITS -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Potential Benefits
+                    </h2>
+
+                    <div class="benefits">
+
+
+                        <div class="benefit">
+
+                            <h3>
+                                Flexible Access
+                            </h3>
+
+                            <p>
+                                Hybrid models can provide different access
+                                routes depending on the journal and article.
+                            </p>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <h3>
+                                Wider Visibility
+                            </h3>
+
+                            <p>
+                                Where an article is legitimately published
+                                open access, it may be accessible to readers
+                                without a subscription.
+                            </p>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <h3>
+                                Institutional Access
+                            </h3>
+
+                            <p>
+                                Subscription arrangements may continue to
+                                support institutional access to journal
+                                content.
+                            </p>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <h3>
+                                Author Choice
+                            </h3>
+
+                            <p>
+                                Where permitted, authors may have a choice
+                                between available access routes.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- APC -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Article Processing Charges
+                    </h2>
+
+                    <p>
+                        An APC may apply when an author chooses an applicable
+                        open-access route in a hybrid journal.
+                    </p>
+
+                    <p>
+                        The amount, currency, eligibility, payment timing,
+                        waiver arrangements and included services should be
+                        stated clearly in the journal's official APC policy.
+                    </p>
+
+                    <p>
+                        For information about the proposed APC structure on
+                        this prototype website, visit the APC information
+                        page.
+                    </p>
+
+                    <a href="apc.html"
+                       class="side-btn"
+                       style="display:inline-block;margin-top:8px;">
+
+                        View APC Information
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- PEER REVIEW -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Peer Review Remains Independent
+                    </h2>
+
+                    <p>
+                        Selecting or paying for an open-access option should
+                        not determine whether a manuscript is accepted.
+                    </p>
+
+                    <p>
+                        Editorial decisions should be based on the journal's
+                        scope, editorial criteria, research quality and
+                        applicable peer-review process.
+                    </p>
+
+                    <p>
+                        Authors should therefore be cautious of any service
+                        that promises acceptance in exchange for payment.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- LICENSING -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Copyright and Licensing
+                    </h2>
+
+                    <p>
+                        The copyright and licensing terms for an article
+                        depend on the journal's formal publishing agreement
+                        and the access route selected.
+                    </p>
+
+                    <p>
+                        If an article is published under an open-access
+                        licence, the applicable licence should be clearly
+                        identified before publication.
+                    </p>
+
+                    <h3>
+                        Authors should check
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Who retains copyright.
+                        </li>
+
+                        <li>
+                            Which licence applies.
+                        </li>
+
+                        <li>
+                            How readers may reuse the article.
+                        </li>
+
+                        <li>
+                            Whether attribution is required.
+                        </li>
+
+                        <li>
+                            Whether commercial reuse is permitted.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <div class="section">
+
+                    <h2>
+                        Frequently Asked Questions
+                    </h2>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Does hybrid publishing mean every article is open access?
+                        </h3>
+
+                        <p>
+                            No. A hybrid journal may provide an open-access
+                            option while continuing to operate with a
+                            subscription-based access model for other
+                            content.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Is an APC always required?
+                        </h3>
+
+                        <p>
+                            Not necessarily. An APC may apply when an author
+                            selects an applicable open-access route, but the
+                            exact policy depends on the journal.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Does paying an APC guarantee acceptance?
+                        </h3>
+
+                        <p>
+                            No. Payment should never be presented as a
+                            guarantee of editorial acceptance or favourable
+                            peer review.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Can I publish through the subscription route?
+                        </h3>
+
+                        <p>
+                            Where a journal offers a subscription route,
+                            authors may follow the access and publishing
+                            conditions specified by that journal.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Are all Scopusixteen journals hybrid?
+                        </h3>
+
+                        <p>
+                            No. Each journal should have its own formally
+                            established publishing model and access policy.
+                            The journal page should be consulted for the
+                            applicable information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="faq">
+
+                        <h3>
+                            Where can I find the APC information?
+                        </h3>
+
+                        <p>
+                            Visit the APC page for the current prototype
+                            explanation of charges, waivers and payment
+                            procedures.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CTA -->
+
+            <section class="cta">
+
+                <div>
+
+                    <h2>
+                        Ready to submit your research?
+                    </h2>
+
+                    <p>
+                        Review the author requirements before submitting a
+                        manuscript.
+                    </p>
+
+                </div>
+
+
+                <a href="submit-manuscript.html"
+                   class="cta-btn">
+
+                    Submit Manuscript
+
+                </a>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================= -->
+
+        <aside>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    Publishing Models
+                </div>
+
+                <div class="sidebar-body">
+
+                    <a href="apc.html"
+                       class="side-link">
+
+                        Article Processing Charges
+
+                    </a>
+
+                    <a href="hybrid.html"
+                       class="side-link">
+
+                        Hybrid Publishing
+
+                    </a>
+
+                    <a href="subscription.html"
+                       class="side-link">
+
+                        Subscription Publishing
+
+                    </a>
+
+                    <a href="journals.html"
+                       class="side-link">
+
+                        Browse Journals
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    Author Resources
+                </div>
+
+                <div class="sidebar-body">
+
+                    <a href="author-guidelines.html"
+                       class="side-btn">
+
+                        Author Guidelines
+
+                    </a>
+
+                    <a href="peer-review.html"
+                       class="side-btn secondary">
+
+                        Peer Review
+
+                    </a>
+
+                    <a href="publication-ethics.html"
+                       class="side-btn secondary">
+
+                        Publication Ethics
+
+                    </a>
+
+                    <a href="submit-manuscript.html"
+                       class="side-btn secondary">
+
+                        Submit Manuscript
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    Important
+                </div>
+
+                <div class="sidebar-body">
+
+                    <p style="font-size:13px;color:#68778a;">
+
+                        Publishing models, APCs, licences and access policies
+                        should be formally established for each journal
+                        before being presented as official information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Scopus<span>ixteen</span>
+            </h2>
+
+            <p>
+                A professional publishing website prototype designed to
+                support scholarly communication, manuscript submission,
+                editorial workflows and academic publishing services.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Publishing
+            </h3>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Policies
+            </h3>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="apc.html">
+                APC Information
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Scopusixteen Publishing.
+        Prototype website. Publishing models and services are subject to
+        formal establishment and verification.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* Close mobile menu when a link is clicked */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
