@@ -1,24 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard | Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author Dashboard – Scopusixteen</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 80vh;
+    }
+    .sidebar {
+      background: var(--primary);
+      color: white;
+      padding: 32px 20px;
+    }
+    .sidebar h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #1e293b;
+      color: white;
+    }
+    .main-content {
+      padding: 40px;
+      background: #f8fafc;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .stat-card h4 {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .stat-card .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .manuscript-table {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .manuscript-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .manuscript-table th {
+      text-align: left;
+      padding: 16px 20px;
+      background: #f1f5f9;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .manuscript-table td {
+      padding: 18px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .status-review { background: #fef3c7; color: #b45309; }
+    .status-accepted { background: #d1fae5; color: #047857; }
+    .status-revision { background: #dbeafe; color: #1d4ed8; }
+    .status-submitted { background: #e0e7ff; color: #4338ca; }
+
+    @media (max-width: 900px) {
+      .dashboard-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <div id="site-header"></div>
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="section-title" style="margin-bottom:0.35rem">Dashboard</h1>
-        <p style="color:var(--slate-600);margin-bottom:1.5rem">Welcome, <span id="dash-user">…</span></p>
-        <div id="dashboard-root"></div>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>support@scopusixteen.com</span>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="login.html">Logout</a>
       </div>
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      <div class="header-actions">
+        <span style="margin-right:16px; font-weight:500;">Welcome, Author</span>
+        <a href="submit.html" class="btn btn-primary">+ New Submission</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="submit.html">Submit Manuscript</a>
+      <a href="#">My Manuscripts</a>
+      <a href="#">Revisions</a>
+      <a href="#">Messages</a>
+      <a href="#">Profile Settings</a>
+      <a href="index.html" style="margin-top:30px;">← Back to Website</a>
+    </aside>
+
+    <main class="main-content">
+      <h1 style="font-size:28px; margin-bottom:8px;">Author Dashboard</h1>
+      <p style="color:var(--text-light); margin-bottom:32px;">Track your submissions and manage your publications.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h4>Total Submissions</h4>
+          <div class="number">7</div>
+        </div>
+        <div class="stat-card">
+          <h4>Under Review</h4>
+          <div class="number">3</div>
+        </div>
+        <div class="stat-card">
+          <h4>Revisions Requested</h4>
+          <div class="number">1</div>
+        </div>
+        <div class="stat-card">
+          <h4>Accepted</h4>
+          <div class="number">2</div>
+        </div>
+      </div>
+
+      <h2 style="font-size:20px; margin-bottom:20px;">My Manuscripts</h2>
+      <div class="manuscript-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manuscript ID</th>
+              <th>Title</th>
+              <th>Journal</th>
+              <th>Status</th>
+              <th>Last Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MS-2026-0142</td>
+              <td>Machine Learning Approaches for Predicting Protein Structures</td>
+              <td>Journal of Engineering...</td>
+              <td><span class="status status-review">Under Review</span></td>
+              <td>2 days ago</td>
+            </tr>
+            <tr>
+              <td>MS-2026-0098</td>
+              <td>Impact of Climate Change on Vector-Borne Diseases</td>
+              <td>Medical & Health Research</td>
+              <td><span class="status status-revision">Revision Required</span></td>
+              <td>5 days ago</td>
+            </tr>
+            <tr>
+              <td>MS-2025-0871</td>
+              <td>Sustainable Business Models in Emerging Markets</td>
+              <td>Business & Management</td>
+              <td><span class="status status-accepted">Accepted</span></td>
+              <td>12 days ago</td>
+            </tr>
+            <tr>
+              <td>MS-2026-0155</td>
+              <td>Deep Learning for Environmental Monitoring</td>
+              <td>Environmental Science</td>
+              <td><span class="status status-submitted">Submitted</span></td>
+              <td>1 day ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
 </body>
 </html>
