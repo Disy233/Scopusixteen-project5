@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Subscriptions | Scopusixteen Publishing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --primary-dark:#092b49;
+    --secondary:#1d6fa5;
+    --light:#f5f8fb;
+    --white:#fff;
+    --text:#1c2733;
+    --muted:#718096;
+    --border:#e2e8f0;
+    --success:#16834b;
+    --warning:#b7791f;
+    --danger:#c53030;
+    --shadow:0 8px 25px rgba(15,35,55,.08);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+/* HEADER */
+
+.header{
+    height:70px;
+    background:white;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:42px;
+    height:42px;
+    border-radius:8px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.brand h1{
+    color:var(--primary);
+    font-size:19px;
+}
+
+.brand small{
+    color:var(--muted);
+    display:block;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.header-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-links a{
+    text-decoration:none;
+    color:var(--primary);
+    font-size:13px;
+}
+
+.header-links a:hover{
+    color:var(--secondary);
+}
+
+/* MAIN */
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:45px 20px 60px;
+}
+
+.hero{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.hero h2{
+    color:var(--primary);
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* DEMO NOTICE */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f1d28a;
+    color:#745b23;
+    border-radius:8px;
+    padding:15px 18px;
+    margin-bottom:30px;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* BILLING TOGGLE */
+
+.billing-toggle{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.billing-label{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.toggle{
+    width:52px;
+    height:28px;
+    background:#d9e2ea;
+    border-radius:20px;
+    padding:3px;
+    cursor:pointer;
+}
+
+.toggle-circle{
+    width:22px;
+    height:22px;
+    background:white;
+    border-radius:50%;
+    transition:.25s;
+}
+
+.toggle.active{
+    background:var(--primary);
+}
+
+.toggle.active .toggle-circle{
+    transform:translateX(24px);
+}
+
+.save{
+    background:#e5f7ed;
+    color:var(--success);
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+/* PLANS */
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    align-items:stretch;
+}
+
+.plan{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+}
+
+.plan.featured{
+    border:2px solid var(--secondary);
+    transform:translateY(-6px);
+}
+
+.popular{
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--secondary);
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.plan h3{
+    color:var(--primary);
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.plan-description{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+    min-height:38px;
+}
+
+.price{
+    margin:22px 0;
+    color:var(--primary);
+}
+
+.price strong{
+    font-size:36px;
+}
+
+.price span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.price .old{
+    display:block;
+    text-decoration:line-through;
+    color:#a0aec0;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.features{
+    list-style:none;
+    margin:5px 0 25px;
+    flex:1;
+}
+
+.features li{
+    font-size:13px;
+    padding:9px 0;
+    border-bottom:1px solid #edf1f4;
+    color:#465565;
+}
+
+.features li::before{
+    content:"✓";
+    color:var(--success);
+    font-weight:bold;
+    margin-right:8px;
+}
+
+.plan-btn{
+    width:100%;
+    border:none;
+    border-radius:6px;
+    padding:12px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:13px;
+    background:var(--primary);
+    color:white;
+}
+
+.plan-btn:hover{
+    background:var(--primary-dark);
+}
+
+.plan.featured .plan-btn{
+    background:var(--secondary);
+}
+
+/* PAYMENT */
+
+.payment-section{
+    margin-top:45px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:22px;
+}
+
+.section-title h3{
+    color:var(--primary);
+    font-size:23px;
+}
+
+.section-title p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+}
+
+.payment-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:22px;
+}
+
+.box{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
+
+.box h4{
+    color:var(--primary);
+    margin-bottom:18px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    font-size:12px;
+    font-weight:bold;
+    color:#4a5968;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    border:1px solid var(--border);
+    padding:11px;
+    border-radius:6px;
+    outline:none;
+    font-size:13px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--secondary);
+}
+
+.pay-btn{
+    width:100%;
+    border:none;
+    background:var(--primary);
+    color:white;
+    padding:12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.pay-btn:hover{
+    background:var(--primary-dark);
+}
+
+/* PAYMENT METHODS */
+
+.methods{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.method{
+    border:1px solid var(--border);
+    padding:15px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:12px;
+    transition:.2s;
+}
+
+.method:hover,
+.method.selected{
+    border-color:var(--secondary);
+    background:#f3f8fc;
+}
+
+.method strong{
+    display:block;
+    color:var(--primary);
+    margin-bottom:4px;
+}
+
+.method span{
+    color:var(--muted);
+    font-size:10px;
+}
+
+/* ACCOUNT */
+
+.account{
+    margin-top:45px;
+}
+
+.account-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
+
+.account-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.account-item{
+    padding:15px;
+    background:#f7f9fb;
+    border-radius:7px;
+}
+
+.account-item small{
+    color:var(--muted);
+    font-size:10px;
+    display:block;
+    margin-bottom:5px;
+}
+
+.account-item strong{
+    color:var(--primary);
+    font-size:14px;
+}
+
+.active-status{
+    color:var(--success)!important;
+}
+
+/* FAQ */
+
+.faq{
+    margin-top:45px;
+}
+
+.faq-list{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:8px;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+
+.faq-question{
+    padding:17px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+    color:var(--primary);
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 17px 17px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+/* FOOTER */
+
+.footer{
+    background:var(--primary-dark);
+    color:#c8d5df;
+    padding:30px 20px;
+    text-align:center;
+    font-size:11px;
+}
+
+.footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:3000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    width:100%;
+    max-width:440px;
+    background:white;
+    border-radius:10px;
+    padding:28px;
+    text-align:center;
+}
+
+.modal-box h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.modal-btn{
+    margin-top:20px;
+    width:100%;
+    padding:11px;
+    border:none;
+    border-radius:6px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .plans{
+        grid-template-columns:1fr;
+        max-width:550px;
+        margin:auto;
+    }
+
+    .plan.featured{
+        transform:none;
+    }
+
+    .payment-grid{
+        grid-template-columns:1fr;
+    }
+
+    .account-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .brand h1{
+        font-size:16px;
+    }
+
+    .brand small{
+        display:none;
+    }
+
+    .header-links a:not(:last-child){
+        display:none;
+    }
+
+    .container{
+        padding:35px 15px 50px;
+    }
+
+    .hero h2{
+        font-size:27px;
+    }
+
+    .account-grid{
+        grid-template-columns:1fr;
+    }
+
+    .methods{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <div class="logo">SX</div>
+
+        <div>
+            <h1>Scopusixteen Publishing</h1>
+            <small>Academic Publishing Platform</small>
+        </div>
+
+    </div>
+
+    <div class="header-links">
+        <a href="index.html">Home</a>
+        <a href="author-dashboard.html">Author Portal</a>
+        <a href="administration.html">Administration</a>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h2>Publishing Subscriptions</h2>
+
+        <p>
+            Choose a subscription plan designed for researchers,
+            institutions and organisations seeking access to
+            academic publishing resources and services.
+        </p>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Demo Payment Environment:</strong>
+        This subscription page is currently a frontend prototype.
+        No payment is processed and no subscription is activated
+        until a secure payment provider and backend are connected.
+
+    </div>
+
+
+    <!-- BILLING -->
+
+    <div class="billing-toggle">
+
+        <span class="billing-label">Monthly</span>
+
+        <div class="toggle" id="billingToggle"
+             onclick="toggleBilling()">
+
+            <div class="toggle-circle"></div>
+
+        </div>
+
+        <span class="billing-label">Annual</span>
+
+        <span class="save">SAVE 20%</span>
+
+    </div>
+
+
+    <!-- PLANS -->
+
+    <section class="plans">
+
+
+        <!-- BASIC -->
+
+        <div class="plan">
+
+            <h3>Researcher</h3>
+
+            <p class="plan-description">
+                For individual researchers and academic authors.
+            </p>
+
+            <div class="price">
+
+                <strong class="monthly-price">$19</strong>
+
+                <span class="period">/month</span>
+
+            </div>
+
+            <ul class="features">
+
+                <li>Author account</li>
+                <li>Submission tracking</li>
+                <li>Author dashboard</li>
+                <li>Publishing resources</li>
+                <li>Email support</li>
+
+            </ul>
+
+            <button class="plan-btn"
+                    onclick="selectPlan('Researcher')">
+                Choose Researcher
+            </button>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="plan featured">
+
+            <div class="popular">
+                MOST POPULAR
+            </div>
+
+            <h3>Professional</h3>
+
+            <p class="plan-description">
+                For active researchers and publishing professionals.
+            </p>
+
+            <div class="price">
+
+                <strong class="monthly-price">$49</strong>
+
+                <span class="period">/month</span>
+
+            </div>
+
+            <ul class="features">
+
+                <li>Everything in Researcher</li>
+                <li>Priority support</li>
+                <li>Advanced author tools</li>
+                <li>Research resources</li>
+                <li>Enhanced profile</li>
+                <li>Publishing analytics</li>
+
+            </ul>
+
+            <button class="plan-btn"
+                    onclick="selectPlan('Professional')">
+                Choose Professional
+            </button>
+
+        </div>
+
+
+        <!-- INSTITUTION -->
+
+        <div class="plan">
+
+            <h3>Institution</h3>
+
+            <p class="plan-description">
+                For universities, research centres and organisations.
+            </p>
+
+            <div class="price">
+
+                <strong class="monthly-price">$149</strong>
+
+                <span class="period">/month</span>
+
+            </div>
+
+            <ul class="features">
+
+                <li>Multiple user accounts</li>
+                <li>Institution profile</li>
+                <li>Administrative tools</li>
+                <li>Usage analytics</li>
+                <li>Priority support</li>
+                <li>Organisation resources</li>
+
+            </ul>
+
+            <button class="plan-btn"
+                    onclick="selectPlan('Institution')">
+                Choose Institution
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAYMENT -->
+
+    <section class="payment-section">
+
+        <div class="section-title">
+
+            <h3>Subscription Checkout</h3>
+
+            <p>
+                Select your preferred payment method and continue.
+            </p>
+
+        </div>
+
+
+        <div class="payment-grid">
+
+
+            <div class="box">
+
+                <h4>Subscriber Information</h4>
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="name@example.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Country</label>
+
+                    <select id="country">
+
+                        <option value="">Select country</option>
+
+                        <option>Nigeria</option>
+                        <option>United Kingdom</option>
+                        <option>United States</option>
+                        <option>India</option>
+                        <option>Germany</option>
+                        <option>Canada</option>
+                        <option>Ghana</option>
+                        <option>South Africa</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Selected Plan</label>
+
+                    <input
+                        type="text"
+                        id="selectedPlan"
+                        value="No plan selected"
+                        readonly
+                    >
+
+                </div>
+
+
+                <button class="pay-btn"
+                        onclick="processPayment()">
+
+                    Continue to Payment
+
+                </button>
+
+            </div>
+
+
+            <div class="box">
+
+                <h4>Payment Methods</h4>
+
+                <div class="methods">
+
+                    <div class="method"
+                         onclick="selectPayment(this,'Card')">
+
+                        💳
+
+                        <strong>Card</strong>
+
+                        <span>Credit or debit card</span>
+
+                    </div>
+
+
+                    <div class="method"
+                         onclick="selectPayment(this,'Bank Transfer')">
+
+                        🏦
+
+                        <strong>Bank Transfer</strong>
+
+                        <span>Local or international transfer</span>
+
+                    </div>
+
+
+                    <div class="method"
+                         onclick="selectPayment(this,'Online Payment')">
+
+                        🌐
+
+                        <strong>Online Payment</strong>
+
+                        <span>Supported online methods</span>
+
+                    </div>
+
+
+                    <div class="method"
+                         onclick="selectPayment(this,'Other')">
+
+                        💰
+
+                        <strong>Other</strong>
+
+                        <span>Alternative payment method</span>
+
+                    </div>
+
+                </div>
+
+
+                <div style="
+                    margin-top:20px;
+                    padding:15px;
+                    background:#f7f9fb;
+                    border-radius:7px;
+                    font-size:11px;
+                    color:#718096;
+                    line-height:1.6;
+                ">
+
+                    Your payment information should only be
+                    submitted through a secure payment provider.
+                    Do not enter card details into this demo page.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+
+    <section class="account">
+
+        <div class="section-title">
+
+            <h3>Subscription Account</h3>
+
+            <p>
+                Example account status for the frontend interface.
+            </p>
+
+        </div>
+
+        <div class="account-card">
+
+            <div class="account-grid">
+
+                <div class="account-item">
+
+                    <small>Subscription</small>
+
+                    <strong id="accountPlan">
+                        Not Active
+                    </strong>
+
+                </div>
+
+
+                <div class="account-item">
+
+                    <small>Status</small>
+
+                    <strong class="active-status">
+                        Demo
+                    </strong>
+
+                </div>
+
+
+                <div class="account-item">
+
+                    <small>Billing</small>
+
+                    <strong id="accountBilling">
+                        Monthly
+                    </strong>
+
+                </div>
+
+
+                <div class="account-item">
+
+                    <small>Payment</small>
+
+                    <strong>
+                        Not Processed
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq">
+
+        <div class="section-title">
+
+            <h3>Frequently Asked Questions</h3>
+
+        </div>
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <div class="faq-question"
+                     onclick="toggleFAQ(this)">
+
+                    What does a subscription provide?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Subscription benefits depend on the plan
+                    selected and may include platform resources,
+                    account features, support and other services.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question"
+                     onclick="toggleFAQ(this)">
+
+                    Can I cancel my subscription?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    A production version can provide cancellation
+                    and billing-management tools through the
+                    subscriber account.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question"
+                     onclick="toggleFAQ(this)">
+
+                    Are payments processed on this page?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    No. This version is a frontend demonstration.
+                    A secure payment gateway must be connected
+                    before real payments can be accepted.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question"
+                     onclick="toggleFAQ(this)">
+
+                    Can institutions subscribe?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Yes. The Institution plan is designed as a
+                    placeholder for organisations. Institutional
+                    pricing and access rules can later be connected
+                    to the backend.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Scopusixteen Publishing. All rights reserved.
+    </p>
+
+    <div style="margin-top:10px;">
+
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+
+    </div>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <h3 id="modalTitle">
+            Subscription
+        </h3>
+
+        <p id="modalMessage">
+            This is a frontend demonstration.
+        </p>
+
+        <button class="modal-btn"
+                onclick="closeModal()">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   BILLING TOGGLE
+========================= */
+
+let annual = false;
+
+function toggleBilling(){
+
+    annual = !annual;
+
+    const toggle =
+        document.getElementById("billingToggle");
+
+    toggle.classList.toggle("active", annual);
+
+    const prices =
+        document.querySelectorAll(".monthly-price");
+
+    const periods =
+        document.querySelectorAll(".period");
+
+    const values =
+        annual
+        ? ["$182","$470","$1,430"]
+        : ["$19","$49","$149"];
+
+    prices.forEach((price,index)=>{
+
+        price.textContent =
+            values[index];
+
+    });
+
+    periods.forEach(period=>{
+
+        period.textContent =
+            annual
+            ? "/year"
+            : "/month";
+
+    });
+
+    document.getElementById("accountBilling")
+        .textContent =
+        annual ? "Annual" : "Monthly";
+
+}
+
+
+/* =========================
+   SELECT PLAN
+========================= */
+
+function selectPlan(plan){
+
+    document.getElementById("selectedPlan")
+        .value = plan;
+
+    document.getElementById("accountPlan")
+        .textContent = plan;
+
+    document
+        .querySelector(".payment-section")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   PAYMENT METHOD
+========================= */
+
+let selectedPayment = "";
+
+function selectPayment(element, method){
+
+    document
+        .querySelectorAll(".method")
+        .forEach(item => {
+
+            item.classList.remove("selected");
+
+        });
+
+    element.classList.add("selected");
+
+    selectedPayment = method;
+
+}
+
+
+/* =========================
+   PROCESS PAYMENT
+========================= */
+
+function processPayment(){
+
+    const name =
+        document.getElementById("fullName").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const country =
+        document.getElementById("country").value;
+
+    const plan =
+        document.getElementById("selectedPlan").value;
+
+    if(!name){
+
+        showModal(
+            "Information Required",
+            "Please enter your full name."
+        );
+
+        return;
+
+    }
+
+    if(!email){
+
+        showModal(
+            "Information Required",
+            "Please enter your email address."
+        );
+
+        return;
+
+    }
+
+    if(!country){
+
+        showModal(
+            "Information Required",
+            "Please select your country."
+        );
+
+        return;
+
+    }
+
+    if(plan === "No plan selected"){
+
+        showModal(
+            "Select a Plan",
+            "Please choose a subscription plan before continuing."
+        );
+
+        return;
+
+    }
+
+    if(!selectedPayment){
+
+        showModal(
+            "Select Payment Method",
+            "Please select a payment method."
+        );
+
+        return;
+
+    }
+
+    showModal(
+        "Demo Checkout",
+        "Your subscription request for the " +
+        plan +
+        " plan has been prepared using " +
+        selectedPayment +
+        ". No payment has been processed because this is a frontend prototype."
+    );
+
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+function toggleFAQ(element){
+
+    const item =
+        element.parentElement;
+
+    item.classList.toggle("open");
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function showModal(title,message){
+
+    document.getElementById("modalTitle")
+        .textContent = title;
+
+    document.getElementById("modalMessage")
+        .textContent = message;
+
+    document.getElementById("modal")
+        .style.display = "flex";
+
+}
+
+function closeModal(){
+
+    document.getElementById("modal")
+        .style.display = "none";
+
+}
+
+window.addEventListener("click",function(event){
+
+    const modal =
+        document.getElementById("modal");
+
+    if(event.target === modal){
+
+        closeModal();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
