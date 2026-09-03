@@ -1,174 +1,1203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journals – Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journals | Scopusixteen Publishing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --primary-dark:#092b49;
+    --secondary:#1d6fa5;
+    --light:#f5f8fb;
+    --white:#ffffff;
+    --text:#1d2a36;
+    --muted:#718096;
+    --border:#e1e8ef;
+    --success:#16834b;
+    --shadow:0 8px 25px rgba(15,35,55,.07);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    height:72px;
+    background:white;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:43px;
+    height:43px;
+    border-radius:8px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.brand h1{
+    color:var(--primary);
+    font-size:19px;
+}
+
+.brand small{
+    color:var(--muted);
+    display:block;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav a{
+    color:var(--primary);
+    text-decoration:none;
+    font-size:13px;
+}
+
+.nav a:hover{
+    color:var(--secondary);
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+    color:var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+    color:white;
+    padding:65px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:37px;
+    margin-bottom:13px;
+}
+
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#dbe8f1;
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+    max-width:1050px;
+    margin:-28px auto 35px;
+    position:relative;
+    padding:0 20px;
+}
+
+.search-box{
+    background:white;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    border-radius:9px;
+    padding:15px;
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    flex:1;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:13px;
+    outline:none;
+    font-size:13px;
+}
+
+.search-box input:focus{
+    border-color:var(--secondary);
+}
+
+.search-box button{
+    border:none;
+    border-radius:6px;
+    background:var(--primary);
+    color:white;
+    padding:0 25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.search-box button:hover{
+    background:var(--primary-dark);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:1120px;
+    margin:auto;
+    padding:0 20px 60px;
+}
+
+.heading{
+    margin-bottom:22px;
+}
+
+.heading h3{
+    color:var(--primary);
+    font-size:24px;
+}
+
+.heading p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:white;
+    color:#536373;
+    padding:9px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:11px;
+}
+
+.filter:hover,
+.filter.active{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
+}
+
+/* =========================
+   JOURNAL GRID
+========================= */
+
+.journal-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.journal-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    min-height:340px;
+    transition:.2s;
+}
+
+.journal-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 13px 30px rgba(15,35,55,.11);
+}
+
+.journal-badge{
+    width:46px;
+    height:46px;
+    border-radius:8px;
+    background:#eaf3f9;
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    margin-bottom:15px;
+}
+
+.journal-card h4{
+    color:var(--primary);
+    font-size:17px;
+    line-height:1.4;
+    margin-bottom:8px;
+}
+
+.journal-card .subtitle{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.5;
+    margin-bottom:13px;
+}
+
+.meta{
+    margin-top:auto;
+}
+
+.meta-row{
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid #edf1f4;
+    padding:9px 0;
+    font-size:11px;
+}
+
+.meta-row span:first-child{
+    color:var(--muted);
+}
+
+.meta-row strong{
+    color:#445564;
+    text-align:right;
+}
+
+.journal-actions{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+}
+
+.btn{
+    flex:1;
+    padding:10px 8px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:11px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+    border:1px solid var(--primary);
+}
+
+.btn-outline{
+    background:white;
+    color:var(--primary);
+    border:1px solid var(--primary);
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty{
+    display:none;
+    text-align:center;
+    background:white;
+    border:1px solid var(--border);
+    padding:45px 20px;
+    border-radius:9px;
+    color:var(--muted);
+}
+
+.empty strong{
+    display:block;
+    color:var(--primary);
+    margin-bottom:6px;
+}
+
+/* =========================
+   INFORMATION
+========================= */
+
+.info-section{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:22px;
+}
+
+.info-card .icon{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.info-card h4{
+    color:var(--primary);
+    margin-bottom:7px;
+}
+
+.info-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    margin-top:35px;
+    background:#fff8e6;
+    border:1px solid #f1d28a;
+    color:#765c25;
+    border-radius:8px;
+    padding:15px 18px;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:var(--primary-dark);
+    color:#c8d5df;
+    padding:32px 20px;
+    text-align:center;
+    font-size:11px;
+}
+
+.footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .journal-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-section{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .nav{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        right:0;
+        background:white;
+        border-bottom:1px solid var(--border);
+        padding:15px 20px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .nav.open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding:48px 18px;
+    }
+
+    .hero h2{
+        font-size:29px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box button{
+        padding:12px;
+    }
+
+    .journal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        padding-left:15px;
+        padding-right:15px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <span>support@scopusixteen.com</span>
-      <div>
-        <a href="login.html">Author Login</a>
-        <a href="login.html">Reviewer Login</a>
-        <a href="login.html">Editor Login</a>
-        <a href="login.html">Admin Login</a>
-      </div>
-    </div>
-  </div>
+<!-- =========================
+     HEADER
+========================= -->
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
-      
-      <nav class="nav">
-        <a href="journals.html" class="active">Journals</a>
-        <a href="articles.html">Articles</a>
-        <a href="about.html">About</a>
-        <a href="submit.html">For Authors</a>
-        <a href="#">For Reviewers</a>
-      </nav>
+<header class="header">
 
-      <div class="header-actions">
-        <a href="login.html" class="btn btn-outline">Login</a>
-        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
-        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-      </div>
-    </div>
+    <div class="brand">
 
-    <!-- Mobile Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="journals.html">Journals</a>
-      <a href="articles.html">Articles</a>
-      <a href="about.html">About</a>
-      <a href="submit.html">For Authors</a>
-      <a href="login.html">Login</a>
-      <a href="dashboard.html">Author Dashboard</a>
-      <a href="submit.html">Submit Manuscript</a>
-    </div>
-  </header>
+        <div class="logo">SX</div>
 
-  <!-- Page Header -->
-  <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:60px 0;">
-    <div class="container">
-      <h1 style="font-size:36px; margin-bottom:12px;">Our Journals</h1>
-      <p style="color:#94a3b8; max-width:600px;">Browse our portfolio of peer-reviewed journals across Engineering, Medicine, Business, Environmental Science and more.</p>
-    </div>
-  </section>
-
-  <!-- Journals List -->
-  <section class="section">
-    <div class="container">
-      <div class="journals-grid">
-
-        <div class="journal-card">
-          <div class="journal-card-header">ENGINEERING & APPLIED SCIENCES</div>
-          <div class="journal-card-body">
-            <span class="badge badge-apc">APC</span>
-            <h3>Journal of Engineering and Applied Sciences</h3>
-            <div class="journal-meta">ISSN: 2616-7300<br>Latest Issue: Vol. 8 No. 2 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Original research and reviews in engineering, materials, and applied technology.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">MEDICAL & HEALTH RESEARCH</div>
-          <div class="journal-card-body">
-            <span class="badge badge-hybrid">HYBRID</span>
-            <h3>International Journal of Medical and Health Research</h3>
-            <div class="journal-meta">ISSN: 2708-9516<br>Latest Issue: Vol. 7 No. 2 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Clinical studies, public health, and biomedical research.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">BUSINESS & MANAGEMENT</div>
-          <div class="journal-card-body">
-            <span class="badge badge-sub">SUBSCRIPTION</span>
-            <h3>Journal of Business, Management & Economics</h3>
-            <div class="journal-meta">ISSN: 2617-4611<br>Latest Issue: Vol. 9 No. 1 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Strategy, finance, entrepreneurship and economic policy.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">ENVIRONMENTAL SCIENCE</div>
-          <div class="journal-card-body">
-            <span class="badge badge-apc">APC</span>
-            <h3>Advances in Environmental Science & Sustainability</h3>
-            <div class="journal-meta">ISSN: 2738-1141<br>Latest Issue: Vol. 6 No. 1 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Climate, ecology, sustainability and environmental policy.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">COMPUTER SCIENCE & AI</div>
-          <div class="journal-card-body">
-            <span class="badge badge-apc">APC</span>
-            <h3>Journal of Artificial Intelligence & Computing</h3>
-            <div class="journal-meta">ISSN: 2789-4521<br>Latest Issue: Vol. 4 No. 1 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Machine learning, data science, and intelligent systems.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">SOCIAL SCIENCES</div>
-          <div class="journal-card-body">
-            <span class="badge badge-hybrid">HYBRID</span>
-            <h3>International Journal of Social Sciences & Humanities</h3>
-            <div class="journal-meta">ISSN: 2654-8823<br>Latest Issue: Vol. 5 No. 2 (2026)</div>
-            <p style="font-size:14px; color:#64748b; margin:12px 0;">Sociology, education, psychology and cultural studies.</p>
-            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
         <div>
-          <div class="logo" style="color:white; margin-bottom:16px;">SCOPUSI<span style="color:#38bdf8;">X</span>TEEN</div>
-          <p style="font-size:14px; max-width:280px;">A modern academic publishing platform supporting APC, Subscription and Hybrid models.</p>
+            <h1>Scopusixteen Publishing</h1>
+            <small>Academic Publishing Platform</small>
         </div>
-        <div>
-          <h4>Explore</h4>
-          <a href="journals.html">Journals</a>
-          <a href="articles.html">Articles</a>
-          <a href="about.html">About Us</a>
-        </div>
-        <div>
-          <h4>For Authors</h4>
-          <a href="submit.html">Submit Manuscript</a>
-          <a href="login.html">Author Login</a>
-          <a href="dashboard.html">Dashboard</a>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <a href="#">Contact</a>
-          <a href="#">Guidelines</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
-    </div>
-  </footer>
 
-  <script src="app.js"></script>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <nav class="nav" id="nav">
+
+        <a href="index.html">Home</a>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscriptions
+        </a>
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h2>Journals</h2>
+
+    <p>
+        Explore the Scopusixteen Publishing journal collection
+        across business, technology, education, management,
+        environmental studies and related research disciplines.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="journalSearch"
+            placeholder="Search by journal title, subject or ISSN..."
+            onkeyup="searchJournals()"
+        >
+
+        <button onclick="searchJournals()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTENT
+========================= -->
+
+<main class="container">
+
+    <div class="heading">
+
+        <h3>Journal Collection</h3>
+
+        <p>
+            Browse journals by subject area.
+        </p>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button class="filter active"
+                onclick="filterJournals('all',this)">
+            All
+        </button>
+
+        <button class="filter"
+                onclick="filterJournals('business',this)">
+            Business
+        </button>
+
+        <button class="filter"
+                onclick="filterJournals('technology',this)">
+            Technology
+        </button>
+
+        <button class="filter"
+                onclick="filterJournals('education',this)">
+            Education
+        </button>
+
+        <button class="filter"
+                onclick="filterJournals('management',this)">
+            Management
+        </button>
+
+        <button class="filter"
+                onclick="filterJournals('environment',this)">
+            Environment
+        </button>
+
+    </div>
+
+
+    <!-- JOURNALS -->
+
+    <section class="journal-grid" id="journalGrid">
+
+
+        <!-- JOURNAL 1 -->
+
+        <article class="journal-card"
+                 data-category="technology">
+
+            <div class="journal-badge">
+                💻
+            </div>
+
+            <h4>
+                Journal of Digital Education
+            </h4>
+
+            <p class="subtitle">
+                Research on digital learning, educational
+                technologies, artificial intelligence and
+                innovation in education.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Technology</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Hybrid</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JOURNAL 2 -->
+
+        <article class="journal-card"
+                 data-category="management">
+
+            <div class="journal-badge">
+                📊
+            </div>
+
+            <h4>
+                Global Management Review
+            </h4>
+
+            <p class="subtitle">
+                Scholarly research covering strategic management,
+                leadership, organisational behaviour and business
+                transformation.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Management</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Subscription</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JOURNAL 3 -->
+
+        <article class="journal-card"
+                 data-category="environment">
+
+            <div class="journal-badge">
+                🌱
+            </div>
+
+            <h4>
+                Environmental Studies Journal
+            </h4>
+
+            <p class="subtitle">
+                Research addressing environmental sustainability,
+                waste management, climate-related challenges and
+                sustainable development.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Environment</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Open Access</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JOURNAL 4 -->
+
+        <article class="journal-card"
+                 data-category="business">
+
+            <div class="journal-badge">
+                💼
+            </div>
+
+            <h4>
+                International Journal of Business Research
+            </h4>
+
+            <p class="subtitle">
+                International research on business strategy,
+                entrepreneurship, finance, marketing and
+                organisational performance.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Business</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Hybrid</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JOURNAL 5 -->
+
+        <article class="journal-card"
+                 data-category="education">
+
+            <div class="journal-badge">
+                🎓
+            </div>
+
+            <h4>
+                International Review of Higher Education
+            </h4>
+
+            <p class="subtitle">
+                Research in higher education policy, teaching,
+                learning, academic development and institutional
+                innovation.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Education</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Subscription</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JOURNAL 6 -->
+
+        <article class="journal-card"
+                 data-category="management">
+
+            <div class="journal-badge">
+                ⚙️
+            </div>
+
+            <h4>
+                Journal of Organisational Strategy
+            </h4>
+
+            <p class="subtitle">
+                Research into organisational strategy, agility,
+                crisis management, leadership and digital
+                capabilities.
+            </p>
+
+            <div class="meta">
+
+                <div class="meta-row">
+                    <span>ISSN</span>
+                    <strong>Pending</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Subject</span>
+                    <strong>Management</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Model</span>
+                    <strong>Hybrid</strong>
+                </div>
+
+            </div>
+
+            <div class="journal-actions">
+
+                <a href="journal.html"
+                   class="btn btn-primary">
+                    View Journal
+                </a>
+
+                <a href="submit-manuscript.html"
+                   class="btn btn-outline">
+                    Submit
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- EMPTY -->
+
+    <div class="empty" id="empty">
+
+        <strong>No journals found</strong>
+
+        Try another title, subject area or ISSN.
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info-section">
+
+        <div class="info-card">
+
+            <div class="icon">🔎</div>
+
+            <h4>Discover Research</h4>
+
+            <p>
+                Browse journals according to their subject areas
+                and research focus.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">📝</div>
+
+            <h4>Submit Your Research</h4>
+
+            <p>
+                Authors can use the submission system to submit
+                manuscripts for editorial consideration.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">📖</div>
+
+            <h4>Explore Articles</h4>
+
+            <p>
+                Individual journal pages can provide access to
+                articles, issues, archives and publication
+                information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Publication information:</strong>
+        Journal titles, ISSNs, indexing information, editorial
+        boards and publication policies should only be presented
+        as official once they have been formally established and
+        verified. The entries on this prototype are demonstration
+        content.
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Scopusixteen Publishing. All rights reserved.
+    </p>
+
+    <div style="margin-top:10px;">
+
+        <a href="index.html">Home</a>
+        <a href="subscription.html">Subscriptions</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("nav")
+        .classList.toggle("open");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchJournals(){
+
+    const search =
+        document
+        .getElementById("journalSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards =
+        document.querySelectorAll(".journal-card");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const text =
+            card.textContent.toLowerCase();
+
+        if(text.includes(search)){
+
+            card.style.display = "flex";
+            visible++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("empty")
+        .style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterJournals(category,button){
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+    button.classList.add("active");
+
+    const cards =
+        document.querySelectorAll(".journal-card");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display = "flex";
+            visible++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("empty")
+        .style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+
+/* =========================
+   CLEAR SEARCH WHEN FILTERING
+========================= */
+
+document
+    .querySelectorAll(".filter")
+    .forEach(button => {
+
+        button.addEventListener("click",function(){
+
+            document
+                .getElementById("journalSearch")
+                .value = "";
+
+        });
+
+    });
+
+</script>
+
 </body>
 </html>
