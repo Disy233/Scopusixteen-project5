@@ -1,65 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scopusixteen Publishing – Discover. Publish. Advance Knowledge.</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="site-header"></div>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <h1>Discover. Publish.<br>Advance Knowledge.</h1>
-        <p>
-          Explore peer-reviewed research and submit your work through a modern
-          publishing platform. Subscription and Open Access (APC) modes available.
-        </p>
-        <div class="hero-actions">
-          <a href="journals.html" class="btn btn-primary">Browse Journals</a>
-          <a href="submit.html" class="btn btn-outline" style="background:transparent;border-color:#94a3b8;color:#fff">Submit Manuscript</a>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>support@scopusixteen.com</span>
+      <div>
+        <a href="login.html">Author Login</a>
+        <a href="login.html">Reviewer Login</a>
+        <a href="login.html">Editor Login</a>
+        <a href="login.html">Admin Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      
+      <nav class="nav">
+        <a href="journals.html">Journals</a>
+        <a href="articles.html">Articles</a>
+        <a href="about.html">About</a>
+        <a href="submit.html">For Authors</a>
+        <a href="#">For Reviewers</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
+        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p style="color:#38bdf8; font-weight:600; margin-bottom:12px; letter-spacing:1px;">SCOPUSIXTEEN PUBLISHING</p>
+      <h1>Discover. Publish.<br><span>Advance Knowledge.</span></h1>
+      <p>Explore peer-reviewed research and submit your work through a modern academic publishing platform with responsible AI-assisted editorial tools.</p>
+      
+      <div class="hero-buttons">
+        <a href="journals.html" class="btn btn-primary" style="padding:14px 28px;">Explore Journals</a>
+        <a href="submit.html" class="btn" style="background:white; color:#0f172a; padding:14px 28px;">Submit Your Manuscript</a>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search articles, authors, keywords, journals...">
+        <select>
+          <option>All Fields</option>
+          <option>Title</option>
+          <option>Author</option>
+          <option>Keywords</option>
+        </select>
+        <button class="btn btn-dark">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Journals -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Journals</h2>
+        <a href="journals.html" class="section-link">View all journals →</a>
+      </div>
+
+      <div class="journals-grid">
+        <div class="journal-card">
+          <div class="journal-card-header">ENGINEERING & APPLIED SCIENCES</div>
+          <div class="journal-card-body">
+            <span class="badge badge-apc">APC</span>
+            <h3>Journal of Engineering and Applied Sciences</h3>
+            <div class="journal-meta">ISSN: 2616-7300 · Latest: Vol. 8 No. 2</div>
+            <a href="journals.html" class="section-link">View Journal →</a>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><strong>8</strong><span>Journals</span></div>
-          <div class="stat"><strong>1,200+</strong><span>Articles</span></div>
-          <div class="stat"><strong>45</strong><span>Countries</span></div>
-          <div class="stat"><strong>98%</strong><span>On-time reviews</span></div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">MEDICAL & HEALTH RESEARCH</div>
+          <div class="journal-card-body">
+            <span class="badge badge-hybrid">HYBRID</span>
+            <h3>International Journal of Medical and Health Research</h3>
+            <div class="journal-meta">ISSN: 2708-9516 · Latest: Vol. 7 No. 2</div>
+            <a href="journals.html" class="section-link">View Journal →</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">BUSINESS & MANAGEMENT</div>
+          <div class="journal-card-body">
+            <span class="badge badge-sub">SUBSCRIPTION</span>
+            <h3>Journal of Business, Management & Economics</h3>
+            <div class="journal-meta">ISSN: 2617-4611 · Latest: Vol. 9 No. 1</div>
+            <a href="journals.html" class="section-link">View Journal →</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">ENVIRONMENTAL SCIENCE</div>
+          <div class="journal-card-body">
+            <span class="badge badge-apc">APC</span>
+            <h3>Advances in Environmental Science & Sustainability</h3>
+            <div class="journal-meta">ISSN: 2738-1141 · Latest: Vol. 6 No. 1</div>
+            <a href="journals.html" class="section-link">View Journal →</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Featured Journals -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Featured Journals</h2>
-          <a href="journals.html" style="font-size:0.875rem;font-weight:600;color:var(--indigo-600)">View all →</a>
+  <!-- Features -->
+  <section class="section" style="background:#f1f5f9;">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">📝</div>
+          <h3>Ready to publish your research?</h3>
+          <p>Submit your manuscript, monitor peer review, respond to revisions and track publication from one dashboard.</p>
+          <br>
+          <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
         </div>
-        <div id="home-journals" class="journal-grid"></div>
+
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>AI-Assisted Publishing</h3>
+          <p>AI assists with manuscript completeness, academic language, metadata, journal scope and reviewer matching while human editors retain decision authority.</p>
+          <br>
+          <a href="about.html" class="btn btn-outline">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">👨‍🔬</div>
+          <h3>For Reviewers & Editors</h3>
+          <p>Efficient tools for peer-review management, editorial workflows and decision tracking.</p>
+          <br>
+          <a href="login.html" class="btn btn-outline">Join as Reviewer</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Latest Research -->
-    <section class="section" style="background:var(--slate-50)">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Latest Research</h2>
-          <a href="articles.html" style="font-size:0.875rem;font-weight:600;color:var(--indigo-600)">View all →</a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:white; margin-bottom:16px;">SCOPUSI<span style="color:#38bdf8;">X</span>TEEN</div>
+          <p style="font-size:14px; max-width:280px;">A modern academic publishing platform supporting APC, Subscription and Hybrid models with responsible AI tools.</p>
         </div>
-        <div id="home-articles" class="article-list"></div>
-        <div class="text-center mt-6">
-          <a href="articles.html" class="btn btn-outline">View More Articles</a>
+        <div>
+          <h4>Explore</h4>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div>
+          <h4>For Authors</h4>
+          <a href="submit.html">Submit Manuscript</a>
+          <a href="login.html">Author Login</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Contact</a>
+          <a href="#">Guidelines</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="footer-bottom">
+        © 2026 Scopusixteen Publishing. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
-  <div id="site-footer"></div>
-
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>
