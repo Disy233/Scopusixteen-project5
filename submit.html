@@ -57,6 +57,7 @@
 </head>
 <body>
 
+  <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
       <span>support@scopusixteen.com</span>
@@ -64,13 +65,16 @@
         <a href="login.html">Author Login</a>
         <a href="login.html">Reviewer Login</a>
         <a href="login.html">Editor Login</a>
+        <a href="login.html">Admin Login</a>
       </div>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <div class="container">
       <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      
       <nav class="nav">
         <a href="journals.html">Journals</a>
         <a href="articles.html">Articles</a>
@@ -78,14 +82,28 @@
         <a href="submit.html" class="active">For Authors</a>
         <a href="#">For Reviewers</a>
       </nav>
+
       <div class="header-actions">
         <a href="login.html" class="btn btn-outline">Login</a>
         <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
         <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
       </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="journals.html">Journals</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="submit.html">For Authors</a>
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Author Dashboard</a>
+      <a href="submit.html">Submit Manuscript</a>
     </div>
   </header>
 
+  <!-- Page Header -->
   <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:50px 0;">
     <div class="container">
       <h1 style="font-size:32px; margin-bottom:8px;">Submit Your Manuscript</h1>
@@ -93,6 +111,7 @@
     </div>
   </section>
 
+  <!-- Form -->
   <section class="section">
     <div class="container">
       <div class="form-card">
@@ -155,11 +174,13 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
     </div>
   </footer>
 
+  <script src="app.js"></script>
 </body>
 </html>
