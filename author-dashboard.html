@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Author Portal | Scopusixteen Publishing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+.header{
+    height:70px;
+    background:#fff;
+    border-bottom:1px solid #e2e7ee;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4%;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:42px;
+    height:42px;
+    border-radius:7px;
+    background:#0b4ea2;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.brand h2{
+    color:#102b4d;
+    font-size:19px;
+}
+
+.brand small{
+    display:block;
+    color:#718096;
+    font-size:9px;
+    letter-spacing:1px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.notification{
+    font-size:20px;
+    cursor:pointer;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#0b4ea2;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.user span{
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* LAYOUT */
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 70px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:245px;
+    background:#071a33;
+    color:#fff;
+    padding:25px 15px;
+}
+
+.sidebar-title{
+    color:#8fa4bc;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:0 12px 12px;
+}
+
+.sidebar a{
+    display:block;
+    padding:13px 12px;
+    border-radius:6px;
+    margin-bottom:5px;
+    font-size:13px;
+    color:#c6d2df;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#0b4ea2;
+    color:#fff;
+}
+
+.logout{
+    margin-top:35px !important;
+    color:#ffb7b7 !important;
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+    padding:35px;
+    max-width:1400px;
+}
+
+.welcome{
+    margin-bottom:28px;
+}
+
+.welcome h1{
+    color:#102b4d;
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.welcome p{
+    color:#718096;
+    font-size:14px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:28px;
+}
+
+.stat-card{
+    background:#fff;
+    border:1px solid #e1e7ee;
+    border-radius:8px;
+    padding:22px;
+}
+
+.stat-card .label{
+    color:#718096;
+    font-size:12px;
+}
+
+.stat-card h2{
+    color:#102b4d;
+    font-size:28px;
+    margin-top:7px;
+}
+
+.stat-card .blue{
+    color:#0b5dc7;
+}
+
+/* CONTENT GRID */
+
+.content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:22px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border:1px solid #e1e7ee;
+    border-radius:8px;
+    margin-bottom:22px;
+    overflow:hidden;
+}
+
+.card-header{
+    padding:19px 22px;
+    border-bottom:1px solid #e8ecf1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-header h3{
+    font-size:16px;
+    color:#142b49;
+}
+
+.card-header a{
+    color:#0b5dc7;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.card-body{
+    padding:22px;
+}
+
+/* SUBMISSIONS */
+
+.submission{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:16px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.submission:last-child{
+    border-bottom:none;
+}
+
+.submission h4{
+    font-size:14px;
+    color:#172b45;
+    margin-bottom:5px;
+}
+
+.submission p{
+    color:#7a8798;
+    font-size:11px;
+}
+
+.status{
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:10px;
+    white-space:nowrap;
+}
+
+.review{
+    background:#fff4d8;
+    color:#946c00;
+}
+
+.accepted{
+    background:#e2f7eb;
+    color:#087a3e;
+}
+
+.revision{
+    background:#e8f1ff;
+    color:#165cb7;
+}
+
+.submitted{
+    background:#edf0f5;
+    color:#526174;
+}
+
+/* BUTTONS */
+
+.btn{
+    border:none;
+    border-radius:5px;
+    padding:11px 17px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.btn-primary{
+    background:#0b4ea2;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#083c7d;
+}
+
+.btn-light{
+    background:#eef4fa;
+    color:#0b4ea2;
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.action{
+    border:1px solid #e1e7ee;
+    border-radius:6px;
+    padding:17px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.action:hover{
+    background:#f4f8fd;
+}
+
+.action-icon{
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.action strong{
+    display:block;
+    color:#20344e;
+    font-size:12px;
+}
+
+.action small{
+    color:#8190a2;
+    font-size:10px;
+}
+
+/* PROFILE */
+
+.profile-row{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:12px;
+}
+
+.profile-row:last-child{
+    border-bottom:none;
+}
+
+.profile-row span:first-child{
+    color:#7a8798;
+}
+
+.profile-row span:last-child{
+    font-weight:bold;
+    color:#273b55;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#edf6ff;
+    border-left:4px solid #0b5dc7;
+    padding:15px;
+    border-radius:5px;
+    font-size:12px;
+    color:#35516f;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#8794a5;
+    font-size:11px;
+    padding:25px 0 5px;
+}
+
+/* MOBILE */
+
+.mobile-menu{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+@media(max-width:950px){
+
+    .sidebar{
+        position:fixed;
+        left:-260px;
+        top:70px;
+        bottom:0;
+        z-index:99;
+        transition:.3s;
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+
+    .main{
+        padding:25px 18px;
+    }
+}
+
+@media(max-width:600px){
+
+    .user span{
+        display:none;
+    }
+
+    .brand h2{
+        font-size:16px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .welcome h1{
+        font-size:23px;
+    }
+
+    .quick-actions{
+        grid-template-columns:1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <div class="mobile-menu"
+             onclick="toggleSidebar()">
+            ☰
+        </div>
+
+        <div class="logo">
+            S16
+        </div>
+
+        <div>
+            <h2>Scopusixteen</h2>
+            <small>AUTHOR PORTAL</small>
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <div class="notification"
+             onclick="showNotification()">
+            🔔
+        </div>
+
+        <div class="user">
+
+            <div class="avatar">
+                AU
+            </div>
+
+            <span>
+                Author Account
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar"
+       id="sidebar">
+
+    <div class="sidebar-title">
+        Author Menu
+    </div>
+
+    <a href="#" class="active">
+        Dashboard
+    </a>
+
+    <a href="submit-manuscript.html">
+        Submit Manuscript
+    </a>
+
+    <a href="#submissions">
+        My Submissions
+    </a>
+
+    <a href="#revisions">
+        Revisions
+    </a>
+
+    <a href="#publications">
+        My Publications
+    </a>
+
+    <a href="#profile">
+        My Profile
+    </a>
+
+    <a href="author-guidelines.html">
+        Author Guidelines
+    </a>
+
+    <a href="publication-ethics.html">
+        Publication Ethics
+    </a>
+
+    <a href="index.html">
+        ← Back to Website
+    </a>
+
+    <a href="#" class="logout"
+       onclick="logout()">
+        Sign Out
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <div class="welcome">
+
+        <h1>
+            Author Dashboard
+        </h1>
+
+        <p>
+            Manage your manuscripts, submissions,
+            revisions and publications.
+        </p>
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <span class="label">
+                Total Submissions
+            </span>
+
+            <h2>
+                04
+            </h2>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="label">
+                Under Review
+            </span>
+
+            <h2 class="blue">
+                02
+            </h2>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="label">
+                Published
+            </span>
+
+            <h2>
+                01
+            </h2>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="label">
+                Revisions Required
+            </span>
+
+            <h2>
+                01
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="content-grid">
+
+
+        <!-- LEFT COLUMN -->
+
+        <div>
+
+
+            <!-- RECENT SUBMISSIONS -->
+
+            <div class="card"
+                 id="submissions">
+
+                <div class="card-header">
+
+                    <h3>
+                        Recent Submissions
+                    </h3>
+
+                    <a href="#">
+                        View All
+                    </a>
+
+                </div>
+
+                <div class="card-body">
+
+
+                    <div class="submission">
+
+                        <div>
+
+                            <h4>
+                                The Impact of Artificial Intelligence
+                                on Modern Education
+                            </h4>
+
+                            <p>
+                                Manuscript ID:
+                                SX-2026-00124
+                            </p>
+
+                            <p>
+                                Submitted:
+                                28 August 2026
+                            </p>
+
+                        </div>
+
+                        <span class="status review">
+                            Under Review
+                        </span>
+
+                    </div>
+
+
+                    <div class="submission">
+
+                        <div>
+
+                            <h4>
+                                Strategic Leadership and
+                                Organisational Performance
+                            </h4>
+
+                            <p>
+                                Manuscript ID:
+                                SX-2026-00098
+                            </p>
+
+                            <p>
+                                Submitted:
+                                17 August 2026
+                            </p>
+
+                        </div>
+
+                        <span class="status revision">
+                            Revision Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="submission">
+
+                        <div>
+
+                            <h4>
+                                Sustainable Environmental
+                                Management Practices
+                            </h4>
+
+                            <p>
+                                Manuscript ID:
+                                SX-2026-00071
+                            </p>
+
+                            <p>
+                                Submitted:
+                                04 August 2026
+                            </p>
+
+                        </div>
+
+                        <span class="status accepted">
+                            Accepted
+                        </span>
+
+                    </div>
+
+
+                    <div class="submission">
+
+                        <div>
+
+                            <h4>
+                                Digital Transformation in
+                                Small Businesses
+                            </h4>
+
+                            <p>
+                                Manuscript ID:
+                                SX-2026-00032
+                            </p>
+
+                            <p>
+                                Submitted:
+                                20 July 2026
+                            </p>
+
+                        </div>
+
+                        <span class="status submitted">
+                            Published
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVISION -->
+
+            <div class="card"
+                 id="revisions">
+
+                <div class="card-header">
+
+                    <h3>
+                        Revision Required
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="notice">
+
+                        <strong>
+                            Action required
+                        </strong>
+
+                        <br>
+
+                        Your manuscript
+                        <strong>
+                            "Strategic Leadership and Organisational Performance"
+                        </strong>
+                        requires a revision.
+
+                        Please review the editorial comments
+                        and submit the revised manuscript
+                        before the deadline.
+
+                        <br><br>
+
+                        <button class="btn btn-primary"
+                                onclick="openRevision()">
+                            View Revision
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PUBLICATIONS -->
+
+            <div class="card"
+                 id="publications">
+
+                <div class="card-header">
+
+                    <h3>
+                        My Publications
+                    </h3>
+
+                    <a href="#">
+                        View All
+                    </a>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="submission">
+
+                        <div>
+
+                            <h4>
+                                Digital Transformation in
+                                Small Businesses
+                            </h4>
+
+                            <p>
+                                Scopusixteen Journal of Business
+                                & Management
+                            </p>
+
+                            <p>
+                                DOI:
+                                10.xxxx/scopusixteen.2026.0032
+                            </p>
+
+                        </div>
+
+                        <span class="status accepted">
+                            Published
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="quick-actions">
+
+                        <a class="action"
+                           href="submit-manuscript.html">
+
+                            <div class="action-icon">
+                                📝
+                            </div>
+
+                            <strong>
+                                Submit
+                            </strong>
+
+                            <small>
+                                New manuscript
+                            </small>
+
+                        </a>
+
+
+                        <a class="action"
+                           href="#revisions">
+
+                            <div class="action-icon">
+                                🔄
+                            </div>
+
+                            <strong>
+                                Revision
+                            </strong>
+
+                            <small>
+                                Upload revision
+                            </small>
+
+                        </a>
+
+
+                        <a class="action"
+                           href="#publications">
+
+                            <div class="action-icon">
+                                📚
+                            </div>
+
+                            <strong>
+                                Publications
+                            </strong>
+
+                            <small>
+                                View articles
+                            </small>
+
+                        </a>
+
+
+                        <a class="action"
+                           href="#profile">
+
+                            <div class="action-icon">
+                                👤
+                            </div>
+
+                            <strong>
+                                Profile
+                            </strong>
+
+                            <small>
+                                Edit profile
+                            </small>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="card"
+                 id="profile">
+
+                <div class="card-header">
+
+                    <h3>
+                        Author Profile
+                    </h3>
+
+                    <a href="#"
+                       onclick="editProfile()">
+                        Edit
+                    </a>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="profile-row">
+
+                        <span>
+                            Name
+                        </span>
+
+                        <span>
+                            Author Account
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-row">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <span>
+                            author@example.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-row">
+
+                        <span>
+                            ORCID
+                        </span>
+
+                        <span>
+                            Not connected
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-row">
+
+                        <span>
+                            Institution
+                        </span>
+
+                        <span>
+                            Not specified
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HELP -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h3>
+                        Need Help?
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p style="font-size:12px;color:#718096;margin-bottom:15px;">
+
+                        Need assistance with your manuscript,
+                        submission or account?
+
+                    </p>
+
+                    <a href="mailto:support@scopusixteen.com"
+                       class="btn btn-primary">
+
+                        Contact Support
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2026 Scopusixteen Publishing.
+        Author Portal.
+
+    </div>
+
+</main>
+
+</div>
+
+
+<script>
+
+function toggleSidebar(){
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("open");
+
+}
+
+
+function showNotification(){
+
+    alert(
+        "You have 2 notifications:\n\n" +
+        "1. Manuscript SX-2026-00124 is under review.\n" +
+        "2. Revision required for SX-2026-00098."
+    );
+
+}
+
+
+function openRevision(){
+
+    alert(
+        "Revision Centre\n\n" +
+        "The revision centre will allow you to " +
+        "download editorial comments, upload your " +
+        "revised manuscript and submit your response."
+    );
+
+}
+
+
+function editProfile(){
+
+    alert(
+        "Profile editor will be connected to the " +
+        "author database in the backend."
+    );
+
+}
+
+
+function logout(){
+
+    const confirmLogout =
+        confirm(
+            "Are you sure you want to sign out?"
+        );
+
+    if(confirmLogout){
+
+        window.location.href =
+            "index.html";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
