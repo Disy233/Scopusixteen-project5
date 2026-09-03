@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Author Guidelines | Scopusixteen Publishing</title>
+
+<meta name="description"
+content="Author guidelines for preparing and submitting manuscripts to Scopusixteen Publishing journals.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --dark:#082943;
+    --blue:#1677b8;
+    --light:#f5f8fb;
+    --text:#17212b;
+    --muted:#687785;
+    --border:#dce5ec;
+    --white:#ffffff;
+    --shadow:0 7px 25px rgba(15,45,70,.07);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--dark);
+    color:#dbe9f3;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+/* NAVIGATION */
+
+header{
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-mark{
+    width:43px;
+    height:43px;
+    border-radius:9px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.logo-text strong{
+    display:block;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav-links a{
+    color:#304654;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.nav-btn{
+    background:var(--primary);
+    color:white!important;
+    padding:11px 16px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(120deg,#082943,#145b8e);
+    color:white;
+    padding:52px 5%;
+}
+
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#c9d9e6;
+    margin-bottom:17px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+    line-height:1.2;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:780px;
+    color:#dfeaf2;
+    font-size:16px;
+}
+
+/* LAYOUT */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:42px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 285px;
+    gap:28px;
+}
+
+.main{
+    min-width:0;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#fff8e5;
+    border:1px solid #efd28a;
+    color:#6d5615;
+    border-radius:8px;
+    padding:15px;
+    margin-bottom:22px;
+    font-size:13px;
+}
+
+/* CONTENT */
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    box-shadow:var(--shadow);
+    padding:29px;
+    margin-bottom:22px;
+}
+
+.card h2{
+    color:var(--primary);
+    font-size:23px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    color:#1b405f;
+    font-size:17px;
+    margin:22px 0 8px;
+}
+
+.card p{
+    color:#536570;
+    font-size:15px;
+    margin-bottom:13px;
+}
+
+.card ul,
+.card ol{
+    margin:10px 0 15px 23px;
+    color:#536570;
+}
+
+.card li{
+    margin-bottom:8px;
+}
+
+/* REQUIREMENT GRID */
+
+.requirement-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+    margin-top:17px;
+}
+
+.requirement{
+    border:1px solid var(--border);
+    background:#fafcfe;
+    padding:16px;
+    border-radius:7px;
+}
+
+.requirement strong{
+    display:block;
+    color:#20445e;
+    margin-bottom:4px;
+}
+
+.requirement span{
+    font-size:13px;
+    color:var(--muted);
+}
+
+/* CHECKLIST */
+
+.checklist{
+    list-style:none!important;
+    margin-left:0!important;
+}
+
+.checklist li{
+    border-bottom:1px solid var(--border);
+    padding:11px 0;
+}
+
+.checklist li:last-child{
+    border-bottom:0;
+}
+
+.checklist li::before{
+    content:"✓";
+    color:#16835b;
+    font-weight:bold;
+    margin-right:9px;
+}
+
+/* SIDEBAR */
+
+.sidebar-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:20px;
+    margin-bottom:19px;
+    box-shadow:var(--shadow);
+}
+
+.sidebar-card h3{
+    color:var(--primary);
+    font-size:17px;
+    margin-bottom:13px;
+}
+
+.side-links{
+    list-style:none;
+}
+
+.side-links li{
+    border-bottom:1px solid var(--border);
+}
+
+.side-links li:last-child{
+    border-bottom:0;
+}
+
+.side-links a{
+    display:block;
+    padding:10px 0;
+    color:#435967;
+    font-size:13px;
+}
+
+.side-links a:hover{
+    color:var(--blue);
+}
+
+.submit{
+    display:block;
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:12px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071f33;
+    color:#b9cbd8;
+    margin-top:20px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:42px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer-brand strong{
+    color:white;
+    font-size:20px;
+}
+
+.footer-brand p{
+    margin-top:10px;
+    font-size:13px;
+    max-width:400px;
+}
+
+.footer-column h4{
+    color:white;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.footer-column a{
+    display:block;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    padding:17px 5%;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px 5%;
+        border-bottom:1px solid var(--border);
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .hero{
+        padding:38px 5%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .container{
+        padding:30px 4%;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .requirement-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing — Author Resources
+        </div>
+
+        <div class="top-links">
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-mark">
+            S16
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                Scopusixteen
+            </strong>
+
+            <span>
+                Academic Publishing
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+
+    <div
+        class="nav-links"
+        id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscriptions
+        </a>
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+        <a
+            href="submit-manuscript.html"
+            class="nav-btn">
+
+            Submit Manuscript
+
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        /
+
+        Author Guidelines
+
+    </div>
+
+
+    <h1>
+        Author Guidelines
+    </h1>
+
+
+    <p>
+
+        Information to help authors prepare,
+        format and submit manuscripts for
+        consideration by Scopusixteen Publishing journals.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<main class="container">
+
+<div class="layout">
+
+
+<div class="main">
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Important:</strong>
+
+        Individual journals may have additional
+        requirements. Authors should always review
+        the specific journal's aims, scope and
+        submission instructions before submitting.
+
+    </div>
+
+
+    <!-- BEFORE SUBMISSION -->
+
+    <section class="card">
+
+        <h2>
+            Before You Submit
+        </h2>
+
+        <p>
+
+            Authors should ensure that their manuscript
+            is original, appropriately prepared and
+            suitable for the selected journal.
+
+        </p>
+
+
+        <ul class="checklist">
+
+            <li>
+                The manuscript is original and has not
+                been published elsewhere.
+            </li>
+
+            <li>
+                The manuscript is not simultaneously
+                under consideration by another journal.
+            </li>
+
+            <li>
+                All listed authors have approved the
+                submitted version.
+            </li>
+
+            <li>
+                All authors meet appropriate authorship
+                requirements.
+            </li>
+
+            <li>
+                Sources and references have been
+                accurately cited.
+            </li>
+
+            <li>
+                Required ethical approvals have been
+                obtained where applicable.
+            </li>
+
+            <li>
+                Conflicts of interest have been disclosed.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ARTICLE TYPES -->
+
+    <section class="card">
+
+        <h2>
+            Article Types
+        </h2>
+
+        <p>
+            Journals may accept different categories
+            of scholarly work. Authors should select
+            the article type that best represents
+            their submission.
+        </p>
+
+
+        <div class="requirement-grid">
+
+            <div class="requirement">
+
+                <strong>
+                    Research Article
+                </strong>
+
+                <span>
+                    Original research presenting
+                    methods, results and discussion.
+                </span>
+
+            </div>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Review Article
+                </strong>
+
+                <span>
+                    Critical synthesis and evaluation
+                    of existing research.
+                </span>
+
+            </div>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Systematic Review
+                </strong>
+
+                <span>
+                    Structured review using a defined
+                    methodology.
+                </span>
+
+            </div>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Case Study
+                </strong>
+
+                <span>
+                    Detailed examination of a particular
+                    case, organisation or context.
+                </span>
+
+            </div>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Short Communication
+                </strong>
+
+                <span>
+                    Concise presentation of important
+                    findings or observations.
+                </span>
+
+            </div>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Conceptual Article
+                </strong>
+
+                <span>
+                    Development or examination of
+                    theoretical concepts and frameworks.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MANUSCRIPT STRUCTURE -->
+
+    <section class="card">
+
+        <h2>
+            Manuscript Structure
+        </h2>
+
+        <p>
+
+            Unless the target journal specifies otherwise,
+            manuscripts should generally contain the
+            following elements.
+
+        </p>
+
+
+        <ol>
+
+            <li>
+                Title
+            </li>
+
+            <li>
+                Author names and affiliations
+            </li>
+
+            <li>
+                Abstract
+            </li>
+
+            <li>
+                Keywords
+            </li>
+
+            <li>
+                Introduction
+            </li>
+
+            <li>
+                Literature review or theoretical framework,
+                where applicable
+            </li>
+
+            <li>
+                Methodology
+            </li>
+
+            <li>
+                Results or findings
+            </li>
+
+            <li>
+                Discussion
+            </li>
+
+            <li>
+                Conclusion
+            </li>
+
+            <li>
+                Declarations
+            </li>
+
+            <li>
+                References
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- TITLE -->
+
+    <section class="card">
+
+        <h2>
+            Title
+        </h2>
+
+        <p>
+
+            The title should be concise, informative and
+            accurately describe the main subject of the
+            manuscript.
+
+        </p>
+
+        <p>
+
+            Avoid unnecessary abbreviations, excessive
+            punctuation and promotional language.
+
+        </p>
+
+    </section>
+
+
+    <!-- ABSTRACT -->
+
+    <section class="card">
+
+        <h2>
+            Abstract
+        </h2>
+
+        <p>
+
+            The abstract should provide a clear summary
+            of the research and allow readers to understand
+            the purpose and main contribution of the work.
+
+        </p>
+
+        <h3>
+            A structured abstract may include:
+        </h3>
+
+        <ul>
+
+            <li>
+                Background
+            </li>
+
+            <li>
+                Objective
+            </li>
+
+            <li>
+                Methods
+            </li>
+
+            <li>
+                Results
+            </li>
+
+            <li>
+                Conclusion
+            </li>
+
+        </ul>
+
+        <p>
+
+            The exact word limit may vary by journal.
+
+        </p>
+
+    </section>
+
+
+    <!-- KEYWORDS -->
+
+    <section class="card">
+
+        <h2>
+            Keywords
+        </h2>
+
+        <p>
+
+            Authors should provide relevant keywords
+            that accurately describe the manuscript.
+
+            Keywords help readers discover research
+            through search systems.
+
+        </p>
+
+        <p>
+
+            A typical submission may include
+            approximately 4–8 keywords unless the
+            target journal specifies otherwise.
+
+        </p>
+
+    </section>
+
+
+    <!-- AUTHORS -->
+
+    <section class="card">
+
+        <h2>
+            Authors and Affiliations
+        </h2>
+
+        <p>
+
+            All authors should have made a meaningful
+            contribution to the research and should
+            approve the final manuscript.
+
+        </p>
+
+        <h3>
+            Author information should normally include:
+        </h3>
+
+        <ul>
+
+            <li>
+                Full name
+            </li>
+
+            <li>
+                Institutional affiliation
+            </li>
+
+            <li>
+                Department or faculty where applicable
+            </li>
+
+            <li>
+                Country
+            </li>
+
+            <li>
+                Corresponding author's email address
+            </li>
+
+        </ul>
+
+        <p>
+
+            Changes to authorship after submission may
+            require approval from all affected authors
+            and the editorial office.
+
+        </p>
+
+    </section>
+
+
+    <!-- REFERENCES -->
+
+    <section class="card">
+
+        <h2>
+            References and Citations
+        </h2>
+
+        <p>
+
+            Authors are responsible for ensuring that
+            references are accurate, complete and
+            consistently formatted.
+
+        </p>
+
+        <ul>
+
+            <li>
+                Cite sources that directly support the
+                statements made in the manuscript.
+            </li>
+
+            <li>
+                Check author names, publication years,
+                titles and page information.
+            </li>
+
+            <li>
+                Include DOI information when available
+                and appropriate.
+            </li>
+
+            <li>
+                Do not fabricate references or citations.
+            </li>
+
+        </ul>
+
+        <p>
+
+            The required citation style may vary between
+            journals.
+
+        </p>
+
+    </section>
+
+
+    <!-- FIGURES -->
+
+    <section class="card">
+
+        <h2>
+            Figures and Tables
+        </h2>
+
+        <p>
+
+            Figures and tables should be clearly numbered
+            and referred to in the manuscript text.
+
+        </p>
+
+        <ul>
+
+            <li>
+                Provide descriptive titles or captions.
+            </li>
+
+            <li>
+                Ensure figures are sufficiently clear.
+            </li>
+
+            <li>
+                Identify the source of reproduced material.
+            </li>
+
+            <li>
+                Obtain permission where copyrighted
+                material requires permission.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- AI -->
+
+    <section class="card">
+
+        <h2>
+            Use of Artificial Intelligence
+        </h2>
+
+        <p>
+
+            Authors may use appropriate artificial
+            intelligence tools for limited assistance
+            during manuscript preparation, subject to
+            the requirements of the target journal.
+
+        </p>
+
+        <p>
+
+            Authors remain fully responsible for the
+            accuracy, originality, integrity and
+            intellectual content of their manuscript.
+
+        </p>
+
+        <h3>
+            Authors should not:
+        </h3>
+
+        <ul>
+
+            <li>
+                Submit fabricated information generated
+                by an AI system.
+            </li>
+
+            <li>
+                Use AI to create fake references,
+                citations or research results.
+            </li>
+
+            <li>
+                Present AI systems as authors.
+            </li>
+
+            <li>
+                Upload confidential or sensitive
+                manuscript information to external
+                systems without appropriate safeguards.
+            </li>
+
+        </ul>
+
+        <p>
+
+            Where required by the journal, authors should
+            disclose material use of AI-assisted tools
+            during manuscript preparation.
+
+        </p>
+
+    </section>
+
+
+    <!-- ETHICS -->
+
+    <section class="card">
+
+        <h2>
+            Research Ethics
+        </h2>
+
+        <p>
+
+            Research involving human participants,
+            animals, personal data or other regulated
+            activities should comply with applicable
+            ethical standards and institutional
+            requirements.
+
+        </p>
+
+        <p>
+
+            Where applicable, authors should provide
+            information about ethics approval,
+            informed consent and relevant permissions.
+
+        </p>
+
+    </section>
+
+
+    <!-- DECLARATIONS -->
+
+    <section class="card">
+
+        <h2>
+            Required Declarations
+        </h2>
+
+        <p>
+            Depending on the article and journal,
+            authors may be required to provide:
+        </p>
+
+        <ul>
+
+            <li>
+                Funding information
+            </li>
+
+            <li>
+                Conflict of interest statement
+            </li>
+
+            <li>
+                Ethics approval
+            </li>
+
+            <li>
+                Informed consent
+            </li>
+
+            <li>
+                Data availability statement
+            </li>
+
+            <li>
+                Author contribution statement
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- SUBMISSION CHECKLIST -->
+
+    <section class="card">
+
+        <h2>
+            Submission Checklist
+        </h2>
+
+        <ul class="checklist">
+
+            <li>
+                Correct journal selected
+            </li>
+
+            <li>
+                Manuscript file prepared
+            </li>
+
+            <li>
+                Title and abstract completed
+            </li>
+
+            <li>
+                Keywords added
+            </li>
+
+            <li>
+                All authors listed correctly
+            </li>
+
+            <li>
+                References checked
+            </li>
+
+            <li>
+                Figures and tables checked
+            </li>
+
+            <li>
+                Declarations completed
+            </li>
+
+            <li>
+                Ethical requirements addressed
+            </li>
+
+            <li>
+                Manuscript checked for originality
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- SUBMIT -->
+
+    <section class="card">
+
+        <h2>
+            Ready to Submit?
+        </h2>
+
+        <p>
+
+            Once your manuscript has been prepared
+            according to the relevant journal requirements,
+            you can submit it through the Scopusixteen
+            Author Portal.
+
+        </p>
+
+        <a
+            href="submit-manuscript.html"
+            class="submit"
+            style="display:inline-block;padding:12px 20px;">
+
+            Submit Manuscript
+
+        </a>
+
+    </section>
+
+
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            On This Page
+        </h3>
+
+        <ul class="side-links">
+
+            <li>
+                <a href="#">
+                    Before You Submit
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Article Types
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Manuscript Structure
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    References
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    AI Use
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Research Ethics
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Submission Checklist
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Author Resources
+        </h3>
+
+        <ul class="side-links">
+
+            <li>
+                <a href="submit-manuscript.html">
+                    Submit Manuscript
+                </a>
+            </li>
+
+            <li>
+                <a href="peer-review.html">
+                    Peer Review
+                </a>
+            </li>
+
+            <li>
+                <a href="publication-ethics.html">
+                    Publication Ethics
+                </a>
+            </li>
+
+            <li>
+                <a href="author-dashboard.html">
+                    Author Portal
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Need Assistance?
+        </h3>
+
+        <p style="font-size:13px;color:#687785;">
+
+            Use the Author Portal to manage
+            submissions and access available
+            publishing resources.
+
+        </p>
+
+        <a
+            href="author-dashboard.html"
+            class="submit">
+
+            Open Author Portal
+
+        </a>
+
+    </div>
+
+
+</aside>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+        <strong>
+            Scopusixteen Publishing
+        </strong>
+
+        <p>
+
+            A professional academic publishing
+            platform supporting researchers,
+            authors, editors and scholarly
+            communication.
+
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Publishing
+        </h4>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="submit-manuscript.html">
+            Submit Manuscript
+        </a>
+
+        <a href="peer-review.html">
+            Peer Review
+        </a>
+
+        <a href="publication-ethics.html">
+            Publication Ethics
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Authors
+        </h4>
+
+        <a href="author-guidelines.html">
+            Author Guidelines
+        </a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscriptions
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Platform
+        </h4>
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Scopusixteen Publishing.
+    All rights reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+}
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link){
+
+        link.addEventListener("click",function(){
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
