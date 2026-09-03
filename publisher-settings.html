@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Publisher Settings | Scopusixteen Publishing</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --navy:#071b3a;
+    --navy2:#0d2b59;
+    --blue:#1769e0;
+    --light:#f4f7fb;
+    --border:#dfe6ef;
+    --text:#172033;
+    --muted:#667085;
+    --white:#ffffff;
+    --green:#16845b;
+    --orange:#d9822b;
+    --red:#c93636;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--navy);
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.topbar a{
+    margin-left:18px;
+    opacity:.9;
+}
+
+/* HEADER */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+    padding:17px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:var(--navy);
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#334155;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.mobile-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* LAYOUT */
+
+.layout{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:260px 1fr;
+    min-height:calc(100vh - 110px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    background:var(--navy);
+    color:#fff;
+    padding:25px 15px;
+    min-height:100%;
+}
+
+.sidebar-title{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#91a6c7;
+    padding:10px 14px;
+    margin-top:10px;
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding:12px 14px;
+    border-radius:8px;
+    margin:3px 0;
+    font-size:14px;
+    color:#d9e3f3;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#123564;
+    color:#fff;
+}
+
+.sidebar .danger{
+    color:#ffb2b2;
+}
+
+/* MAIN */
+
+.main{
+    padding:30px;
+}
+
+.page-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.page-head h1{
+    font-size:29px;
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+.page-head p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.head-actions{
+    display:flex;
+    gap:10px;
+}
+
+/* BUTTONS */
+
+.btn{
+    border:0;
+    border-radius:7px;
+    padding:11px 17px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:14px;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#0f57bd;
+}
+
+.btn-light{
+    background:#fff;
+    color:#334155;
+    border:1px solid var(--border);
+}
+
+.btn-light:hover{
+    background:#f8fafc;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#fff8e8;
+    border:1px solid #f0d48a;
+    color:#75530c;
+    padding:15px 18px;
+    border-radius:9px;
+    margin-bottom:25px;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* STATUS */
+
+.status-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-bottom:25px;
+}
+
+.status-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+}
+
+.status-card small{
+    color:var(--muted);
+    display:block;
+    margin-bottom:8px;
+}
+
+.status-value{
+    font-weight:800;
+    font-size:19px;
+    color:var(--navy);
+}
+
+.status-dot{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--green);
+    margin-right:7px;
+}
+
+/* SETTINGS NAV */
+
+.settings-layout{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:20px;
+    align-items:start;
+}
+
+.settings-menu{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px;
+    position:sticky;
+    top:105px;
+}
+
+.settings-menu button{
+    width:100%;
+    text-align:left;
+    border:0;
+    background:none;
+    padding:12px 13px;
+    border-radius:7px;
+    cursor:pointer;
+    color:#475467;
+    font-weight:600;
+    margin-bottom:2px;
+}
+
+.settings-menu button:hover,
+.settings-menu button.active{
+    background:#eaf2ff;
+    color:var(--blue);
+}
+
+/* SETTINGS PANELS */
+
+.panel{
+    display:none;
+}
+
+.panel.active{
+    display:block;
+}
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:var(--navy);
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.card h3{
+    color:var(--navy);
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.card-description{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-size:13px;
+    font-weight:700;
+    color:#344054;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #cfd7e3;
+    border-radius:7px;
+    outline:none;
+    background:#fff;
+    color:#172033;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(23,105,224,.1);
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+/* TOGGLE */
+
+.setting-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:17px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.setting-row:last-child{
+    border-bottom:0;
+}
+
+.setting-info strong{
+    display:block;
+    margin-bottom:5px;
+    color:var(--navy);
+}
+
+.setting-info span{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.5;
+}
+
+.switch{
+    position:relative;
+    width:48px;
+    height:26px;
+    flex-shrink:0;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    inset:0;
+    background:#cbd5e1;
+    border-radius:30px;
+    transition:.2s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    height:20px;
+    width:20px;
+    left:3px;
+    top:3px;
+    background:#fff;
+    border-radius:50%;
+    transition:.2s;
+}
+
+.switch input:checked + .slider{
+    background:var(--blue);
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(22px);
+}
+
+/* MODEL CARDS */
+
+.model-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.model{
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:18px;
+}
+
+.model h3{
+    margin-bottom:9px;
+}
+
+.model p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th,
+td{
+    padding:13px;
+    border-bottom:1px solid #edf1f5;
+    text-align:left;
+    font-size:13px;
+}
+
+th{
+    background:#f8fafc;
+    color:#344054;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.badge-green{
+    background:#e6f7ef;
+    color:#14734d;
+}
+
+.badge-blue{
+    background:#e8f1ff;
+    color:#1555a5;
+}
+
+.badge-orange{
+    background:#fff2df;
+    color:#9a5a11;
+}
+
+/* SAVE BAR */
+
+.save-bar{
+    position:sticky;
+    bottom:0;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:14px 18px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    box-shadow:0 -4px 15px rgba(0,0,0,.05);
+}
+
+.save-message{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.save-message.unsaved{
+    color:var(--orange);
+    font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--navy);
+    color:#d9e3f3;
+    margin-top:40px;
+}
+
+.footer-inner{
+    max-width:1400px;
+    margin:auto;
+    padding:35px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer-brand{
+    font-size:21px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.footer-inner p{
+    color:#aebdd3;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.footer-inner h4{
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.footer-inner a{
+    display:block;
+    color:#b9c8dc;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.footer-inner a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid #17345d;
+    padding:17px 5%;
+    text-align:center;
+    font-size:12px;
+    color:#9eb0c8;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:var(--navy);
+    color:#fff;
+    padding:14px 18px;
+    border-radius:8px;
+    display:none;
+    z-index:2000;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .mobile-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .sidebar.open{
+        display:block;
+    }
+
+    .status-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .settings-layout{
+        grid-template-columns:1fr;
+    }
+
+    .settings-menu{
+        position:static;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:4px;
+    }
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    .nav{
+        padding:15px 5%;
+    }
+
+    .main{
+        padding:20px 15px;
+    }
+
+    .page-head{
+        flex-direction:column;
+    }
+
+    .head-actions{
+        width:100%;
+    }
+
+    .head-actions .btn{
+        flex:1;
+    }
+
+    .status-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .model-grid{
+        grid-template-columns:1fr;
+    }
+
+    .settings-menu{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .setting-row{
+        align-items:flex-start;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .save-bar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div>Scopusixteen Publishing Platform</div>
+
+    <div>
+        <a href="contact.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="administration.html">Administration</a>
+    </div>
+
+    <button class="mobile-btn" onclick="toggleSidebar()">☰</button>
+
+</nav>
+
+</header>
+
+<!-- MAIN LAYOUT -->
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">Administration</div>
+
+    <a href="administration.html">▣ Dashboard</a>
+    <a href="administration.html">▤ Manuscripts</a>
+    <a href="editorial-dashboard.html">◈ Editorial</a>
+    <a href="production-dashboard.html">▥ Production</a>
+
+    <div class="sidebar-title">Platform</div>
+
+    <a href="publisher-settings.html" class="active">⚙ Publisher Settings</a>
+    <a href="journals.html">▦ Journal Management</a>
+    <a href="subscription.html">◇ Subscriptions</a>
+    <a href="apc.html">₿ APC Configuration</a>
+
+    <div class="sidebar-title">Services</div>
+
+    <a href="ai-assistant.html">✦ AI Assistant</a>
+    <a href="author-guidelines.html">▤ Author Guidelines</a>
+    <a href="peer-review.html">◉ Peer Review</a>
+    <a href="publication-ethics.html">⚖ Publication Ethics</a>
+
+    <div class="sidebar-title">Website</div>
+
+    <a href="index.html">↗ View Website</a>
+    <a href="contact.html">? Support</a>
+
+</aside>
+
+<!-- CONTENT -->
+
+<main class="main">
+
+    <div class="page-head">
+
+        <div>
+            <h1>Publisher Settings</h1>
+            <p>
+                Central configuration area for the Scopusixteen Publishing platform.
+                Manage platform information, journals, publishing models,
+                editorial workflows, notifications and service settings.
+            </p>
+        </div>
+
+        <div class="head-actions">
+            <button class="btn btn-light" onclick="resetDemo()">
+                Reset Demo
+            </button>
+
+            <button class="btn btn-primary" onclick="saveSettings()">
+                Save Settings
+            </button>
+        </div>
+
+    </div>
+
+    <div class="notice">
+        <strong>Prototype notice:</strong>
+        This settings centre is a frontend demonstration. Changes are stored
+        only in this browser using local storage and are not connected to a
+        live database, authentication system, payment gateway, email server,
+        DOI service or production publishing infrastructure.
+    </div>
+
+    <!-- SYSTEM STATUS -->
+
+    <div class="status-grid">
+
+        <div class="status-card">
+            <small>Platform Status</small>
+            <div class="status-value">
+                <span class="status-dot"></span>
+                Prototype
+            </div>
+        </div>
+
+        <div class="status-card">
+            <small>Editorial Workflow</small>
+            <div class="status-value">Configured</div>
+        </div>
+
+        <div class="status-card">
+            <small>Payment Processing</small>
+            <div class="status-value">Demo Mode</div>
+        </div>
+
+        <div class="status-card">
+            <small>AI Assistant</small>
+            <div class="status-value">Demo Mode</div>
+        </div>
+
+    </div>
+
+    <!-- SETTINGS -->
+
+    <div class="settings-layout">
+
+        <div class="settings-menu">
+
+            <button class="active" onclick="openPanel('site',this)">
+                Site Information
+            </button>
+
+            <button onclick="openPanel('journal',this)">
+                Journal Settings
+            </button>
+
+            <button onclick="openPanel('publishing',this)">
+                Publishing Models
+            </button>
+
+            <button onclick="openPanel('apc',this)">
+                APC Configuration
+            </button>
+
+            <button onclick="openPanel('workflow',this)">
+                Editorial Workflow
+            </button>
+
+            <button onclick="openPanel('email',this)">
+                Email Templates
+            </button>
+
+            <button onclick="openPanel('users',this)">
+                User & Roles
+            </button>
+
+            <button onclick="openPanel('ai',this)">
+                AI Assistant
+            </button>
+
+            <button onclick="openPanel('subscription',this)">
+                Subscriptions
+            </button>
+
+            <button onclick="openPanel('metadata',this)">
+                Metadata & Publication
+            </button>
+
+            <button onclick="openPanel('security',this)">
+                Security & Platform
+            </button>
+
+        </div>
+
+        <div>
+
+            <!-- SITE -->
+
+            <section class="panel active" id="site">
+
+                <div class="card">
+
+                    <h2>Site Information</h2>
+
+                    <p class="card-description">
+                        Basic information displayed throughout the publishing platform.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Publisher Name</label>
+                            <input id="publisherName"
+                                   value="Scopusixteen Publishing">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Platform Name</label>
+                            <input id="platformName"
+                                   value="Scopusixteen">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Support Email</label>
+                            <input id="supportEmail"
+                                   type="email"
+                                   value="support@scopusixteen.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Editorial Email</label>
+                            <input id="editorialEmail"
+                                   type="email"
+                                   value="editorial@scopusixteen.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website URL</label>
+                            <input id="websiteUrl"
+                                   value="https://scopusixteen-project5.vercel.app">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Default Language</label>
+                            <select>
+                                <option selected>English</option>
+                                <option>French</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Publisher Description</label>
+                            <textarea id="publisherDescription">Scopusixteen Publishing is a digital publishing platform prototype designed to support scholarly journals, manuscript submission, editorial workflows, peer review and publication services.</textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- JOURNAL -->
+
+            <section class="panel" id="journal">
+
+                <div class="card">
+
+                    <h2>Journal Settings</h2>
+
+                    <p class="card-description">
+                        Configure general journal presentation and submission options.
+                    </p>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Enable Journal Directory</strong>
+                            <span>Display available journals on the public website.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Allow Manuscript Submission</strong>
+                            <span>Allow authors to access the manuscript submission interface.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Display ISSN Information</strong>
+                            <span>Display ISSN fields where an official ISSN has been established.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Show Publishing Model</strong>
+                            <span>Show whether a journal uses APC, subscription or hybrid publishing.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PUBLISHING -->
+
+            <section class="panel" id="publishing">
+
+                <div class="card">
+
+                    <h2>Publishing Models</h2>
+
+                    <p class="card-description">
+                        Configure the publishing models that the platform can present.
+                    </p>
+
+                    <div class="model-grid">
+
+                        <div class="model">
+                            <h3>APC / Open Access</h3>
+                            <p>
+                                Authors may be charged an Article Processing Charge
+                                where a journal officially operates under this model.
+                            </p>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="model">
+                            <h3>Subscription</h3>
+                            <p>
+                                Access may be provided through subscription plans
+                                where this model has been formally established.
+                            </p>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="model">
+                            <h3>Hybrid</h3>
+                            <p>
+                                Journals may combine subscription access with
+                                optional open-access publication routes.
+                            </p>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- APC -->
+
+            <section class="panel" id="apc">
+
+                <div class="card">
+
+                    <h2>APC Configuration</h2>
+
+                    <p class="card-description">
+                        Demonstration settings for Article Processing Charges.
+                        These values do not create real invoices or payment requests.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Standard APC (USD)</label>
+                            <input type="number" value="300">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Open Access APC (USD)</label>
+                            <input type="number" value="500">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Currency</label>
+                            <select>
+                                <option selected>USD</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
+                                <option>NGN</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Institutional Pricing</label>
+                            <select>
+                                <option selected>Contact Publisher</option>
+                                <option>Fixed Amount</option>
+                                <option>Disabled</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>APC Rules</h2>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Display APC Before Submission</strong>
+                            <span>Show the applicable demonstration APC information before submission.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Waiver Requests</strong>
+                            <span>Allow authors to indicate that they wish to request a waiver or discount.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WORKFLOW -->
+
+            <section class="panel" id="workflow">
+
+                <div class="card">
+
+                    <h2>Editorial Workflow</h2>
+
+                    <p class="card-description">
+                        Configure the conceptual workflow used by the platform.
+                    </p>
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Submission</td>
+                                    <td>Author submits manuscript</td>
+                                    <td><span class="badge badge-green">Enabled</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Initial Screening</td>
+                                    <td>Editorial office checks submission</td>
+                                    <td><span class="badge badge-green">Enabled</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Reviewer Assignment</td>
+                                    <td>Reviewers are selected</td>
+                                    <td><span class="badge badge-green">Enabled</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Peer Review</td>
+                                    <td>Reviewers evaluate manuscript</td>
+                                    <td><span class="badge badge-green">Enabled</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Editorial Decision</td>
+                                    <td>Editor records decision</td>
+                                    <td><span class="badge badge-green">Enabled</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Production</td>
+                                    <td>Copyediting and publication preparation</td>
+                                    <td><span class="badge badge-blue">Configured</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EMAIL -->
+
+            <section class="panel" id="email">
+
+                <div class="card">
+
+                    <h2>Email Notification Templates</h2>
+
+                    <p class="card-description">
+                        Demonstration templates for future email automation.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+                            <label>Submission Confirmation</label>
+                            <textarea>Dear {{author_name}},
+
+Your manuscript {{manuscript_id}} has been received by Scopusixteen Publishing.
+
+This is a demonstration notification template.</textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Revision Request</label>
+                            <textarea>Dear {{author_name}},
+
+A revision has been requested for manuscript {{manuscript_id}}.
+
+Please review the editorial instructions provided through your author account.</textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Editorial Decision</label>
+                            <textarea>Dear {{author_name}},
+
+An editorial decision has been recorded for manuscript {{manuscript_id}}.
+
+Please access your author account for further information.</textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- USERS -->
+
+            <section class="panel" id="users">
+
+                <div class="card">
+
+                    <h2>User & Role Settings</h2>
+
+                    <p class="card-description">
+                        Define the conceptual permissions available to different platform users.
+                    </p>
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Dashboard</th>
+                                    <th>Manuscripts</th>
+                                    <th>Decisions</th>
+                                    <th>Settings</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Administrator</td>
+                                    <td>Full</td>
+                                    <td>Full</td>
+                                    <td>Full</td>
+                                    <td>Full</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Editor</td>
+                                    <td>Full</td>
+                                    <td>Manage</td>
+                                    <td>Manage</td>
+                                    <td>Limited</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Reviewer</td>
+                                    <td>Limited</td>
+                                    <td>Assigned</td>
+                                    <td>Recommendation</td>
+                                    <td>None</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Author</td>
+                                    <td>Own Account</td>
+                                    <td>Own Manuscripts</td>
+                                    <td>View</td>
+                                    <td>Profile</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI -->
+
+            <section class="panel" id="ai">
+
+                <div class="card">
+
+                    <h2>AI Assistant Settings</h2>
+
+                    <p class="card-description">
+                        Configure the demonstration AI assistant. A real AI provider,
+                        API credentials and secure server-side integration must be added
+                        before production use.
+                    </p>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Enable AI Assistant</strong>
+                            <span>Display the AI assistant interface on the platform.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Responsible AI Notice</strong>
+                            <span>Show users a notice explaining that AI output requires human verification.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Research Assistance</strong>
+                            <span>Allow the assistant interface to provide research-support prompts.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <br>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>AI Provider</label>
+                            <select>
+                                <option selected>Demo / Not Connected</option>
+                                <option>External AI Provider</option>
+                                <option>Self-Hosted Model</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Model</label>
+                            <input value="Not connected" disabled>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="notice">
+                        Never place a private AI API key directly inside frontend HTML,
+                        CSS or JavaScript. Production AI integrations should use a secure
+                        backend/server environment.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUBSCRIPTION -->
+
+            <section class="panel" id="subscription">
+
+                <div class="card">
+
+                    <h2>Subscription Plans</h2>
+
+                    <p class="card-description">
+                        Demonstration subscription configuration.
+                    </p>
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Plan</th>
+                                    <th>Monthly</th>
+                                    <th>Annual</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Researcher</td>
+                                    <td>$19</td>
+                                    <td>$182</td>
+                                    <td><span class="badge badge-green">Active Demo</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Professional</td>
+                                    <td>$49</td>
+                                    <td>$470</td>
+                                    <td><span class="badge badge-green">Active Demo</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Institution</td>
+                                    <td>$149</td>
+                                    <td>$1,430</td>
+                                    <td><span class="badge badge-green">Active Demo</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- METADATA -->
+
+            <section class="panel" id="metadata">
+
+                <div class="card">
+
+                    <h2>Metadata & Publication Settings</h2>
+
+                    <p class="card-description">
+                        Configure how publication metadata is conceptually handled.
+                    </p>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Article Metadata</strong>
+                            <span>Maintain structured title, author, abstract and keyword information.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>DOI Display</strong>
+                            <span>Display DOI information only after a DOI has actually been assigned.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>ISSN Display</strong>
+                            <span>Show official ISSN information only after it has been established.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Indexing Claims</strong>
+                            <span>Prevent unsupported indexing claims from appearing as official information.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY -->
+
+            <section class="panel" id="security">
+
+                <div class="card">
+
+                    <h2>Security & Platform</h2>
+
+                    <p class="card-description">
+                        Demonstration platform controls. These options do not provide
+                        production security without a real backend.
+                    </p>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Demo Mode</strong>
+                            <span>Keep frontend workflows clearly separated from live production services.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Require Secure Authentication</strong>
+                            <span>Production authentication should be handled by a secure backend.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+                            <strong>Audit Logging</strong>
+                            <span>Future backend can record administrative actions and security events.</span>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <br>
+
+                    <div class="notice">
+                        Do not enter passwords, private API keys, payment credentials,
+                        database passwords or other secrets into this frontend prototype.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SAVE -->
+
+            <div class="save-bar">
+
+                <div class="save-message" id="saveMessage">
+                    All changes are currently unsaved.
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSettings()">
+                    Save Settings
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            <div class="footer-brand">Scopusixteen Publishing</div>
+
+            <p>
+                A publishing platform prototype for scholarly journals,
+                manuscript workflows, editorial management and research support.
+            </p>
+        </div>
+
+        <div>
+            <h4>Platform</h4>
+            <a href="journals.html">Journals</a>
+            <a href="author-dashboard.html">Author Portal</a>
+            <a href="reviewer-portal.html">Reviewer Portal</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+        </div>
+
+        <div>
+            <h4>Management</h4>
+            <a href="administration.html">Administration</a>
+            <a href="editorial-dashboard.html">Editorial</a>
+            <a href="production-dashboard.html">Production</a>
+            <a href="publisher-settings.html">Publisher Settings</a>
+        </div>
+
+        <div>
+            <h4>Policies</h4>
+            <a href="publication-ethics.html">Publication Ethics</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Scopusixteen Publishing. Prototype platform.
+    </div>
+
+</footer>
+
+
+<div class="toast" id="toast">
+    Settings saved locally for this prototype.
+</div>
+
+
+<script>
+
+/* SIDEBAR */
+
+function toggleSidebar(){
+
+    const sidebar = document.getElementById("sidebar");
+
+    sidebar.classList.toggle("open");
+
+}
+
+
+/* SETTINGS TABS */
+
+function openPanel(id, button){
+
+    document.querySelectorAll(".panel").forEach(panel => {
+        panel.classList.remove("active");
+    });
+
+    document.querySelectorAll(".settings-menu button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    button.classList.add("active");
+
+}
+
+
+/* SAVE */
+
+function saveSettings(){
+
+    const settings = {
+
+        publisherName:
+            document.getElementById("publisherName").value,
+
+        platformName:
+            document.getElementById("platformName").value,
+
+        supportEmail:
+            document.getElementById("supportEmail").value,
+
+        editorialEmail:
+            document.getElementById("editorialEmail").value,
+
+        websiteUrl:
+            document.getElementById("websiteUrl").value,
+
+        publisherDescription:
+            document.getElementById("publisherDescription").value,
+
+        savedAt:
+            new Date().toISOString()
+
+    };
+
+    localStorage.setItem(
+        "scopusixteenPublisherSettings",
+        JSON.stringify(settings)
+    );
+
+    document.getElementById("saveMessage").textContent =
+        "Settings saved locally in this browser.";
+
+    document.getElementById("saveMessage").classList.remove("unsaved");
+
+    showToast();
+
+}
+
+
+/* LOAD SETTINGS */
+
+function loadSettings(){
+
+    const saved =
+        localStorage.getItem("scopusixteenPublisherSettings");
+
+    if(!saved){
+        return;
+    }
+
+    try{
+
+        const settings = JSON.parse(saved);
+
+        if(settings.publisherName)
+            document.getElementById("publisherName").value =
+                settings.publisherName;
+
+        if(settings.platformName)
+            document.getElementById("platformName").value =
+                settings.platformName;
+
+        if(settings.supportEmail)
+            document.getElementById("supportEmail").value =
+                settings.supportEmail;
+
+        if(settings.editorialEmail)
+            document.getElementById("editorialEmail").value =
+                settings.editorialEmail;
+
+        if(settings.websiteUrl)
+            document.getElementById("websiteUrl").value =
+                settings.websiteUrl;
+
+        if(settings.publisherDescription)
+            document.getElementById("publisherDescription").value =
+                settings.publisherDescription;
+
+        document.getElementById("saveMessage").textContent =
+            "Saved prototype settings loaded from this browser.";
+
+    }catch(error){
+
+        console.log("Could not load demo settings.");
+
+    }
+
+}
+
+
+/* RESET */
+
+function resetDemo(){
+
+    const confirmReset =
+        confirm("Reset the locally saved publisher settings?");
+
+    if(!confirmReset){
+        return;
+    }
+
+    localStorage.removeItem(
+        "scopusixteenPublisherSettings"
+    );
+
+    location.reload();
+
+}
+
+
+/* TOAST */
+
+function showToast(){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* UNSAVED INDICATOR */
+
+document.querySelectorAll("input, select, textarea")
+.forEach(element => {
+
+    element.addEventListener("input", markUnsaved);
+    element.addEventListener("change", markUnsaved);
+
+});
+
+
+function markUnsaved(){
+
+    const message =
+        document.getElementById("saveMessage");
+
+    message.textContent =
+        "You have unsaved changes.";
+
+    message.classList.add("unsaved");
+
+}
+
+
+/* INITIALISE */
+
+loadSettings();
+
+</script>
+
+</body>
+</html>
