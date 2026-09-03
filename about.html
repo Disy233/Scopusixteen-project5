@@ -1,47 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – Scopusixteen Publishing</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main>
-    <section class="section">
-      <div class="container" style="max-width:48rem">
-        <h1 class="section-title" style="margin-bottom:1.5rem">About Scopusixteen</h1>
-        <p style="line-height:1.7;margin-bottom:1rem">
-          Scopusixteen Publishing is a modern academic publishing platform that supports both
-          <strong>subscription</strong> and <strong>open access (APC)</strong> models.
-        </p>
-        <p style="line-height:1.7;margin-bottom:1rem">
-          Our mission is to advance research, connect knowledge, and make scholarly communication
-          more transparent and efficient through responsible AI-assisted editorial tools.
-        </p>
-        <h2 style="font-size:1.15rem;font-weight:600;margin:1.75rem 0 0.75rem">Publishing modes</h2>
-        <ul style="padding-left:1.25rem;line-height:1.8">
-          <li><strong>APC / Open Access</strong> – authors pay a fee; articles are free to read worldwide.</li>
-          <li><strong>Subscription</strong> – institutions or individuals subscribe; selected content is paywalled.</li>
-          <li><strong>Hybrid</strong> – journals offer both routes on an article-by-article basis.</li>
-        </ul>
-        <h2 style="font-size:1.15rem;font-weight:600;margin:1.75rem 0 0.75rem">This demo</h2>
-        <p style="line-height:1.7">
-          You are viewing a <strong>static HTML/CSS/JavaScript</strong> version of the platform.
-          It demonstrates the public website, article paywall, login and simple role-based dashboard.
-          The full Next.js application includes Prisma database, Stripe payments, ORCID, DOI registration,
-          email notifications and AI pre-check features.
-        </p>
-        <p class="mt-6">
-          <a href="index.html" class="btn btn-primary">Back to home</a>
-          <a href="login.html" class="btn btn-outline" style="margin-left:0.5rem">Try login</a>
-        </p>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>support@scopusixteen.com</span>
+      <div>
+        <a href="login.html">Author Login</a>
+        <a href="login.html">Reviewer Login</a>
+        <a href="login.html">Editor Login</a>
       </div>
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      <nav class="nav">
+        <a href="journals.html">Journals</a>
+        <a href="articles.html">Articles</a>
+        <a href="about.html" class="active">About</a>
+        <a href="submit.html">For Authors</a>
+        <a href="#">For Reviewers</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
+        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:60px 0;">
+    <div class="container">
+      <h1 style="font-size:36px; margin-bottom:12px;">About Scopusixteen</h1>
+      <p style="color:#94a3b8; max-width:600px;">A modern academic publishing platform built for researchers, editors and institutions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <h2 style="font-size:24px; margin-bottom:16px;">Our Mission</h2>
+      <p style="margin-bottom:24px; color:#475569; font-size:17px; line-height:1.7;">
+        Scopusixteen exists to make high-quality academic publishing more accessible, transparent and efficient. 
+        We combine rigorous peer review with modern technology and responsible AI tools to support authors and editors worldwide.
+      </p>
+
+      <h2 style="font-size:24px; margin-bottom:16px; margin-top:40px;">Publishing Models</h2>
+      <div class="features-grid" style="margin-top:20px;">
+        <div class="feature-card">
+          <h3>APC (Open Access)</h3>
+          <p>Authors pay an Article Processing Charge. The final article is freely available to everyone.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Subscription</h3>
+          <p>Institutions and individuals subscribe to access the full content of the journal.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Hybrid</h3>
+          <p>A mix of subscription access and optional open-access publication for individual articles.</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:24px; margin-bottom:16px; margin-top:50px;">Responsible AI</h2>
+      <p style="color:#475569; font-size:17px; line-height:1.7;">
+        We use AI to assist with manuscript completeness checks, language improvement suggestions, 
+        metadata generation, journal-scope matching and reviewer recommendations. 
+        All AI outputs are advisory only. Final editorial decisions are always made by qualified human editors.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
