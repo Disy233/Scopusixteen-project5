@@ -1,23 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articles | Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles – Scopusixteen Publishing</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .article-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .article-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0f172a, #1e40af);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .article-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .article-meta {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .article-meta span {
+      margin-right: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div id="site-header"></div>
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="section-title" style="margin-bottom:1.5rem">All Articles</h1>
-        <div id="articles-list" class="article-list"></div>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>support@scopusixteen.com</span>
+      <div>
+        <a href="login.html">Author Login</a>
+        <a href="login.html">Reviewer Login</a>
+        <a href="login.html">Editor Login</a>
       </div>
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      <nav class="nav">
+        <a href="journals.html">Journals</a>
+        <a href="articles.html" class="active">Articles</a>
+        <a href="about.html">About</a>
+        <a href="submit.html">For Authors</a>
+        <a href="#">For Reviewers</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
+        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:50px 0;">
+    <div class="container">
+      <h1 style="font-size:32px; margin-bottom:8px;">Latest Research</h1>
+      <p style="color:#94a3b8;">Recently published peer-reviewed articles</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="article-card">
+        <div class="article-icon">ML</div>
+        <div>
+          <h3>Machine Learning Approaches for Predicting Protein Structures: A Review</h3>
+          <div class="article-meta">
+            <span>A. Jana, R. K. Singh, P. Verma</span>
+            <span>Journal of Engineering and Applied Sciences</span>
+            <span>May 20, 2026</span>
+          </div>
+          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">This review examines recent advances in machine learning methods for protein structure prediction, including AlphaFold and emerging transformer-based architectures...</p>
+          <a href="article.html" class="section-link">Read Full Article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-icon">BIO</div>
+        <div>
+          <h3>Impact of Climate Change on Vector-Borne Diseases: A Global Perspective</h3>
+          <div class="article-meta">
+            <span>S. Patel, M. Okonkwo, L. Chen</span>
+            <span>International Journal of Medical and Health Research</span>
+            <span>April 12, 2026</span>
+          </div>
+          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">Climate change is altering the distribution and seasonality of vector-borne diseases. This study analyzes global trends and projects future risk zones...</p>
+          <a href="article.html" class="section-link">Read Full Article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-icon">BUS</div>
+        <div>
+          <h3>Sustainable Business Models in Emerging Markets: Evidence from Sub-Saharan Africa</h3>
+          <div class="article-meta">
+            <span>K. Adeyemi, J. Mwangi</span>
+            <span>Journal of Business, Management & Economics</span>
+            <span>March 28, 2026</span>
+          </div>
+          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">This paper investigates how firms in emerging markets are integrating sustainability into their core business models while remaining competitive...</p>
+          <a href="article.html" class="section-link">Read Full Article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-icon">ENV</div>
+        <div>
+          <h3>Deep Learning for Real-Time Environmental Monitoring Using Satellite Data</h3>
+          <div class="article-meta">
+            <span>R. Thompson, A. Silva, N. Kim</span>
+            <span>Advances in Environmental Science & Sustainability</span>
+            <span>March 5, 2026</span>
+          </div>
+          <p style="font-size:14px; color:#64748b; margin-bottom:12px;">We present a novel deep learning pipeline for processing multi-spectral satellite imagery to detect deforestation and water quality changes in near real-time...</p>
+          <a href="article.html" class="section-link">Read Full Article →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
