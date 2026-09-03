@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscribe | Scopusixteen Publishing</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:40rem">
+        <h1 class="section-title" style="margin-bottom:0.5rem">Subscribe</h1>
+        <p style="color:var(--slate-600);margin-bottom:2rem">
+          Institutional and individual subscriptions unlock paywalled content across our hybrid and subscription journals.
+        </p>
+        <div style="display:grid;gap:1.25rem">
+          <div class="dash-card">
+            <h3 style="color:var(--slate-900);font-size:1.1rem">Individual</h3>
+            <p style="font-size:1.75rem;font-weight:700;margin:0.5rem 0">$99 <span style="font-size:0.9rem;font-weight:500;color:var(--slate-500)">/ year</span></p>
+            <p style="font-size:0.9rem;color:var(--slate-600);margin-bottom:1rem">Access to all subscription & hybrid content for one user.</p>
+            <button class="btn btn-primary btn-sm" onclick="alert('In the full app this starts a Stripe Checkout session.')">Subscribe (demo)</button>
+          </div>
+          <div class="dash-card">
+            <h3 style="color:var(--slate-900);font-size:1.1rem">Institutional</h3>
+            <p style="font-size:1.75rem;font-weight:700;margin:0.5rem 0">Custom</p>
+            <p style="font-size:0.9rem;color:var(--slate-600);margin-bottom:1rem">IP-based access for libraries and universities. Contact us for a quote.</p>
+            <a href="mailto:support@scopusixteen.com" class="btn btn-outline btn-sm">Contact sales</a>
+          </div>
+        </div>
+        <p class="mt-6" style="font-size:0.85rem;color:var(--slate-500)">
+          Tip: On article pages you can also click <strong>“Unlock for demo”</strong> to read paywalled sample articles without a subscription.
+        </p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
