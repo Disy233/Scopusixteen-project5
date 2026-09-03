@@ -1,201 +1,2345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scopusixteen Publishing – Discover. Publish. Advance Knowledge.</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Scopusixteen Publishing — Professional academic publishing, journals, research articles, author services and AI-assisted editorial tools.">
+
+<meta name="keywords"
+content="Scopusixteen, academic publishing, research journals, scholarly articles, manuscript submission, DOI, authors, researchers">
+
+<title>Scopusixteen Publishing | Academic Research & Journals</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#172033;
+    background:#ffffff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071a33;
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.topbar a{
+    color:#fff;
+    margin-left:18px;
+}
+
+.topbar a:hover{
+    color:#58a6ff;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid #e7eaf0;
+    padding:15px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-box{
+    width:42px;
+    height:42px;
+    border-radius:8px;
+    background:#0b4ea2;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.logo-text h2{
+    font-size:19px;
+    color:#0b2850;
+}
+
+.logo-text span{
+    font-size:10px;
+    color:#687386;
+    letter-spacing:1.5px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#26354d;
+}
+
+.nav-links a:hover{
+    color:#0b5dc7;
+}
+
+.nav-button{
+    background:#0b4ea2;
+    color:#fff !important;
+    padding:10px 17px;
+    border-radius:5px;
+}
+
+.nav-button:hover{
+    background:#083b7d;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:590px;
+    background:
+        linear-gradient(rgba(5,26,51,.90),rgba(7,40,76,.88)),
+        radial-gradient(circle at top right,#1c72bd,#071a33 60%);
+    color:#fff;
+    padding:90px 5%;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-label{
+    display:inline-block;
+    border:1px solid rgba(255,255,255,.3);
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:22px;
+    background:rgba(255,255,255,.08);
+}
+
+.hero h1{
+    font-size:53px;
+    line-height:1.12;
+    margin-bottom:22px;
+    max-width:800px;
+}
+
+.hero h1 span{
+    color:#6cb8ff;
+}
+
+.hero p{
+    max-width:700px;
+    font-size:18px;
+    color:#dce8f7;
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 21px;
+    border-radius:5px;
+    font-weight:bold;
+    font-size:14px;
+    cursor:pointer;
+    border:none;
+}
+
+.btn-primary{
+    background:#1683df;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#0e6fc0;
+}
+
+.btn-light{
+    background:#fff;
+    color:#08274d;
+}
+
+.btn-light:hover{
+    background:#edf5fc;
+}
+
+.btn-outline{
+    border:1px solid #fff;
+    color:#fff;
+    background:transparent;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+    background:#f5f8fc;
+    padding:32px 5%;
+}
+
+.search-box{
+    max-width:1050px;
+    margin:auto;
+    display:flex;
+    background:#fff;
+    border:1px solid #dce2ea;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.search-box input{
+    flex:1;
+    padding:17px;
+    border:none;
+    outline:none;
+}
+
+.search-box select{
+    border:none;
+    border-left:1px solid #e4e8ee;
+    padding:0 15px;
+    outline:none;
+}
+
+.search-box button{
+    border:none;
+    background:#0b4ea2;
+    color:#fff;
+    padding:0 28px;
+    cursor:pointer;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section{
+    padding:80px 5%;
+}
+
+.section-header{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 45px;
+}
+
+.section-header .label{
+    color:#0b5dc7;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.section-header h2{
+    font-size:35px;
+    color:#102846;
+    margin:10px 0 13px;
+}
+
+.section-header p{
+    color:#687386;
+}
+
+/* =========================
+   JOURNALS
+========================= */
+
+.journal-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.journal-card{
+    border:1px solid #e1e6ee;
+    border-radius:8px;
+    padding:27px;
+    background:#fff;
+    transition:.25s;
+}
+
+.journal-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(11,61,110,.10);
+}
+
+.journal-icon{
+    width:48px;
+    height:48px;
+    background:#e9f3ff;
+    color:#0b5dc7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:7px;
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.journal-card h3{
+    font-size:18px;
+    margin-bottom:9px;
+    color:#152b49;
+}
+
+.journal-card p{
+    color:#687386;
+    font-size:14px;
+    margin-bottom:17px;
+}
+
+.journal-card a{
+    color:#0b5dc7;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:#0b4ea2;
+    color:#fff;
+    padding:45px 5%;
+}
+
+.stats-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+}
+
+.stat h2{
+    font-size:35px;
+}
+
+.stat p{
+    color:#d9eaff;
+    font-size:13px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.feature-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.feature{
+    padding:28px;
+    border:1px solid #e5e9ef;
+    border-radius:8px;
+}
+
+.feature-number{
+    color:#0b5dc7;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    margin-bottom:8px;
+    color:#142b49;
+}
+
+.feature p{
+    color:#687386;
+    font-size:14px;
+}
+
+/* =========================
+   AI SECTION
+========================= */
+
+.ai-section{
+    background:#071a33;
+    color:#fff;
+    padding:80px 5%;
+}
+
+.ai-wrapper{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.ai-content h2{
+    font-size:39px;
+    margin:12px 0 18px;
+}
+
+.ai-content p{
+    color:#cbd9e8;
+    margin-bottom:25px;
+}
+
+.ai-features{
+    list-style:none;
+    margin-bottom:28px;
+}
+
+.ai-features li{
+    margin:12px 0;
+    color:#dce8f5;
+}
+
+.ai-features li::before{
+    content:"✓";
+    color:#58b1ff;
+    margin-right:10px;
+}
+
+.ai-chat{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    color:#172033;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.chat-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:1px solid #e5e8ee;
+    padding-bottom:14px;
+    margin-bottom:15px;
+}
+
+.ai-avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#0b4ea2;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.chat-message{
+    background:#f2f5f9;
+    padding:13px;
+    border-radius:8px;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.chat-user{
+    background:#e8f2ff;
+    text-align:right;
+}
+
+/* =========================
+   PUBLISHING MODELS
+========================= */
+
+.models{
+    background:#f5f8fc;
+}
+
+.model-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.model{
+    background:#fff;
+    border:1px solid #dfe5ec;
+    padding:30px;
+    border-radius:8px;
+}
+
+.model.featured{
+    border:2px solid #0b5dc7;
+}
+
+.model h3{
+    color:#102b4d;
+    margin-bottom:8px;
+}
+
+.model .tag{
+    display:inline-block;
+    font-size:11px;
+    color:#0b5dc7;
+    background:#e9f3ff;
+    padding:5px 9px;
+    border-radius:15px;
+    margin-bottom:18px;
+}
+
+.model p{
+    font-size:14px;
+    color:#687386;
+}
+
+/* =========================
+   ARTICLES
+========================= */
+
+.article-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.article{
+    border:1px solid #e2e7ed;
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.article-top{
+    height:115px;
+    background:linear-gradient(135deg,#0b4ea2,#1683df);
+}
+
+.article-content{
+    padding:22px;
+}
+
+.article-category{
+    color:#0b5dc7;
+    font-size:11px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.article h3{
+    margin:8px 0 10px;
+    font-size:17px;
+}
+
+.article p{
+    font-size:13px;
+    color:#687386;
+}
+
+/* =========================
+   AUTHOR PORTAL
+========================= */
+
+.portal{
+    background:#eef5fc;
+}
+
+.portal-box{
+    max-width:1050px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    background:#fff;
+    padding:38px;
+    border-radius:10px;
+    border:1px solid #dce6f0;
+}
+
+.portal-box h2{
+    color:#102b4d;
+    margin-bottom:8px;
+}
+
+.portal-box p{
+    color:#687386;
+    max-width:650px;
+}
+
+/* =========================
+   SUBSCRIPTION
+========================= */
+
+.subscription{
+    padding:80px 5%;
+    background:#0b4ea2;
+    color:#fff;
+    text-align:center;
+}
+
+.subscription h2{
+    font-size:37px;
+    margin-bottom:12px;
+}
+
+.subscription p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#dbeaff;
+}
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-section{
+    background:#fff;
+}
+
+.admin-box{
+    max-width:1050px;
+    margin:auto;
+    border:1px solid #e0e5ec;
+    padding:35px;
+    border-radius:9px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.admin-box h2{
+    color:#102b4d;
+    margin-bottom:7px;
+}
+
+.admin-box p{
+    color:#687386;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#061426;
+    color:#fff;
+    padding:60px 5% 25px;
+}
+
+.footer-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+.footer-brand p{
+    color:#9eafc3;
+    font-size:13px;
+    max-width:370px;
+    margin-top:15px;
+}
+
+.footer-column h4{
+    margin-bottom:16px;
+}
+
+.footer-column a{
+    display:block;
+    color:#9eafc3;
+    font-size:13px;
+    margin:9px 0;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    max-width:1150px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid #213248;
+    color:#8192a7;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================
+   AI FLOATING BUTTON
+========================= */
+
+.ai-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#0b4ea2;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 7px 25px rgba(0,0,0,.25);
+    z-index:1500;
+    font-size:22px;
+}
+
+/* =========================
+   AI MODAL
+========================= */
+
+.ai-modal{
+    position:fixed;
+    right:20px;
+    bottom:90px;
+    width:350px;
+    max-width:calc(100% - 40px);
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+    z-index:1499;
+    display:none;
+    overflow:hidden;
+}
+
+.ai-modal.active{
+    display:block;
+}
+
+.ai-modal-header{
+    background:#0b4ea2;
+    color:#fff;
+    padding:17px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.ai-modal-header button{
+    background:none;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.ai-body{
+    height:300px;
+    overflow-y:auto;
+    padding:15px;
+}
+
+.ai-input{
+    display:flex;
+    border-top:1px solid #e2e6eb;
+}
+
+.ai-input input{
+    flex:1;
+    border:none;
+    padding:13px;
+    outline:none;
+}
+
+.ai-input button{
+    border:none;
+    background:#0b4ea2;
+    color:#fff;
+    padding:0 18px;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px 5%;
+        border-bottom:1px solid #ddd;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .journal-grid,
+    .feature-grid,
+    .model-grid,
+    .article-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .ai-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        padding:12px 5%;
+    }
+
+    .hero{
+        min-height:530px;
+        padding:65px 5%;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .journal-grid,
+    .feature-grid,
+    .model-grid,
+    .article-grid,
+    .stats-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        gap:25px;
+    }
+
+    .portal-box,
+    .admin-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box select{
+        padding:13px;
+        border-left:none;
+        border-top:1px solid #eee;
+    }
+
+    .search-box button{
+        padding:14px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <span>support@scopusixteen.com</span>
-      <div>
-        <a href="login.html">Author Login</a>
-        <a href="login.html">Reviewer Login</a>
-        <a href="login.html">Editor Login</a>
-        <a href="login.html">Admin Login</a>
-      </div>
-    </div>
-  </div>
+<!-- =========================
+     TOP BAR
+========================= -->
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
-      
-      <nav class="nav">
-        <a href="journals.html">Journals</a>
-        <a href="articles.html">Articles</a>
-        <a href="about.html">About</a>
-        <a href="submit.html">For Authors</a>
-        <a href="#">For Reviewers</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="login.html" class="btn btn-outline">Login</a>
-        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
-        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-      </div>
+<div class="topbar">
+    <div>
+        Scopusixteen Publishing • Advancing Research Through Knowledge
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="journals.html">Journals</a>
-      <a href="articles.html">Articles</a>
-      <a href="about.html">About</a>
-      <a href="submit.html">For Authors</a>
-      <a href="login.html">Login</a>
-      <a href="dashboard.html">Author Dashboard</a>
-      <a href="submit.html">Submit Manuscript</a>
+    <div>
+        <a href="mailto:support@scopusixteen.com">Support</a>
+        <a href="#contact">Contact</a>
     </div>
-  </header>
+</div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <p style="color:#38bdf8; font-weight:600; margin-bottom:12px; letter-spacing:1px;">SCOPUSIXTEEN PUBLISHING</p>
-      <h1>Discover. Publish.<br><span>Advance Knowledge.</span></h1>
-      <p>Explore peer-reviewed research and submit your work through a modern academic publishing platform with responsible AI-assisted editorial tools.</p>
-      
-      <div class="hero-buttons">
-        <a href="journals.html" class="btn btn-primary" style="padding:14px 28px;">Explore Journals</a>
-        <a href="submit.html" class="btn" style="background:white; color:#0f172a; padding:14px 28px;">Submit Your Manuscript</a>
-      </div>
 
-      <div class="search-box">
-        <input type="text" placeholder="Search articles, authors, keywords, journals...">
-        <select>
-          <option>All Fields</option>
-          <option>Title</option>
-          <option>Author</option>
-          <option>Keywords</option>
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-box">
+            S16
+        </div>
+
+        <div class="logo-text">
+            <h2>Scopusixteen</h2>
+            <span>ACADEMIC PUBLISHING</span>
+        </div>
+
+    </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#journals">Journals</a>
+
+        <a href="#articles">Articles</a>
+
+        <a href="#publishing">Publishing</a>
+
+        <a href="#ai">AI Assistant</a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscription
+        </a>
+
+        <a href="administration.html" class="nav-button">
+            Administration
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            PROFESSIONAL ACADEMIC PUBLISHING PLATFORM
+        </span>
+
+        <h1>
+            Advancing
+            <span>Research.</span>
+            Sharing Knowledge.
+        </h1>
+
+        <p>
+            Scopusixteen Publishing provides a professional platform
+            for researchers, authors, institutions and scholarly
+            communities to discover, publish and access high-quality
+            academic research.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="submit-manuscript.html"
+               class="btn btn-primary">
+                Submit Manuscript
+            </a>
+
+            <a href="#journals"
+               class="btn btn-light">
+                Explore Journals
+            </a>
+
+            <a href="author-dashboard.html"
+               class="btn btn-outline">
+                Author Portal
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+    <form class="search-box"
+          onsubmit="searchContent(event)">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search journals, articles, authors or DOI..."
+        >
+
+        <select id="searchType">
+
+            <option value="all">
+                All Content
+            </option>
+
+            <option value="journals">
+                Journals
+            </option>
+
+            <option value="articles">
+                Articles
+            </option>
+
+            <option value="authors">
+                Authors
+            </option>
+
         </select>
-        <button class="btn btn-dark">Search</button>
-      </div>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- =========================
+     JOURNALS
+========================= -->
+
+<section class="section" id="journals">
+
+    <div class="section-header">
+
+        <span class="label">
+            Our Journals
+        </span>
+
+        <h2>
+            Explore Academic Journals
+        </h2>
+
+        <p>
+            Discover scholarly journals covering a broad range
+            of disciplines and research areas.
+        </p>
+
     </div>
-  </section>
 
-  <!-- Featured Journals -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Journals</h2>
-        <a href="journals.html" class="section-link">View all journals →</a>
-      </div>
 
-      <div class="journals-grid">
-        <div class="journal-card">
-          <div class="journal-card-header">ENGINEERING & APPLIED SCIENCES</div>
-          <div class="journal-card-body">
-            <span class="badge badge-apc">APC</span>
-            <h3>Journal of Engineering and Applied Sciences</h3>
-            <div class="journal-meta">ISSN: 2616-7300 · Latest: Vol. 8 No. 2</div>
-            <a href="journals.html" class="section-link">View Journal →</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">MEDICAL & HEALTH RESEARCH</div>
-          <div class="journal-card-body">
-            <span class="badge badge-hybrid">HYBRID</span>
-            <h3>International Journal of Medical and Health Research</h3>
-            <div class="journal-meta">ISSN: 2708-9516 · Latest: Vol. 7 No. 2</div>
-            <a href="journals.html" class="section-link">View Journal →</a>
-          </div>
-        </div>
-
-        <div class="journal-card">
-          <div class="journal-card-header">BUSINESS & MANAGEMENT</div>
-          <div class="journal-card-body">
-            <span class="badge badge-sub">SUBSCRIPTION</span>
-            <h3>Journal of Business, Management & Economics</h3>
-            <div class="journal-meta">ISSN: 2617-4611 · Latest: Vol. 9 No. 1</div>
-            <a href="journals.html" class="section-link">View Journal →</a>
-          </div>
-        </div>
+    <div class="journal-grid">
 
         <div class="journal-card">
-          <div class="journal-card-header">ENVIRONMENTAL SCIENCE</div>
-          <div class="journal-card-body">
-            <span class="badge badge-apc">APC</span>
-            <h3>Advances in Environmental Science & Sustainability</h3>
-            <div class="journal-meta">ISSN: 2738-1141 · Latest: Vol. 6 No. 1</div>
-            <a href="journals.html" class="section-link">View Journal →</a>
-          </div>
+
+            <div class="journal-icon">
+                JS
+            </div>
+
+            <h3>
+                Journal of Software & Computing
+            </h3>
+
+            <p>
+                Research in software engineering,
+                artificial intelligence, computing and
+                information systems.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
         </div>
-      </div>
+
+
+        <div class="journal-card">
+
+            <div class="journal-icon">
+                BM
+            </div>
+
+            <h3>
+                Business & Management Review
+            </h3>
+
+            <p>
+                Contemporary research in management,
+                leadership, entrepreneurship and business.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <div class="journal-icon">
+                HS
+            </div>
+
+            <h3>
+                Health & Scientific Research
+            </h3>
+
+            <p>
+                Multidisciplinary research across health,
+                biomedical and scientific fields.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <div class="journal-icon">
+                ED
+            </div>
+
+            <h3>
+                Education & Learning Studies
+            </h3>
+
+            <p>
+                Research on education, learning technologies,
+                pedagogy and academic development.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <div class="journal-icon">
+                EN
+            </div>
+
+            <h3>
+                Environmental Research Journal
+            </h3>
+
+            <p>
+                Environmental sustainability, climate,
+                waste management and ecological research.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <div class="journal-icon">
+                SS
+            </div>
+
+            <h3>
+                Social Sciences & Humanities
+            </h3>
+
+            <p>
+                Interdisciplinary research in social sciences,
+                humanities, culture and society.
+            </p>
+
+            <a href="journal.html">
+                View Journal →
+            </a>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- Features -->
-  <section class="section" style="background:#f1f5f9;">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">📝</div>
-          <h3>Ready to publish your research?</h3>
-          <p>Submit your manuscript, monitor peer review, respond to revisions and track publication from one dashboard.</p>
-          <br>
-          <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <h2>50+</h2>
+            <p>Research Areas</p>
         </div>
 
-        <div class="feature-card">
-          <div class="icon">🤖</div>
-          <h3>AI-Assisted Publishing</h3>
-          <p>AI assists with manuscript completeness, academic language, metadata, journal scope and reviewer matching while human editors retain decision authority.</p>
-          <br>
-          <a href="about.html" class="btn btn-outline">Learn More</a>
+        <div class="stat">
+            <h2>20+</h2>
+            <p>Academic Journals</p>
         </div>
 
-        <div class="feature-card">
-          <div class="icon">👨‍🔬</div>
-          <h3>For Reviewers & Editors</h3>
-          <p>Efficient tools for peer-review management, editorial workflows and decision tracking.</p>
-          <br>
-          <a href="login.html" class="btn btn-outline">Join as Reviewer</a>
+        <div class="stat">
+            <h2>1,000+</h2>
+            <p>Researchers</p>
         </div>
-      </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>Digital Access</p>
+        </div>
+
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="logo" style="color:white; margin-bottom:16px;">SCOPUSI<span style="color:#38bdf8;">X</span>TEEN</div>
-          <p style="font-size:14px; max-width:280px;">A modern academic publishing platform supporting APC, Subscription and Hybrid models with responsible AI tools.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <a href="journals.html">Journals</a>
-          <a href="articles.html">Articles</a>
-          <a href="about.html">About Us</a>
-        </div>
-        <div>
-          <h4>For Authors</h4>
-          <a href="submit.html">Submit Manuscript</a>
-          <a href="login.html">Author Login</a>
-          <a href="dashboard.html">Dashboard</a>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <a href="#">Contact</a>
-          <a href="#">Guidelines</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        © 2026 Scopusixteen Publishing. All rights reserved.
-      </div>
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <span class="label">
+            Why Scopusixteen
+        </span>
+
+        <h2>
+            A Modern Publishing Experience
+        </h2>
+
+        <p>
+            Built to make academic publishing more accessible,
+            transparent and efficient.
+        </p>
+
     </div>
-  </footer>
 
-  <script src="app.js"></script>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <h3>
+                Author-Centred Publishing
+            </h3>
+
+            <p>
+                Manage manuscripts, submissions,
+                revisions and publication information
+                through a dedicated author portal.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <h3>
+                Editorial Workflow
+            </h3>
+
+            <p>
+                Organise submissions and editorial
+                activities through a structured digital
+                publishing workflow.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <h3>
+                Research Discovery
+            </h3>
+
+            <p>
+                Search and discover scholarly content
+                through journals, articles, authors
+                and research categories.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <h3>
+                Digital Article Access
+            </h3>
+
+            <p>
+                Provide readers with structured article
+                pages and easy access to academic
+                publications.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                05
+            </div>
+
+            <h3>
+                Researcher Support
+            </h3>
+
+            <p>
+                Give authors access to publishing resources,
+                submission information and editorial guidance.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                06
+            </div>
+
+            <h3>
+                Responsible AI Assistance
+            </h3>
+
+            <p>
+                AI tools can assist with research discovery,
+                language improvement and publishing workflows
+                while keeping human oversight in the process.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AI ASSISTANT
+========================= -->
+
+<section class="ai-section" id="ai">
+
+    <div class="ai-wrapper">
+
+        <div class="ai-content">
+
+            <span class="hero-label">
+                SCOPUSIXTEEN AI
+            </span>
+
+            <h2>
+                Your Intelligent Publishing Assistant
+            </h2>
+
+            <p>
+                The Scopusixteen AI Assistant is designed to help
+                researchers navigate publishing resources,
+                understand submission requirements and find
+                relevant information.
+            </p>
+
+            <ul class="ai-features">
+
+                <li>
+                    Research and journal discovery
+                </li>
+
+                <li>
+                    Manuscript preparation assistance
+                </li>
+
+                <li>
+                    Academic language support
+                </li>
+
+                <li>
+                    Publishing workflow guidance
+                </li>
+
+                <li>
+                    Author portal assistance
+                </li>
+
+            </ul>
+
+            <button class="btn btn-primary"
+                    onclick="openAI()">
+                Open AI Assistant
+            </button>
+
+        </div>
+
+
+        <div class="ai-chat">
+
+            <div class="chat-header">
+
+                <div class="ai-avatar">
+                    AI
+                </div>
+
+                <div>
+                    <strong>
+                        Scopusixteen AI
+                    </strong>
+
+                    <div style="font-size:11px;color:#718096;">
+                        Publishing Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="chat-message">
+
+                Hello! I'm the Scopusixteen AI Assistant.
+                How can I help you with academic publishing?
+
+            </div>
+
+
+            <div class="chat-message chat-user">
+
+                Find information about submitting a manuscript.
+
+            </div>
+
+
+            <div class="chat-message">
+
+                I can guide you through the manuscript
+                submission process and connect you with
+                the appropriate author resources.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PUBLISHING MODELS
+========================= -->
+
+<section class="section models" id="publishing">
+
+    <div class="section-header">
+
+        <span class="label">
+            Publishing Models
+        </span>
+
+        <h2>
+            Flexible Publishing Options
+        </h2>
+
+        <p>
+            Choose the publishing model that best fits
+            your research and institutional requirements.
+        </p>
+
+    </div>
+
+
+    <div class="model-grid">
+
+        <div class="model">
+
+            <span class="tag">
+                OPEN ACCESS
+            </span>
+
+            <h3>
+                APC Mode
+            </h3>
+
+            <p>
+                Authors or institutions may cover an
+                article processing charge for eligible
+                open-access publication.
+            </p>
+
+            <br>
+
+            <a href="apc.html"
+               class="btn btn-primary">
+                Learn More
+            </a>
+
+        </div>
+
+
+        <div class="model featured">
+
+            <span class="tag">
+                ACCESS MODEL
+            </span>
+
+            <h3>
+                Subscription Mode
+            </h3>
+
+            <p>
+                Readers or institutions can access
+                participating scholarly content through
+                subscription arrangements.
+            </p>
+
+            <br>
+
+            <a href="subscription.html"
+               class="btn btn-primary">
+                View Subscription
+            </a>
+
+        </div>
+
+
+        <div class="model">
+
+            <span class="tag">
+                FLEXIBLE
+            </span>
+
+            <h3>
+                Hybrid Mode
+            </h3>
+
+            <p>
+                Participating journals may provide both
+                subscription access and eligible open-access
+                publication options.
+            </p>
+
+            <br>
+
+            <a href="hybrid.html"
+               class="btn btn-primary">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ARTICLES
+========================= -->
+
+<section class="section" id="articles">
+
+    <div class="section-header">
+
+        <span class="label">
+            Research
+        </span>
+
+        <h2>
+            Featured Articles
+        </h2>
+
+        <p>
+            Explore selected scholarly research available
+            through the Scopusixteen platform.
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+        <article class="article">
+
+            <div class="article-top"></div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    Artificial Intelligence
+                </span>
+
+                <h3>
+                    Artificial Intelligence and the Future
+                    of Digital Education
+                </h3>
+
+                <p>
+                    Explore how emerging AI technologies
+                    are transforming teaching, learning
+                    and academic research.
+                </p>
+
+                <br>
+
+                <a href="article.html"
+                   style="color:#0b5dc7;font-weight:bold;font-size:13px;">
+                    Read Article →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="article">
+
+            <div class="article-top"></div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    Management
+                </span>
+
+                <h3>
+                    Strategic Leadership and
+                    Organisational Performance
+                </h3>
+
+                <p>
+                    An examination of leadership practices
+                    and organisational effectiveness in
+                    modern environments.
+                </p>
+
+                <br>
+
+                <a href="article.html"
+                   style="color:#0b5dc7;font-weight:bold;font-size:13px;">
+                    Read Article →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="article">
+
+            <div class="article-top"></div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    Sustainability
+                </span>
+
+                <h3>
+                    Sustainable Approaches to
+                    Environmental Management
+                </h3>
+
+                <p>
+                    Research perspectives on sustainable
+                    environmental management and future
+                    development.
+                </p>
+
+                <br>
+
+                <a href="article.html"
+                   style="color:#0b5dc7;font-weight:bold;font-size:13px;">
+                    Read Article →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AUTHOR PORTAL
+========================= -->
+
+<section class="section portal">
+
+    <div class="portal-box">
+
+        <div>
+
+            <span class="label">
+                AUTHOR SERVICES
+            </span>
+
+            <h2>
+                Manage Your Research
+            </h2>
+
+            <p>
+                Access your author dashboard to submit
+                manuscripts, monitor submissions, manage
+                revisions and view publication information.
+            </p>
+
+        </div>
+
+        <a href="author-dashboard.html"
+           class="btn btn-primary">
+            Enter Author Portal
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SUBSCRIPTION
+========================= -->
+
+<section class="subscription">
+
+    <h2>
+        Access More Research
+    </h2>
+
+    <p>
+        Explore subscription options for readers,
+        researchers, institutions and organisations.
+    </p>
+
+    <a href="subscription.html"
+       class="btn btn-light">
+        View Subscription Options
+    </a>
+
+</section>
+
+
+<!-- =========================
+     ADMINISTRATION
+========================= -->
+
+<section class="section admin-section">
+
+    <div class="admin-box">
+
+        <div>
+
+            <span class="label">
+                ADMINISTRATION
+            </span>
+
+            <h2>
+                Publishing Administration
+            </h2>
+
+            <p>
+                Authorised administrators can manage
+                journals, manuscripts, users, editorial
+                workflows, subscriptions and platform
+                settings.
+            </p>
+
+        </div>
+
+        <a href="administration.html"
+           class="btn btn-primary">
+            Administration
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section"
+         id="contact"
+         style="background:#f5f8fc;text-align:center;">
+
+    <div class="section-header">
+
+        <span class="label">
+            Contact
+        </span>
+
+        <h2>
+            Need Assistance?
+        </h2>
+
+        <p>
+            Contact the Scopusixteen Publishing support team
+            for questions about submissions, journals,
+            subscriptions and publishing.
+        </p>
+
+        <br>
+
+        <a href="mailto:support@scopusixteen.com"
+           class="btn btn-primary">
+            Contact Support
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <div class="logo-box">
+                    S16
+                </div>
+
+                <div class="logo-text">
+
+                    <h2 style="color:#fff;">
+                        Scopusixteen
+                    </h2>
+
+                    <span style="color:#8fa4bc;">
+                        ACADEMIC PUBLISHING
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Scopusixteen Publishing is a digital academic
+                publishing platform designed to connect
+                researchers, authors, journals and readers.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Publishing
+            </h4>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="apc.html">
+                APC
+            </a>
+
+            <a href="subscription.html">
+                Subscription
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Authors
+            </h4>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Platform
+            </h4>
+
+            <a href="#ai">
+                AI Assistant
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Scopusixteen Publishing.
+            All rights reserved.
+        </span>
+
+        <span>
+            Academic Publishing Platform
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING AI
+========================= -->
+
+<div class="ai-float"
+     onclick="openAI()"
+     title="Open AI Assistant">
+
+    AI
+
+</div>
+
+
+<!-- =========================
+     AI MODAL
+========================= -->
+
+<div class="ai-modal"
+     id="aiModal">
+
+    <div class="ai-modal-header">
+
+        <strong>
+            Scopusixteen AI
+        </strong>
+
+        <button onclick="closeAI()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="ai-body"
+         id="aiMessages">
+
+        <div class="chat-message">
+
+            Hello! I'm your Scopusixteen Publishing
+            Assistant. Ask me about journals,
+            manuscript submission, publishing models
+            or the author portal.
+
+        </div>
+
+    </div>
+
+
+    <div class="ai-input">
+
+        <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask something..."
+            onkeydown="handleAIKey(event)"
+        >
+
+        <button onclick="sendAI()">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchContent(event){
+
+    event.preventDefault();
+
+    const input =
+        document.getElementById("searchInput").value.trim();
+
+    const type =
+        document.getElementById("searchType").value;
+
+    if(!input){
+
+        alert("Please enter something to search.");
+
+        return;
+
+    }
+
+    /*
+       This is the frontend search placeholder.
+
+       Later we can connect this to:
+       - database
+       - article API
+       - journal database
+       - PHP backend
+       - Python/FastAPI backend
+    */
+
+    alert(
+        "Searching " +
+        type +
+        " for: " +
+        input
+    );
+
+}
+
+
+/* =========================
+   AI MODAL
+========================= */
+
+function openAI(){
+
+    document
+        .getElementById("aiModal")
+        .classList.add("active");
+
+    document
+        .getElementById("aiInput")
+        .focus();
+
+}
+
+
+function closeAI(){
+
+    document
+        .getElementById("aiModal")
+        .classList.remove("active");
+
+}
+
+
+function handleAIKey(event){
+
+    if(event.key === "Enter"){
+
+        sendAI();
+
+    }
+
+}
+
+
+/* =========================
+   BASIC AI DEMO
+========================= */
+
+function sendAI(){
+
+    const input =
+        document.getElementById("aiInput");
+
+    const messages =
+        document.getElementById("aiMessages");
+
+    const question =
+        input.value.trim();
+
+    if(!question){
+
+        return;
+
+    }
+
+
+    const userMessage =
+        document.createElement("div");
+
+    userMessage.className =
+        "chat-message chat-user";
+
+    userMessage.textContent =
+        question;
+
+    messages.appendChild(userMessage);
+
+
+    input.value = "";
+
+
+    setTimeout(function(){
+
+        const answer =
+            document.createElement("div");
+
+        answer.className =
+            "chat-message";
+
+        let response =
+            "I can help you with Scopusixteen Publishing. " +
+            "Try asking about manuscript submission, " +
+            "journals, subscriptions, publishing models " +
+            "or the author portal.";
+
+        const q =
+            question.toLowerCase();
+
+
+        if(q.includes("submit") ||
+           q.includes("manuscript")){
+
+            response =
+                "To submit a manuscript, use the Submit Manuscript " +
+                "page or enter the Author Portal. Your manuscript " +
+                "can then be prepared for the platform's editorial workflow.";
+
+        }
+
+
+        else if(q.includes("journal")){
+
+            response =
+                "You can explore available journals in the Journals " +
+                "section. Each journal can have its own scope, " +
+                "author guidelines and submission requirements.";
+
+        }
+
+
+        else if(q.includes("subscription")){
+
+            response =
+                "Our Subscription section provides information about " +
+                "access options for readers, researchers and institutions.";
+
+        }
+
+
+        else if(q.includes("author")){
+
+            response =
+                "The Author Portal is designed for manuscript submission, " +
+                "submission tracking, revisions and publication information.";
+
+        }
+
+
+        else if(q.includes("apc") ||
+                q.includes("payment")){
+
+            response =
+                "APC information should be displayed on the relevant " +
+                "journal or publishing-model page. Always review the " +
+                "specific journal's official terms before making payment.";
+
+        }
+
+
+        answer.textContent =
+            response;
+
+        messages.appendChild(answer);
+
+        messages.scrollTop =
+            messages.scrollHeight;
+
+    },700);
+
+}
+
+
+/* =========================
+   CLOSE MENU AFTER CLICK
+========================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link){
+
+        link.addEventListener("click",function(){
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
 </body>
 </html>
