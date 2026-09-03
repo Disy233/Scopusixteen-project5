@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Assistant | Scopusixteen Publishing</title>
+
+<meta name="description" content="Scopusixteen AI Assistant for academic research, manuscript preparation, journal guidance and scholarly publishing support.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fa;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071b3a;
+    color:#d9e5f2;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+.top-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e1e6ed;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#082b63;
+}
+
+.logo span{
+    color:#1683c7;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:#26364f;
+}
+
+.nav-links a:hover{
+    color:#0b78bc;
+}
+
+.nav-btn{
+    background:#0b78bc;
+    color:#fff !important;
+    padding:11px 17px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    font-size:27px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:linear-gradient(135deg,#071b3a,#0b467d);
+    color:#fff;
+    padding:55px 5%;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#bcd0e5;
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:#fff;
+}
+
+.ai-label{
+    display:inline-block;
+    padding:7px 13px;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#d7e5f3;
+    font-size:17px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:35px 5%;
+}
+
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e7;
+    border:1px solid #ecd58f;
+    border-left:5px solid #d8a51d;
+    border-radius:8px;
+    padding:17px 20px;
+    margin-bottom:25px;
+}
+
+.notice strong{
+    color:#705000;
+}
+
+.notice p{
+    color:#655b46;
+    font-size:13px;
+    margin-top:3px;
+}
+
+
+/* =========================
+   AI LAYOUT
+========================= */
+
+.ai-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:22px;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    background:#fff;
+    border:1px solid #dfe5ec;
+    border-radius:10px;
+    overflow:hidden;
+    height:max-content;
+}
+
+.sidebar-title{
+    padding:18px 20px;
+    background:#f1f5f8;
+    color:#123b66;
+    font-weight:bold;
+}
+
+.new-chat{
+    margin:15px;
+    width:calc(100% - 30px);
+    padding:11px;
+    border:1px solid #0b78bc;
+    background:#fff;
+    color:#0b78bc;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.new-chat:hover{
+    background:#0b78bc;
+    color:#fff;
+}
+
+.sidebar-section{
+    padding:10px 15px 18px;
+}
+
+.sidebar-section h4{
+    color:#7a8796;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:.5px;
+    margin-bottom:8px;
+}
+
+.side-item{
+    display:block;
+    padding:10px 12px;
+    border-radius:6px;
+    color:#4d6076;
+    font-size:13px;
+    margin-bottom:3px;
+    cursor:pointer;
+}
+
+.side-item:hover,
+.side-item.active{
+    background:#eaf4fa;
+    color:#0b78bc;
+}
+
+.sidebar-bottom{
+    border-top:1px solid #e5e9ee;
+    padding:15px;
+}
+
+.sidebar-bottom a{
+    display:block;
+    font-size:13px;
+    color:#52708d;
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-container{
+    background:#fff;
+    border:1px solid #dfe5ec;
+    border-radius:10px;
+    overflow:hidden;
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header{
+    padding:17px 20px;
+    border-bottom:1px solid #e5e9ee;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.ai-profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.ai-avatar{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:#0b78bc;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.ai-profile h2{
+    color:#123b66;
+    font-size:16px;
+}
+
+.ai-profile p{
+    color:#7a8796;
+    font-size:12px;
+}
+
+.status{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#617186;
+    font-size:12px;
+}
+
+.status-dot{
+    width:8px;
+    height:8px;
+    background:#d99e18;
+    border-radius:50%;
+}
+
+
+/* =========================
+   CHAT MESSAGES
+========================= */
+
+.chat-messages{
+    flex:1;
+    padding:25px;
+    overflow-y:auto;
+    min-height:450px;
+}
+
+.message{
+    display:flex;
+    margin-bottom:22px;
+    gap:11px;
+}
+
+.message.user{
+    justify-content:flex-end;
+}
+
+.message-avatar{
+    width:34px;
+    height:34px;
+    min-width:34px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:15px;
+}
+
+.ai-message-avatar{
+    background:#e7f3f9;
+    color:#0b78bc;
+}
+
+.user-message-avatar{
+    background:#e8edf3;
+    color:#3b4d62;
+}
+
+.message-content{
+    max-width:78%;
+}
+
+.message-content p{
+    font-size:14px;
+}
+
+.ai-bubble{
+    background:#f4f7fa;
+    border:1px solid #e2e7ed;
+    padding:14px 16px;
+    border-radius:4px 10px 10px 10px;
+    color:#34465a;
+}
+
+.user-bubble{
+    background:#0b78bc;
+    color:#fff;
+    padding:14px 16px;
+    border-radius:10px 4px 10px 10px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome{
+    max-width:700px;
+    margin:20px auto 30px;
+    text-align:center;
+}
+
+.welcome-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#e8f3fa;
+    color:#0b78bc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin:0 auto 15px;
+}
+
+.welcome h2{
+    color:#153e68;
+    margin-bottom:7px;
+}
+
+.welcome p{
+    color:#69788a;
+    font-size:14px;
+}
+
+
+/* =========================
+   PROMPTS
+========================= */
+
+.prompt-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    max-width:700px;
+    margin:0 auto;
+}
+
+.prompt{
+    background:#fff;
+    border:1px solid #dfe5ec;
+    border-radius:7px;
+    padding:13px;
+    text-align:left;
+    cursor:pointer;
+    color:#40556c;
+    font-size:13px;
+    transition:.2s;
+}
+
+.prompt:hover{
+    border-color:#0b78bc;
+    color:#0b78bc;
+    background:#f7fbfd;
+}
+
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-area{
+    border-top:1px solid #e3e8ed;
+    padding:15px 18px;
+}
+
+.input-wrapper{
+    display:flex;
+    gap:10px;
+    align-items:flex-end;
+}
+
+#userInput{
+    flex:1;
+    min-height:48px;
+    max-height:130px;
+    resize:none;
+    border:1px solid #d3dce5;
+    border-radius:7px;
+    padding:13px;
+    outline:none;
+}
+
+#userInput:focus{
+    border-color:#0b78bc;
+}
+
+.send-btn{
+    width:50px;
+    height:48px;
+    border:0;
+    background:#0b78bc;
+    color:#fff;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.send-btn:hover{
+    background:#075f94;
+}
+
+.input-note{
+    color:#8a96a4;
+    font-size:11px;
+    margin-top:8px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature-card{
+    background:#fff;
+    border:1px solid #e0e6ed;
+    border-radius:9px;
+    padding:22px;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.feature-card h3{
+    color:#173f68;
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.feature-card p{
+    color:#667588;
+    font-size:13px;
+}
+
+
+/* =========================
+   RESPONSIBLE AI
+========================= */
+
+.responsible{
+    margin-top:25px;
+    background:#fff;
+    border:1px solid #dfe5ec;
+    border-radius:10px;
+    padding:25px;
+}
+
+.responsible h2{
+    color:#123b66;
+    font-size:20px;
+    margin-bottom:9px;
+}
+
+.responsible p{
+    color:#667588;
+    font-size:14px;
+}
+
+.responsible ul{
+    margin:15px 0 0 20px;
+    color:#667588;
+    font-size:13px;
+}
+
+.responsible li{
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    margin-top:25px;
+    background:#0a3269;
+    color:white;
+    border-radius:10px;
+    padding:30px;
+}
+
+.cta h2{
+    margin-bottom:7px;
+}
+
+.cta p{
+    color:#d5e2ef;
+    font-size:14px;
+    margin-bottom:17px;
+}
+
+.cta-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.cta-btn{
+    display:inline-block;
+    background:#1683c7;
+    color:#fff;
+    padding:11px 17px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.cta-btn.secondary{
+    background:#fff;
+    color:#0a3269;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#d7e2ee;
+    margin-top:40px;
+}
+
+.footer-main{
+    max-width:1250px;
+    margin:auto;
+    padding:50px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.footer-brand h2 span{
+    color:#43a8df;
+}
+
+.footer-brand p{
+    color:#a9bbd0;
+    font-size:14px;
+    max-width:420px;
+}
+
+.footer-col h3{
+    color:#fff;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#a9bbd0;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+    padding:18px 5%;
+    color:#95a8bd;
+    font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .top-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:#fff;
+        border-bottom:1px solid #ddd;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:9px 0;
+    }
+
+    .ai-layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:42px 5%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:25px 5%;
+    }
+
+    .chat-container{
+        min-height:600px;
+    }
+
+    .chat-messages{
+        padding:18px;
+    }
+
+    .message-content{
+        max-width:84%;
+    }
+
+    .prompt-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing • AI Research Support
+        </div>
+
+        <div class="top-links">
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Scopus<span>ixteen</span>
+        </a>
+
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+
+            ☰
+
+        </button>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="administration.html"
+               class="nav-btn">
+
+                Administration
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            /
+
+            AI Assistant
+
+        </div>
+
+
+        <span class="ai-label">
+            SCOPUSIXTEEN AI
+        </span>
+
+
+        <h1>
+            Academic AI Assistant
+        </h1>
+
+
+        <p>
+            Get structured assistance with research questions,
+            manuscript preparation, academic writing, journal guidance,
+            publication policies and scholarly publishing workflows.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+
+    <div class="notice">
+
+        <strong>
+            AI Assistant prototype
+        </strong>
+
+        <p>
+            This interface is currently a frontend demonstration.
+            Responses are generated by the demonstration logic in this
+            page and are not connected to a live AI model or external API.
+            A production AI service can be connected later.
+        </p>
+
+    </div>
+
+
+    <div class="ai-layout">
+
+
+        <!-- =====================
+             SIDEBAR
+        ====================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+                AI Workspace
+            </div>
+
+
+            <button
+                class="new-chat"
+                onclick="newChat()">
+
+                + New Conversation
+
+            </button>
+
+
+            <div class="sidebar-section">
+
+                <h4>
+                    Research
+                </h4>
+
+                <div
+                    class="side-item active"
+                    onclick="setTopic('Research Assistance')">
+
+                    🔬 Research Assistance
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Academic Writing')">
+
+                    ✍ Academic Writing
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Literature Review')">
+
+                    📚 Literature Review
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Research Methodology')">
+
+                    🧪 Research Methodology
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-section">
+
+                <h4>
+                    Publishing
+                </h4>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Journal Selection')">
+
+                    📖 Journal Selection
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Manuscript Preparation')">
+
+                    📄 Manuscript Preparation
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Peer Review')">
+
+                    👥 Peer Review
+
+                </div>
+
+                <div
+                    class="side-item"
+                    onclick="setTopic('Publication Ethics')">
+
+                    ⚖ Publication Ethics
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="author-guidelines.html">
+                    Author Guidelines →
+                </a>
+
+                <a href="peer-review.html">
+                    Peer Review →
+                </a>
+
+                <a href="publication-ethics.html">
+                    Publication Ethics →
+                </a>
+
+                <a href="contact.html">
+                    Contact Support →
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================
+             CHAT
+        ====================== -->
+
+        <main class="chat-container">
+
+
+            <div class="chat-header">
+
+                <div class="ai-profile">
+
+                    <div class="ai-avatar">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Scopusixteen AI Assistant
+                        </h2>
+
+                        <p>
+                            Academic publishing support
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Prototype
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="chat-messages"
+                id="chatMessages">
+
+
+                <!-- WELCOME -->
+
+                <div
+                    class="welcome"
+                    id="welcome">
+
+                    <div class="welcome-icon">
+                        ✦
+                    </div>
+
+                    <h2>
+                        How can I help with your research?
+                    </h2>
+
+                    <p>
+                        Ask a question about academic writing,
+                        research methodology, journal selection or
+                        scholarly publishing.
+                    </p>
+
+                </div>
+
+
+                <!-- PROMPTS -->
+
+                <div
+                    class="prompt-grid"
+                    id="promptGrid">
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        Help me structure a research paper.
+
+                    </button>
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        How do I write a strong abstract?
+
+                    </button>
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        Explain the peer-review process.
+
+                    </button>
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        What should I include in a literature review?
+
+                    </button>
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        How can I choose an appropriate journal?
+
+                    </button>
+
+
+                    <button
+                        class="prompt"
+                        onclick="usePrompt(this)">
+
+                        What is a conflict of interest?
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="chat-input-area">
+
+                <div class="input-wrapper">
+
+                    <textarea
+                        id="userInput"
+                        placeholder="Ask the Scopusixteen AI Assistant..."
+                        rows="1"
+                        onkeydown="handleKey(event)"></textarea>
+
+
+                    <button
+                        class="send-btn"
+                        onclick="sendMessage()"
+                        aria-label="Send message">
+
+                        ➤
+
+                    </button>
+
+                </div>
+
+
+                <div class="input-note">
+
+                    AI responses should be reviewed critically and
+                    verified against appropriate scholarly sources and
+                    journal policies.
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================
+         FEATURES
+    ====================== -->
+
+    <div class="features">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Research Support
+            </h3>
+
+            <p>
+                Get assistance understanding research concepts,
+                methodology, literature reviews and academic structures.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✍
+            </div>
+
+            <h3>
+                Writing Assistance
+            </h3>
+
+            <p>
+                Use AI guidance for improving academic structure,
+                clarity, abstracts, introductions and conclusions.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📖
+            </div>
+
+            <h3>
+                Publishing Guidance
+            </h3>
+
+            <p>
+                Learn about manuscript submission, peer review,
+                journal policies, APCs and publishing workflows.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================
+         RESPONSIBLE AI
+    ====================== -->
+
+    <div class="responsible">
+
+        <h2>
+            Responsible Use of AI
+        </h2>
+
+        <p>
+            AI can support researchers, but it should not replace
+            scholarly judgement or institutional requirements.
+        </p>
+
+
+        <ul>
+
+            <li>
+                Verify important factual and scientific claims using
+                reliable scholarly sources.
+            </li>
+
+            <li>
+                Do not submit AI-generated material without reviewing,
+                editing and taking responsibility for its content.
+            </li>
+
+            <li>
+                Follow the AI disclosure requirements of the target
+                journal or publisher.
+            </li>
+
+            <li>
+                Never fabricate references, data, results or citations.
+            </li>
+
+            <li>
+                Protect confidential manuscript, reviewer and research
+                information when using AI systems.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- =====================
+         CTA
+    ====================== -->
+
+    <div class="cta">
+
+        <h2>
+            Continue Your Publishing Journey
+        </h2>
+
+        <p>
+            Explore journals, review submission requirements or access
+            the author portal.
+        </p>
+
+
+        <div class="cta-links">
+
+            <a
+                href="journals.html"
+                class="cta-btn secondary">
+
+                Explore Journals
+
+            </a>
+
+
+            <a
+                href="author-dashboard.html"
+                class="cta-btn">
+
+                Author Portal
+
+            </a>
+
+
+            <a
+                href="submit-manuscript.html"
+                class="cta-btn">
+
+                Submit Manuscript
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Scopus<span>ixteen</span>
+            </h2>
+
+            <p>
+                A professional academic publishing website prototype
+                supporting scholarly communication, manuscript
+                submission, editorial workflows and research assistance.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Publishing
+            </h3>
+
+            <a href="journals.html">
+                Journals
+            </a>
+
+            <a href="submit-manuscript.html">
+                Submit Manuscript
+            </a>
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="ai-assistant.html">
+                AI Assistant
+            </a>
+
+            <a href="subscription.html">
+                Subscriptions
+            </a>
+
+            <a href="apc.html">
+                APC Information
+            </a>
+
+            <a href="hybrid.html">
+                Hybrid Publishing
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="administration.html">
+                Administration
+            </a>
+
+            <a href="contact.html">
+                Contact Support
+            </a>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Scopusixteen Publishing.
+        Prototype website. AI services must be connected to a
+        production AI provider before being presented as live.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* =========================
+   CHAT ELEMENTS
+========================= */
+
+const input =
+    document.getElementById("userInput");
+
+const messages =
+    document.getElementById("chatMessages");
+
+const welcome =
+    document.getElementById("welcome");
+
+const promptGrid =
+    document.getElementById("promptGrid");
+
+
+/* =========================
+   PROMPT BUTTON
+========================= */
+
+function usePrompt(button){
+
+    input.value =
+        button.innerText.trim();
+
+    sendMessage();
+
+}
+
+
+/* =========================
+   SEND MESSAGE
+========================= */
+
+function sendMessage(){
+
+    const text =
+        input.value.trim();
+
+    if(!text){
+        return;
+    }
+
+
+    welcome.style.display = "none";
+
+    promptGrid.style.display = "none";
+
+
+    addMessage(
+        text,
+        "user"
+    );
+
+
+    input.value = "";
+
+
+    setTimeout(function(){
+
+        const response =
+            generateDemoResponse(text);
+
+        addMessage(
+            response,
+            "ai"
+        );
+
+    },700);
+
+}
+
+
+/* =========================
+   ADD MESSAGE
+========================= */
+
+function addMessage(text,type){
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "message " + type;
+
+
+    const avatar =
+        document.createElement("div");
+
+    avatar.className =
+        "message-avatar " +
+        (type === "ai"
+            ? "ai-message-avatar"
+            : "user-message-avatar");
+
+    avatar.innerHTML =
+        type === "ai" ? "✦" : "●";
+
+
+    const content =
+        document.createElement("div");
+
+    content.className =
+        "message-content";
+
+
+    const bubble =
+        document.createElement("div");
+
+    bubble.className =
+        type === "ai"
+            ? "ai-bubble"
+            : "user-bubble";
+
+
+    const paragraph =
+        document.createElement("p");
+
+    paragraph.innerHTML =
+        text;
+
+
+    bubble.appendChild(
+        paragraph
+    );
+
+    content.appendChild(
+        bubble
+    );
+
+
+    if(type === "ai"){
+
+        message.appendChild(
+            avatar
+        );
+
+        message.appendChild(
+            content
+        );
+
+    }else{
+
+        message.appendChild(
+            content
+        );
+
+        message.appendChild(
+            avatar
+        );
+
+    }
+
+
+    messages.appendChild(
+        message
+    );
+
+
+    messages.scrollTop =
+        messages.scrollHeight;
+
+}
+
+
+/* =========================
+   DEMO AI RESPONSE
+========================= */
+
+function generateDemoResponse(question){
+
+    const q =
+        question.toLowerCase();
+
+
+    if(
+        q.includes("abstract")
+    ){
+
+        return `
+        A strong academic abstract usually contains four core elements:
+        <br><br>
+
+        <strong>1. Background:</strong>
+        Briefly establish the research problem or context.
+        <br>
+
+        <strong>2. Objective:</strong>
+        State what the study aims to investigate.
+        <br>
+
+        <strong>3. Method:</strong>
+        Summarise the research design, participants, data or analytical
+        approach.
+        <br>
+
+        <strong>4. Results and conclusion:</strong>
+        Present the main findings and their significance.
+        <br><br>
+
+        Keep the abstract concise and follow the target journal's
+        requirements.
+        `;
+
+    }
+
+
+    if(
+        q.includes("literature review")
+    ){
+
+        return `
+        A literature review should do more than list previous studies.
+        It should identify what is already known, compare different
+        findings, identify gaps and explain how your study addresses
+        those gaps.
+        <br><br>
+
+        A useful structure is:
+        <br>
+        • Introduction to the topic
+        <br>
+        • Major themes or schools of thought
+        <br>
+        • Critical comparison of previous studies
+        <br>
+        • Research gaps
+        <br>
+        • Relationship to your research objectives
+        <br>
+        • Summary
+        `;
+
+    }
+
+
+    if(
+        q.includes("peer review")
+    ){
+
+        return `
+        Peer review is an editorial quality-assessment process in which
+        qualified reviewers evaluate a submitted manuscript.
+        <br><br>
+
+        A typical workflow includes editorial screening, reviewer
+        selection, review, an editorial decision and, where necessary,
+        revision.
+        <br><br>
+
+        The exact process and review model can vary between journals.
+        Please consult the specific journal's policy before submitting.
+        `;
+
+    }
+
+
+    if(
+        q.includes("journal")
+    ){
+
+        return `
+        When choosing a journal, consider:
+        <br><br>
+
+        • Whether your topic fits the journal's aims and scope.
+        <br>
+        • The types of articles it accepts.
+        <br>
+        • Its peer-review and editorial policies.
+        <br>
+        • Publication model and applicable charges.
+        <br>
+        • Expected audience.
+        <br>
+        • Author guidelines and formatting requirements.
+        <br><br>
+
+        Always verify journal information directly from the journal's
+        official website before submitting.
+        `;
+
+    }
+
+
+    if(
+        q.includes("methodology") ||
+        q.includes("research method")
+    ){
+
+        return `
+        A research methodology section should explain how the study was
+        conducted and why the chosen approach was appropriate.
+        <br><br>
+
+        Depending on the study, it may include research design,
+        population or sample, data sources, instruments, procedures,
+        variables, analytical techniques, validity or reliability and
+        ethical considerations.
+        `;
+
+    }
+
+
+    if(
+        q.includes("conflict of interest")
+    ){
+
+        return `
+        A conflict of interest occurs when personal, professional,
+        financial or other interests could influence—or reasonably appear
+        to influence—research, authorship, reviewing or editorial
+        decisions.
+        <br><br>
+
+        Authors, reviewers and editors should disclose relevant conflicts
+        according to the journal's policy.
+        `;
+
+    }
+
+
+    if(
+        q.includes("research paper") ||
+        q.includes("structure")
+    ){
+
+        return `
+        A common research-paper structure is:
+        <br><br>
+
+        <strong>Title → Abstract → Keywords → Introduction →
+        Literature Review → Methodology → Results → Discussion →
+        Conclusion → References.</strong>
+        <br><br>
+
+        The exact structure depends on the discipline, study design and
+        target journal.
+        `;
+
+    }
+
+
+    return `
+    I can help you think through that academic question.
+
+    <br><br>
+
+    For a useful research workflow, first define the research problem,
+    identify the objective, select an appropriate methodology and check
+    the requirements of your target journal.
+
+    <br><br>
+
+    <strong>Important:</strong>
+    This is currently a demonstration assistant rather than a live
+    AI model. For publication decisions, citations, scientific claims
+    and journal requirements, verify information using authoritative
+    sources and the relevant journal's official policies.
+    `;
+
+}
+
+
+/* =========================
+   ENTER KEY
+========================= */
+
+function handleKey(event){
+
+    if(
+        event.key === "Enter" &&
+        !event.shiftKey
+    ){
+
+        event.preventDefault();
+
+        sendMessage();
+
+    }
+
+}
+
+
+/* =========================
+   NEW CHAT
+========================= */
+
+function newChat(){
+
+    messages.innerHTML = `
+    
+        <div
+            class="welcome"
+            id="welcome">
+
+            <div class="welcome-icon">
+                ✦
+            </div>
+
+            <h2>
+                How can I help with your research?
+            </h2>
+
+            <p>
+                Ask a question about academic writing,
+                research methodology, journal selection or
+                scholarly publishing.
+            </p>
+
+        </div>
+
+
+        <div
+            class="prompt-grid"
+            id="promptGrid">
+
+            <button
+                class="prompt"
+                onclick="usePrompt(this)">
+
+                Help me structure a research paper.
+
+            </button>
+
+            <button
+                class="prompt"
+                onclick="usePrompt(this)">
+
+                How do I write a strong abstract?
+
+            </button>
+
+            <button
+                class="prompt"
+                onclick="usePrompt(this)">
+
+                Explain the peer-review process.
+
+            </button>
+
+            <button
+                class="prompt"
+                onclick="usePrompt(this)">
+
+                What should I include in a literature review?
+
+            </button>
+
+        </div>
+    
+    `;
+
+}
+
+
+/* =========================
+   TOPIC SELECTION
+========================= */
+
+function setTopic(topic){
+
+    input.value =
+        "Help me with " + topic.toLowerCase() + ".";
+
+    input.focus();
+
+}
+
+
+</script>
+
+
+</body>
+</html>
