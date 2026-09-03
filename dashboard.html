@@ -103,11 +103,13 @@
       .dashboard-layout { grid-template-columns: 1fr; }
       .sidebar { display: none; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .main-content { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
       <span>support@scopusixteen.com</span>
@@ -118,13 +120,23 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <div class="container">
       <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
       <div class="header-actions">
         <span style="margin-right:16px; font-weight:500;">Welcome, Author</span>
         <a href="submit.html" class="btn btn-primary">+ New Submission</a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
       </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="submit.html">Submit Manuscript</a>
+      <a href="login.html">Logout</a>
     </div>
   </header>
 
@@ -210,5 +222,6 @@
     </main>
   </div>
 
+  <script src="app.js"></script>
 </body>
 </html>
