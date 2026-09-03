@@ -1,26 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Journals | Scopusixteen Publishing</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journals – Scopusixteen Publishing</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="section-title" style="margin-bottom:0.5rem">Our Journals</h1>
-        <p style="color:var(--slate-600);margin-bottom:2rem;max-width:36rem">
-          Eight peer-reviewed titles covering engineering, medicine, business, environment, computer science, education, law and social sciences.
-        </p>
-        <div id="journals-list" class="journal-grid"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>support@scopusixteen.com</span>
+      <div>
+        <a href="login.html">Author Login</a>
+        <a href="login.html">Reviewer Login</a>
+        <a href="login.html">Editor Login</a>
+        <a href="login.html">Admin Login</a>
       </div>
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">SCOPUSI<span>X</span>TEEN</a>
+      <nav class="nav">
+        <a href="journals.html" class="active">Journals</a>
+        <a href="articles.html">Articles</a>
+        <a href="about.html">About</a>
+        <a href="submit.html">For Authors</a>
+        <a href="#">For Reviewers</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="dashboard.html" class="btn btn-dark">Author Dashboard</a>
+        <a href="submit.html" class="btn btn-primary">Submit Manuscript</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white; padding:60px 0;">
+    <div class="container">
+      <h1 style="font-size:36px; margin-bottom:12px;">Our Journals</h1>
+      <p style="color:#94a3b8; max-width:600px;">Browse our portfolio of peer-reviewed journals across Engineering, Medicine, Business, Environmental Science and more.</p>
+    </div>
+  </section>
+
+  <!-- Journals List -->
+  <section class="section">
+    <div class="container">
+      <div class="journals-grid">
+
+        <div class="journal-card">
+          <div class="journal-card-header">ENGINEERING & APPLIED SCIENCES</div>
+          <div class="journal-card-body">
+            <span class="badge badge-apc">APC</span>
+            <h3>Journal of Engineering and Applied Sciences</h3>
+            <div class="journal-meta">ISSN: 2616-7300<br>Latest Issue: Vol. 8 No. 2 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Original research and reviews in engineering, materials, and applied technology.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">MEDICAL & HEALTH RESEARCH</div>
+          <div class="journal-card-body">
+            <span class="badge badge-hybrid">HYBRID</span>
+            <h3>International Journal of Medical and Health Research</h3>
+            <div class="journal-meta">ISSN: 2708-9516<br>Latest Issue: Vol. 7 No. 2 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Clinical studies, public health, and biomedical research.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">BUSINESS & MANAGEMENT</div>
+          <div class="journal-card-body">
+            <span class="badge badge-sub">SUBSCRIPTION</span>
+            <h3>Journal of Business, Management & Economics</h3>
+            <div class="journal-meta">ISSN: 2617-4611<br>Latest Issue: Vol. 9 No. 1 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Strategy, finance, entrepreneurship and economic policy.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">ENVIRONMENTAL SCIENCE</div>
+          <div class="journal-card-body">
+            <span class="badge badge-apc">APC</span>
+            <h3>Advances in Environmental Science & Sustainability</h3>
+            <div class="journal-meta">ISSN: 2738-1141<br>Latest Issue: Vol. 6 No. 1 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Climate, ecology, sustainability and environmental policy.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">COMPUTER SCIENCE & AI</div>
+          <div class="journal-card-body">
+            <span class="badge badge-apc">APC</span>
+            <h3>Journal of Artificial Intelligence & Computing</h3>
+            <div class="journal-meta">ISSN: 2789-4521<br>Latest Issue: Vol. 4 No. 1 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Machine learning, data science, and intelligent systems.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-card-header">SOCIAL SCIENCES</div>
+          <div class="journal-card-body">
+            <span class="badge badge-hybrid">HYBRID</span>
+            <h3>International Journal of Social Sciences & Humanities</h3>
+            <div class="journal-meta">ISSN: 2654-8823<br>Latest Issue: Vol. 5 No. 2 (2026)</div>
+            <p style="font-size:14px; color:#64748b; margin:12px 0;">Sociology, education, psychology and cultural studies.</p>
+            <a href="#" class="btn btn-primary" style="width:100%; margin-top:8px;">View Journal</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:white; margin-bottom:16px;">SCOPUSI<span style="color:#38bdf8;">X</span>TEEN</div>
+          <p style="font-size:14px; max-width:280px;">A modern academic publishing platform supporting APC, Subscription and Hybrid models.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div>
+          <h4>For Authors</h4>
+          <a href="submit.html">Submit Manuscript</a>
+          <a href="login.html">Author Login</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Contact</a>
+          <a href="#">Guidelines</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Scopusixteen Publishing. All rights reserved.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
