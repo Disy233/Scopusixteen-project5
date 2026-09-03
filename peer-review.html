@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Peer Review | Scopusixteen Publishing</title>
+
+<meta name="description"
+content="Peer review process and editorial workflow for Scopusixteen Publishing journals.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#123b63;
+    --dark:#082943;
+    --blue:#1677b8;
+    --light:#f5f8fb;
+    --text:#17212b;
+    --muted:#687785;
+    --border:#dce5ec;
+    --white:#ffffff;
+    --green:#16835b;
+    --shadow:0 7px 25px rgba(15,45,70,.07);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--dark);
+    color:#dbe9f3;
+    padding:9px 5%;
+    font-size:13px;
+}
+
+.topbar-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+}
+
+/* NAVIGATION */
+
+header{
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:76px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-mark{
+    width:43px;
+    height:43px;
+    border-radius:9px;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.logo-text strong{
+    display:block;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav-links a{
+    color:#304654;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.nav-btn{
+    background:var(--primary);
+    color:white!important;
+    padding:11px 16px;
+    border-radius:6px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(120deg,#082943,#145b8e);
+    color:white;
+    padding:52px 5%;
+}
+
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    font-size:13px;
+    color:#c9d9e6;
+    margin-bottom:17px;
+}
+
+.breadcrumb a{
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+    line-height:1.2;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:800px;
+    color:#dfeaf2;
+    font-size:16px;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:42px 5%;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 285px;
+    gap:28px;
+}
+
+.main{
+    min-width:0;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#fff8e5;
+    border:1px solid #efd28a;
+    color:#6d5615;
+    border-radius:8px;
+    padding:15px;
+    margin-bottom:22px;
+    font-size:13px;
+}
+
+/* CARDS */
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    box-shadow:var(--shadow);
+    padding:29px;
+    margin-bottom:22px;
+}
+
+.card h2{
+    color:var(--primary);
+    font-size:23px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    color:#1b405f;
+    font-size:17px;
+    margin:21px 0 8px;
+}
+
+.card p{
+    color:#536570;
+    font-size:15px;
+    margin-bottom:13px;
+}
+
+.card ul,
+.card ol{
+    margin:10px 0 15px 23px;
+    color:#536570;
+}
+
+.card li{
+    margin-bottom:8px;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    gap:0;
+    margin-top:20px;
+}
+
+.step{
+    display:grid;
+    grid-template-columns:54px 1fr;
+    gap:16px;
+    position:relative;
+    padding-bottom:24px;
+}
+
+.step:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:26px;
+    top:54px;
+    bottom:0;
+    width:2px;
+    background:#d5e3ec;
+}
+
+.step-number{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    position:relative;
+    z-index:2;
+}
+
+.step-content{
+    border:1px solid var(--border);
+    background:#fafcfe;
+    border-radius:8px;
+    padding:15px;
+}
+
+.step-content strong{
+    display:block;
+    color:#1c4561;
+    margin-bottom:4px;
+}
+
+.step-content span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* REVIEW TYPES */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:18px;
+}
+
+.review-box{
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:17px;
+    background:#fafcfe;
+}
+
+.review-box strong{
+    display:block;
+    color:#20445e;
+    margin-bottom:5px;
+}
+
+.review-box p{
+    font-size:13px;
+    margin:0;
+}
+
+/* DECISIONS */
+
+.decision{
+    border-left:4px solid var(--blue);
+    background:#f5f9fc;
+    padding:15px;
+    margin:12px 0;
+    border-radius:0 7px 7px 0;
+}
+
+.decision strong{
+    display:block;
+    color:#20445e;
+    margin-bottom:4px;
+}
+
+.decision span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* SIDEBAR */
+
+.sidebar-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:20px;
+    margin-bottom:19px;
+    box-shadow:var(--shadow);
+}
+
+.sidebar-card h3{
+    color:var(--primary);
+    font-size:17px;
+    margin-bottom:13px;
+}
+
+.side-links{
+    list-style:none;
+}
+
+.side-links li{
+    border-bottom:1px solid var(--border);
+}
+
+.side-links li:last-child{
+    border-bottom:0;
+}
+
+.side-links a{
+    display:block;
+    padding:10px 0;
+    color:#435967;
+    font-size:13px;
+}
+
+.side-links a:hover{
+    color:var(--blue);
+}
+
+.submit{
+    display:block;
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:12px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071f33;
+    color:#b9cbd8;
+    margin-top:20px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:42px 5%;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer-brand strong{
+    color:white;
+    font-size:20px;
+}
+
+.footer-brand p{
+    margin-top:10px;
+    font-size:13px;
+    max-width:400px;
+}
+
+.footer-column h4{
+    color:white;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.footer-column a{
+    display:block;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    padding:17px 5%;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px 5%;
+        border-bottom:1px solid var(--border);
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .top-links{
+        display:none;
+    }
+
+    .hero{
+        padding:38px 5%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .container{
+        padding:30px 4%;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .step{
+        grid-template-columns:45px 1fr;
+        gap:12px;
+    }
+
+    .step-number{
+        width:45px;
+        height:45px;
+    }
+
+    .step:not(:last-child)::after{
+        left:21px;
+        top:45px;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div>
+            Scopusixteen Publishing — Editorial Policies
+        </div>
+
+        <div class="top-links">
+
+            <a href="author-guidelines.html">
+                Author Guidelines
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-mark">
+            S16
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                Scopusixteen
+            </strong>
+
+            <span>
+                Academic Publishing
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+
+    <div
+        class="nav-links"
+        id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscriptions
+        </a>
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+        <a
+            href="submit-manuscript.html"
+            class="nav-btn">
+
+            Submit Manuscript
+
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        /
+
+        Peer Review
+
+    </div>
+
+
+    <h1>
+        Peer Review Process
+    </h1>
+
+
+    <p>
+
+        Our editorial workflow is designed to support
+        rigorous, fair and transparent evaluation of
+        scholarly manuscripts.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+<div class="layout">
+
+
+<div class="main">
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Policy notice:</strong>
+
+        The workflow described on this page represents
+        the intended Scopusixteen Publishing editorial
+        framework. Individual journals may adapt the
+        process according to their discipline and
+        specific editorial policy.
+
+    </div>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="card">
+
+        <h2>
+            Overview
+        </h2>
+
+        <p>
+
+            Manuscripts submitted to a Scopusixteen
+            journal may undergo editorial assessment
+            and peer review before a publication decision
+            is reached.
+
+        </p>
+
+        <p>
+
+            Peer review helps editors and authors assess
+            the quality, originality, relevance,
+            methodological soundness and scholarly
+            contribution of submitted research.
+
+        </p>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section class="card">
+
+        <h2>
+            Editorial Workflow
+        </h2>
+
+        <div class="process">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Manuscript Submission
+                    </strong>
+
+                    <span>
+
+                        The corresponding author submits
+                        the manuscript and required
+                        information through the submission
+                        system.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Initial Editorial Screening
+                    </strong>
+
+                    <span>
+
+                        The editorial team checks the
+                        manuscript for basic suitability,
+                        completeness, scope and compliance
+                        with submission requirements.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Reviewer Selection
+                    </strong>
+
+                    <span>
+
+                        Where peer review is required,
+                        appropriate reviewers may be
+                        invited based on subject expertise
+                        and potential conflicts of interest.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Peer Review
+                    </strong>
+
+                    <span>
+
+                        Reviewers evaluate the manuscript
+                        according to the journal's criteria
+                        and provide comments and
+                        recommendations.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    5
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Editorial Decision
+                    </strong>
+
+                    <span>
+
+                        The editor considers the reviewers'
+                        reports together with the manuscript
+                        and makes an appropriate editorial
+                        decision.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    6
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Revision
+                    </strong>
+
+                    <span>
+
+                        Where revisions are requested,
+                        authors may submit a revised
+                        manuscript and response to reviewers.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    7
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Final Decision
+                    </strong>
+
+                    <span>
+
+                        The editor issues the final
+                        decision after considering the
+                        available evidence and any required
+                        revisions.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    8
+                </div>
+
+                <div class="step-content">
+
+                    <strong>
+                        Production and Publication
+                    </strong>
+
+                    <span>
+
+                        Accepted manuscripts may proceed
+                        to copyediting, typesetting,
+                        metadata preparation and publication
+                        according to the journal's workflow.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEW TYPES -->
+
+    <section class="card">
+
+        <h2>
+            Peer Review Models
+        </h2>
+
+        <p>
+
+            Journals may use different review models.
+            The applicable model should be clearly stated
+            by each journal.
+
+        </p>
+
+
+        <div class="review-grid">
+
+
+            <div class="review-box">
+
+                <strong>
+                    Single-Blind Review
+                </strong>
+
+                <p>
+
+                    Reviewer identities are concealed
+                    from authors while reviewer comments
+                    may be shared with authors.
+
+                </p>
+
+            </div>
+
+
+            <div class="review-box">
+
+                <strong>
+                    Double-Blind Review
+                </strong>
+
+                <p>
+
+                    Reviewer and author identities are
+                    concealed from each other where
+                    practical.
+
+                </p>
+
+            </div>
+
+
+            <div class="review-box">
+
+                <strong>
+                    Open Review
+                </strong>
+
+                <p>
+
+                    Reviewer and author identities may
+                    be disclosed according to the journal's
+                    policy.
+
+                </p>
+
+            </div>
+
+
+            <div class="review-box">
+
+                <strong>
+                    Editorial Review
+                </strong>
+
+                <p>
+
+                    Certain article types may be assessed
+                    primarily through editorial review
+                    where the journal permits it.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEW CRITERIA -->
+
+    <section class="card">
+
+        <h2>
+            What Reviewers May Consider
+        </h2>
+
+        <ul>
+
+            <li>
+                Relevance to the journal's aims and scope
+            </li>
+
+            <li>
+                Originality and contribution to knowledge
+            </li>
+
+            <li>
+                Research question or objectives
+            </li>
+
+            <li>
+                Methodological quality
+            </li>
+
+            <li>
+                Accuracy and clarity of analysis
+            </li>
+
+            <li>
+                Presentation of results
+            </li>
+
+            <li>
+                Quality of discussion and conclusions
+            </li>
+
+            <li>
+                Appropriate use of references
+            </li>
+
+            <li>
+                Ethical considerations
+            </li>
+
+            <li>
+                Overall clarity and scholarly quality
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- DECISIONS -->
+
+    <section class="card">
+
+        <h2>
+            Possible Editorial Decisions
+        </h2>
+
+
+        <div class="decision">
+
+            <strong>
+                Accept
+            </strong>
+
+            <span>
+                The manuscript is suitable for publication
+                subject to any final production requirements.
+            </span>
+
+        </div>
+
+
+        <div class="decision">
+
+            <strong>
+                Minor Revision
+            </strong>
+
+            <span>
+                Limited changes are required before a final
+                decision can be made.
+            </span>
+
+        </div>
+
+
+        <div class="decision">
+
+            <strong>
+                Major Revision
+            </strong>
+
+            <span>
+                Substantial changes are required and the
+                revised manuscript may undergo additional
+                review.
+            </span>
+
+        </div>
+
+
+        <div class="decision">
+
+            <strong>
+                Reject and Resubmit
+            </strong>
+
+            <span>
+                The current submission is not suitable for
+                acceptance, but a substantially revised
+                manuscript may be considered where the
+                journal permits.
+            </span>
+
+        </div>
+
+
+        <div class="decision">
+
+            <strong>
+                Reject
+            </strong>
+
+            <span>
+                The manuscript is not suitable for
+                publication in the journal.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHORS -->
+
+    <section class="card">
+
+        <h2>
+            Responsibilities of Authors
+        </h2>
+
+        <ul>
+
+            <li>
+                Submit original work.
+            </li>
+
+            <li>
+                Provide accurate information.
+            </li>
+
+            <li>
+                Respond appropriately to reviewer
+                comments.
+            </li>
+
+            <li>
+                Identify changes made in a revised
+                manuscript where requested.
+            </li>
+
+            <li>
+                Disclose relevant conflicts of interest.
+            </li>
+
+            <li>
+                Correct significant errors discovered
+                after submission or publication.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- REVIEWERS -->
+
+    <section class="card">
+
+        <h2>
+            Responsibilities of Reviewers
+        </h2>
+
+        <ul>
+
+            <li>
+                Evaluate manuscripts objectively.
+            </li>
+
+            <li>
+                Maintain confidentiality.
+            </li>
+
+            <li>
+                Identify potential conflicts of interest.
+            </li>
+
+            <li>
+                Provide constructive and evidence-based
+                feedback.
+            </li>
+
+            <li>
+                Avoid inappropriate personal criticism.
+            </li>
+
+            <li>
+                Alert editors to serious concerns about
+                originality or research integrity.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- CONFIDENTIALITY -->
+
+    <section class="card">
+
+        <h2>
+            Confidentiality
+        </h2>
+
+        <p>
+
+            Manuscripts submitted for peer review should
+            be treated as confidential. Reviewers should
+            not share manuscript content or use unpublished
+            information for personal advantage.
+
+        </p>
+
+        <p>
+
+            Editorial and review communications should
+            be handled through the authorised publishing
+            workflow.
+
+        </p>
+
+    </section>
+
+
+    <!-- APPEALS -->
+
+    <section class="card">
+
+        <h2>
+            Appeals and Complaints
+        </h2>
+
+        <p>
+
+            Authors who believe that an editorial decision
+            involved a significant procedural error may
+            contact the relevant editorial office with
+            a clear explanation and supporting information.
+
+        </p>
+
+        <p>
+
+            An appeal does not automatically result in
+            reversal of an editorial decision.
+
+        </p>
+
+    </section>
+
+
+    <!-- SUBMISSION -->
+
+    <section class="card">
+
+        <h2>
+            Submit a Manuscript
+        </h2>
+
+        <p>
+
+            Authors who are ready to submit should first
+            review the relevant journal's aims, scope and
+            author requirements.
+
+        </p>
+
+        <a
+            href="submit-manuscript.html"
+            class="submit"
+            style="display:inline-block;padding:12px 20px;">
+
+            Submit Manuscript
+
+        </a>
+
+    </section>
+
+
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Editorial Policies
+        </h3>
+
+        <ul class="side-links">
+
+            <li>
+                <a href="peer-review.html">
+                    Peer Review
+                </a>
+            </li>
+
+            <li>
+                <a href="publication-ethics.html">
+                    Publication Ethics
+                </a>
+            </li>
+
+            <li>
+                <a href="author-guidelines.html">
+                    Author Guidelines
+                </a>
+            </li>
+
+            <li>
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            For Authors
+        </h3>
+
+        <ul class="side-links">
+
+            <li>
+                <a href="journals.html">
+                    Find a Journal
+                </a>
+            </li>
+
+            <li>
+                <a href="submit-manuscript.html">
+                    Submit Manuscript
+                </a>
+            </li>
+
+            <li>
+                <a href="author-dashboard.html">
+                    Author Portal
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Important
+        </h3>
+
+        <p style="font-size:13px;color:#687785;">
+
+            Peer review does not guarantee acceptance.
+            Final editorial decisions depend on the
+            journal's applicable policies and assessment
+            of each manuscript.
+
+        </p>
+
+    </div>
+
+</aside>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+        <strong>
+            Scopusixteen Publishing
+        </strong>
+
+        <p>
+
+            A professional academic publishing platform
+            supporting researchers, authors, editors and
+            scholarly communication.
+
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Publishing
+        </h4>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="submit-manuscript.html">
+            Submit Manuscript
+        </a>
+
+        <a href="author-guidelines.html">
+            Author Guidelines
+        </a>
+
+        <a href="peer-review.html">
+            Peer Review
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Policies
+        </h4>
+
+        <a href="publication-ethics.html">
+            Publication Ethics
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="apc.html">
+            APC Information
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Platform
+        </h4>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="subscription.html">
+            Subscriptions
+        </a>
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Scopusixteen Publishing.
+    All rights reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+}
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link){
+
+        link.addEventListener("click",function(){
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
