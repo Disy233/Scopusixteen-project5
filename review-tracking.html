@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Review Tracking | Scopusixteen Publishing</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#18243a;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    height:68px;
+    background:#071b3a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#4ea1ff;
+}
+
+.top-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    font-size:14px;
+}
+
+.top-links a{
+    color:#dce8f7;
+}
+
+.top-links a:hover{
+    color:#fff;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* LAYOUT */
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 68px);
+}
+
+.sidebar{
+    width:255px;
+    background:#fff;
+    border-right:1px solid #e1e8f0;
+    padding:22px 14px;
+    flex-shrink:0;
+}
+
+.sidebar-title{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#8491a5;
+    font-weight:700;
+    padding:8px 12px;
+    margin-bottom:7px;
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 12px;
+    border-radius:8px;
+    font-size:14px;
+    color:#4a5870;
+    margin-bottom:3px;
+}
+
+.sidebar a:hover{
+    background:#eef5ff;
+    color:#1677ff;
+}
+
+.sidebar a.active{
+    background:#eaf3ff;
+    color:#1677ff;
+    font-weight:700;
+}
+
+.main{
+    flex:1;
+    padding:30px;
+    min-width:0;
+}
+
+/* HEADER */
+
+.page-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.page-heading h1{
+    font-size:28px;
+    color:#071b3a;
+    margin-bottom:7px;
+}
+
+.page-heading p{
+    color:#69778d;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.primary-btn{
+    background:#1677ff;
+    color:#fff;
+    border:0;
+    border-radius:8px;
+    padding:11px 17px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.primary-btn:hover{
+    background:#0d64dc;
+}
+
+.secondary-btn{
+    background:#fff;
+    color:#1677ff;
+    border:1px solid #cbd8e8;
+    border-radius:8px;
+    padding:10px 15px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.secondary-btn:hover{
+    background:#f5f9ff;
+}
+
+/* PROTOTYPE NOTICE */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f0d48a;
+    color:#735719;
+    border-radius:10px;
+    padding:14px 17px;
+    margin-bottom:24px;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* STAT CARDS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:#fff;
+    border:1px solid #e3eaf2;
+    border-radius:11px;
+    padding:19px;
+    box-shadow:0 2px 8px rgba(23,43,77,.04);
+}
+
+.stat-label{
+    color:#748197;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.stat-number{
+    font-size:28px;
+    font-weight:800;
+    color:#071b3a;
+}
+
+.stat-small{
+    margin-top:6px;
+    color:#8a96a8;
+    font-size:12px;
+}
+
+/* PANELS */
+
+.panel{
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:11px;
+    margin-bottom:24px;
+    box-shadow:0 2px 8px rgba(23,43,77,.035);
+}
+
+.panel-header{
+    padding:18px 20px;
+    border-bottom:1px solid #e6ebf2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.panel-header h2{
+    color:#071b3a;
+    font-size:17px;
+}
+
+.panel-header p{
+    color:#8491a5;
+    font-size:12px;
+    margin-top:4px;
+}
+
+.panel-body{
+    padding:20px;
+}
+
+/* FILTERS */
+
+.filters{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr auto;
+    gap:10px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid #d5deea;
+    border-radius:8px;
+    padding:11px 12px;
+    outline:none;
+    background:#fff;
+    color:#25344b;
+    font-size:13px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:#1677ff;
+}
+
+/* TABLE */
+
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:950px;
+}
+
+th{
+    text-align:left;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    color:#7d899b;
+    background:#f8fafc;
+    padding:12px 14px;
+    border-bottom:1px solid #e5ebf2;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #edf1f5;
+    font-size:13px;
+    vertical-align:middle;
+}
+
+tr:last-child td{
+    border-bottom:0;
+}
+
+.manuscript-title{
+    font-weight:700;
+    color:#1a2940;
+    margin-bottom:4px;
+}
+
+.subtext{
+    font-size:11px;
+    color:#8793a5;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.status.invited{
+    background:#fff4d8;
+    color:#946b00;
+}
+
+.status.accepted{
+    background:#e9f4ff;
+    color:#1677ff;
+}
+
+.status.progress{
+    background:#efeaff;
+    color:#6348c7;
+}
+
+.status.submitted{
+    background:#e6f7ed;
+    color:#18824b;
+}
+
+.status.overdue{
+    background:#ffe9e9;
+    color:#bd3030;
+}
+
+.status.editorial{
+    background:#e8f2ff;
+    color:#155ca8;
+}
+
+.status.completed{
+    background:#e6f7ed;
+    color:#18824b;
+}
+
+.progress-box{
+    min-width:120px;
+}
+
+.progress-bar{
+    width:100%;
+    height:7px;
+    background:#edf1f5;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:5px;
+}
+
+.progress-fill{
+    height:100%;
+    background:#1677ff;
+    border-radius:10px;
+}
+
+.progress-text{
+    font-size:10px;
+    color:#7d899b;
+}
+
+.deadline{
+    font-size:12px;
+}
+
+.deadline.overdue-text{
+    color:#c52f2f;
+    font-weight:700;
+}
+
+.action-btn{
+    border:1px solid #d7e0eb;
+    background:#fff;
+    color:#31506f;
+    border-radius:7px;
+    padding:7px 9px;
+    font-size:11px;
+    cursor:pointer;
+    margin:2px;
+}
+
+.action-btn:hover{
+    background:#f2f7fd;
+}
+
+.action-btn.blue{
+    border-color:#c9ddfa;
+    color:#1677ff;
+}
+
+/* PIPELINE */
+
+.pipeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.pipeline-step{
+    position:relative;
+    background:#f8fafc;
+    border:1px solid #e3e9f1;
+    border-radius:10px;
+    padding:18px 13px;
+    text-align:center;
+}
+
+.pipeline-step strong{
+    display:block;
+    font-size:23px;
+    color:#071b3a;
+    margin-bottom:6px;
+}
+
+.pipeline-step span{
+    font-size:11px;
+    color:#778499;
+}
+
+.pipeline-step.active{
+    background:#eef6ff;
+    border-color:#bcd8fb;
+}
+
+.pipeline-step.active strong{
+    color:#1677ff;
+}
+
+/* TWO COLUMNS */
+
+.two-columns{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:24px;
+}
+
+/* ALERTS */
+
+.alert-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.alert{
+    border:1px solid #e5ebf2;
+    border-radius:9px;
+    padding:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.alert-title{
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.alert-text{
+    font-size:11px;
+    color:#7b8798;
+    line-height:1.5;
+}
+
+.alert.overdue{
+    border-left:4px solid #d83b3b;
+}
+
+.alert.warning{
+    border-left:4px solid #e2a900;
+}
+
+.alert.success{
+    border-left:4px solid #27a15c;
+}
+
+/* ACTIVITY */
+
+.activity{
+    display:flex;
+    flex-direction:column;
+}
+
+.activity-item{
+    display:flex;
+    gap:12px;
+    padding:13px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.activity-item:last-child{
+    border-bottom:0;
+}
+
+.activity-dot{
+    width:9px;
+    height:9px;
+    background:#1677ff;
+    border-radius:50%;
+    margin-top:5px;
+    flex-shrink:0;
+}
+
+.activity-title{
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.activity-time{
+    color:#8b96a7;
+    font-size:10px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(4,15,34,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    background:#fff;
+    width:100%;
+    max-width:760px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:13px;
+    box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+.modal-header{
+    padding:19px 22px;
+    border-bottom:1px solid #e4eaf1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-header h3{
+    color:#071b3a;
+    font-size:18px;
+}
+
+.close{
+    border:0;
+    background:none;
+    font-size:25px;
+    color:#8290a3;
+    cursor:pointer;
+}
+
+.modal-body{
+    padding:22px;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.detail{
+    background:#f8fafc;
+    border-radius:8px;
+    padding:12px;
+}
+
+.detail-label{
+    color:#8491a5;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    margin-bottom:5px;
+}
+
+.detail-value{
+    color:#1d2d44;
+    font-size:13px;
+    font-weight:700;
+}
+
+.report-box{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:9px;
+    padding:15px;
+    margin-top:15px;
+}
+
+.report-box h4{
+    font-size:13px;
+    margin-bottom:8px;
+    color:#071b3a;
+}
+
+.report-box p{
+    font-size:12px;
+    line-height:1.7;
+    color:#59687c;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#071b3a;
+    color:#fff;
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:13px;
+    display:none;
+    z-index:3000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071b3a;
+    color:#bdc9da;
+    padding:25px 30px;
+    margin-top:25px;
+    font-size:12px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer a{
+    color:#d8e5f5;
+    margin-right:15px;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1150px){
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .two-columns{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:850px){
+    .top-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-280px;
+        top:68px;
+        bottom:0;
+        z-index:1500;
+        transition:.25s;
+        overflow-y:auto;
+        box-shadow:5px 0 20px rgba(0,0,0,.12);
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .main{
+        padding:22px 16px;
+    }
+
+    .page-heading{
+        flex-direction:column;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .pipeline{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+    .topbar{
+        padding:0 16px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pipeline{
+        grid-template-columns:1fr;
+    }
+
+    .panel-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    footer{
+        padding:22px 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <nav class="top-links">
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+        <a href="administration.html">Administration</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+</header>
+
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">Review Management</div>
+
+    <a href="editorial-dashboard.html">
+        📊 Editorial Dashboard
+    </a>
+
+    <a href="reviewer-management.html">
+        👥 Reviewer Management
+    </a>
+
+    <a href="reviewer-assignment.html">
+        🔗 Reviewer Assignment
+    </a>
+
+    <a href="review-tracking.html" class="active">
+        📋 Review Tracking
+    </a>
+
+    <a href="reviewer-portal.html">
+        📝 Reviewer Portal
+    </a>
+
+    <a href="reviewer-profile.html">
+        👤 Reviewer Profiles
+    </a>
+
+    <div class="sidebar-title">Policies</div>
+
+    <a href="peer-review.html">
+        ⚖️ Peer Review Policy
+    </a>
+
+    <a href="reviewer-guidelines.html">
+        📘 Reviewer Guidelines
+    </a>
+
+    <a href="publication-ethics.html">
+        🛡 Publication Ethics
+    </a>
+
+    <a href="author-guidelines.html">
+        📄 Author Guidelines
+    </a>
+
+    <div class="sidebar-title">Publishing</div>
+
+    <a href="production-dashboard.html">
+        ⚙️ Production
+    </a>
+
+    <a href="publisher-settings.html">
+        🏢 Publisher Settings
+    </a>
+
+    <a href="ai-assistant.html">
+        ✨ AI Assistant
+    </a>
+
+    <div class="sidebar-title">Platform</div>
+
+    <a href="administration.html">
+        🔐 Administration
+    </a>
+
+    <a href="contact.html">
+        💬 Support
+    </a>
+
+    <a href="index.html">
+        🌐 View Website
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <section class="page-heading">
+
+        <div>
+            <h1>Review Tracking</h1>
+
+            <p>
+                Monitor peer-review invitations, deadlines, reviewer progress,
+                submitted reports and editorial follow-up.
+            </p>
+        </div>
+
+        <button class="primary-btn" onclick="sendReminder()">
+            + Send Reminder
+        </button>
+
+    </section>
+
+
+    <div class="notice">
+        <strong>Prototype notice:</strong>
+        This Review Tracking dashboard is a frontend demonstration.
+        Reviewer statuses, deadlines, reports, reminders and activity records
+        are demo data and are not connected to a live editorial or reviewer
+        database.
+    </div>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="stat-label">INVITATIONS SENT</div>
+            <div class="stat-number">30</div>
+            <div class="stat-small">Current review cycle</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">ACCEPTED</div>
+            <div class="stat-number">21</div>
+            <div class="stat-small">Reviewer invitations accepted</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">IN PROGRESS</div>
+            <div class="stat-number">12</div>
+            <div class="stat-small">Reviews currently active</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">SUBMITTED</div>
+            <div class="stat-number">46</div>
+            <div class="stat-small">Reports received</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">OVERDUE</div>
+            <div class="stat-number">4</div>
+            <div class="stat-small">Requires follow-up</div>
+        </div>
+
+    </section>
+
+
+    <!-- PIPELINE -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Review Pipeline</h2>
+                <p>Overview of the current peer-review workflow.</p>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <strong>9</strong>
+                    <span>Invitation Pending</span>
+                </div>
+
+                <div class="pipeline-step active">
+                    <strong>21</strong>
+                    <span>Accepted</span>
+                </div>
+
+                <div class="pipeline-step active">
+                    <strong>12</strong>
+                    <span>In Progress</span>
+                </div>
+
+                <div class="pipeline-step active">
+                    <strong>46</strong>
+                    <span>Submitted</span>
+                </div>
+
+                <div class="pipeline-step">
+                    <strong>18</strong>
+                    <span>Editorial Review</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FILTER -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Review Records</h2>
+                <p>Search and monitor individual reviewer assignments.</p>
+            </div>
+
+            <button class="secondary-btn" onclick="resetFilters()">
+                Reset
+            </button>
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="filters">
+
+                <div class="field">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search manuscript, reviewer or ID..."
+                        onkeyup="filterTable()"
+                    >
+                </div>
+
+                <div class="field">
+                    <select id="statusFilter" onchange="filterTable()">
+                        <option value="">All Statuses</option>
+                        <option value="Invitation Pending">Invitation Pending</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Submitted">Submitted</option>
+                        <option value="Overdue">Overdue</option>
+                        <option value="Editorial Review">Editorial Review</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <select id="journalFilter" onchange="filterTable()">
+                        <option value="">All Journals</option>
+                        <option value="Journal of Digital Education">
+                            Journal of Digital Education
+                        </option>
+                        <option value="Global Management Review">
+                            Global Management Review
+                        </option>
+                        <option value="Environmental Studies Journal">
+                            Environmental Studies Journal
+                        </option>
+                        <option value="International Review of Higher Education">
+                            International Review of Higher Education
+                        </option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <select id="deadlineFilter" onchange="filterTable()">
+                        <option value="">All Deadlines</option>
+                        <option value="Due Soon">Due Soon</option>
+                        <option value="Overdue">Overdue</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" onclick="filterTable()">
+                    Filter
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEW TABLE -->
+
+    <section class="panel">
+
+        <div class="panel-body">
+
+            <div class="table-wrap">
+
+                <table id="reviewTable">
+
+                    <thead>
+                        <tr>
+                            <th>Manuscript</th>
+                            <th>Reviewer</th>
+                            <th>Journal</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Deadline</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr
+                            data-search="artificial intelligence digital learning david reviewer ms-2026-00124"
+                            data-status="In Progress"
+                            data-journal="Journal of Digital Education"
+                            data-deadline="Due Soon"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Artificial Intelligence and Digital Learning
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00124
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Dr. David Reviewer</strong>
+                                <div class="subtext">
+                                    Example University
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Journal of Digital Education
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status progress">
+                                    In Progress
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:65%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        65% estimated
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline">
+                                    10 Sep 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Artificial Intelligence and Digital Learning','Dr. David Reviewer','MS-2026-00124','In Progress','65%','10 Sep 2026')"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="sendReviewerReminder('Dr. David Reviewer')"
+                                >
+                                    Remind
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-search="strategic leadership digital organisations anita sharma ms-2026-00119"
+                            data-status="Submitted"
+                            data-journal="Global Management Review"
+                            data-deadline="Completed"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Strategic Leadership in Digital Organisations
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00119
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Dr. Anita Sharma</strong>
+                                <div class="subtext">
+                                    Example University of Education
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Global Management Review
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status submitted">
+                                    Submitted
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:100%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        Report received
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline">
+                                    Submitted 03 Sep 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Strategic Leadership in Digital Organisations','Dr. Anita Sharma','MS-2026-00119','Submitted','100%','03 Sep 2026')"
+                                >
+                                    View Report
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-search="sustainable waste management michael okoro ms-2026-00108"
+                            data-status="Overdue"
+                            data-journal="Environmental Studies Journal"
+                            data-deadline="Overdue"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Sustainable Waste Management Practices
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00108
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Dr. Michael Okoro</strong>
+                                <div class="subtext">
+                                    Example Technology University
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Environmental Studies Journal
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status overdue">
+                                    Overdue
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:42%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        42% estimated
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline overdue-text">
+                                    Due 01 Sep 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Sustainable Waste Management Practices','Dr. Michael Okoro','MS-2026-00108','Overdue','42%','01 Sep 2026')"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="sendReviewerReminder('Dr. Michael Okoro')"
+                                >
+                                    Remind
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-search="digital transformation higher education sarah mensah ms-2026-00094"
+                            data-status="Editorial Review"
+                            data-journal="International Review of Higher Education"
+                            data-deadline="Completed"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Digital Transformation in Higher Education
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00094
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Prof. Sarah Mensah</strong>
+                                <div class="subtext">
+                                    Example Institute of Management
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    International Review of Higher Education
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status editorial">
+                                    Editorial Review
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:100%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        Report received
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline">
+                                    Submitted 31 Aug 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Digital Transformation in Higher Education','Prof. Sarah Mensah','MS-2026-00094','Editorial Review','100%','31 Aug 2026')"
+                                >
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-search="data analytics academic decision making david reviewer ms-2026-00081"
+                            data-status="Accepted"
+                            data-journal="Journal of Digital Education"
+                            data-deadline="Due Soon"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Data Analytics for Academic Decision Making
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00081
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Dr. David Reviewer</strong>
+                                <div class="subtext">
+                                    Example University
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Journal of Digital Education
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status accepted">
+                                    Accepted
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:15%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        Review not started
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline">
+                                    12 Sep 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Data Analytics for Academic Decision Making','Dr. David Reviewer','MS-2026-00081','Accepted','15%','12 Sep 2026')"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="sendReviewerReminder('Dr. David Reviewer')"
+                                >
+                                    Remind
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-search="organisational resilience technology michael okoro ms-2026-00061"
+                            data-status="Completed"
+                            data-journal="Global Management Review"
+                            data-deadline="Completed"
+                        >
+
+                            <td>
+                                <div class="manuscript-title">
+                                    Organisational Resilience and Technology
+                                </div>
+                                <div class="subtext">
+                                    MS-2026-00061
+                                </div>
+                            </td>
+
+                            <td>
+                                <strong>Dr. Michael Okoro</strong>
+                                <div class="subtext">
+                                    Example Technology University
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Global Management Review
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status completed">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="progress-box">
+
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-fill"
+                                            style="width:100%"
+                                        ></div>
+                                    </div>
+
+                                    <div class="progress-text">
+                                        Completed
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="deadline">
+                                    Submitted 27 Aug 2026
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="viewReview('Organisational Resilience and Technology','Dr. Michael Okoro','MS-2026-00061','Completed','100%','27 Aug 2026')"
+                                >
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TWO COLUMNS -->
+
+    <div class="two-columns">
+
+
+        <!-- ALERTS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Review Alerts</h2>
+                    <p>Items requiring editorial attention.</p>
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="alert-list">
+
+                    <div class="alert overdue">
+
+                        <div>
+                            <div class="alert-title">
+                                Overdue Review
+                            </div>
+
+                            <div class="alert-text">
+                                Dr. Michael Okoro — Sustainable Waste Management Practices
+                                is past the review deadline.
+                            </div>
+                        </div>
+
+                        <button
+                            class="action-btn"
+                            onclick="sendReviewerReminder('Dr. Michael Okoro')"
+                        >
+                            Remind
+                        </button>
+
+                    </div>
+
+
+                    <div class="alert warning">
+
+                        <div>
+                            <div class="alert-title">
+                                Deadline Approaching
+                            </div>
+
+                            <div class="alert-text">
+                                Dr. David Reviewer has a review due on
+                                10 September 2026.
+                            </div>
+                        </div>
+
+                        <button
+                            class="action-btn"
+                            onclick="sendReviewerReminder('Dr. David Reviewer')"
+                        >
+                            Remind
+                        </button>
+
+                    </div>
+
+
+                    <div class="alert success">
+
+                        <div>
+                            <div class="alert-title">
+                                Report Received
+                            </div>
+
+                            <div class="alert-text">
+                                A completed review has been received for
+                                Strategic Leadership in Digital Organisations.
+                            </div>
+                        </div>
+
+                        <button
+                            class="action-btn blue"
+                            onclick="viewReview('Strategic Leadership in Digital Organisations','Dr. Anita Sharma','MS-2026-00119','Submitted','100%','03 Sep 2026')"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Review Activity</h2>
+                    <p>Recent review-management events.</p>
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="activity">
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot"></div>
+
+                        <div>
+                            <div class="activity-title">
+                                Review submitted
+                            </div>
+
+                            <div class="activity-time">
+                                Dr. Anita Sharma · 03 Sep 2026
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot"></div>
+
+                        <div>
+                            <div class="activity-title">
+                                Reminder prepared
+                            </div>
+
+                            <div class="activity-time">
+                                MS-2026-00124 · 03 Sep 2026
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot"></div>
+
+                        <div>
+                            <div class="activity-title">
+                                Review marked overdue
+                            </div>
+
+                            <div class="activity-time">
+                                MS-2026-00108 · 02 Sep 2026
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot"></div>
+
+                        <div>
+                            <div class="activity-title">
+                                Reviewer accepted invitation
+                            </div>
+
+                            <div class="activity-time">
+                                MS-2026-00081 · 01 Sep 2026
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-dot"></div>
+
+                        <div>
+                            <div class="activity-title">
+                                Reviewer assignment created
+                            </div>
+
+                            <div class="activity-time">
+                                MS-2026-00124 · 31 Aug 2026
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- WORKFLOW -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Review Follow-Up Workflow</h2>
+                <p>Suggested editorial monitoring process.</p>
+            </div>
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <strong>01</strong>
+                    <span>Invitation Sent</span>
+                </div>
+
+                <div class="pipeline-step">
+                    <strong>02</strong>
+                    <span>Invitation Accepted</span>
+                </div>
+
+                <div class="pipeline-step">
+                    <strong>03</strong>
+                    <span>Review in Progress</span>
+                </div>
+
+                <div class="pipeline-step">
+                    <strong>04</strong>
+                    <span>Report Submitted</span>
+                </div>
+
+                <div class="pipeline-step">
+                    <strong>05</strong>
+                    <span>Editorial Follow-Up</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Scopusixteen Publishing · Prototype Platform
+        </div>
+
+        <div>
+            <a href="peer-review.html">Peer Review</a>
+            <a href="publication-ethics.html">Publication Ethics</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- REVIEW MODAL -->
+
+<div class="modal" id="reviewModal">
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>Review Record</h3>
+
+            <button class="close" onclick="closeModal()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="detail-grid">
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Manuscript
+                    </div>
+
+                    <div class="detail-value" id="modalManuscript">
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Manuscript ID
+                    </div>
+
+                    <div class="detail-value" id="modalId">
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Reviewer
+                    </div>
+
+                    <div class="detail-value" id="modalReviewer">
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Status
+                    </div>
+
+                    <div class="detail-value" id="modalStatus">
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Review Progress
+                    </div>
+
+                    <div class="detail-value" id="modalProgress">
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <div class="detail-label">
+                        Deadline / Date
+                    </div>
+
+                    <div class="detail-value" id="modalDeadline">
+                        —
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-box">
+
+                <h4>Reviewer Report</h4>
+
+                <p id="reportText">
+                    The reviewer report is displayed here as demonstration
+                    content. In a live system, confidential reviewer reports
+                    would be securely retrieved from the editorial database.
+                </p>
+
+            </div>
+
+
+            <div class="report-box">
+
+                <h4>Confidential Editorial Note</h4>
+
+                <p>
+                    This section is intended for confidential communication
+                    between reviewers and editors. It should not be exposed
+                    to authors unless the applicable editorial policy permits it.
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal()"
+                >
+                    Close
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="markSubmitted()"
+                >
+                    Mark as Submitted
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    Action completed in demo mode.
+</div>
+
+
+<script>
+
+/* SIDEBAR */
+
+function toggleSidebar(){
+
+    document
+        .getElementById("sidebar")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* REVIEW MODAL */
+
+let currentReview = {};
+
+function viewReview(
+    manuscript,
+    reviewer,
+    id,
+    status,
+    progress,
+    deadline
+){
+
+    currentReview = {
+        manuscript,
+        reviewer,
+        id,
+        status,
+        progress,
+        deadline
+    };
+
+    document.getElementById("modalManuscript").textContent = manuscript;
+
+    document.getElementById("modalReviewer").textContent = reviewer;
+
+    document.getElementById("modalId").textContent = id;
+
+    document.getElementById("modalStatus").textContent = status;
+
+    document.getElementById("modalProgress").textContent = progress;
+
+    document.getElementById("modalDeadline").textContent = deadline;
+
+
+    const reportText =
+        status === "Submitted" ||
+        status === "Editorial Review" ||
+        status === "Completed"
+
+        ?
+
+        "Demonstration reviewer report: The manuscript addresses a relevant research problem and provides a structured discussion of the subject. The reviewer recommends editorial consideration following evaluation of the methodology, evidence, clarity and contribution."
+
+        :
+
+        "The reviewer report has not yet been submitted. This area will display the report when a reviewer completes the review in a connected editorial system.";
+
+
+    document.getElementById("reportText").textContent = reportText;
+
+
+    document
+        .getElementById("reviewModal")
+        .classList
+        .add("show");
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("reviewModal")
+        .classList
+        .remove("show");
+
+}
+
+
+/* MARK SUBMITTED */
+
+function markSubmitted(){
+
+    if(!currentReview.id){
+
+        showToast("No review selected.");
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "scopusixteenReviewUpdate",
+        JSON.stringify({
+            manuscriptId:currentReview.id,
+            reviewer:currentReview.reviewer,
+            status:"Submitted",
+            updatedAt:new Date().toISOString()
+        })
+    );
+
+
+    closeModal();
+
+    showToast(
+        currentReview.id +
+        " marked as submitted in demo mode."
+    );
+
+}
+
+
+/* REMINDER */
+
+function sendReviewerReminder(reviewer){
+
+    localStorage.setItem(
+        "scopusixteenReviewReminder",
+        JSON.stringify({
+            reviewer:reviewer,
+            sentAt:new Date().toISOString()
+        })
+    );
+
+
+    showToast(
+        "Demo reminder prepared for " +
+        reviewer
+    );
+
+}
+
+
+function sendReminder(){
+
+    localStorage.setItem(
+        "scopusixteenGeneralReminder",
+        new Date().toISOString()
+    );
+
+
+    showToast(
+        "Demo review reminder prepared."
+    );
+
+}
+
+
+/* FILTER */
+
+function filterTable(){
+
+    const search =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const status =
+        document
+            .getElementById("statusFilter")
+            .value;
+
+    const journal =
+        document
+            .getElementById("journalFilter")
+            .value;
+
+    const deadline =
+        document
+            .getElementById("deadlineFilter")
+            .value;
+
+
+    const rows =
+        document.querySelectorAll(
+            "#reviewTable tbody tr"
+        );
+
+
+    rows.forEach(function(row){
+
+        const rowSearch =
+            row.dataset.search.toLowerCase();
+
+        const rowStatus =
+            row.dataset.status;
+
+        const rowJournal =
+            row.dataset.journal;
+
+        const rowDeadline =
+            row.dataset.deadline;
+
+
+        const matchesSearch =
+            !search ||
+            rowSearch.includes(search);
+
+        const matchesStatus =
+            !status ||
+            rowStatus === status;
+
+        const matchesJournal =
+            !journal ||
+            rowJournal === journal;
+
+        const matchesDeadline =
+            !deadline ||
+            rowDeadline === deadline;
+
+
+        if(
+            matchesSearch &&
+            matchesStatus &&
+            matchesJournal &&
+            matchesDeadline
+        ){
+
+            row.style.display = "";
+
+        }else{
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* RESET FILTERS */
+
+function resetFilters(){
+
+    document.getElementById("searchInput").value = "";
+
+    document.getElementById("statusFilter").value = "";
+
+    document.getElementById("journalFilter").value = "";
+
+    document.getElementById("deadlineFilter").value = "";
+
+    filterTable();
+
+    showToast("Filters reset.");
+
+}
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+document
+    .getElementById("reviewModal")
+    .addEventListener("click",function(event){
+
+        if(event.target === this){
+
+            closeModal();
+
+        }
+
+    });
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        closeModal();
+
+    }
+
+});
+
+
+</script>
+
+</body>
+</html>
