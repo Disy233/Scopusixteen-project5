@@ -7,34 +7,17 @@
 <title>Reviewer Portal | Scopusixteen Publishing</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-:root{
-    --navy:#071b3a;
-    --navy2:#0d2854;
-    --blue:#1769e0;
-    --lightblue:#eaf2ff;
-    --green:#198754;
-    --orange:#f59f00;
-    --red:#dc3545;
-    --purple:#6f42c1;
-    --bg:#f4f7fb;
-    --white:#ffffff;
-    --text:#172033;
-    --muted:#687386;
-    --border:#e3e8f0;
-    --shadow:0 8px 25px rgba(15,35,70,.07);
-}
-
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
+    background:#f4f7fb;
+    color:#18243a;
 }
 
 a{
@@ -46,401 +29,399 @@ button,
 input,
 select,
 textarea{
-    font:inherit;
+    font-family:inherit;
 }
 
-button{
-    cursor:pointer;
-}
-
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar{
-    background:var(--navy);
+    height:68px;
+    background:#071b3a;
     color:#fff;
-    padding:9px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:13px;
-}
-
-.topbar a{
-    color:#dce7fb;
-    margin-left:18px;
-}
-
-/* HEADER */
-
-.header{
-    height:74px;
-    background:#fff;
-    border-bottom:1px solid var(--border);
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 30px;
+    padding:0 28px;
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
 }
 
 .logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#4ea1ff;
+}
+
+.top-links{
     display:flex;
     align-items:center;
-    gap:12px;
-}
-
-.logo-mark{
-    width:42px;
-    height:42px;
-    border-radius:8px;
-    background:var(--navy);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.logo-text{
-    font-size:21px;
-    font-weight:700;
-    color:var(--navy);
-}
-
-.logo-sub{
-    display:block;
-    font-size:10px;
-    color:var(--muted);
-    letter-spacing:.5px;
-    text-transform:uppercase;
-}
-
-.nav{
-    display:flex;
-    align-items:center;
-    gap:24px;
+    gap:21px;
     font-size:14px;
 }
 
-.nav a{
-    color:#445064;
-    font-weight:600;
+.top-links a{
+    color:#dce7f5;
 }
 
-.nav a:hover{
-    color:var(--blue);
-}
-
-.nav-btn{
-    background:var(--navy);
-    color:#fff !important;
-    padding:10px 16px;
-    border-radius:6px;
-}
-
-/* MOBILE BUTTON */
-
-.mobile-menu{
-    display:none;
-    border:0;
-    background:var(--navy);
+.top-links a:hover{
     color:#fff;
-    width:42px;
-    height:40px;
-    border-radius:6px;
-    font-size:20px;
 }
 
-/* LAYOUT */
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   LAYOUT
+========================= */
 
 .layout{
     display:flex;
-    min-height:calc(100vh - 123px);
+    min-height:calc(100vh - 68px);
 }
-
-/* SIDEBAR */
 
 .sidebar{
     width:255px;
     background:#fff;
-    border-right:1px solid var(--border);
-    padding:25px 15px;
+    border-right:1px solid #e0e7ef;
+    padding:22px 14px;
     flex-shrink:0;
 }
 
 .sidebar-title{
-    padding:0 12px 14px;
-    color:#8791a3;
     font-size:11px;
-    font-weight:700;
+    color:#8491a5;
     text-transform:uppercase;
-    letter-spacing:.8px;
+    letter-spacing:1px;
+    font-weight:700;
+    padding:8px 12px;
+    margin-bottom:7px;
 }
 
-.side-link{
+.sidebar a{
     display:flex;
     align-items:center;
-    gap:11px;
+    gap:10px;
     padding:11px 12px;
-    margin-bottom:3px;
-    border-radius:7px;
-    color:#536075;
+    border-radius:8px;
+    color:#4d5c72;
     font-size:14px;
-    font-weight:600;
+    margin-bottom:3px;
 }
 
-.side-link:hover{
-    background:#f0f5fd;
-    color:var(--blue);
+.sidebar a:hover{
+    background:#eef5ff;
+    color:#1677ff;
 }
 
-.side-link.active{
-    background:var(--lightblue);
-    color:var(--blue);
+.sidebar a.active{
+    background:#eaf3ff;
+    color:#1677ff;
+    font-weight:700;
 }
-
-.side-icon{
-    width:20px;
-    text-align:center;
-}
-
-.sidebar-divider{
-    height:1px;
-    background:var(--border);
-    margin:17px 10px;
-}
-
-/* MAIN */
 
 .main{
     flex:1;
-    padding:30px;
     min-width:0;
+    padding:30px;
 }
 
-/* PAGE HEADER */
+/* =========================
+   PAGE HEADING
+========================= */
 
-.page-header{
+.page-heading{
     display:flex;
-    justify-content:space-between;
     align-items:flex-start;
+    justify-content:space-between;
     gap:20px;
     margin-bottom:25px;
 }
 
-.page-header h1{
-    font-size:30px;
-    color:var(--navy);
-    margin-bottom:5px;
+.page-heading h1{
+    font-size:28px;
+    color:#071b3a;
+    margin-bottom:7px;
 }
 
-.page-header p{
-    color:var(--muted);
+.page-heading p{
+    color:#69778d;
     font-size:14px;
+    line-height:1.6;
 }
 
-.reviewer-badge{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#fff;
-    padding:9px 14px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    box-shadow:var(--shadow);
-    font-size:13px;
-}
-
-.avatar{
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    background:var(--navy);
+.primary-btn{
+    border:0;
+    background:#1677ff;
     color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-}
-
-/* NOTICE */
-
-.prototype-notice{
-    background:#fff8e6;
-    border:1px solid #f2d28b;
-    color:#6b531d;
+    padding:11px 17px;
     border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.primary-btn:hover{
+    background:#0c64dc;
+}
+
+.secondary-btn{
+    border:1px solid #d1dce9;
+    background:#fff;
+    color:#1677ff;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.secondary-btn:hover{
+    background:#f4f8fd;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #efd58f;
+    color:#725719;
+    border-radius:10px;
     padding:14px 17px;
-    margin-bottom:25px;
     font-size:13px;
+    line-height:1.6;
+    margin-bottom:24px;
 }
 
-.prototype-notice strong{
-    color:#8b6714;
-}
-
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
     margin-bottom:25px;
 }
 
 .stat-card{
     background:#fff;
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:20px;
-    box-shadow:var(--shadow);
-}
-
-.stat-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
+    border:1px solid #e1e8f0;
+    border-radius:11px;
+    padding:19px;
+    box-shadow:0 2px 8px rgba(20,40,70,.04);
 }
 
 .stat-label{
-    font-size:13px;
-    color:var(--muted);
-    font-weight:600;
-}
-
-.stat-icon{
-    width:37px;
-    height:37px;
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:17px;
-    background:var(--lightblue);
-    color:var(--blue);
+    color:#778499;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
 .stat-number{
+    color:#071b3a;
     font-size:28px;
-    font-weight:700;
-    color:var(--navy);
+    font-weight:800;
 }
 
-.stat-small{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:3px;
+.stat-description{
+    color:#8a96a7;
+    font-size:11px;
+    margin-top:6px;
 }
 
-/* CARDS */
+/* =========================
+   PANELS
+========================= */
 
-.card{
+.panel{
     background:#fff;
-    border:1px solid var(--border);
-    border-radius:10px;
-    box-shadow:var(--shadow);
-    margin-bottom:25px;
+    border:1px solid #e2e8f0;
+    border-radius:11px;
+    margin-bottom:24px;
+    box-shadow:0 2px 8px rgba(20,40,70,.035);
 }
 
-.card-header{
-    padding:19px 21px;
-    border-bottom:1px solid var(--border);
+.panel-header{
+    padding:18px 20px;
+    border-bottom:1px solid #e5ebf2;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     gap:15px;
 }
 
-.card-header h2{
-    font-size:18px;
-    color:var(--navy);
+.panel-header h2{
+    color:#071b3a;
+    font-size:17px;
 }
 
-.card-header p{
-    color:var(--muted);
+.panel-header p{
+    color:#8491a5;
     font-size:12px;
+    margin-top:4px;
 }
 
-.card-body{
-    padding:21px;
+.panel-body{
+    padding:20px;
 }
 
-/* FILTER */
+/* =========================
+   INVITATION CARDS
+========================= */
 
-.filters{
+.invitation-grid{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr auto;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.invitation{
+    border:1px solid #e1e8f0;
+    border-radius:10px;
+    padding:17px;
+    background:#fff;
+}
+
+.invitation:hover{
+    box-shadow:0 5px 18px rgba(30,55,90,.07);
+}
+
+.invitation-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
     gap:10px;
-    margin-bottom:20px;
+    margin-bottom:13px;
 }
 
-.form-control{
-    width:100%;
-    padding:11px 12px;
-    border:1px solid #d8dfe9;
-    border-radius:6px;
-    outline:none;
+.invitation h3{
+    font-size:15px;
+    color:#17263d;
+    line-height:1.45;
+}
+
+.journal{
+    font-size:11px;
+    color:#1677ff;
+    margin-top:5px;
+}
+
+.badge{
+    display:inline-flex;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.badge.pending{
+    background:#fff4d7;
+    color:#936c00;
+}
+
+.badge.accepted{
+    background:#e8f2ff;
+    color:#1266d2;
+}
+
+.badge.progress{
+    background:#eee9ff;
+    color:#6147bf;
+}
+
+.badge.overdue{
+    background:#ffe9e9;
+    color:#ba3030;
+}
+
+.badge.completed{
+    background:#e7f7ed;
+    color:#19834d;
+}
+
+.invitation-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.meta{
+    background:#f8fafc;
+    border-radius:7px;
+    padding:9px;
+}
+
+.meta-label{
+    font-size:9px;
+    color:#8995a6;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.meta-value{
+    font-size:12px;
+    color:#25344b;
+    font-weight:700;
+}
+
+.invitation-actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.small-btn{
+    border:1px solid #d5dfeb;
     background:#fff;
-    color:var(--text);
+    color:#36516f;
+    border-radius:7px;
+    padding:8px 11px;
+    font-size:11px;
+    cursor:pointer;
 }
 
-.form-control:focus{
-    border-color:var(--blue);
+.small-btn:hover{
+    background:#f4f8fd;
 }
 
-/* BUTTONS */
-
-.btn{
-    border:0;
-    border-radius:6px;
-    padding:10px 15px;
-    font-weight:600;
-    font-size:13px;
-    transition:.2s;
-}
-
-.btn-primary{
-    background:var(--blue);
+.small-btn.primary{
     color:#fff;
+    background:#1677ff;
+    border-color:#1677ff;
 }
 
-.btn-primary:hover{
-    background:#0f59c3;
+.small-btn.primary:hover{
+    background:#0d64dc;
 }
 
-.btn-dark{
-    background:var(--navy);
-    color:#fff;
+.small-btn.danger{
+    color:#bd3030;
+    border-color:#f0caca;
 }
 
-.btn-light{
-    background:#eef2f7;
-    color:#344054;
-}
-
-.btn-success{
-    background:var(--green);
-    color:#fff;
-}
-
-.btn-danger{
-    background:var(--red);
-    color:#fff;
-}
-
-.btn-outline{
-    background:#fff;
-    border:1px solid #cfd7e3;
-    color:#344054;
-}
-
-/* TABLE */
+/* =========================
+   TABLE
+========================= */
 
 .table-wrap{
+    width:100%;
     overflow-x:auto;
 }
 
@@ -452,137 +433,135 @@ table{
 
 th{
     text-align:left;
-    padding:13px 12px;
     background:#f8fafc;
-    color:#687386;
-    font-size:11px;
+    color:#7d899b;
+    padding:12px 14px;
+    font-size:10px;
     text-transform:uppercase;
     letter-spacing:.4px;
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid #e5ebf2;
 }
 
 td{
-    padding:15px 12px;
-    border-bottom:1px solid var(--border);
-    font-size:13px;
+    padding:14px;
+    font-size:12px;
+    border-bottom:1px solid #edf1f5;
     vertical-align:middle;
 }
 
-tr:hover td{
-    background:#fbfcfe;
+tr:last-child td{
+    border-bottom:0;
 }
 
-.manuscript-title{
-    color:var(--navy);
+.title-cell{
     font-weight:700;
-    margin-bottom:3px;
+    color:#1b2b42;
+    margin-bottom:4px;
 }
 
-.manuscript-id{
-    color:#8791a3;
-    font-size:11px;
+.subtext{
+    color:#8793a5;
+    font-size:10px;
 }
 
-/* STATUS */
-
-.status{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:20px;
-    font-size:11px;
+.deadline{
     font-weight:700;
 }
 
-.status-active{
-    background:#e7f7ef;
-    color:#147342;
+.deadline.overdue{
+    color:#c12e2e;
 }
 
-.status-invited{
-    background:#fff4dc;
-    color:#956a00;
+.deadline.soon{
+    color:#a37400;
 }
 
-.status-completed{
-    background:#e8eefb;
-    color:#315aa7;
-}
-
-.status-overdue{
-    background:#fde8ea;
-    color:#b42331;
-}
-
-.status-draft{
-    background:#eef1f5;
-    color:#687386;
-}
-
-/* INVITATIONS */
-
-.invitation-list{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-}
-
-.invitation{
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:17px;
+.action-btn{
+    border:1px solid #d6e0eb;
     background:#fff;
+    color:#31506f;
+    border-radius:7px;
+    padding:7px 9px;
+    font-size:10px;
+    cursor:pointer;
+    margin:2px;
 }
 
-.invitation h3{
+.action-btn:hover{
+    background:#f4f8fd;
+}
+
+.action-btn.blue{
+    color:#1677ff;
+    border-color:#cbdff8;
+}
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-columns{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:24px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#eaf3ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:800;
+    flex-shrink:0;
+}
+
+.profile h3{
+    color:#071b3a;
     font-size:15px;
-    color:var(--navy);
     margin-bottom:5px;
 }
 
-.invitation p{
-    font-size:12px;
-    color:var(--muted);
-    margin-bottom:12px;
-}
-
-.invitation-meta{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:14px;
-}
-
-.meta-item{
+.profile p{
+    color:#7c899c;
     font-size:11px;
-    color:#667085;
-    background:#f5f7fa;
-    padding:5px 8px;
-    border-radius:5px;
+    line-height:1.6;
 }
 
-.invitation-actions{
-    display:flex;
-    gap:8px;
+.profile-link{
+    margin-top:10px;
+    display:inline-block;
+    color:#1677ff;
+    font-size:11px;
+    font-weight:700;
 }
 
-/* TWO COLUMNS */
+/* =========================
+   ACTIVITY
+========================= */
 
-.two-col{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:25px;
-}
-
-/* ACTIVITY */
-
-.activity{
+.activity-item{
     display:flex;
     gap:12px;
-    padding:13px 0;
-    border-bottom:1px solid var(--border);
+    padding:12px 0;
+    border-bottom:1px solid #edf1f5;
 }
 
-.activity:last-child{
+.activity-item:last-child{
     border-bottom:0;
 }
 
@@ -590,1037 +569,1014 @@ tr:hover td{
     width:9px;
     height:9px;
     border-radius:50%;
-    background:var(--blue);
-    margin-top:6px;
+    background:#1677ff;
+    margin-top:5px;
     flex-shrink:0;
 }
 
-.activity-text{
-    font-size:13px;
+.activity-title{
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:4px;
 }
 
 .activity-time{
-    color:#8a94a6;
-    font-size:11px;
-    margin-top:2px;
+    font-size:10px;
+    color:#8995a6;
 }
 
-/* GUIDELINES */
+/* =========================
+   GUIDELINE CARDS
+========================= */
 
-.guideline{
-    display:flex;
-    gap:12px;
-    margin-bottom:17px;
+.guidelines{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
 }
 
-.guideline-icon{
-    width:36px;
-    height:36px;
-    border-radius:7px;
-    background:#eef4ff;
-    color:var(--blue);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
+.guideline-card{
+    border:1px solid #e2e8f0;
+    border-radius:9px;
+    padding:16px;
 }
 
-.guideline h4{
+.guideline-card h3{
     font-size:13px;
-    margin-bottom:2px;
-    color:var(--navy);
+    color:#071b3a;
+    margin-bottom:7px;
 }
 
-.guideline p{
-    font-size:12px;
-    color:var(--muted);
+.guideline-card p{
+    font-size:11px;
+    color:#758298;
+    line-height:1.6;
+    margin-bottom:10px;
 }
 
-/* MODAL */
+.guideline-card a{
+    color:#1677ff;
+    font-size:11px;
+    font-weight:700;
+}
 
-.modal-overlay{
+/* =========================
+   MODAL
+========================= */
+
+.modal{
     position:fixed;
     inset:0;
-    background:rgba(5,20,42,.62);
+    background:rgba(4,15,34,.58);
     display:none;
     align-items:center;
     justify-content:center;
     padding:20px;
-    z-index:500;
+    z-index:2000;
 }
 
-.modal-overlay.show{
+.modal.show{
     display:flex;
 }
 
-.modal{
+.modal-card{
     width:100%;
-    max-width:900px;
+    max-width:780px;
     max-height:92vh;
     overflow-y:auto;
     background:#fff;
-    border-radius:10px;
-    box-shadow:0 25px 80px rgba(0,0,0,.25);
+    border-radius:13px;
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
 }
 
 .modal-header{
-    padding:20px 23px;
-    border-bottom:1px solid var(--border);
+    padding:19px 22px;
+    border-bottom:1px solid #e4eaf1;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:sticky;
-    top:0;
-    background:#fff;
-    z-index:2;
+    gap:15px;
 }
 
-.modal-header h2{
-    color:var(--navy);
-    font-size:20px;
+.modal-header h3{
+    color:#071b3a;
+    font-size:18px;
 }
 
 .close{
     border:0;
-    background:#eef2f7;
-    width:35px;
-    height:35px;
-    border-radius:6px;
-    font-size:18px;
+    background:none;
+    color:#8290a3;
+    font-size:25px;
+    cursor:pointer;
 }
 
 .modal-body{
-    padding:23px;
+    padding:22px;
 }
 
 .detail-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
     margin-bottom:20px;
 }
 
 .detail{
-    border:1px solid var(--border);
-    padding:13px;
-    border-radius:7px;
+    background:#f8fafc;
+    border-radius:8px;
+    padding:12px;
 }
 
 .detail-label{
-    font-size:10px;
-    color:#8791a3;
+    color:#8491a5;
+    font-size:9px;
     text-transform:uppercase;
-    font-weight:700;
-    margin-bottom:3px;
+    margin-bottom:5px;
 }
 
 .detail-value{
+    color:#1c2c43;
+    font-size:12px;
+    font-weight:700;
+}
+
+.abstract-box{
+    background:#f8fafc;
+    border:1px solid #e4eaf1;
+    border-radius:9px;
+    padding:15px;
+    margin-bottom:17px;
+}
+
+.abstract-box h4{
     font-size:13px;
-    font-weight:600;
-    color:var(--navy);
+    color:#071b3a;
+    margin-bottom:8px;
 }
 
-.notice-box{
-    padding:13px;
-    border-radius:7px;
-    background:#f4f8ff;
-    border-left:4px solid var(--blue);
+.abstract-box p{
+    color:#5c6a7e;
     font-size:12px;
-    margin-bottom:20px;
+    line-height:1.75;
 }
 
-.section-title{
-    color:var(--navy);
-    font-size:16px;
-    margin:20px 0 12px;
+.confidential{
+    background:#fff8e6;
+    border:1px solid #efd58f;
+    border-radius:8px;
+    padding:12px;
+    color:#725719;
+    font-size:11px;
+    line-height:1.6;
 }
 
-.rating-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:13px;
-}
-
-.rating-item{
-    border:1px solid var(--border);
-    border-radius:7px;
-    padding:13px;
-}
-
-.rating-item label{
-    display:block;
-    font-size:12px;
-    font-weight:600;
-    margin-bottom:7px;
-}
-
-.radio-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.radio-row label{
-    font-weight:400;
-    display:flex;
-    gap:5px;
-    align-items:center;
-    margin:0;
-}
-
-textarea{
-    min-height:115px;
-    resize:vertical;
-}
-
-.checkbox-row{
-    display:flex;
-    gap:8px;
-    align-items:flex-start;
-    font-size:12px;
-    margin:14px 0;
-}
-
-.modal-footer{
-    padding:17px 23px;
-    border-top:1px solid var(--border);
+.modal-actions{
     display:flex;
     justify-content:flex-end;
     gap:9px;
-    position:sticky;
-    bottom:0;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   REVIEW FORM
+========================= */
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    color:#26364e;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid #d5deea;
+    border-radius:8px;
+    padding:11px;
+    outline:none;
+    font-size:12px;
+    color:#26364e;
+    resize:vertical;
+}
+
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:#1677ff;
+}
+
+.help-text{
+    color:#8a96a7;
+    font-size:10px;
+    margin-top:5px;
+    line-height:1.5;
+}
+
+.criteria{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.criteria-item{
+    background:#f8fafc;
+    border:1px solid #e3e9f0;
+    border-radius:8px;
+    padding:12px;
+}
+
+.criteria-item label{
+    display:block;
+    margin-bottom:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.criteria-item select{
+    width:100%;
+    padding:8px;
+    border:1px solid #d6e0eb;
+    border-radius:6px;
     background:#fff;
 }
 
-/* PROFILE */
-
-.profile-card{
-    text-align:center;
-}
-
-.profile-avatar{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    background:var(--navy);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    font-weight:bold;
-    margin:0 auto 12px;
-}
-
-.profile-card h3{
-    color:var(--navy);
-    font-size:17px;
-}
-
-.profile-card p{
-    color:var(--muted);
-    font-size:12px;
-}
-
-.expertise{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    justify-content:center;
-    margin-top:13px;
-}
-
-.expertise span{
-    background:#eef4ff;
-    color:#315aa7;
-    padding:5px 8px;
-    border-radius:15px;
-    font-size:10px;
-}
-
-/* TOAST */
+/* =========================
+   TOAST
+========================= */
 
 .toast{
     position:fixed;
-    right:25px;
-    bottom:25px;
-    background:var(--navy);
+    right:24px;
+    bottom:24px;
+    background:#071b3a;
     color:#fff;
-    padding:13px 18px;
-    border-radius:7px;
-    box-shadow:0 10px 35px rgba(0,0,0,.2);
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:12px;
     display:none;
-    z-index:700;
-    font-size:13px;
+    z-index:3000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 .toast.show{
     display:block;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
-.footer{
-    background:var(--navy);
-    color:#d7e1f2;
-    padding:35px 30px 20px;
-}
-
-.footer-grid{
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:30px;
-}
-
-.footer h3{
-    color:#fff;
-    font-size:15px;
-    margin-bottom:12px;
-}
-
-.footer p,
-.footer a{
-    color:#b9c7dc;
+footer{
+    background:#071b3a;
+    color:#bdc9da;
+    padding:25px 30px;
     font-size:12px;
 }
 
-.footer a{
-    display:block;
-    margin-bottom:7px;
-}
-
-.footer a:hover{
-    color:#fff;
-}
-
-.footer-bottom{
+.footer-inner{
     max-width:1250px;
-    margin:25px auto 0;
-    border-top:1px solid rgba(255,255,255,.12);
-    padding-top:17px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     gap:20px;
-    font-size:11px;
-    color:#9eacc2;
+    flex-wrap:wrap;
 }
 
-/* RESPONSIVE */
+footer a{
+    color:#d8e5f5;
+    margin-right:14px;
+}
 
-@media(max-width:1100px){
+footer a:hover{
+    color:#fff;
+}
 
-    .nav{
-        gap:13px;
-    }
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1150px){
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .two-col{
+    .two-columns{
         grid-template-columns:1fr;
     }
+
+    .guidelines{
+        grid-template-columns:1fr 1fr;
+    }
+
 }
 
 @media(max-width:850px){
 
-    .topbar{
-        padding:8px 15px;
-    }
-
-    .topbar .right{
+    .top-links{
         display:none;
     }
 
-    .header{
-        padding:0 15px;
-    }
-
-    .mobile-menu{
-        display:block;
-    }
-
-    .nav{
-        display:none;
-        position:absolute;
-        top:74px;
-        left:0;
-        right:0;
-        background:#fff;
-        padding:15px;
-        border-bottom:1px solid var(--border);
-        box-shadow:var(--shadow);
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .nav.show{
-        display:flex;
-    }
-
-    .nav a{
-        padding:10px;
-    }
-
-    .layout{
+    .menu-btn{
         display:block;
     }
 
     .sidebar{
-        display:none;
+        position:fixed;
+        left:-280px;
+        top:68px;
+        bottom:0;
+        z-index:1500;
+        transition:.25s;
+        overflow-y:auto;
+        box-shadow:5px 0 20px rgba(0,0,0,.12);
+    }
+
+    .sidebar.open{
+        left:0;
     }
 
     .main{
-        padding:20px 15px;
+        padding:22px 16px;
     }
 
-    .page-header{
+    .page-heading{
         flex-direction:column;
     }
 
-    .filters{
+    .invitation-grid{
         grid-template-columns:1fr;
     }
 
-    .invitation-list{
-        grid-template-columns:1fr;
-    }
-
-    .footer{
-        padding:30px 20px 18px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-    }
 }
 
 @media(max-width:600px){
+
+    .topbar{
+        padding:0 16px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .guidelines{
+        grid-template-columns:1fr;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .criteria{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        padding:22px 16px;
+    }
+
+}
+
+@media(max-width:430px){
 
     .stats{
         grid-template-columns:1fr;
     }
 
-    .logo-text{
-        font-size:18px;
-    }
-
-    .page-header h1{
-        font-size:25px;
-    }
-
-    .card-header{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
-    .detail-grid,
-    .rating-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .modal-footer{
-        flex-direction:column;
-    }
-
-    .modal-footer .btn{
-        width:100%;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
+<!-- =========================
+     TOP BAR
+========================= -->
 
-<div class="topbar">
-    <div>
-        Scopusixteen Publishing
-    </div>
-
-    <div class="right">
-        Reviewer Services
-        <a href="contact.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-    </div>
-</div>
-
-
-<!-- HEADER -->
-
-<header class="header">
+<header class="topbar">
 
     <a href="index.html" class="logo">
-
-        <div class="logo-mark">S16</div>
-
-        <div>
-            <div class="logo-text">Scopusixteen</div>
-            <span class="logo-sub">Publishing Platform</span>
-        </div>
-
+        Scopus<span>ixteen</span>
     </a>
 
-    <nav class="nav" id="mainNav">
+    <nav class="top-links">
         <a href="index.html">Home</a>
         <a href="journals.html">Journals</a>
         <a href="author-dashboard.html">Authors</a>
         <a href="reviewer-portal.html">Reviewers</a>
         <a href="editorial-dashboard.html">Editorial</a>
-        <a href="administration.html" class="nav-btn">Administration</a>
+        <a href="administration.html">Administration</a>
     </nav>
 
-    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleSidebar()">
+        ☰
+    </button>
 
 </header>
 
 
-<!-- MAIN LAYOUT -->
-
 <div class="layout">
 
-    <!-- SIDEBAR -->
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-    <aside class="sidebar">
+<aside class="sidebar" id="sidebar">
 
-        <div class="sidebar-title">
-            Reviewer Workspace
+    <div class="sidebar-title">
+        Reviewer Workspace
+    </div>
+
+    <a href="reviewer-portal.html" class="active">
+        📝 Reviewer Portal
+    </a>
+
+    <a href="reviewer-profile.html">
+        👤 My Profile
+    </a>
+
+    <a href="reviewer-guidelines.html">
+        📘 Reviewer Guidelines
+    </a>
+
+    <a href="peer-review.html">
+        ⚖️ Peer Review Policy
+    </a>
+
+    <div class="sidebar-title">
+        My Reviews
+    </div>
+
+    <a href="#invitations">
+        📩 Invitations
+    </a>
+
+    <a href="#activeReviews">
+        🔎 Active Reviews
+    </a>
+
+    <a href="#completedReviews">
+        ✅ Completed Reviews
+    </a>
+
+    <a href="review-tracking.html">
+        📋 Review Tracking
+    </a>
+
+    <div class="sidebar-title">
+        Publisher
+    </div>
+
+    <a href="editorial-dashboard.html">
+        🏛 Editorial Dashboard
+    </a>
+
+    <a href="reviewer-assignment.html">
+        🔗 Reviewer Assignment
+    </a>
+
+    <a href="reviewer-management.html">
+        👥 Reviewer Management
+    </a>
+
+    <a href="publication-ethics.html">
+        🛡 Publication Ethics
+    </a>
+
+    <div class="sidebar-title">
+        Platform
+    </div>
+
+    <a href="ai-assistant.html">
+        ✨ AI Assistant
+    </a>
+
+    <a href="contact.html">
+        💬 Support
+    </a>
+
+    <a href="index.html">
+        🌐 View Website
+    </a>
+
+</aside>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+    <section class="page-heading">
+
+        <div>
+
+            <h1>Reviewer Portal</h1>
+
+            <p>
+                Manage invitations, review assigned manuscripts,
+                submit reviewer reports and monitor your review activity.
+            </p>
+
         </div>
 
-        <a href="#" class="side-link active">
-            <span class="side-icon">▦</span>
-            Reviewer Dashboard
-        </a>
+        <button
+            class="secondary-btn"
+            onclick="openProfile()"
+        >
+            My Reviewer Profile
+        </button>
 
-        <a href="#invitations" class="side-link">
-            <span class="side-icon">✉</span>
-            Invitations
-        </a>
+    </section>
 
-        <a href="#reviews" class="side-link">
-            <span class="side-icon">◉</span>
-            Active Reviews
-        </a>
 
-        <a href="#completed" class="side-link">
-            <span class="side-icon">✓</span>
-            Completed Reviews
-        </a>
+    <div class="notice">
 
-        <a href="#reviews" class="side-link">
-            <span class="side-icon">▤</span>
-            Review History
-        </a>
+        <strong>Prototype notice:</strong>
+        This reviewer portal is a frontend demonstration.
+        Reviewer accounts, manuscripts, invitations, reports and editorial
+        communications are not connected to a live database or authentication
+        system. Do not enter real passwords or confidential manuscript
+        information.
 
-        <div class="sidebar-divider"></div>
+    </div>
 
-        <div class="sidebar-title">
-            Resources
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                PENDING INVITATIONS
+            </div>
+
+            <div class="stat-number">
+                3
+            </div>
+
+            <div class="stat-description">
+                Invitations awaiting response
+            </div>
+
         </div>
 
-        <a href="author-guidelines.html" class="side-link">
-            <span class="side-icon">▣</span>
-            Reviewer Guidelines
-        </a>
 
-        <a href="peer-review.html" class="side-link">
-            <span class="side-icon">◆</span>
-            Peer Review Policy
-        </a>
+        <div class="stat-card">
 
-        <a href="publication-ethics.html" class="side-link">
-            <span class="side-icon">⚖</span>
-            Publication Ethics
-        </a>
+            <div class="stat-label">
+                ACCEPTED REVIEWS
+            </div>
 
-        <a href="ai-assistant.html" class="side-link">
-            <span class="side-icon">✦</span>
-            AI Assistant
-        </a>
+            <div class="stat-number">
+                5
+            </div>
 
-        <div class="sidebar-divider"></div>
+            <div class="stat-description">
+                Current assignments
+            </div>
 
-        <a href="#profile" class="side-link">
-            <span class="side-icon">◎</span>
-            Reviewer Profile
-        </a>
-
-        <a href="contact.html" class="side-link">
-            <span class="side-icon">?</span>
-            Support
-        </a>
-
-        <a href="index.html" class="side-link">
-            <span class="side-icon">↗</span>
-            View Website
-        </a>
-
-    </aside>
+        </div>
 
 
-    <!-- MAIN CONTENT -->
+        <div class="stat-card">
 
-    <main class="main">
+            <div class="stat-label">
+                IN PROGRESS
+            </div>
 
-        <!-- PAGE HEADER -->
+            <div class="stat-number">
+                2
+            </div>
 
-        <div class="page-header">
+            <div class="stat-description">
+                Reviews currently active
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                COMPLETED
+            </div>
+
+            <div class="stat-number">
+                18
+            </div>
+
+            <div class="stat-description">
+                Reports submitted
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                ON-TIME RATE
+            </div>
+
+            <div class="stat-number">
+                94%
+            </div>
+
+            <div class="stat-description">
+                Demonstration performance
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INVITATIONS
+    ========================= -->
+
+    <section
+        class="panel"
+        id="invitations"
+    >
+
+        <div class="panel-header">
 
             <div>
-                <h1>Reviewer Portal</h1>
-                <p>Manage invitations, assigned manuscripts and peer-review reports.</p>
+
+                <h2>
+                    Review Invitations
+                </h2>
+
+                <p>
+                    Respond to invitations before the indicated deadline.
+                </p>
+
             </div>
 
-            <div class="reviewer-badge">
-                <div class="avatar">DR</div>
-                <div>
-                    <strong>Demo Reviewer</strong><br>
-                    <span style="color:#8791a3;font-size:11px;">
-                        Reviewer workspace
-                    </span>
-                </div>
-            </div>
+            <button
+                class="secondary-btn"
+                onclick="refreshDemo()"
+            >
+                Refresh
+            </button>
 
         </div>
 
 
-        <!-- PROTOTYPE NOTICE -->
+        <div class="panel-body">
 
-        <div class="prototype-notice">
-            <strong>Prototype notice:</strong>
-            This Reviewer Portal is a frontend demonstration. Reviewer accounts,
-            manuscript assignments, review reports and editorial decisions are not
-            connected to a live database or authentication system. Actions performed
-            here are demonstrations only.
-        </div>
+            <div class="invitation-grid">
 
 
-        <!-- STATS -->
+                <!-- INVITATION 1 -->
 
-        <section class="stats">
+                <div class="invitation">
 
-            <div class="stat-card">
-                <div class="stat-top">
-                    <span class="stat-label">Pending Invitations</span>
-                    <div class="stat-icon">✉</div>
-                </div>
-                <div class="stat-number" id="invitationCount">2</div>
-                <div class="stat-small">Awaiting response</div>
-            </div>
+                    <div class="invitation-top">
 
-            <div class="stat-card">
-                <div class="stat-top">
-                    <span class="stat-label">Active Reviews</span>
-                    <div class="stat-icon">◉</div>
-                </div>
-                <div class="stat-number">2</div>
-                <div class="stat-small">Currently assigned</div>
-            </div>
+                        <div>
 
-            <div class="stat-card">
-                <div class="stat-top">
-                    <span class="stat-label">Completed Reviews</span>
-                    <div class="stat-icon">✓</div>
-                </div>
-                <div class="stat-number">18</div>
-                <div class="stat-small">Demo review history</div>
-            </div>
+                            <h3>
+                                Machine Learning Applications
+                                in Digital Education
+                            </h3>
 
-            <div class="stat-card">
-                <div class="stat-top">
-                    <span class="stat-label">Overdue Reviews</span>
-                    <div class="stat-icon">!</div>
-                </div>
-                <div class="stat-number">0</div>
-                <div class="stat-small">No overdue demo reviews</div>
-            </div>
-
-        </section>
-
-
-        <!-- ASSIGNED REVIEWS -->
-
-        <section class="card" id="reviews">
-
-            <div class="card-header">
-                <div>
-                    <h2>Assigned Manuscripts</h2>
-                    <p>Review manuscripts currently associated with this demo reviewer account.</p>
-                </div>
-
-                <button class="btn btn-outline" onclick="showToast('Demo list refreshed.')">
-                    ↻ Refresh
-                </button>
-            </div>
-
-            <div class="card-body">
-
-                <div class="filters">
-
-                    <input
-                        type="text"
-                        id="searchInput"
-                        class="form-control"
-                        placeholder="Search manuscript title or ID..."
-                        onkeyup="filterReviews()"
-                    >
-
-                    <select id="statusFilter" class="form-control" onchange="filterReviews()">
-                        <option value="">All Statuses</option>
-                        <option value="Active Review">Active Review</option>
-                        <option value="Review Invited">Review Invited</option>
-                        <option value="Completed">Completed</option>
-                        <option value="Major Revision">Major Revision</option>
-                    </select>
-
-                    <select id="journalFilter" class="form-control" onchange="filterReviews()">
-                        <option value="">All Journals</option>
-                        <option value="Journal of Digital Education">Journal of Digital Education</option>
-                        <option value="Global Management Review">Global Management Review</option>
-                        <option value="Environmental Studies Journal">Environmental Studies Journal</option>
-                        <option value="International Review of Higher Education">International Review of Higher Education</option>
-                    </select>
-
-                    <button class="btn btn-light" onclick="clearFilters()">
-                        Clear
-                    </button>
-
-                </div>
-
-
-                <div class="table-wrap">
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>Manuscript</th>
-                                <th>Journal</th>
-                                <th>ID</th>
-                                <th>Status</th>
-                                <th>Due Date</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="reviewTable">
-
-                            <tr
-                                data-title="Artificial Intelligence and Digital Learning"
-                                data-journal="Journal of Digital Education"
-                                data-status="Major Revision"
-                            >
-                                <td>
-                                    <div class="manuscript-title">
-                                        Artificial Intelligence and Digital Learning
-                                    </div>
-                                    <div class="manuscript-id">
-                                        Research Article
-                                    </div>
-                                </td>
-
-                                <td>
-                                    Journal of Digital Education
-                                </td>
-
-                                <td>
-                                    MS-2026-00124
-                                </td>
-
-                                <td>
-                                    <span class="status status-active">
-                                        Major Revision
-                                    </span>
-                                </td>
-
-                                <td>
-                                    15 Sep 2026
-                                </td>
-
-                                <td>
-                                    <button
-                                        class="btn btn-primary"
-                                        onclick="openReview('Artificial Intelligence and Digital Learning','Journal of Digital Education','MS-2026-00124','Major Revision')"
-                                    >
-                                        Review
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr
-                                data-title="Strategic Leadership in Digital Organisations"
-                                data-journal="Global Management Review"
-                                data-status="Review Invited"
-                            >
-                                <td>
-                                    <div class="manuscript-title">
-                                        Strategic Leadership in Digital Organisations
-                                    </div>
-                                    <div class="manuscript-id">
-                                        Research Article
-                                    </div>
-                                </td>
-
-                                <td>
-                                    Global Management Review
-                                </td>
-
-                                <td>
-                                    MS-2026-00119
-                                </td>
-
-                                <td>
-                                    <span class="status status-invited">
-                                        Review Invited
-                                    </span>
-                                </td>
-
-                                <td>
-                                    20 Sep 2026
-                                </td>
-
-                                <td>
-                                    <button
-                                        class="btn btn-primary"
-                                        onclick="openReview('Strategic Leadership in Digital Organisations','Global Management Review','MS-2026-00119','Review Invited')"
-                                    >
-                                        Review
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr
-                                data-title="Sustainable Waste Management Practices"
-                                data-journal="Environmental Studies Journal"
-                                data-status="Active Review"
-                            >
-                                <td>
-                                    <div class="manuscript-title">
-                                        Sustainable Waste Management Practices
-                                    </div>
-                                    <div class="manuscript-id">
-                                        Research Article
-                                    </div>
-                                </td>
-
-                                <td>
-                                    Environmental Studies Journal
-                                </td>
-
-                                <td>
-                                    MS-2026-00108
-                                </td>
-
-                                <td>
-                                    <span class="status status-active">
-                                        Active Review
-                                    </span>
-                                </td>
-
-                                <td>
-                                    12 Sep 2026
-                                </td>
-
-                                <td>
-                                    <button
-                                        class="btn btn-primary"
-                                        onclick="openReview('Sustainable Waste Management Practices','Environmental Studies Journal','MS-2026-00108','Active Review')"
-                                    >
-                                        Review
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr
-                                data-title="Digital Transformation in Higher Education"
-                                data-journal="International Review of Higher Education"
-                                data-status="Completed"
-                            >
-                                <td>
-                                    <div class="manuscript-title">
-                                        Digital Transformation in Higher Education
-                                    </div>
-                                    <div class="manuscript-id">
-                                        Research Article
-                                    </div>
-                                </td>
-
-                                <td>
-                                    International Review of Higher Education
-                                </td>
-
-                                <td>
-                                    MS-2026-00094
-                                </td>
-
-                                <td>
-                                    <span class="status status-completed">
-                                        Completed
-                                    </span>
-                                </td>
-
-                                <td>
-                                    Completed
-                                </td>
-
-                                <td>
-                                    <button
-                                        class="btn btn-outline"
-                                        onclick="viewCompleted()"
-                                    >
-                                        View
-                                    </button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- INVITATIONS -->
-
-        <section class="card" id="invitations">
-
-            <div class="card-header">
-
-                <div>
-                    <h2>Review Invitations</h2>
-                    <p>Demonstration invitations awaiting reviewer response.</p>
-                </div>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="invitation-list" id="invitationList">
-
-                    <div class="invitation">
-
-                        <h3>
-                            Strategic Leadership in Digital Organisations
-                        </h3>
-
-                        <p>
-                            A manuscript concerning strategic leadership,
-                            digital capabilities and organisational performance.
-                        </p>
-
-                        <div class="invitation-meta">
-
-                            <span class="meta-item">
-                                Global Management Review
-                            </span>
-
-                            <span class="meta-item">
-                                MS-2026-00119
-                            </span>
-
-                            <span class="meta-item">
-                                Due 20 Sep 2026
-                            </span>
-
-                        </div>
-
-                        <div class="invitation-actions">
-
-                            <button
-                                class="btn btn-success"
-                                onclick="acceptInvitation(this)"
-                            >
-                                Accept
-                            </button>
-
-                            <button
-                                class="btn btn-outline"
-                                onclick="declineInvitation(this)"
-                            >
-                                Decline
-                            </button>
-
-                            <button
-                                class="btn btn-light"
-                                onclick="viewInvitation()"
-                            >
-                                Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="invitation">
-
-                        <h3>
-                            Data Analytics for Academic Decision Making
-                        </h3>
-
-                        <p>
-                            A research manuscript exploring analytical tools
-                            for institutional decision-making.
-                        </p>
-
-                        <div class="invitation-meta">
-
-                            <span class="meta-item">
+                            <div class="journal">
                                 Journal of Digital Education
-                            </span>
-
-                            <span class="meta-item">
-                                MS-2026-00081
-                            </span>
-
-                            <span class="meta-item">
-                                Due 25 Sep 2026
-                            </span>
+                            </div>
 
                         </div>
 
-                        <div class="invitation-actions">
+                        <span class="badge pending">
+                            Invitation
+                        </span>
 
-                            <button
-                                class="btn btn-success"
-                                onclick="acceptInvitation(this)"
-                            >
-                                Accept
-                            </button>
+                    </div>
 
-                            <button
-                                class="btn btn-outline"
-                                onclick="declineInvitation(this)"
-                            >
-                                Decline
-                            </button>
 
-                            <button
-                                class="btn btn-light"
-                                onclick="viewInvitation()"
-                            >
-                                Details
-                            </button>
+                    <div class="invitation-meta">
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Manuscript
+                            </div>
+
+                            <div class="meta-value">
+                                MS-2026-00131
+                            </div>
 
                         </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Deadline
+                            </div>
+
+                            <div class="meta-value">
+                                09 Sep 2026
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Review Type
+                            </div>
+
+                            <div class="meta-value">
+                                Double-Blind
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Article Type
+                            </div>
+
+                            <div class="meta-value">
+                                Research Article
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="invitation-actions">
+
+                        <button
+                            class="small-btn primary"
+                            onclick="acceptInvitation('MS-2026-00131')"
+                        >
+                            Accept
+                        </button>
+
+                        <button
+                            class="small-btn danger"
+                            onclick="declineInvitation('MS-2026-00131')"
+                        >
+                            Decline
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="viewManuscript(
+                                'Machine Learning Applications in Digital Education',
+                                'MS-2026-00131',
+                                'Journal of Digital Education',
+                                '09 Sep 2026'
+                            )"
+                        >
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INVITATION 2 -->
+
+                <div class="invitation">
+
+                    <div class="invitation-top">
+
+                        <div>
+
+                            <h3>
+                                Organisational Culture and
+                                Technology Adoption
+                            </h3>
+
+                            <div class="journal">
+                                Global Management Review
+                            </div>
+
+                        </div>
+
+                        <span class="badge pending">
+                            Invitation
+                        </span>
+
+                    </div>
+
+
+                    <div class="invitation-meta">
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Manuscript
+                            </div>
+
+                            <div class="meta-value">
+                                MS-2026-00128
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Deadline
+                            </div>
+
+                            <div class="meta-value">
+                                11 Sep 2026
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Review Type
+                            </div>
+
+                            <div class="meta-value">
+                                Single-Blind
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Article Type
+                            </div>
+
+                            <div class="meta-value">
+                                Research Article
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="invitation-actions">
+
+                        <button
+                            class="small-btn primary"
+                            onclick="acceptInvitation('MS-2026-00128')"
+                        >
+                            Accept
+                        </button>
+
+                        <button
+                            class="small-btn danger"
+                            onclick="declineInvitation('MS-2026-00128')"
+                        >
+                            Decline
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="viewManuscript(
+                                'Organisational Culture and Technology Adoption',
+                                'MS-2026-00128',
+                                'Global Management Review',
+                                '11 Sep 2026'
+                            )"
+                        >
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INVITATION 3 -->
+
+                <div class="invitation">
+
+                    <div class="invitation-top">
+
+                        <div>
+
+                            <h3>
+                                Sustainable Innovation in
+                                Urban Waste Management
+                            </h3>
+
+                            <div class="journal">
+                                Environmental Studies Journal
+                            </div>
+
+                        </div>
+
+                        <span class="badge pending">
+                            Invitation
+                        </span>
+
+                    </div>
+
+
+                    <div class="invitation-meta">
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Manuscript
+                            </div>
+
+                            <div class="meta-value">
+                                MS-2026-00125
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Deadline
+                            </div>
+
+                            <div class="meta-value">
+                                14 Sep 2026
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Review Type
+                            </div>
+
+                            <div class="meta-value">
+                                Double-Blind
+                            </div>
+
+                        </div>
+
+                        <div class="meta">
+
+                            <div class="meta-label">
+                                Article Type
+                            </div>
+
+                            <div class="meta-value">
+                                Research Article
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="invitation-actions">
+
+                        <button
+                            class="small-btn primary"
+                            onclick="acceptInvitation('MS-2026-00125')"
+                        >
+                            Accept
+                        </button>
+
+                        <button
+                            class="small-btn danger"
+                            onclick="declineInvitation('MS-2026-00125')"
+                        >
+                            Decline
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="viewManuscript(
+                                'Sustainable Innovation in Urban Waste Management',
+                                'MS-2026-00125',
+                                'Environmental Studies Journal',
+                                '14 Sep 2026'
+                            )"
+                        >
+                            View Details
+                        </button>
 
                     </div>
 
@@ -1628,280 +1584,416 @@ textarea{
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- TWO COLUMN -->
+    <!-- =========================
+         ACTIVE REVIEWS
+    ========================= -->
 
-        <div class="two-col">
+    <section
+        class="panel"
+        id="activeReviews"
+    >
 
-            <!-- ACTIVITY -->
+        <div class="panel-header">
 
-            <section class="card">
+            <div>
 
-                <div class="card-header">
-                    <div>
-                        <h2>Reviewer Activity</h2>
-                        <p>Recent demonstration activity.</p>
-                    </div>
+                <h2>
+                    Active Reviews
+                </h2>
+
+                <p>
+                    Manuscripts currently assigned to you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel-body">
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Manuscript</th>
+                            <th>Journal</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                            <th>Progress</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Artificial Intelligence and
+                                    Digital Learning
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00124
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="subtext">
+                                    Journal of Digital Education
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <span class="badge progress">
+                                    In Progress
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="deadline soon">
+                                    10 Sep 2026
+                                </div>
+
+                            </td>
+
+                            <td>
+                                65%
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="openReviewForm(
+                                        'Artificial Intelligence and Digital Learning',
+                                        'MS-2026-00124'
+                                    )"
+                                >
+                                    Continue Review
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="viewManuscript(
+                                        'Artificial Intelligence and Digital Learning',
+                                        'MS-2026-00124',
+                                        'Journal of Digital Education',
+                                        '10 Sep 2026'
+                                    )"
+                                >
+                                    Manuscript
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Data Analytics for Academic
+                                    Decision Making
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00081
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <div class="subtext">
+                                    Journal of Digital Education
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge accepted">
+                                    Accepted
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="deadline">
+                                    12 Sep 2026
+                                </div>
+
+                            </td>
+
+                            <td>
+                                15%
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="openReviewForm(
+                                        'Data Analytics for Academic Decision Making',
+                                        'MS-2026-00081'
+                                    )"
+                                >
+                                    Start Review
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="viewManuscript(
+                                        'Data Analytics for Academic Decision Making',
+                                        'MS-2026-00081',
+                                        'Journal of Digital Education',
+                                        '12 Sep 2026'
+                                    )"
+                                >
+                                    Manuscript
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Organisational Resilience
+                                    and Technology
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00061
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <div class="subtext">
+                                    Global Management Review
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge overdue">
+                                    Overdue
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="deadline overdue">
+                                    05 Sep 2026
+                                </div>
+
+                            </td>
+
+                            <td>
+                                42%
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="openReviewForm(
+                                        'Organisational Resilience and Technology',
+                                        'MS-2026-00061'
+                                    )"
+                                >
+                                    Continue Review
+                                </button>
+
+                                <button
+                                    class="action-btn"
+                                    onclick="viewManuscript(
+                                        'Organisational Resilience and Technology',
+                                        'MS-2026-00061',
+                                        'Global Management Review',
+                                        '05 Sep 2026'
+                                    )"
+                                >
+                                    Manuscript
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEWER PROFILE + ACTIVITY
+    ========================= -->
+
+    <div class="two-columns">
+
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Reviewer Profile
+                    </h2>
+
+                    <p>
+                        Your reviewer information and availability.
+                    </p>
+
                 </div>
 
-                <div class="card-body">
-
-                    <div class="activity">
-
-                        <div class="activity-dot"></div>
-
-                        <div class="activity-text">
-                            Review draft opened for
-                            <strong>Artificial Intelligence and Digital Learning</strong>
-                            <div class="activity-time">
-                                Today · Demo activity
-                            </div>
-                        </div>
-
-                    </div>
+            </div>
 
 
-                    <div class="activity">
+            <div class="panel-body">
 
-                        <div class="activity-dot"></div>
+                <div class="profile">
 
-                        <div class="activity-text">
-                            Review invitation received for
-                            <strong>Data Analytics for Academic Decision Making</strong>
-                            <div class="activity-time">
-                                Yesterday · Demo activity
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="activity">
-
-                        <div class="activity-dot"></div>
-
-                        <div class="activity-text">
-                            Previous review marked as completed:
-                            <strong>Digital Transformation in Higher Education</strong>
-                            <div class="activity-time">
-                                03 Sep 2026 · Demo activity
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="activity">
-
-                        <div class="activity-dot"></div>
-
-                        <div class="activity-text">
-                            Reviewer profile information viewed.
-                            <div class="activity-time">
-                                02 Sep 2026 · Demo activity
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- PROFILE -->
-
-            <section class="card" id="profile">
-
-                <div class="card-header">
-                    <div>
-                        <h2>Reviewer Profile</h2>
-                        <p>Demo reviewer information.</p>
-                    </div>
-                </div>
-
-                <div class="card-body profile-card">
-
-                    <div class="profile-avatar">
+                    <div class="avatar">
                         DR
                     </div>
 
-                    <h3>
-                        Demo Reviewer
-                    </h3>
+                    <div>
 
-                    <p>
-                        Academic Reviewer
-                    </p>
+                        <h3>
+                            Dr. David Reviewer
+                        </h3>
 
-                    <p style="margin-top:5px;">
-                        reviewer@example.test
-                    </p>
+                        <p>
+                            Academic Reviewer<br>
+                            Example University<br>
+                            Artificial Intelligence · Digital Education
+                        </p>
 
-                    <div class="expertise">
-
-                        <span>Artificial Intelligence</span>
-                        <span>Education</span>
-                        <span>Digital Transformation</span>
-                        <span>Management</span>
+                        <a
+                            href="reviewer-profile.html"
+                            class="profile-link"
+                        >
+                            Edit Reviewer Profile →
+                        </a>
 
                     </div>
 
-                    <button
-                        class="btn btn-outline"
-                        style="margin-top:17px;"
-                        onclick="editProfile()"
-                    >
-                        Edit Profile
-                    </button>
-
                 </div>
-
-            </section>
-
-        </div>
-
-
-        <!-- REVIEW GUIDANCE -->
-
-        <section class="card">
-
-            <div class="card-header">
-
-                <div>
-                    <h2>Reviewer Responsibilities</h2>
-                    <p>Important principles for responsible peer review.</p>
-                </div>
-
-                <a href="peer-review.html" class="btn btn-outline">
-                    Full Policy
-                </a>
 
             </div>
 
-            <div class="card-body">
+        </section>
 
-                <div class="two-col">
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+                    <p>
+                        Your latest reviewer actions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel-body">
+
+                <div class="activity-item">
+
+                    <div class="activity-dot"></div>
 
                     <div>
 
-                        <div class="guideline">
-
-                            <div class="guideline-icon">
-                                ⚖
-                            </div>
-
-                            <div>
-                                <h4>Confidentiality</h4>
-
-                                <p>
-                                    Manuscripts and review materials should be
-                                    treated as confidential and should not be
-                                    shared with unauthorised individuals.
-                                </p>
-                            </div>
-
+                        <div class="activity-title">
+                            Review opened
                         </div>
 
-
-                        <div class="guideline">
-
-                            <div class="guideline-icon">
-                                ✓
-                            </div>
-
-                            <div>
-                                <h4>Objective Assessment</h4>
-
-                                <p>
-                                    Reviews should focus on scholarly quality,
-                                    methodology, originality, clarity and
-                                    relevance rather than personal characteristics.
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="guideline">
-
-                            <div class="guideline-icon">
-                                !
-                            </div>
-
-                            <div>
-                                <h4>Conflict of Interest</h4>
-
-                                <p>
-                                    Reviewers should disclose potential conflicts
-                                    and decline assignments where impartiality
-                                    could reasonably be compromised.
-                                </p>
-                            </div>
-
+                        <div class="activity-time">
+                            MS-2026-00124 · Today
                         </div>
 
                     </div>
 
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-dot"></div>
 
                     <div>
 
-                        <div class="guideline">
-
-                            <div class="guideline-icon">
-                                ◆
-                            </div>
-
-                            <div>
-                                <h4>Constructive Feedback</h4>
-
-                                <p>
-                                    Comments should help authors understand
-                                    strengths, weaknesses and opportunities for
-                                    improvement.
-                                </p>
-                            </div>
-
+                        <div class="activity-title">
+                            Review invitation accepted
                         </div>
 
-
-                        <div class="guideline">
-
-                            <div class="guideline-icon">
-                                ✦
-                            </div>
-
-                            <div>
-                                <h4>Responsible AI Use</h4>
-
-                                <p>
-                                    Any permitted AI-assisted review activity
-                                    should respect confidentiality and applicable
-                                    journal policies.
-                                </p>
-                            </div>
-
+                        <div class="activity-time">
+                            MS-2026-00081 · Yesterday
                         </div>
 
+                    </div>
 
-                        <div class="guideline">
+                </div>
 
-                            <div class="guideline-icon">
-                                ⏱
-                            </div>
 
-                            <div>
-                                <h4>Timely Review</h4>
+                <div class="activity-item">
 
-                                <p>
-                                    Reviewers should respond to invitations and
-                                    complete accepted reviews within the agreed
-                                    timeframe.
-                                </p>
-                            </div>
+                    <div class="activity-dot"></div>
 
+                    <div>
+
+                        <div class="activity-title">
+                            Reviewer profile updated
+                        </div>
+
+                        <div class="activity-time">
+                            02 Sep 2026
                         </div>
 
                     </div>
@@ -1912,22 +2004,367 @@ textarea{
 
         </section>
 
-    </main>
+    </div>
+
+
+    <!-- =========================
+         COMPLETED REVIEWS
+    ========================= -->
+
+    <section
+        class="panel"
+        id="completedReviews"
+    >
+
+        <div class="panel-header">
+
+            <div>
+
+                <h2>
+                    Completed Reviews
+                </h2>
+
+                <p>
+                    Previous reviewer reports submitted through this
+                    demonstration portal.
+                </p>
+
+            </div>
+
+            <a
+                href="review-tracking.html"
+                class="secondary-btn"
+            >
+                Review Tracking
+            </a>
+
+        </div>
+
+
+        <div class="panel-body">
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Manuscript</th>
+                            <th>Journal</th>
+                            <th>Submitted</th>
+                            <th>Recommendation</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Strategic Leadership in
+                                    Digital Organisations
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00119
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Global Management Review
+                            </td>
+
+                            <td>
+                                03 Sep 2026
+                            </td>
+
+                            <td>
+
+                                <span class="badge completed">
+                                    Minor Revision
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="showToast('Demo report opened.')"
+                                >
+                                    View Report
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Digital Transformation
+                                    in Higher Education
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00094
+                                </div>
+
+                            </td>
+
+                            <td>
+                                International Review of Higher Education
+                            </td>
+
+                            <td>
+                                31 Aug 2026
+                            </td>
+
+                            <td>
+
+                                <span class="badge completed">
+                                    Major Revision
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="showToast('Demo report opened.')"
+                                >
+                                    View Report
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="title-cell">
+                                    Organisational Behaviour
+                                    in Digital Workplaces
+                                </div>
+
+                                <div class="subtext">
+                                    MS-2026-00072
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Global Management Review
+                            </td>
+
+                            <td>
+                                27 Aug 2026
+                            </td>
+
+                            <td>
+
+                                <span class="badge completed">
+                                    Accept
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="action-btn blue"
+                                    onclick="showToast('Demo report opened.')"
+                                >
+                                    View Report
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GUIDELINES
+    ========================= -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <h2>
+                    Reviewer Resources
+                </h2>
+
+                <p>
+                    Important resources for conducting responsible peer review.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel-body">
+
+            <div class="guidelines">
+
+                <div class="guideline-card">
+
+                    <h3>
+                        Reviewer Guidelines
+                    </h3>
+
+                    <p>
+                        Learn about reviewer responsibilities, evaluation
+                        criteria, confidentiality and constructive feedback.
+                    </p>
+
+                    <a href="reviewer-guidelines.html">
+                        Read Guidelines →
+                    </a>
+
+                </div>
+
+
+                <div class="guideline-card">
+
+                    <h3>
+                        Peer Review Policy
+                    </h3>
+
+                    <p>
+                        Review the available peer-review models and editorial
+                        decision framework.
+                    </p>
+
+                    <a href="peer-review.html">
+                        View Policy →
+                    </a>
+
+                </div>
+
+
+                <div class="guideline-card">
+
+                    <h3>
+                        Publication Ethics
+                    </h3>
+
+                    <p>
+                        Review principles relating to confidentiality,
+                        conflicts of interest and research integrity.
+                    </p>
+
+                    <a href="publication-ethics.html">
+                        View Ethics Policy →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
 
 </div>
 
 
-<!-- REVIEW MODAL -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-<div class="modal-overlay" id="reviewModal">
+<footer>
 
-    <div class="modal">
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Scopusixteen Publishing · Prototype Platform
+        </div>
+
+        <div>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="reviewer-guidelines.html">
+                Reviewer Guidelines
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     MANUSCRIPT MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="manuscriptModal"
+>
+
+    <div class="modal-card">
 
         <div class="modal-header">
 
-            <h2>Review Manuscript</h2>
+            <h3>
+                Manuscript Details
+            </h3>
 
-            <button class="close" onclick="closeReview()">
+            <button
+                class="close"
+                onclick="closeModal('manuscriptModal')"
+            >
                 ×
             </button>
 
@@ -1941,10 +2378,13 @@ textarea{
                 <div class="detail">
 
                     <div class="detail-label">
-                        Manuscript Title
+                        Manuscript
                     </div>
 
-                    <div class="detail-value" id="modalTitle">
+                    <div
+                        class="detail-value"
+                        id="manuscriptTitle"
+                    >
                         —
                     </div>
 
@@ -1957,7 +2397,10 @@ textarea{
                         Manuscript ID
                     </div>
 
-                    <div class="detail-value" id="modalId">
+                    <div
+                        class="detail-value"
+                        id="manuscriptId"
+                    >
                         —
                     </div>
 
@@ -1970,7 +2413,10 @@ textarea{
                         Journal
                     </div>
 
-                    <div class="detail-value" id="modalJournal">
+                    <div
+                        class="detail-value"
+                        id="manuscriptJournal"
+                    >
                         —
                     </div>
 
@@ -1980,10 +2426,13 @@ textarea{
                 <div class="detail">
 
                     <div class="detail-label">
-                        Current Status
+                        Review Deadline
                     </div>
 
-                    <div class="detail-value" id="modalStatus">
+                    <div
+                        class="detail-value"
+                        id="manuscriptDeadline"
+                    >
                         —
                     </div>
 
@@ -1992,202 +2441,66 @@ textarea{
             </div>
 
 
-            <div class="notice-box">
+            <div class="abstract-box">
 
-                <strong>Confidentiality reminder:</strong>
-                This is a demonstration review workspace. In a live publishing
-                system, confidential manuscript materials should only be accessed
-                through authorised reviewer accounts and handled according to the
-                applicable journal policy.
+                <h4>
+                    Abstract
+                </h4>
 
-            </div>
-
-
-            <h3 class="section-title">
-                Conflict of Interest
-            </h3>
-
-            <div class="radio-row">
-
-                <label>
-                    <input type="radio" name="conflict" value="none" checked>
-                    I have no conflict of interest
-                </label>
-
-                <label>
-                    <input type="radio" name="conflict" value="yes">
-                    I may have a conflict
-                </label>
+                <p>
+                    This is demonstration manuscript content for the
+                    reviewer workspace. A connected editorial system would
+                    securely display the submitted manuscript abstract and
+                    permitted manuscript files to the assigned reviewer.
+                </p>
 
             </div>
 
 
-            <h3 class="section-title">
-                Overall Assessment
-            </h3>
+            <div class="abstract-box">
 
+                <h4>
+                    Reviewer Responsibilities
+                </h4>
 
-            <div class="rating-grid">
-
-                <div class="rating-item">
-
-                    <label>
-                        Originality
-                    </label>
-
-                    <select class="form-control" id="originality">
-                        <option value="">Select rating</option>
-                        <option>Excellent</option>
-                        <option>Very Good</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                        <option>Poor</option>
-                    </select>
-
-                </div>
-
-
-                <div class="rating-item">
-
-                    <label>
-                        Methodology
-                    </label>
-
-                    <select class="form-control" id="methodology">
-                        <option value="">Select rating</option>
-                        <option>Excellent</option>
-                        <option>Very Good</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                        <option>Poor</option>
-                    </select>
-
-                </div>
-
-
-                <div class="rating-item">
-
-                    <label>
-                        Clarity
-                    </label>
-
-                    <select class="form-control" id="clarity">
-                        <option value="">Select rating</option>
-                        <option>Excellent</option>
-                        <option>Very Good</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                        <option>Poor</option>
-                    </select>
-
-                </div>
-
-
-                <div class="rating-item">
-
-                    <label>
-                        Significance
-                    </label>
-
-                    <select class="form-control" id="significance">
-                        <option value="">Select rating</option>
-                        <option>Excellent</option>
-                        <option>Very Good</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                        <option>Poor</option>
-                    </select>
-
-                </div>
+                <p>
+                    Review the manuscript objectively, maintain confidentiality,
+                    identify relevant methodological or presentation concerns,
+                    disclose potential conflicts of interest and provide
+                    constructive recommendations to the editor.
+                </p>
 
             </div>
 
 
-            <h3 class="section-title">
-                Recommendation
-            </h3>
+            <div class="confidential">
 
-            <select class="form-control" id="recommendation">
+                <strong>Confidentiality:</strong>
+                Manuscripts and reviewer reports should be treated as
+                confidential editorial material. Do not share or distribute
+                unpublished manuscript content outside the authorised review
+                process.
 
-                <option value="">
-                    Select recommendation
-                </option>
-
-                <option>
-                    Accept
-                </option>
-
-                <option>
-                    Minor Revision
-                </option>
-
-                <option>
-                    Major Revision
-                </option>
-
-                <option>
-                    Reject and Resubmit
-                </option>
-
-                <option>
-                    Reject
-                </option>
-
-            </select>
+            </div>
 
 
-            <h3 class="section-title">
-                Comments to the Editor
-            </h3>
+            <div class="modal-actions">
 
-            <textarea
-                id="editorComments"
-                class="form-control"
-                placeholder="Provide confidential comments for the editor..."
-            ></textarea>
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal('manuscriptModal')"
+                >
+                    Close
+                </button>
 
+                <button
+                    class="primary-btn"
+                    onclick="startReviewFromManuscript()"
+                >
+                    Start Review
+                </button>
 
-            <h3 class="section-title">
-                Comments to the Authors
-            </h3>
-
-            <textarea
-                id="authorComments"
-                class="form-control"
-                placeholder="Provide constructive comments for the authors..."
-            ></textarea>
-
-
-            <label class="checkbox-row">
-
-                <input type="checkbox" id="reviewConfirmation">
-
-                <span>
-                    I confirm that this demonstration review reflects an
-                    objective assessment and that I have considered confidentiality
-                    and potential conflicts of interest.
-                </span>
-
-            </label>
-
-        </div>
-
-
-        <div class="modal-footer">
-
-            <button
-                class="btn btn-light"
-                onclick="saveDraft()"
-            >
-                Save Draft
-            </button>
-
-            <button
-                class="btn btn-primary"
-                onclick="submitReview()"
-            >
-                Submit Review
-            </button>
+            </div>
 
         </div>
 
@@ -2196,105 +2509,417 @@ textarea{
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     REVIEW FORM MODAL
+========================= -->
 
-<footer class="footer">
+<div
+    class="modal"
+    id="reviewModal"
+>
 
-    <div class="footer-grid">
+    <div class="modal-card">
 
-        <div>
+        <div class="modal-header">
 
-            <h3>Scopusixteen Publishing</h3>
+            <h3>
+                Reviewer Report
+            </h3>
 
-            <p>
-                A demonstration academic publishing platform designed to
-                support authors, reviewers, editors and publishing administrators.
-            </p>
-
-            <p style="margin-top:12px;">
-                This website prototype is not affiliated with Springer Nature
-                or any other publisher.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>Publishing</h3>
-
-            <a href="journals.html">Journals</a>
-            <a href="author-guidelines.html">Author Guidelines</a>
-            <a href="peer-review.html">Peer Review</a>
-            <a href="publication-ethics.html">Publication Ethics</a>
+            <button
+                class="close"
+                onclick="closeModal('reviewModal')"
+            >
+                ×
+            </button>
 
         </div>
 
 
-        <div>
+        <div class="modal-body">
 
-            <h3>Platform</h3>
+            <div class="detail-grid">
 
-            <a href="author-dashboard.html">Author Portal</a>
-            <a href="reviewer-portal.html">Reviewer Portal</a>
-            <a href="editorial-dashboard.html">Editorial Dashboard</a>
-            <a href="production-dashboard.html">Production</a>
+                <div class="detail">
 
-        </div>
+                    <div class="detail-label">
+                        Manuscript
+                    </div>
+
+                    <div
+                        class="detail-value"
+                        id="reviewTitle"
+                    >
+                        —
+                    </div>
+
+                </div>
 
 
-        <div>
+                <div class="detail">
 
-            <h3>Support</h3>
+                    <div class="detail-label">
+                        Manuscript ID
+                    </div>
 
-            <a href="contact.html">Contact</a>
-            <a href="ai-assistant.html">AI Assistant</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms & Conditions</a>
+                    <div
+                        class="detail-value"
+                        id="reviewId"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Overall Recommendation
+                </label>
+
+                <select id="recommendation">
+
+                    <option value="">
+                        Select recommendation
+                    </option>
+
+                    <option>
+                        Accept
+                    </option>
+
+                    <option>
+                        Minor Revision
+                    </option>
+
+                    <option>
+                        Major Revision
+                    </option>
+
+                    <option>
+                        Reject and Resubmit
+                    </option>
+
+                    <option>
+                        Reject
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Manuscript Evaluation
+                </label>
+
+                <div class="criteria">
+
+                    <div class="criteria-item">
+
+                        <label>
+                            Originality
+                        </label>
+
+                        <select>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Needs Improvement</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="criteria-item">
+
+                        <label>
+                            Methodology
+                        </label>
+
+                        <select>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Needs Improvement</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="criteria-item">
+
+                        <label>
+                            Results
+                        </label>
+
+                        <select>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Needs Improvement</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="criteria-item">
+
+                        <label>
+                            Presentation
+                        </label>
+
+                        <select>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Needs Improvement</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Comments to the Author
+                </label>
+
+                <textarea
+                    id="authorComments"
+                    rows="6"
+                    placeholder="Provide constructive comments that may be shared with the author..."
+                ></textarea>
+
+                <div class="help-text">
+                    Focus on specific, professional and constructive
+                    observations about the manuscript.
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Confidential Comments to the Editor
+                </label>
+
+                <textarea
+                    id="editorComments"
+                    rows="5"
+                    placeholder="Provide confidential comments intended only for the editor..."
+                ></textarea>
+
+                <div class="help-text">
+                    Do not repeat confidential information unnecessarily.
+                    This area is intended for editorial communication.
+                </div>
+
+            </div>
+
+
+            <div class="confidential">
+
+                <strong>Reviewer confidentiality reminder:</strong>
+                Do not upload or disclose confidential manuscript material
+                to external AI tools or other third-party services unless
+                explicitly permitted by the applicable journal policy.
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="saveDraftReview()"
+                >
+                    Save Draft
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="submitReview()"
+                >
+                    Submit Review
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
+</div>
 
-    <div class="footer-bottom">
 
-        <div>
-            © 2026 Scopusixteen Publishing. Prototype platform.
+<!-- =========================
+     PROFILE MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="profileModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>
+                Reviewer Availability
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal('profileModal')"
+            >
+                ×
+            </button>
+
         </div>
 
-        <div>
-            Reviewer Portal · Frontend Demonstration
+
+        <div class="modal-body">
+
+            <div class="profile">
+
+                <div class="avatar">
+                    DR
+                </div>
+
+                <div>
+
+                    <h3>
+                        Dr. David Reviewer
+                    </h3>
+
+                    <p>
+                        Example University<br>
+                        Artificial Intelligence · Digital Education
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group" style="margin-top:22px;">
+
+                <label>
+                    Current Availability
+                </label>
+
+                <select id="availability">
+
+                    <option value="Available">
+                        Available for Review
+                    </option>
+
+                    <option value="Limited">
+                        Limited Availability
+                    </option>
+
+                    <option value="Unavailable">
+                        Unavailable
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="confidential">
+
+                Your availability preference is demonstration data in
+                this prototype and is not transmitted to a live reviewer
+                management system.
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal('profileModal')"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="saveAvailability()"
+                >
+                    Save Availability
+                </button>
+
+            </div>
+
         </div>
 
     </div>
 
-</footer>
+</div>
 
 
-<!-- TOAST -->
+<!-- =========================
+     TOAST
+========================= -->
 
-<div class="toast" id="toast"></div>
+<div
+    class="toast"
+    id="toast"
+>
+    Demo action completed.
+</div>
 
 
 <script>
 
-/* MOBILE MENU */
+/* =========================
+   GLOBAL STATE
+========================= */
 
-function toggleMenu(){
+let selectedManuscript = {
+    title:"",
+    id:"",
+    journal:"",
+    deadline:""
+};
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+function toggleSidebar(){
 
     document
-        .getElementById("mainNav")
-        .classList.toggle("show");
+        .getElementById("sidebar")
+        .classList
+        .toggle("open");
 
 }
 
 
-/* TOAST */
+/* =========================
+   TOAST
+========================= */
 
 function showToast(message){
 
-    const toast = document.getElementById("toast");
+    const toast =
+        document.getElementById("toast");
 
     toast.textContent = message;
 
@@ -2309,343 +2934,503 @@ function showToast(message){
 }
 
 
-/* FILTER REVIEWS */
+/* =========================
+   REFRESH
+========================= */
 
-function filterReviews(){
+function refreshDemo(){
 
-    const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+    showToast(
+        "Reviewer portal refreshed in demo mode."
+    );
 
-    const status =
-        document
-        .getElementById("statusFilter")
-        .value;
+}
 
-    const journal =
-        document
-        .getElementById("journalFilter")
-        .value;
 
-    const rows =
-        document.querySelectorAll("#reviewTable tr");
+/* =========================
+   ACCEPT INVITATION
+========================= */
 
-    rows.forEach(function(row){
+function acceptInvitation(id){
 
-        const title =
-            row.dataset.title.toLowerCase();
+    localStorage.setItem(
+        "scopusixteenReviewerInvitation",
+        JSON.stringify({
+            manuscriptId:id,
+            status:"Accepted",
+            updatedAt:new Date().toISOString()
+        })
+    );
 
-        const rowJournal =
-            row.dataset.journal;
+    showToast(
+        id +
+        " invitation accepted in demo mode."
+    );
 
-        const rowStatus =
-            row.dataset.status;
+}
 
-        const matchesSearch =
-            title.includes(search) ||
-            row.textContent.toLowerCase().includes(search);
 
-        const matchesStatus =
-            !status || rowStatus === status;
+/* =========================
+   DECLINE INVITATION
+========================= */
 
-        const matchesJournal =
-            !journal || rowJournal === journal;
+function declineInvitation(id){
 
-        if(
-            matchesSearch &&
-            matchesStatus &&
-            matchesJournal
-        ){
+    const confirmed =
+        confirm(
+            "Decline this review invitation in demo mode?"
+        );
 
-            row.style.display = "";
+    if(!confirmed){
+        return;
+    }
 
-        }else{
+    localStorage.setItem(
+        "scopusixteenReviewerInvitation",
+        JSON.stringify({
+            manuscriptId:id,
+            status:"Declined",
+            updatedAt:new Date().toISOString()
+        })
+    );
 
-            row.style.display = "none";
+    showToast(
+        id +
+        " invitation declined in demo mode."
+    );
+
+}
+
+
+/* =========================
+   MANUSCRIPT MODAL
+========================= */
+
+function viewManuscript(
+    title,
+    id,
+    journal,
+    deadline
+){
+
+    selectedManuscript = {
+        title:title,
+        id:id,
+        journal:journal,
+        deadline:deadline
+    };
+
+    document
+        .getElementById("manuscriptTitle")
+        .textContent = title;
+
+    document
+        .getElementById("manuscriptId")
+        .textContent = id;
+
+    document
+        .getElementById("manuscriptJournal")
+        .textContent = journal;
+
+    document
+        .getElementById("manuscriptDeadline")
+        .textContent = deadline;
+
+    document
+        .getElementById("manuscriptModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   START REVIEW FROM MANUSCRIPT
+========================= */
+
+function startReviewFromManuscript(){
+
+    closeModal("manuscriptModal");
+
+    openReviewForm(
+        selectedManuscript.title,
+        selectedManuscript.id
+    );
+
+}
+
+
+/* =========================
+   OPEN REVIEW FORM
+========================= */
+
+function openReviewForm(
+    title,
+    id
+){
+
+    selectedManuscript.title = title;
+
+    selectedManuscript.id = id;
+
+    document
+        .getElementById("reviewTitle")
+        .textContent = title;
+
+    document
+        .getElementById("reviewId")
+        .textContent = id;
+
+
+    /* Load saved draft */
+
+    const savedDraft =
+        localStorage.getItem(
+            "scopusixteenReviewerDraft_" + id
+        );
+
+
+    if(savedDraft){
+
+        try{
+
+            const data =
+                JSON.parse(savedDraft);
+
+            document
+                .getElementById("recommendation")
+                .value =
+                data.recommendation || "";
+
+            document
+                .getElementById("authorComments")
+                .value =
+                data.authorComments || "";
+
+            document
+                .getElementById("editorComments")
+                .value =
+                data.editorComments || "";
+
+        }catch(error){
+
+            console.log(
+                "Draft could not be loaded."
+            );
 
         }
 
-    });
+    }else{
 
-}
+        document
+            .getElementById("recommendation")
+            .value = "";
 
+        document
+            .getElementById("authorComments")
+            .value = "";
 
-/* CLEAR FILTERS */
+        document
+            .getElementById("editorComments")
+            .value = "";
 
-function clearFilters(){
+    }
 
-    document.getElementById("searchInput").value = "";
-    document.getElementById("statusFilter").value = "";
-    document.getElementById("journalFilter").value = "";
-
-    filterReviews();
-
-}
-
-
-/* OPEN REVIEW */
-
-function openReview(title,journal,id,status){
-
-    document.getElementById("modalTitle").textContent = title;
-
-    document.getElementById("modalJournal").textContent = journal;
-
-    document.getElementById("modalId").textContent = id;
-
-    document.getElementById("modalStatus").textContent = status;
-
-    document.getElementById("reviewModal").classList.add("show");
-
-}
-
-
-/* CLOSE REVIEW */
-
-function closeReview(){
 
     document
         .getElementById("reviewModal")
-        .classList.remove("show");
+        .classList
+        .add("show");
 
 }
 
 
-/* SAVE REVIEW DRAFT */
+/* =========================
+   SAVE DRAFT
+========================= */
 
-function saveDraft(){
+function saveDraftReview(){
+
+    const recommendation =
+        document
+            .getElementById("recommendation")
+            .value;
+
+    const authorComments =
+        document
+            .getElementById("authorComments")
+            .value;
+
+    const editorComments =
+        document
+            .getElementById("editorComments")
+            .value;
+
 
     const draft = {
 
-        originality:
-            document.getElementById("originality").value,
+        manuscriptId:
+            selectedManuscript.id,
 
-        methodology:
-            document.getElementById("methodology").value,
-
-        clarity:
-            document.getElementById("clarity").value,
-
-        significance:
-            document.getElementById("significance").value,
+        title:
+            selectedManuscript.title,
 
         recommendation:
-            document.getElementById("recommendation").value,
-
-        editorComments:
-            document.getElementById("editorComments").value,
+            recommendation,
 
         authorComments:
-            document.getElementById("authorComments").value,
+            authorComments,
+
+        editorComments:
+            editorComments,
 
         savedAt:
             new Date().toISOString()
 
     };
 
+
     localStorage.setItem(
-        "scopusixteenReviewerDraft",
+        "scopusixteenReviewerDraft_" +
+        selectedManuscript.id,
         JSON.stringify(draft)
     );
 
+
     showToast(
-        "Review draft saved locally for this prototype."
+        "Review draft saved locally in demo mode."
     );
 
 }
 
 
-/* SUBMIT REVIEW */
+/* =========================
+   SUBMIT REVIEW
+========================= */
 
 function submitReview(){
 
     const recommendation =
-        document.getElementById("recommendation").value;
+        document
+            .getElementById("recommendation")
+            .value;
 
-    const confirmation =
-        document.getElementById("reviewConfirmation").checked;
+    const authorComments =
+        document
+            .getElementById("authorComments")
+            .value.trim();
+
+    const editorComments =
+        document
+            .getElementById("editorComments")
+            .value.trim();
+
 
     if(!recommendation){
 
         showToast(
-            "Please select a recommendation first."
+            "Please select a recommendation."
         );
 
         return;
     }
 
-    if(!confirmation){
+
+    if(!authorComments){
 
         showToast(
-            "Please confirm the reviewer declaration."
+            "Please provide comments to the author."
         );
 
         return;
     }
+
+
+    const confirmed =
+        confirm(
+            "Submit this reviewer report in demo mode?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    const report = {
+
+        manuscriptId:
+            selectedManuscript.id,
+
+        title:
+            selectedManuscript.title,
+
+        recommendation:
+            recommendation,
+
+        authorComments:
+            authorComments,
+
+        editorComments:
+            editorComments,
+
+        submittedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenReviewerReport_" +
+        selectedManuscript.id,
+        JSON.stringify(report)
+    );
+
 
     localStorage.removeItem(
-        "scopusixteenReviewerDraft"
+        "scopusixteenReviewerDraft_" +
+        selectedManuscript.id
     );
 
-    closeReview();
+
+    closeModal("reviewModal");
+
 
     showToast(
-        "Demo review submitted. No real report was transmitted."
+        "Reviewer report submitted in demo mode."
     );
 
 }
 
 
-/* ACCEPT INVITATION */
+/* =========================
+   PROFILE
+========================= */
 
-function acceptInvitation(button){
+function openProfile(){
 
-    const card =
-        button.closest(".invitation");
+    document
+        .getElementById("profileModal")
+        .classList
+        .add("show");
 
-    card.style.opacity = ".55";
+}
 
-    button.disabled = true;
+
+function saveAvailability(){
+
+    const availability =
+        document
+            .getElementById("availability")
+            .value;
+
+
+    localStorage.setItem(
+        "scopusixteenReviewerAvailability",
+        JSON.stringify({
+            status:availability,
+            updatedAt:new Date().toISOString()
+        })
+    );
+
+
+    closeModal("profileModal");
+
 
     showToast(
-        "Demo invitation accepted. No live assignment was created."
+        "Availability saved in demo mode."
     );
 
 }
 
 
-/* DECLINE INVITATION */
+/* =========================
+   CLOSE MODALS
+========================= */
 
-function declineInvitation(button){
+function closeModal(id){
 
-    const card =
-        button.closest(".invitation");
-
-    card.style.opacity = ".45";
-
-    button.disabled = true;
-
-    showToast(
-        "Demo invitation declined. No live decision was recorded."
-    );
+    document
+        .getElementById(id)
+        .classList
+        .remove("show");
 
 }
 
 
-/* VIEW INVITATION */
-
-function viewInvitation(){
-
-    showToast(
-        "Invitation details are demonstration content."
-    );
-
-}
-
-
-/* COMPLETED REVIEW */
-
-function viewCompleted(){
-
-    showToast(
-        "Completed review details are demonstration content."
-    );
-
-}
-
-
-/* PROFILE */
-
-function editProfile(){
-
-    showToast(
-        "Profile editing will be connected to the reviewer account system later."
-    );
-
-}
-
-
-/* LOAD LOCAL DRAFT */
-
-function loadDraft(){
-
-    const saved =
-        localStorage.getItem(
-            "scopusixteenReviewerDraft"
-        );
-
-    if(!saved){
-        return;
-    }
-
-    try{
-
-        const draft =
-            JSON.parse(saved);
-
-        document.getElementById("originality").value =
-            draft.originality || "";
-
-        document.getElementById("methodology").value =
-            draft.methodology || "";
-
-        document.getElementById("clarity").value =
-            draft.clarity || "";
-
-        document.getElementById("significance").value =
-            draft.significance || "";
-
-        document.getElementById("recommendation").value =
-            draft.recommendation || "";
-
-        document.getElementById("editorComments").value =
-            draft.editorComments || "";
-
-        document.getElementById("authorComments").value =
-            draft.authorComments || "";
-
-    }catch(error){
-
-        console.log("No valid demo draft found.");
-
-    }
-
-}
-
-
-/* CLICK OUTSIDE MODAL */
+/* =========================
+   OUTSIDE CLICK
+========================= */
 
 document
-    .getElementById("reviewModal")
-    .addEventListener("click",function(event){
+    .querySelectorAll(".modal")
+    .forEach(function(modal){
 
-        if(event.target === this){
+        modal.addEventListener(
+            "click",
+            function(event){
 
-            closeReview();
+                if(event.target === modal){
 
-        }
+                    modal.classList.remove("show");
+
+                }
+
+            }
+        );
 
     });
 
 
-/* ESCAPE KEY */
+/* =========================
+   ESC KEY
+========================= */
 
-document.addEventListener("keydown",function(event){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    if(event.key === "Escape"){
+        if(event.key === "Escape"){
 
-        closeReview();
+            document
+                .querySelectorAll(".modal")
+                .forEach(function(modal){
+
+                    modal.classList.remove("show");
+
+                });
+
+        }
 
     }
+);
 
-});
+
+/* =========================
+   REVIEWER SESSION CHECK
+========================= */
+
+const reviewerSession =
+    localStorage.getItem(
+        "scopusixteenReviewerSession"
+    );
 
 
-/* INITIALISE */
+if(!reviewerSession){
 
-loadDraft();
+    /*
+       Prototype behaviour:
+       We do not force redirect because the
+       portal is still a frontend demonstration.
+    */
+
+    console.log(
+        "No live reviewer authentication session found. Prototype mode enabled."
+    );
+
+}
 
 </script>
 
