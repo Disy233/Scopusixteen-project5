@@ -1,0 +1,3262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editorial Revision | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --navy:#071b3a;
+    --navy2:#102d58;
+    --blue:#1677ff;
+    --blue2:#0d5fd1;
+    --light:#f4f7fb;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#687386;
+    --border:#e1e7ef;
+    --green:#16a34a;
+    --orange:#f59e0b;
+    --red:#dc2626;
+    --purple:#7c3aed;
+    --shadow:0 8px 25px rgba(7,27,58,.08);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* HEADER */
+
+.topbar{
+    height:70px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.16);
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#4d9aff;
+}
+
+.topnav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.topnav a{
+    color:#d9e5f7;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+}
+
+.topnav a:hover{
+    color:#fff;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding-left:17px;
+    margin-left:5px;
+    border-left:1px solid rgba(255,255,255,.18);
+}
+
+.avatar{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.mobile-menu{
+    display:none;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* LAYOUT */
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 70px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:260px;
+    background:#fff;
+    border-right:1px solid var(--border);
+    padding:23px 14px;
+    position:sticky;
+    top:70px;
+    height:calc(100vh - 70px);
+    overflow-y:auto;
+    flex-shrink:0;
+}
+
+.side-title{
+    padding:0 12px 9px;
+    color:#9aa3b2;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.side-link{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:#4b5563;
+    text-decoration:none;
+    font-size:13px;
+    padding:10px 12px;
+    border-radius:8px;
+    margin-bottom:3px;
+}
+
+.side-link:hover{
+    background:#edf4ff;
+    color:var(--blue);
+}
+
+.side-link.active{
+    background:#eaf2ff;
+    color:var(--blue);
+    font-weight:700;
+}
+
+.icon{
+    width:21px;
+    text-align:center;
+}
+
+.divider{
+    height:1px;
+    background:var(--border);
+    margin:17px 10px;
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+    width:100%;
+    max-width:1550px;
+    margin:auto;
+    padding:28px;
+}
+
+.breadcrumb{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    font-size:12px;
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:var(--blue);
+    text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:#fff;
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:22px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    right:-70px;
+    top:-100px;
+    width:260px;
+    height:260px;
+    border:35px solid rgba(255,255,255,.05);
+    border-radius:50%;
+}
+
+.hero h1{
+    font-size:29px;
+    margin-bottom:7px;
+    position:relative;
+    z-index:2;
+}
+
+.hero p{
+    color:#cbd8eb;
+    max-width:820px;
+    font-size:14px;
+    position:relative;
+    z-index:2;
+}
+
+/* NOTICE */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f2d58e;
+    color:#765400;
+    border-radius:10px;
+    padding:13px 15px;
+    margin-bottom:22px;
+    font-size:12px;
+}
+
+/* CARDS */
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    margin-bottom:22px;
+    overflow:hidden;
+}
+
+.card-header{
+    padding:17px 19px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.card-header h2{
+    font-size:17px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+/* MANUSCRIPT */
+
+.manuscript-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.manuscript-title{
+    font-size:22px;
+    font-weight:750;
+    margin-bottom:7px;
+}
+
+.meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.meta span{
+    background:#f5f7fa;
+    color:#596579;
+    padding:5px 9px;
+    border-radius:6px;
+    font-size:11px;
+}
+
+.status{
+    padding:7px 12px;
+    border-radius:20px;
+    background:#fff4dd;
+    color:#946200;
+    border:1px solid #f2d58e;
+    font-size:11px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:22px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+    margin-bottom:22px;
+}
+
+.stat{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:17px;
+    box-shadow:var(--shadow);
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:11px;
+    margin-bottom:4px;
+}
+
+.stat-value{
+    font-size:22px;
+    font-weight:800;
+}
+
+.stat-note{
+    font-size:10px;
+    color:#9aa3b2;
+    margin-top:3px;
+}
+
+/* INFO GRID */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.info{
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:13px;
+}
+
+.info-label{
+    color:var(--muted);
+    font-size:10px;
+    margin-bottom:3px;
+}
+
+.info-value{
+    font-size:13px;
+    font-weight:700;
+}
+
+/* VERSION COMPARISON */
+
+.version-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.version{
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.version-head{
+    background:#f8fafc;
+    border-bottom:1px solid var(--border);
+    padding:12px 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.version-head strong{
+    font-size:13px;
+}
+
+.version-body{
+    padding:15px;
+}
+
+.version-line{
+    padding:10px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:12px;
+    color:#566174;
+}
+
+.version-line:last-child{
+    border-bottom:none;
+}
+
+/* BADGES */
+
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.badge-green{
+    background:#eaf8ef;
+    color:#16803c;
+}
+
+.badge-orange{
+    background:#fff4dd;
+    color:#946200;
+}
+
+.badge-blue{
+    background:#eaf2ff;
+    color:#145ec9;
+}
+
+.badge-red{
+    background:#fdecec;
+    color:#b42318;
+}
+
+.badge-gray{
+    background:#eef1f5;
+    color:#667085;
+}
+
+.badge-purple{
+    background:#f1ebff;
+    color:#6731bd;
+}
+
+/* RESPONSE */
+
+.response{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:12px;
+}
+
+.response:last-child{
+    margin-bottom:0;
+}
+
+.response-head{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.response-title{
+    font-size:13px;
+    font-weight:700;
+}
+
+.response p{
+    font-size:12px;
+    color:#596579;
+}
+
+/* FORM */
+
+label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+select,
+textarea,
+input{
+    width:100%;
+    border:1px solid #ccd5e2;
+    border-radius:8px;
+    padding:10px 11px;
+    font-family:inherit;
+    font-size:13px;
+    outline:none;
+    background:#fff;
+}
+
+select:focus,
+textarea:focus,
+input:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(22,119,255,.08);
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+/* CHECKBOX */
+
+.check{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin-bottom:10px;
+    font-size:12px;
+    color:#596579;
+}
+
+.check input{
+    width:auto;
+    margin-top:3px;
+}
+
+/* BUTTONS */
+
+.btn{
+    border:none;
+    border-radius:8px;
+    padding:10px 14px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:700;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--blue2);
+}
+
+.btn-secondary{
+    background:#edf2f8;
+    color:#334155;
+}
+
+.btn-secondary:hover{
+    background:#e3e9f1;
+}
+
+.btn-outline{
+    background:#fff;
+    border:1px solid #ccd5e2;
+    color:#334155;
+}
+
+.btn-danger{
+    background:#fff0f0;
+    color:#b42318;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:16px;
+    top:8px;
+    bottom:8px;
+    width:2px;
+    background:#dfe5ee;
+}
+
+.timeline-item{
+    display:flex;
+    gap:14px;
+    position:relative;
+    margin-bottom:22px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+}
+
+.dot{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#edf4ff;
+    color:var(--blue);
+    border:2px solid #c6dcff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    z-index:2;
+    flex-shrink:0;
+}
+
+.dot.done{
+    background:#eaf8ef;
+    color:var(--green);
+    border-color:#b4e2c2;
+}
+
+.dot.current{
+    background:#fff4dd;
+    color:#946200;
+    border-color:#f2d58e;
+}
+
+.timeline-content{
+    padding-top:2px;
+}
+
+.timeline-content h3{
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.timeline-content p{
+    font-size:11px;
+    color:var(--muted);
+}
+
+.date{
+    font-size:10px;
+    color:#9aa3b2;
+    margin-top:4px;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+}
+
+th{
+    background:#f8fafc;
+    color:#788394;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    text-align:left;
+    padding:11px 13px;
+    border-bottom:1px solid var(--border);
+}
+
+td{
+    font-size:12px;
+    padding:13px;
+    border-bottom:1px solid #edf0f4;
+}
+
+tr:last-child td{
+    border-bottom:none;
+}
+
+/* ACTIVITY */
+
+.activity{
+    display:flex;
+    gap:10px;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.activity:last-child{
+    border-bottom:none;
+}
+
+.activity-icon{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#edf4ff;
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    flex-shrink:0;
+}
+
+.activity-text{
+    font-size:11px;
+}
+
+.activity-time{
+    font-size:9px;
+    color:#9aa3b2;
+}
+
+/* ALERT */
+
+.alert{
+    padding:13px 15px;
+    border-radius:9px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.alert-info{
+    background:#edf6ff;
+    border:1px solid #c9e2ff;
+    color:#145aa8;
+}
+
+.alert-warning{
+    background:#fff8e8;
+    border:1px solid #f2d58e;
+    color:#805b00;
+}
+
+.alert-success{
+    background:#ecf9f0;
+    border:1px solid #bce5c7;
+    color:#16713a;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
+    background:var(--navy);
+    color:#aebbd0;
+    padding:25px;
+    text-align:center;
+    font-size:11px;
+}
+
+footer a{
+    color:#dce7f8;
+    text-decoration:none;
+    margin:0 7px;
+}
+
+/* MODAL */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(5,18,40,.68);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:3000;
+}
+
+.overlay.show{
+    display:flex;
+}
+
+.modal{
+    background:#fff;
+    width:100%;
+    max-width:580px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:14px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.modal-head{
+    padding:17px 20px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-head h3{
+    font-size:16px;
+}
+
+.close{
+    border:none;
+    background:none;
+    font-size:23px;
+    color:#667085;
+    cursor:pointer;
+}
+
+.modal-body{
+    padding:20px;
+}
+
+.modal-foot{
+    padding:15px 20px;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:var(--navy);
+    color:#fff;
+    padding:12px 16px;
+    border-radius:8px;
+    font-size:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    opacity:0;
+    transform:translateY(15px);
+    transition:.3s;
+    pointer-events:none;
+    z-index:4000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .sidebar{
+        width:230px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .topbar{
+        padding:0 18px;
+    }
+
+    .topnav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-275px;
+        top:70px;
+        width:265px;
+        height:calc(100vh - 70px);
+        z-index:2000;
+        transition:.3s;
+        box-shadow:10px 0 30px rgba(0,0,0,.15);
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .main{
+        padding:20px 14px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .version-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:22px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .manuscript-header{
+        flex-direction:column;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .actions .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <nav class="topnav">
+
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+        <a href="administration.html">Administration</a>
+
+        <div class="user">
+
+            <div class="avatar">
+                ED
+            </div>
+
+            <span style="font-size:12px;">
+                Editor
+            </span>
+
+        </div>
+
+    </nav>
+
+    <button class="mobile-menu"
+            onclick="toggleSidebar()">
+        ☰
+    </button>
+
+</header>
+
+
+<div class="layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="side-title">
+        Editorial Workspace
+    </div>
+
+    <a href="editorial-dashboard.html"
+       class="side-link">
+
+        <span class="icon">⌂</span>
+        Editorial Dashboard
+
+    </a>
+
+    <a href="editorial-revision.html"
+       class="side-link active">
+
+        <span class="icon">↻</span>
+        Revision Assessment
+
+    </a>
+
+    <a href="reviewer-assignment.html"
+       class="side-link">
+
+        <span class="icon">⇄</span>
+        Reviewer Assignment
+
+    </a>
+
+    <a href="review-tracking.html"
+       class="side-link">
+
+        <span class="icon">✓</span>
+        Review Tracking
+
+    </a>
+
+    <a href="reviewer-management.html"
+       class="side-link">
+
+        <span class="icon">♙</span>
+        Reviewer Management
+
+    </a>
+
+    <div class="divider"></div>
+
+    <div class="side-title">
+        Editorial Policies
+    </div>
+
+    <a href="peer-review.html"
+       class="side-link">
+
+        <span class="icon">✓</span>
+        Peer Review Policy
+
+    </a>
+
+    <a href="publication-ethics.html"
+       class="side-link">
+
+        <span class="icon">⚖</span>
+        Publication Ethics
+
+    </a>
+
+    <a href="author-guidelines.html"
+       class="side-link">
+
+        <span class="icon">▤</span>
+        Author Guidelines
+
+    </a>
+
+    <div class="divider"></div>
+
+    <div class="side-title">
+        Production
+    </div>
+
+    <a href="production-dashboard.html"
+       class="side-link">
+
+        <span class="icon">▣</span>
+        Production
+
+    </a>
+
+    <a href="publisher-settings.html"
+       class="side-link">
+
+        <span class="icon">⚙</span>
+        Publisher Settings
+
+    </a>
+
+    <div class="divider"></div>
+
+    <div class="side-title">
+        Platform
+    </div>
+
+    <a href="ai-assistant.html"
+       class="side-link">
+
+        <span class="icon">✦</span>
+        AI Assistant
+
+    </a>
+
+    <a href="administration.html"
+       class="side-link">
+
+        <span class="icon">▦</span>
+        Administration
+
+    </a>
+
+    <a href="contact.html"
+       class="side-link">
+
+        <span class="icon">?</span>
+        Support
+
+    </a>
+
+    <a href="index.html"
+       class="side-link">
+
+        <span class="icon">↗</span>
+        View Website
+
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+    <div class="breadcrumb">
+
+        <a href="editorial-dashboard.html">
+            Editorial Dashboard
+        </a>
+
+        <span>›</span>
+
+        <span>Revision Assessment</span>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Editorial Revision Assessment
+        </h1>
+
+        <p>
+            Review revised manuscripts, evaluate author responses,
+            compare submission versions and determine the next
+            editorial action.
+        </p>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Prototype notice:</strong>
+        This editorial workspace is a frontend demonstration.
+        Manuscripts, reviewer reports, author responses, files,
+        decisions and editorial records are not connected to a
+        live publishing database.
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Revisions Received
+            </div>
+
+            <div class="stat-value">
+                8
+            </div>
+
+            <div class="stat-note">
+                Demo records
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Awaiting Assessment
+            </div>
+
+            <div class="stat-value">
+                5
+            </div>
+
+            <div class="stat-note">
+                Editorial queue
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Sent for Re-review
+            </div>
+
+            <div class="stat-value">
+                3
+            </div>
+
+            <div class="stat-note">
+                Demo records
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Final Decisions
+            </div>
+
+            <div class="stat-value">
+                11
+            </div>
+
+            <div class="stat-note">
+                Revision outcomes
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MANUSCRIPT -->
+
+    <section class="card">
+
+        <div class="card-body">
+
+            <div class="manuscript-header">
+
+                <div>
+
+                    <div class="manuscript-title">
+                        Artificial Intelligence and Digital Learning
+                    </div>
+
+                    <div class="meta">
+
+                        <span>
+                            MS-2026-00124
+                        </span>
+
+                        <span>
+                            Journal of Digital Education
+                        </span>
+
+                        <span>
+                            Research Article
+                        </span>
+
+                        <span>
+                            Revision Round 1
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="status"
+                     id="manuscriptStatus">
+
+                    Revision Submitted
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="grid">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+            <!-- MANUSCRIPT INFORMATION -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Manuscript Information
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="info-grid">
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Manuscript ID
+                            </div>
+
+                            <div class="info-value">
+                                MS-2026-00124
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Original Submission
+                            </div>
+
+                            <div class="info-value">
+                                18 Aug 2026
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Revision Received
+                            </div>
+
+                            <div class="info-value">
+                                04 Sep 2026
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Previous Decision
+                            </div>
+
+                            <div class="info-value">
+                                Major Revision
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Review Round
+                            </div>
+
+                            <div class="info-value">
+                                Round 1
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <div class="info-label">
+                                Current Stage
+                            </div>
+
+                            <div class="info-value">
+                                Editorial Assessment
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- VERSION COMPARISON -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Manuscript Version Comparison
+                    </h2>
+
+                    <button class="btn btn-secondary"
+                            onclick="compareVersions()">
+                        Compare Versions
+                    </button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="version-grid">
+
+
+                        <div class="version">
+
+                            <div class="version-head">
+
+                                <strong>
+                                    Version 1.0
+                                </strong>
+
+                                <span class="badge badge-gray">
+                                    Original
+                                </span>
+
+                            </div>
+
+                            <div class="version-body">
+
+                                <div class="version-line">
+                                    Submitted: 18 Aug 2026
+                                </div>
+
+                                <div class="version-line">
+                                    Decision: Major Revision
+                                </div>
+
+                                <div class="version-line">
+                                    Reviewer Reports: 2
+                                </div>
+
+                                <div class="version-line">
+                                    Status:
+                                    <span class="badge badge-orange">
+                                        Revised
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="version">
+
+                            <div class="version-head">
+
+                                <strong>
+                                    Version 1.1
+                                </strong>
+
+                                <span class="badge badge-blue">
+                                    Revised
+                                </span>
+
+                            </div>
+
+                            <div class="version-body">
+
+                                <div class="version-line">
+                                    Submitted: 04 Sep 2026
+                                </div>
+
+                                <div class="version-line">
+                                    Author Response: Received
+                                </div>
+
+                                <div class="version-line">
+                                    Reviewer Reports:
+                                    Pending assessment
+                                </div>
+
+                                <div class="version-line">
+                                    Status:
+                                    <span class="badge badge-blue">
+                                        Under Assessment
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AUTHOR RESPONSE -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Author Response to Reviewers
+                    </h2>
+
+                    <span class="badge badge-green">
+                        Received
+                    </span>
+
+                </div>
+
+                <div class="card-body">
+
+
+                    <div class="response">
+
+                        <div class="response-head">
+
+                            <div class="response-title">
+                                Response to Reviewer 1
+                            </div>
+
+                            <span class="badge badge-green">
+                                Addressed
+                            </span>
+
+                        </div>
+
+                        <p>
+
+                            The authors state that the methodology
+                            section has been expanded to explain the
+                            research design, participant selection,
+                            data collection process and analytical
+                            approach.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="response">
+
+                        <div class="response-head">
+
+                            <div class="response-title">
+                                Response to Reviewer 2
+                            </div>
+
+                            <span class="badge badge-green">
+                                Addressed
+                            </span>
+
+                        </div>
+
+                        <p>
+
+                            The authors report that the contribution,
+                            limitations and conclusion have been
+                            revised to clarify the study's implications
+                            and boundaries.
+
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn btn-outline"
+                            onclick="viewFullResponse()">
+
+                        View Full Response
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PREVIOUS REVIEWER REPORTS -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Previous Reviewer Reports
+                    </h2>
+
+                    <span class="small">
+                        Round 1
+                    </span>
+
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Reviewer
+                                </th>
+
+                                <th>
+                                    Recommendation
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Report
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Reviewer 1
+                                </td>
+
+                                <td>
+                                    Major Revision
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-green">
+                                        Completed
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="btn btn-outline"
+                                        onclick="viewReviewerReport(1)">
+
+                                        View
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Reviewer 2
+                                </td>
+
+                                <td>
+                                    Major Revision
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-green">
+                                        Completed
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="btn btn-outline"
+                                        onclick="viewReviewerReport(2)">
+
+                                        View
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- REVISION HISTORY -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Revision History
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="timeline">
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot done">
+                                ✓
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Original Manuscript Submitted
+                                </h3>
+
+                                <p>
+                                    Manuscript entered the editorial
+                                    workflow.
+                                </p>
+
+                                <div class="date">
+                                    18 August 2026
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot done">
+                                ✓
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Peer Review Completed
+                                </h3>
+
+                                <p>
+                                    Two reviewer reports were received.
+                                </p>
+
+                                <div class="date">
+                                    31 August 2026
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot done">
+                                ✓
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Major Revision Decision
+                                </h3>
+
+                                <p>
+                                    Authors were asked to revise the
+                                    manuscript.
+                                </p>
+
+                                <div class="date">
+                                    04 September 2026
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot current">
+                                4
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Revised Manuscript Received
+                                </h3>
+
+                                <p>
+                                    Revised manuscript and author
+                                    response received.
+                                </p>
+
+                                <div class="date">
+                                    04 September 2026
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot">
+                                5
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Editorial Assessment
+                                </h3>
+
+                                <p>
+                                    Editor evaluates the revised
+                                    manuscript and responses.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="dot">
+                                6
+                            </div>
+
+                            <div class="timeline-content">
+
+                                <h3>
+                                    Further Review or Decision
+                                </h3>
+
+                                <p>
+                                    The manuscript may proceed to
+                                    further peer review or an editorial
+                                    decision.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div>
+
+
+            <!-- EDITORIAL ASSESSMENT -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Editorial Assessment
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="alert alert-info">
+
+                        Review the revised manuscript and author
+                        responses before selecting the next workflow
+                        action.
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Editorial Assessment
+                        </label>
+
+                        <select id="assessment">
+
+                            <option value="">
+                                Select assessment
+                            </option>
+
+                            <option>
+                                Revision adequately addresses concerns
+                            </option>
+
+                            <option>
+                                Revision partially addresses concerns
+                            </option>
+
+                            <option>
+                                Further revision required
+                            </option>
+
+                            <option>
+                                Further peer review recommended
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Internal Editorial Notes
+                        </label>
+
+                        <textarea
+                            id="editorNotes"
+                            placeholder="Enter confidential internal notes..."></textarea>
+
+                    </div>
+
+
+                    <div class="check">
+
+                        <input
+                            type="checkbox"
+                            id="ethicsCheck">
+
+                        <span>
+                            I have considered relevant publication
+                            ethics and conflict-of-interest matters
+                            before making this editorial assessment.
+                        </span>
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="saveAssessment()">
+
+                            Save Assessment
+
+                        </button>
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="clearAssessment()">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NEXT ACTION -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Next Editorial Action
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="form-group">
+
+                        <label>
+                            Select Action
+                        </label>
+
+                        <select id="nextAction">
+
+                            <option value="">
+                                Select next action
+                            </option>
+
+                            <option>
+                                Accept Manuscript
+                            </option>
+
+                            <option>
+                                Minor Revision
+                            </option>
+
+                            <option>
+                                Major Revision
+                            </option>
+
+                            <option>
+                                Send for Further Peer Review
+                            </option>
+
+                            <option>
+                                Reject and Resubmit
+                            </option>
+
+                            <option>
+                                Reject Manuscript
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Decision / Action Comment
+                        </label>
+
+                        <textarea
+                            id="actionComment"
+                            placeholder="Enter the editorial reasoning or internal action note..."></textarea>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        style="width:100%;"
+                        onclick="applyAction()">
+
+                        Apply Editorial Action
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- REVIEWER STATUS -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Reviewer Re-assessment
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="reviewer-status">
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:9px;
+                        ">
+
+                            <div>
+
+                                <strong style="font-size:13px;">
+                                    Reviewer 1
+                                </strong>
+
+                                <div class="small">
+                                    Previous reviewer
+                                </div>
+
+                            </div>
+
+                            <span class="badge badge-gray">
+                                Not Assigned
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-outline"
+                            style="width:100%;"
+                            onclick="assignReviewer(1)">
+
+                            Invite Reviewer 1
+
+                        </button>
+
+                    </div>
+
+
+                    <div style="
+                        height:1px;
+                        background:#edf0f4;
+                        margin:15px 0;
+                    "></div>
+
+
+                    <div class="reviewer-status">
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            margin-bottom:9px;
+                        ">
+
+                            <div>
+
+                                <strong style="font-size:13px;">
+                                    Reviewer 2
+                                </strong>
+
+                                <div class="small">
+                                    Previous reviewer
+                                </div>
+
+                            </div>
+
+                            <span class="badge badge-gray">
+                                Not Assigned
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-outline"
+                            style="width:100%;"
+                            onclick="assignReviewer(2)">
+
+                            Invite Reviewer 2
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="alert alert-warning"
+                         style="margin-top:15px;margin-bottom:0;">
+
+                        Re-review should only be initiated where
+                        appropriate under the journal's editorial
+                        workflow.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACTIVITY -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Editorial Activity
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+
+                    <div class="activity">
+
+                        <div class="activity-icon">
+                            ↑
+                        </div>
+
+                        <div>
+
+                            <div class="activity-text">
+                                Revised manuscript received.
+                            </div>
+
+                            <div class="activity-time">
+                                04 Sep 2026
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity">
+
+                        <div class="activity-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <div class="activity-text">
+                                Author response received.
+                            </div>
+
+                            <div class="activity-time">
+                                04 Sep 2026
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity">
+
+                        <div class="activity-icon">
+                            !
+                        </div>
+
+                        <div>
+
+                            <div class="activity-text">
+                                Major revision decision previously
+                                recorded.
+                            </div>
+
+                            <div class="activity-time">
+                                04 Sep 2026
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity">
+
+                        <div class="activity-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <div class="activity-text">
+                                Two reviewer reports completed.
+                            </div>
+
+                            <div class="activity-time">
+                                31 Aug 2026
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK LINKS -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Editorial Resources
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="actions">
+
+                        <a href="reviewer-assignment.html"
+                           class="btn btn-secondary">
+                            Reviewer Assignment
+                        </a>
+
+                        <a href="review-tracking.html"
+                           class="btn btn-secondary">
+                            Review Tracking
+                        </a>
+
+                        <a href="publication-ethics.html"
+                           class="btn btn-secondary">
+                            Publication Ethics
+                        </a>
+
+                        <a href="peer-review.html"
+                           class="btn btn-secondary">
+                            Peer Review Policy
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL ACTIONS -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>
+                Final Editorial Workflow
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-warning">
+
+                Editorial actions shown here are demonstration
+                controls. A real publishing platform should require
+                authenticated editorial permissions and server-side
+                validation before recording decisions.
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="makeDecision('Accept Manuscript')">
+
+                    Accept Manuscript
+
+                </button>
+
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="makeDecision('Minor Revision')">
+
+                    Minor Revision
+
+                </button>
+
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="makeDecision('Major Revision')">
+
+                    Major Revision
+
+                </button>
+
+
+                <button
+                    class="btn btn-outline"
+                    onclick="makeDecision('Send for Further Peer Review')">
+
+                    Send for Further Peer Review
+
+                </button>
+
+
+                <button
+                    class="btn btn-danger"
+                    onclick="makeDecision('Reject Manuscript')">
+
+                    Reject Manuscript
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div style="margin-bottom:10px;">
+
+        <strong style="color:#fff;">
+            Scopusixteen Publishing
+        </strong>
+
+    </div>
+
+    <div style="margin-bottom:10px;">
+
+        <a href="index.html">Home</a>
+
+        <a href="journals.html">Journals</a>
+
+        <a href="editorial-dashboard.html">Editorial</a>
+
+        <a href="peer-review.html">Peer Review</a>
+
+        <a href="publication-ethics.html">
+            Publication Ethics
+        </a>
+
+        <a href="privacy.html">Privacy</a>
+
+        <a href="terms.html">Terms</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div>
+        © 2026 Scopusixteen Publishing. Frontend prototype.
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<!-- MODAL -->
+
+<div class="overlay" id="overlay">
+
+    <div class="modal">
+
+        <div class="modal-head">
+
+            <h3 id="modalTitle">
+                Editorial Information
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body"
+             id="modalBody">
+        </div>
+
+
+        <div class="modal-foot">
+
+            <button
+                class="btn btn-secondary"
+                onclick="closeModal()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SIDEBAR
+========================= */
+
+function toggleSidebar(){
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("open");
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function toast(message){
+
+    const el =
+        document.getElementById("toast");
+
+    el.textContent = message;
+
+    el.classList.add("show");
+
+    setTimeout(function(){
+
+        el.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(title,html){
+
+    document
+        .getElementById("modalTitle")
+        .textContent = title;
+
+    document
+        .getElementById("modalBody")
+        .innerHTML = html;
+
+    document
+        .getElementById("overlay")
+        .classList.add("show");
+
+}
+
+function closeModal(){
+
+    document
+        .getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   COMPARE VERSIONS
+========================= */
+
+function compareVersions(){
+
+    openModal(
+        "Version Comparison",
+        `
+        <div class="alert alert-info">
+            Demonstration comparison between the original and
+            revised manuscript versions.
+        </div>
+
+        <div style="
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+            margin-bottom:12px;
+        ">
+
+            <strong style="font-size:13px;">
+                Methodology
+            </strong>
+
+            <p style="
+                font-size:12px;
+                color:#667085;
+                margin-top:7px;
+            ">
+
+                Version 1.0 contained a shorter methodology
+                description. Version 1.1 includes additional
+                information concerning research design,
+                participant selection and data analysis.
+
+            </p>
+
+        </div>
+
+        <div style="
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+            margin-bottom:12px;
+        ">
+
+            <strong style="font-size:13px;">
+                Research Contribution
+            </strong>
+
+            <p style="
+                font-size:12px;
+                color:#667085;
+                margin-top:7px;
+            ">
+
+                The revised version provides a clearer explanation
+                of how the study contributes to existing research.
+
+            </p>
+
+        </div>
+
+        <div style="
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+        ">
+
+            <strong style="font-size:13px;">
+                Limitations & Conclusion
+            </strong>
+
+            <p style="
+                font-size:12px;
+                color:#667085;
+                margin-top:7px;
+            ">
+
+                The revised manuscript expands the limitations
+                section and strengthens the concluding discussion.
+
+            </p>
+
+        </div>
+        `
+    );
+
+}
+
+
+/* =========================
+   FULL AUTHOR RESPONSE
+========================= */
+
+function viewFullResponse(){
+
+    openModal(
+        "Full Author Response",
+        `
+        <p style="
+            font-size:13px;
+            color:#596579;
+            margin-bottom:15px;
+        ">
+
+            The following is demonstration content representing
+            an author response document.
+
+        </p>
+
+        <div style="
+            background:#f8fafc;
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:15px;
+            font-size:12px;
+            color:#566174;
+        ">
+
+            <strong>Reviewer 1 — Comment:</strong>
+
+            <p style="margin:7px 0 14px;">
+
+                Please clarify the methodology and explain the
+                analytical procedure more clearly.
+
+            </p>
+
+            <strong>Author Response:</strong>
+
+            <p style="margin-top:7px;">
+
+                We thank the reviewer for this observation. The
+                methodology section has been expanded to provide
+                additional details regarding research design,
+                participant selection, data collection and analysis.
+
+            </p>
+
+            <hr style="
+                border:none;
+                border-top:1px solid #e3e8f0;
+                margin:17px 0;
+            ">
+
+            <strong>Reviewer 2 — Comment:</strong>
+
+            <p style="margin:7px 0 14px;">
+
+                Please strengthen the manuscript's contribution
+                and limitations.
+
+            </p>
+
+            <strong>Author Response:</strong>
+
+            <p style="margin-top:7px;">
+
+                The contribution and limitations sections have been
+                revised to clarify the study's contribution and
+                boundaries.
+
+            </p>
+
+        </div>
+        `
+    );
+
+}
+
+
+/* =========================
+   REVIEWER REPORT
+========================= */
+
+function viewReviewerReport(number){
+
+    const report =
+        number === 1
+        ?
+        `
+        <strong>Reviewer 1</strong>
+
+        <p style="
+            font-size:12px;
+            color:#667085;
+            margin-top:10px;
+        ">
+
+            Recommendation:
+            <strong>Major Revision</strong>
+
+        </p>
+
+        <div style="
+            margin-top:14px;
+            background:#f8fafc;
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+            font-size:12px;
+            color:#566174;
+        ">
+
+            The manuscript addresses an important topic.
+            However, the methodology requires additional
+            explanation and the discussion should better connect
+            the findings with practical implications.
+
+        </div>
+        `
+        :
+        `
+        <strong>Reviewer 2</strong>
+
+        <p style="
+            font-size:12px;
+            color:#667085;
+            margin-top:10px;
+        ">
+
+            Recommendation:
+            <strong>Major Revision</strong>
+
+        </p>
+
+        <div style="
+            margin-top:14px;
+            background:#f8fafc;
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+            font-size:12px;
+            color:#566174;
+        ">
+
+            The revised manuscript should clearly distinguish
+            its contribution from previous studies and provide a
+            stronger explanation of limitations and conclusions.
+
+        </div>
+        `;
+
+    openModal(
+        "Reviewer Report",
+        report
+    );
+
+}
+
+
+/* =========================
+   REVIEWER ASSIGNMENT
+========================= */
+
+function assignReviewer(number){
+
+    openModal(
+        "Reviewer Re-assignment",
+        `
+        <div class="alert alert-info">
+
+            This demonstration would send an invitation to
+            Reviewer ${number} for a further review round.
+
+        </div>
+
+        <div style="
+            border:1px solid #e3e8f0;
+            border-radius:9px;
+            padding:14px;
+        ">
+
+            <strong>
+                Manuscript
+            </strong>
+
+            <p style="
+                font-size:12px;
+                color:#667085;
+                margin-top:5px;
+            ">
+
+                Artificial Intelligence and Digital Learning
+                · MS-2026-00124
+
+            </p>
+
+            <strong style="
+                display:block;
+                margin-top:12px;
+            ">
+
+                Reviewer
+
+            </strong>
+
+            <p style="
+                font-size:12px;
+                color:#667085;
+                margin-top:5px;
+            ">
+
+                Reviewer ${number}
+
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            style="width:100%;margin-top:15px;"
+            onclick="confirmReviewer(${number})">
+
+            Send Demonstration Invitation
+
+        </button>
+        `
+    );
+
+}
+
+
+function confirmReviewer(number){
+
+    localStorage.setItem(
+        "scopusixteenRevisionReviewerInvitation",
+        JSON.stringify({
+            reviewer:number,
+            manuscript:"MS-2026-00124",
+            date:new Date().toISOString()
+        })
+    );
+
+    closeModal();
+
+    toast(
+        "Demonstration reviewer invitation recorded locally."
+    );
+
+}
+
+
+/* =========================
+   SAVE ASSESSMENT
+========================= */
+
+function saveAssessment(){
+
+    const assessment =
+        document.getElementById(
+            "assessment"
+        ).value;
+
+    const notes =
+        document.getElementById(
+            "editorNotes"
+        ).value;
+
+    const ethics =
+        document.getElementById(
+            "ethicsCheck"
+        ).checked;
+
+    if(!assessment){
+
+        toast(
+            "Please select an editorial assessment."
+        );
+
+        return;
+
+    }
+
+    if(!ethics){
+
+        toast(
+            "Please confirm the editorial ethics check."
+        );
+
+        return;
+
+    }
+
+    localStorage.setItem(
+        "scopusixteenEditorialRevisionAssessment",
+        JSON.stringify({
+            assessment:assessment,
+            notes:notes,
+            ethics:ethics,
+            savedAt:new Date().toISOString()
+        })
+    );
+
+    toast(
+        "Editorial assessment saved locally."
+    );
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearAssessment(){
+
+    document
+        .getElementById("assessment")
+        .value="";
+
+    document
+        .getElementById("editorNotes")
+        .value="";
+
+    document
+        .getElementById("ethicsCheck")
+        .checked=false;
+
+    toast(
+        "Assessment form cleared."
+    );
+
+}
+
+
+/* =========================
+   APPLY ACTION
+========================= */
+
+function applyAction(){
+
+    const action =
+        document.getElementById(
+            "nextAction"
+        ).value;
+
+    const comment =
+        document.getElementById(
+            "actionComment"
+        ).value;
+
+    if(!action){
+
+        toast(
+            "Please select the next editorial action."
+        );
+
+        return;
+
+    }
+
+    if(!comment || comment.length < 10){
+
+        toast(
+            "Please provide an editorial action comment."
+        );
+
+        return;
+
+    }
+
+    localStorage.setItem(
+        "scopusixteenEditorialRevisionAction",
+        JSON.stringify({
+            action:action,
+            comment:comment,
+            manuscript:"MS-2026-00124",
+            date:new Date().toISOString()
+        })
+    );
+
+    document
+        .getElementById(
+            "manuscriptStatus"
+        )
+        .textContent = action;
+
+    toast(
+        "Demonstration editorial action recorded locally."
+    );
+
+}
+
+
+/* =========================
+   QUICK DECISION
+========================= */
+
+function makeDecision(decision){
+
+    openModal(
+        "Confirm Editorial Action",
+        `
+        <div class="alert alert-warning">
+
+            You selected:
+            <strong>${decision}</strong>
+
+        </div>
+
+        <p style="
+            font-size:13px;
+            color:#596579;
+        ">
+
+            In a live publishing platform, this action would
+            require authenticated editorial permissions and
+            server-side validation.
+
+        </p>
+
+        <button
+            class="btn btn-primary"
+            style="width:100%;margin-top:16px;"
+            onclick="confirmDecision('${decision}')">
+
+            Confirm Demonstration Action
+
+        </button>
+        `
+    );
+
+}
+
+
+function confirmDecision(decision){
+
+    localStorage.setItem(
+        "scopusixteenEditorialDecision",
+        JSON.stringify({
+            decision:decision,
+            manuscript:"MS-2026-00124",
+            date:new Date().toISOString()
+        })
+    );
+
+    document
+        .getElementById(
+            "manuscriptStatus"
+        )
+        .textContent = decision;
+
+    closeModal();
+
+    toast(
+        "Demonstration editorial decision recorded locally."
+    );
+
+}
+
+
+/* =========================
+   LOAD SAVED DATA
+========================= */
+
+function loadSavedAssessment(){
+
+    const data =
+        localStorage.getItem(
+            "scopusixteenEditorialRevisionAssessment"
+        );
+
+    if(!data) return;
+
+    try{
+
+        const obj =
+            JSON.parse(data);
+
+        document
+            .getElementById(
+                "assessment"
+            ).value =
+            obj.assessment || "";
+
+        document
+            .getElementById(
+                "editorNotes"
+            ).value =
+            obj.notes || "";
+
+        document
+            .getElementById(
+                "ethicsCheck"
+            ).checked =
+            obj.ethics || false;
+
+    }catch(e){
+
+        console.log(
+            "Saved prototype assessment unavailable."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CLOSE OUTSIDE
+========================= */
+
+document
+    .getElementById("overlay")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(
+                e.target ===
+                document.getElementById("overlay")
+            ){
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   INITIALISE
+========================= */
+
+loadSavedAssessment();
+
+</script>
+
+</body>
+</html>
