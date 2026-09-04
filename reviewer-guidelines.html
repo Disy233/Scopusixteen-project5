@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviewer Guidelines | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071b3a;
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+}
+
+.topbar a{
+    color:#dce8ff;
+    text-decoration:none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e3e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    min-height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    text-decoration:none;
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#1677ff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#344054;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav-links a:hover{
+    color:#1677ff;
+}
+
+.nav-btn{
+    background:#071b3a;
+    color:#fff !important;
+    padding:10px 15px;
+    border-radius:7px;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.layout{
+    width:90%;
+    max-width:1300px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:235px 1fr;
+    gap:25px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    background:#071b3a;
+    border-radius:12px;
+    padding:18px 12px;
+    height:max-content;
+    position:sticky;
+    top:95px;
+}
+
+.sidebar-title{
+    color:#8da8ce;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    padding:8px 12px 13px;
+}
+
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:#d9e4f5;
+    padding:10px 12px;
+    border-radius:7px;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#12335f;
+    color:#fff;
+}
+
+.sidebar a.active{
+    border-left:3px solid #4b9aff;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+    min-width:0;
+}
+
+.page-header{
+    margin-bottom:25px;
+}
+
+.eyebrow{
+    color:#1677ff;
+    text-transform:uppercase;
+    letter-spacing:1.3px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.page-header h1{
+    color:#071b3a;
+    font-size:32px;
+    line-height:1.2;
+    margin-bottom:9px;
+}
+
+.page-header p{
+    color:#667085;
+    font-size:14px;
+    max-width:850px;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f0dda3;
+    color:#765b08;
+    padding:14px 16px;
+    border-radius:9px;
+    font-size:11px;
+    line-height:1.65;
+    margin-bottom:22px;
+}
+
+.notice strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.card{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:12px;
+    padding:26px;
+    margin-bottom:22px;
+}
+
+.card h2{
+    color:#071b3a;
+    font-size:19px;
+    margin-bottom:9px;
+}
+
+.card h3{
+    color:#1d2939;
+    font-size:14px;
+    margin:20px 0 7px;
+}
+
+.card p{
+    color:#475467;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.card ul{
+    padding-left:20px;
+    margin-bottom:10px;
+}
+
+.card li{
+    color:#475467;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.card li::marker{
+    color:#1677ff;
+}
+
+/* =========================
+   QUICK STEPS
+========================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:22px;
+}
+
+.step{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:10px;
+    padding:19px;
+}
+
+.step-number{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#eaf2ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:11px;
+}
+
+.step h3{
+    font-size:13px;
+    color:#071b3a;
+    margin-bottom:5px;
+}
+
+.step p{
+    color:#667085;
+    font-size:11px;
+    line-height:1.5;
+}
+
+/* =========================
+   PRINCIPLES
+========================= */
+
+.principles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.principle{
+    border:1px solid #e1e7ef;
+    border-radius:9px;
+    padding:17px;
+    background:#fbfcfe;
+}
+
+.principle-icon{
+    width:35px;
+    height:35px;
+    border-radius:8px;
+    background:#eaf2ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.principle h3{
+    color:#071b3a;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.principle p{
+    color:#667085;
+    font-size:11px;
+    line-height:1.55;
+}
+
+/* =========================
+   EVALUATION GRID
+========================= */
+
+.evaluation-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.evaluation{
+    border:1px solid #e1e7ef;
+    border-radius:9px;
+    padding:18px;
+}
+
+.evaluation h3{
+    color:#071b3a;
+    font-size:14px;
+    margin:0 0 7px;
+}
+
+.evaluation p{
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.evaluation ul{
+    margin-bottom:0;
+}
+
+.evaluation li{
+    font-size:11px;
+    margin-bottom:6px;
+}
+
+/* =========================
+   RECOMMENDATION
+========================= */
+
+.recommendations{
+    display:grid;
+    gap:10px;
+}
+
+.recommendation{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+    padding:14px;
+    border:1px solid #e1e7ef;
+    border-radius:8px;
+}
+
+.rec-label{
+    min-width:125px;
+    font-size:12px;
+    font-weight:800;
+    color:#071b3a;
+}
+
+.rec-description{
+    color:#667085;
+    font-size:11px;
+    line-height:1.55;
+}
+
+/* =========================
+   DO / DON'T
+========================= */
+
+.dodont{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.do-box,
+.dont-box{
+    border-radius:9px;
+    padding:19px;
+}
+
+.do-box{
+    background:#edf9f1;
+    border:1px solid #bde3c8;
+}
+
+.dont-box{
+    background:#fff1f1;
+    border:1px solid #f1c2c2;
+}
+
+.do-box h3,
+.dont-box h3{
+    margin:0 0 10px;
+    font-size:14px;
+}
+
+.do-box h3{
+    color:#176b36;
+}
+
+.dont-box h3{
+    color:#a12626;
+}
+
+.do-box li,
+.dont-box li{
+    font-size:11px;
+    margin-bottom:7px;
+}
+
+.do-box li::marker{
+    color:#176b36;
+}
+
+.dont-box li::marker{
+    color:#a12626;
+}
+
+/* =========================
+   REPORT STRUCTURE
+========================= */
+
+.report{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+}
+
+.report-item{
+    border:1px solid #e1e7ef;
+    border-radius:8px;
+    padding:16px;
+}
+
+.report-item strong{
+    display:block;
+    color:#071b3a;
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.report-item span{
+    color:#667085;
+    font-size:11px;
+}
+
+/* =========================
+   AI BOX
+========================= */
+
+.ai-box{
+    background:#eef5ff;
+    border:1px solid #cfe0fb;
+    border-radius:9px;
+    padding:18px;
+}
+
+.ai-box h3{
+    color:#145bb5;
+    margin:0 0 8px;
+    font-size:14px;
+}
+
+.ai-box p,
+.ai-box li{
+    color:#405b7d;
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.check{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    padding:11px;
+    border:1px solid #e1e7ef;
+    border-radius:7px;
+    color:#475467;
+    font-size:11px;
+    line-height:1.5;
+}
+
+.check input{
+    margin-top:2px;
+    accent-color:#1677ff;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:#071b3a;
+    color:#fff;
+    border-radius:12px;
+    padding:30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.cta h2{
+    color:#fff;
+    margin-bottom:6px;
+}
+
+.cta p{
+    color:#b8c7dc;
+    font-size:12px;
+    margin:0;
+}
+
+.cta-buttons{
+    display:flex;
+    gap:10px;
+    flex-shrink:0;
+}
+
+.cta-btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:11px 16px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.cta-primary{
+    background:#1677ff;
+    color:#fff;
+}
+
+.cta-secondary{
+    background:#fff;
+    color:#071b3a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#aebbd0;
+    padding:25px 5%;
+    text-align:center;
+    font-size:11px;
+    margin-top:35px;
+}
+
+footer a{
+    color:#cbd9ee;
+    text-decoration:none;
+    margin:0 7px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        position:static;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:3px;
+    }
+
+    .sidebar-title{
+        grid-column:1/-1;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .principles{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .nav{
+        width:94%;
+    }
+
+    .nav-links a:not(.nav-btn){
+        display:none;
+    }
+
+    .layout{
+        width:94%;
+        margin:20px auto;
+    }
+
+    .page-header h1{
+        font-size:26px;
+    }
+
+    .steps,
+    .principles,
+    .evaluation-grid,
+    .dodont,
+    .report,
+    .checklist{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .cta-btn{
+        text-align:center;
+        width:100%;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .sidebar{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:19px;
+    }
+
+    .topbar{
+        justify-content:center;
+    }
+
+    .topbar span{
+        display:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <span>
+        Scopusixteen Publishing — Reviewer Services
+    </span>
+
+    <a href="contact.html">
+        Reviewer Support
+    </a>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+
+        <a href="administration.html" class="nav-btn">
+            Administration
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- PAGE -->
+
+<div class="layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+        Reviewer Workspace
+    </div>
+
+    <a href="reviewer-portal.html">
+        Reviewer Dashboard
+    </a>
+
+    <a href="reviewer-portal.html">
+        Assigned Reviews
+    </a>
+
+    <a href="reviewer-portal.html">
+        Invitations
+    </a>
+
+    <a href="reviewer-portal.html">
+        Active Reviews
+    </a>
+
+    <a href="reviewer-portal.html">
+        Completed Reviews
+    </a>
+
+    <a href="reviewer-profile.html">
+        Reviewer Profile
+    </a>
+
+    <a href="reviewer-guidelines.html" class="active">
+        Reviewer Guidelines
+    </a>
+
+    <a href="peer-review.html">
+        Peer Review Policy
+    </a>
+
+    <a href="publication-ethics.html">
+        Publication Ethics
+    </a>
+
+    <a href="ai-assistant.html">
+        AI Assistant
+    </a>
+
+    <a href="contact.html">
+        Support
+    </a>
+
+    <a href="index.html">
+        View Website
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+<!-- HEADER -->
+
+<section class="page-header">
+
+    <div class="eyebrow">
+        Reviewer Resources
+    </div>
+
+    <h1>
+        Reviewer Guidelines
+    </h1>
+
+    <p>
+        Guidance for conducting constructive, confidential and
+        ethically responsible peer reviews for manuscripts submitted
+        to Scopusixteen Publishing journals.
+    </p>
+
+</section>
+
+
+<!-- NOTICE -->
+
+<div class="notice">
+
+    <strong>Prototype Policy Notice</strong>
+
+    These guidelines are part of the Scopusixteen Publishing
+    frontend prototype. Individual journals may adopt additional
+    requirements, review models, deadlines or subject-specific
+    instructions. The live policy should be reviewed and approved
+    before being used as an operational publishing policy.
+
+</div>
+
+
+<!-- QUICK STEPS -->
+
+<section class="steps">
+
+    <div class="step">
+
+        <div class="step-number">1</div>
+
+        <h3>Receive Invitation</h3>
+
+        <p>
+            Review the manuscript title, abstract and invitation
+            information before accepting.
+        </p>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">2</div>
+
+        <h3>Check Conflicts</h3>
+
+        <p>
+            Identify personal, professional, financial or other
+            conflicts that could affect your impartiality.
+        </p>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">3</div>
+
+        <h3>Evaluate Manuscript</h3>
+
+        <p>
+            Assess the research question, methods, evidence,
+            originality, clarity and significance.
+        </p>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">4</div>
+
+        <h3>Submit Review</h3>
+
+        <p>
+            Provide constructive comments and an appropriate
+            recommendation to the editor.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CORE PRINCIPLES -->
+
+<section class="card">
+
+    <h2>
+        Core Principles of Peer Review
+    </h2>
+
+    <p>
+        Reviewers are expected to approach every assignment
+        professionally and independently.
+    </p>
+
+
+    <div class="principles">
+
+        <div class="principle">
+
+            <div class="principle-icon">I</div>
+
+            <h3>Impartiality</h3>
+
+            <p>
+                Evaluate the manuscript on its scholarly merits
+                rather than the identity, institution, nationality
+                or personal characteristics of the authors.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">C</div>
+
+            <h3>Confidentiality</h3>
+
+            <p>
+                Treat manuscript content, reviewer discussions and
+                editorial materials as confidential.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">R</div>
+
+            <h3>Respect</h3>
+
+            <p>
+                Provide professional and constructive criticism
+                focused on improving the scholarly work.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INVITATION -->
+
+<section class="card">
+
+    <h2>
+        Before Accepting a Review
+    </h2>
+
+    <p>
+        Before accepting an invitation, reviewers should consider
+        whether they have sufficient expertise, time and independence
+        to complete the assessment.
+    </p>
+
+    <h3>Consider the following:</h3>
+
+    <ul>
+
+        <li>
+            Do you have appropriate subject or methodological
+            expertise?
+        </li>
+
+        <li>
+            Can you complete the review within the requested
+            timeframe?
+        </li>
+
+        <li>
+            Do you have any conflict of interest with the authors,
+            institutions or research?
+        </li>
+
+        <li>
+            Are you able to provide an objective and professional
+            assessment?
+        </li>
+
+        <li>
+            Have you previously reviewed, collaborated with or
+            directly supervised any of the authors?
+        </li>
+
+    </ul>
+
+    <p>
+        If a significant conflict exists, the reviewer should decline
+        the invitation or contact the responsible editor for guidance.
+    </p>
+
+</section>
+
+
+<!-- CONFLICT -->
+
+<section class="card">
+
+    <h2>
+        Conflicts of Interest
+    </h2>
+
+    <p>
+        A conflict of interest may arise when a reviewer has a
+        relationship or competing interest that could reasonably
+        affect, or appear to affect, the objectivity of the review.
+    </p>
+
+    <h3>Examples may include:</h3>
+
+    <ul>
+
+        <li>
+            Recent collaboration with one or more authors.
+        </li>
+
+        <li>
+            Current employment or close professional relationships
+            with an author.
+        </li>
+
+        <li>
+            Personal relationships that could influence judgement.
+        </li>
+
+        <li>
+            Direct financial or commercial interests related to the
+            manuscript.
+        </li>
+
+        <li>
+            Competitive research interests where confidential
+            information could create an unfair advantage.
+        </li>
+
+    </ul>
+
+    <p>
+        When uncertain, disclose the situation to the editor rather
+        than making the decision privately.
+    </p>
+
+</section>
+
+
+<!-- CONFIDENTIALITY -->
+
+<section class="card">
+
+    <h2>
+        Confidentiality
+    </h2>
+
+    <p>
+        Manuscripts submitted for peer review are confidential
+        scholarly materials. Reviewers should not disclose or use
+        unpublished information obtained through the review process.
+    </p>
+
+    <ul>
+
+        <li>
+            Do not share the manuscript with unauthorised individuals.
+        </li>
+
+        <li>
+            Do not post manuscript content publicly.
+        </li>
+
+        <li>
+            Do not use unpublished ideas or results for personal
+            research advantage.
+        </li>
+
+        <li>
+            Do not contact authors directly about the manuscript
+            unless the journal explicitly permits it.
+        </li>
+
+        <li>
+            Destroy or appropriately delete downloaded review
+            materials when they are no longer required, subject to
+            the journal's procedures.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- EVALUATION -->
+
+<section class="card">
+
+    <h2>
+        How to Evaluate a Manuscript
+    </h2>
+
+    <p>
+        A useful review considers both the strengths and limitations
+        of the manuscript.
+    </p>
+
+
+    <div class="evaluation-grid">
+
+        <div class="evaluation">
+
+            <h3>1. Research Question</h3>
+
+            <p>
+                Consider whether the research problem is clearly
+                defined and appropriate for the journal.
+            </p>
+
+            <ul>
+
+                <li>Is the research question clear?</li>
+                <li>Is the purpose adequately explained?</li>
+                <li>Does the study address a meaningful problem?</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="evaluation">
+
+            <h3>2. Originality & Contribution</h3>
+
+            <p>
+                Assess whether the manuscript provides a meaningful
+                contribution to existing knowledge.
+            </p>
+
+            <ul>
+
+                <li>Does it offer new findings or perspectives?</li>
+                <li>Is the contribution clearly explained?</li>
+                <li>Is the work sufficiently differentiated from prior research?</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="evaluation">
+
+            <h3>3. Methodology</h3>
+
+            <p>
+                Evaluate whether the methods are appropriate,
+                sufficiently described and logically applied.
+            </p>
+
+            <ul>
+
+                <li>Are the methods suitable?</li>
+                <li>Is the sample or data adequately described?</li>
+                <li>Are analytical procedures appropriate?</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="evaluation">
+
+            <h3>4. Results</h3>
+
+            <p>
+                Assess whether the results are presented clearly and
+                supported by the evidence.
+            </p>
+
+            <ul>
+
+                <li>Are findings clearly reported?</li>
+                <li>Do results address the research question?</li>
+                <li>Are tables and figures appropriate?</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="evaluation">
+
+            <h3>5. Discussion</h3>
+
+            <p>
+                Consider whether the authors interpret the findings
+                appropriately.
+            </p>
+
+            <ul>
+
+                <li>Are findings compared with previous research?</li>
+                <li>Are limitations acknowledged?</li>
+                <li>Are conclusions supported by evidence?</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="evaluation">
+
+            <h3>6. Presentation</h3>
+
+            <p>
+                Assess the organisation, readability, references and
+                overall scholarly presentation.
+            </p>
+
+            <ul>
+
+                <li>Is the manuscript logically structured?</li>
+                <li>Is the language sufficiently clear?</li>
+                <li>Are citations and references appropriate?</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DO DON'T -->
+
+<section class="card">
+
+    <h2>
+        Writing a Constructive Review
+    </h2>
+
+    <div class="dodont">
+
+        <div class="do-box">
+
+            <h3>✓ Recommended</h3>
+
+            <ul>
+
+                <li>
+                    Explain the reasoning behind major criticisms.
+                </li>
+
+                <li>
+                    Identify specific sections that require
+                    clarification.
+                </li>
+
+                <li>
+                    Distinguish major methodological problems from
+                    minor presentation issues.
+                </li>
+
+                <li>
+                    Suggest realistic improvements where appropriate.
+                </li>
+
+                <li>
+                    Recognise significant strengths as well as
+                    weaknesses.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="dont-box">
+
+            <h3>✕ Avoid</h3>
+
+            <ul>
+
+                <li>
+                    Personal attacks or disrespectful language.
+                </li>
+
+                <li>
+                    Comments about an author's nationality, identity
+                    or personal characteristics.
+                </li>
+
+                <li>
+                    Unsubstantiated accusations of misconduct.
+                </li>
+
+                <li>
+                    Demanding citations solely to increase a
+                    reviewer's own citation count.
+                </li>
+
+                <li>
+                    Recommending rejection without explaining the
+                    substantive scholarly reasons.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEW REPORT -->
+
+<section class="card">
+
+    <h2>
+        Structuring the Reviewer Report
+    </h2>
+
+    <p>
+        A clear report helps editors make decisions and gives authors
+        useful information for improving their manuscript.
+    </p>
+
+
+    <div class="report">
+
+        <div class="report-item">
+
+            <strong>Overall Assessment</strong>
+
+            <span>
+                Briefly summarise the manuscript's contribution,
+                strengths and principal concerns.
+            </span>
+
+        </div>
+
+
+        <div class="report-item">
+
+            <strong>Major Comments</strong>
+
+            <span>
+                Explain substantive issues involving research design,
+                evidence, analysis or interpretation.
+            </span>
+
+        </div>
+
+
+        <div class="report-item">
+
+            <strong>Minor Comments</strong>
+
+            <span>
+                Identify smaller issues involving clarity,
+                organisation, terminology or presentation.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMENTS -->
+
+<section class="card">
+
+    <h2>
+        Comments to Authors and Editors
+    </h2>
+
+    <h3>Comments to Authors</h3>
+
+    <p>
+        These comments should be professional, constructive and
+        sufficiently detailed to help authors understand what should
+        be improved.
+    </p>
+
+    <h3>Confidential Comments to the Editor</h3>
+
+    <p>
+        Where the review system provides a confidential editor field,
+        use it for information that should not be communicated directly
+        to authors. Keep these comments professional and consistent
+        with the overall recommendation.
+    </p>
+
+    <p>
+        Reviewers should avoid making contradictory recommendations
+        across the two sections.
+    </p>
+
+</section>
+
+
+<!-- RECOMMENDATIONS -->
+
+<section class="card">
+
+    <h2>
+        Editorial Recommendations
+    </h2>
+
+    <p>
+        The final recommendation should reflect the evidence presented
+        in the review.
+    </p>
+
+
+    <div class="recommendations">
+
+        <div class="recommendation">
+
+            <div class="rec-label">
+                Accept
+            </div>
+
+            <div class="rec-description">
+                The manuscript is suitable for publication with no
+                substantive changes required, subject to editorial
+                checks.
+            </div>
+
+        </div>
+
+
+        <div class="recommendation">
+
+            <div class="rec-label">
+                Minor Revision
+            </div>
+
+            <div class="rec-description">
+                The manuscript is potentially publishable after
+                relatively limited corrections or clarifications.
+            </div>
+
+        </div>
+
+
+        <div class="recommendation">
+
+            <div class="rec-label">
+                Major Revision
+            </div>
+
+            <div class="rec-description">
+                Substantive revisions are required before the
+                manuscript can be considered further.
+            </div>
+
+        </div>
+
+
+        <div class="recommendation">
+
+            <div class="rec-label">
+                Reject & Resubmit
+            </div>
+
+            <div class="rec-description">
+                The current manuscript has substantial limitations,
+                but a substantially revised submission may be
+                considered where journal policy permits.
+            </div>
+
+        </div>
+
+
+        <div class="recommendation">
+
+            <div class="rec-label">
+                Reject
+            </div>
+
+            <div class="rec-description">
+                The manuscript is not suitable for publication in its
+                current form based on substantive scholarly,
+                methodological or journal-scope considerations.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI -->
+
+<section class="card">
+
+    <h2>
+        Responsible Use of AI During Peer Review
+    </h2>
+
+
+    <div class="ai-box">
+
+        <h3>
+            Protect Confidential Manuscripts
+        </h3>
+
+        <p>
+            Reviewers should not upload confidential manuscripts,
+            unpublished research or identifying information to
+            external AI systems unless the journal expressly permits
+            such use and appropriate confidentiality safeguards are
+            in place.
+        </p>
+
+        <ul>
+
+            <li>
+                Do not use AI to replace your own scholarly judgement.
+            </li>
+
+            <li>
+                Verify any AI-generated information before relying on it.
+            </li>
+
+            <li>
+                Do not disclose confidential manuscript content to
+                unauthorised third-party services.
+            </li>
+
+            <li>
+                Follow the journal's specific AI and reviewer policy.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- DEADLINES -->
+
+<section class="card">
+
+    <h2>
+        Review Deadlines
+    </h2>
+
+    <p>
+        Reviewers should aim to complete accepted assignments within
+        the deadline provided by the editorial system.
+    </p>
+
+    <ul>
+
+        <li>
+            Accept an invitation only when you reasonably expect to
+            meet the deadline.
+        </li>
+
+        <li>
+            Contact the editor promptly if circumstances change.
+        </li>
+
+        <li>
+            Request an extension rather than submitting an incomplete
+            review without explanation.
+        </li>
+
+        <li>
+            Decline future invitations if your workload prevents
+            timely reviews.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- MISCONDUCT -->
+
+<section class="card">
+
+    <h2>
+        Reviewer Ethics & Misconduct
+    </h2>
+
+    <p>
+        Concerns about reviewer conduct may include breaches of
+        confidentiality, misuse of unpublished information, conflicts
+        that were not disclosed, inappropriate communications or
+        other conduct inconsistent with responsible peer review.
+    </p>
+
+    <p>
+        Concerns should be referred to the responsible editorial or
+        publication-ethics contact for assessment under the applicable
+        journal procedures.
+    </p>
+
+    <a
+        href="publication-ethics.html"
+        style="color:#1677ff;text-decoration:none;font-size:12px;font-weight:800;"
+    >
+        View Publication Ethics
+    </a>
+
+</section>
+
+
+<!-- CHECKLIST -->
+
+<section class="card">
+
+    <h2>
+        Reviewer Final Checklist
+    </h2>
+
+    <p>
+        Before submitting your review, check the following:
+    </p>
+
+
+    <div class="checklist">
+
+        <label class="check">
+            <input type="checkbox">
+            I have assessed the manuscript objectively.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have considered potential conflicts of interest.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            My comments are professional and constructive.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have explained the main reasons for my recommendation.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have distinguished major issues from minor issues.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have maintained manuscript confidentiality.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have not disclosed confidential information to an
+            unauthorised AI or third-party service.
+        </label>
+
+        <label class="check">
+            <input type="checkbox">
+            I have completed the review according to the journal's
+            applicable instructions.
+        </label>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div>
+
+        <h2>
+            Ready to manage your reviews?
+        </h2>
+
+        <p>
+            Return to your reviewer workspace to view invitations
+            and assigned manuscripts.
+        </p>
+
+    </div>
+
+
+    <div class="cta-buttons">
+
+        <a
+            href="reviewer-portal.html"
+            class="cta-btn cta-primary"
+        >
+            Reviewer Portal
+        </a>
+
+        <a
+            href="reviewer-profile.html"
+            class="cta-btn cta-secondary"
+        >
+            My Profile
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 Scopusixteen Publishing. Frontend prototype.
+    </div>
+
+    <div style="margin-top:10px;">
+
+        <a href="peer-review.html">
+            Peer Review
+        </a>
+
+        <a href="publication-ethics.html">
+            Publication Ethics
+        </a>
+
+        <a href="author-guidelines.html">
+            Author Guidelines
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
