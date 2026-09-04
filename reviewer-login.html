@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviewer Login | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    min-height:100vh;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071b3a;
+    color:#fff;
+    padding:10px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.topbar a{
+    color:#dce8ff;
+    text-decoration:none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e4e9f1;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav{
+    width:88%;
+    max-width:1250px;
+    margin:auto;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#1677ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#344054;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#1677ff;
+}
+
+.nav-btn{
+    background:#071b3a;
+    color:#fff !important;
+    padding:11px 17px;
+    border-radius:7px;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    min-height:calc(100vh - 130px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:55px 20px;
+}
+
+.login-wrapper{
+    width:100%;
+    max-width:1050px;
+    display:grid;
+    grid-template-columns:1fr 430px;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(7,27,58,.10);
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.info-panel{
+    background:#071b3a;
+    color:#fff;
+    padding:55px;
+    position:relative;
+    overflow:hidden;
+}
+
+.info-panel:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    border:50px solid rgba(255,255,255,.04);
+    right:-120px;
+    bottom:-120px;
+}
+
+.info-panel:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:35px solid rgba(255,255,255,.04);
+    left:-90px;
+    top:-80px;
+}
+
+.info-content{
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    color:#7db4ff;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.info-panel h1{
+    font-size:39px;
+    line-height:1.12;
+    margin-bottom:20px;
+}
+
+.info-panel p{
+    color:#c8d5e8;
+    line-height:1.75;
+    font-size:15px;
+    max-width:480px;
+}
+
+.benefits{
+    margin-top:35px;
+    display:grid;
+    gap:18px;
+}
+
+.benefit{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+}
+
+.benefit-icon{
+    width:36px;
+    height:36px;
+    min-width:36px;
+    border-radius:8px;
+    background:rgba(255,255,255,.10);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+}
+
+.benefit h3{
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.benefit p{
+    font-size:12px;
+    line-height:1.5;
+    color:#b8c7dc;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-panel{
+    padding:48px 42px;
+}
+
+.login-heading{
+    margin-bottom:27px;
+}
+
+.login-heading h2{
+    color:#071b3a;
+    font-size:27px;
+    margin-bottom:9px;
+}
+
+.login-heading p{
+    color:#667085;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+    font-weight:700;
+    color:#344054;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.form-control{
+    width:100%;
+    height:48px;
+    border:1px solid #d5dce7;
+    border-radius:7px;
+    padding:0 13px;
+    font-size:14px;
+    outline:none;
+    transition:.2s;
+    background:#fff;
+}
+
+.form-control:focus{
+    border-color:#1677ff;
+    box-shadow:0 0 0 3px rgba(22,119,255,.10);
+}
+
+.password-input{
+    padding-right:72px;
+}
+
+.show-password{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    border:0;
+    background:none;
+    color:#1677ff;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:700;
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.form-options{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:3px 0 22px;
+    gap:10px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:12px;
+    color:#667085;
+}
+
+.remember input{
+    accent-color:#1677ff;
+}
+
+.forgot{
+    color:#1677ff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+}
+
+.forgot:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn{
+    width:100%;
+    height:49px;
+    border:none;
+    border-radius:7px;
+    background:#1677ff;
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.login-btn:hover{
+    background:#0e63d7;
+    transform:translateY(-1px);
+}
+
+.login-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+/* =========================
+   DEMO NOTICE
+========================= */
+
+.demo-notice{
+    margin-top:20px;
+    padding:13px 14px;
+    border-radius:8px;
+    background:#fff8e6;
+    border:1px solid #f4df9c;
+    color:#765b08;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.demo-notice strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:25px 0;
+    color:#98a2b3;
+    font-size:11px;
+}
+
+.divider:before,
+.divider:after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#e5eaf1;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.access-links{
+    text-align:center;
+}
+
+.access-links p{
+    color:#667085;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.outline-btn{
+    display:block;
+    width:100%;
+    padding:12px;
+    border:1px solid #cfd7e3;
+    border-radius:7px;
+    color:#071b3a;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.outline-btn:hover{
+    border-color:#1677ff;
+    color:#1677ff;
+}
+
+/* =========================
+   SUCCESS / ERROR
+========================= */
+
+.message{
+    display:none;
+    padding:12px 14px;
+    border-radius:7px;
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.message.error{
+    background:#fff0f0;
+    border:1px solid #f1b6b6;
+    color:#a12626;
+}
+
+.message.success{
+    background:#edf9f1;
+    border:1px solid #b9e2c5;
+    color:#176b36;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#aebbd0;
+    padding:22px 6%;
+    text-align:center;
+    font-size:12px;
+}
+
+footer a{
+    color:#cbd9ee;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .nav{
+        width:92%;
+    }
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a:not(.nav-btn){
+        display:none;
+    }
+
+    .login-wrapper{
+        grid-template-columns:1fr;
+        max-width:520px;
+    }
+
+    .info-panel{
+        padding:38px 30px;
+    }
+
+    .info-panel h1{
+        font-size:31px;
+    }
+
+    .benefits{
+        margin-top:25px;
+    }
+
+    .login-panel{
+        padding:38px 28px;
+    }
+}
+
+@media(max-width:500px){
+
+    .topbar{
+        justify-content:center;
+        text-align:center;
+        padding:8px 15px;
+    }
+
+    .topbar span{
+        display:none;
+    }
+
+    .nav{
+        min-height:64px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .nav-btn{
+        padding:9px 12px;
+        font-size:12px !important;
+    }
+
+    .page{
+        padding:25px 12px;
+    }
+
+    .info-panel{
+        padding:32px 23px;
+    }
+
+    .info-panel h1{
+        font-size:28px;
+    }
+
+    .login-panel{
+        padding:30px 21px;
+    }
+
+    .login-heading h2{
+        font-size:24px;
+    }
+
+    .form-options{
+        align-items:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <span>Scopusixteen Publishing — Reviewer Services</span>
+    <a href="contact.html">Reviewer Support</a>
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+    <nav class="nav">
+
+        <a href="index.html" class="logo">
+            Scopus<span>ixteen</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="journals.html">Journals</a>
+            <a href="author-dashboard.html">Authors</a>
+            <a href="reviewer-portal.html">Reviewers</a>
+            <a href="editorial-dashboard.html">Editorial</a>
+
+            <a href="administration.html" class="nav-btn">
+                Administration
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- PAGE -->
+
+<main class="page">
+
+    <div class="login-wrapper">
+
+        <!-- LEFT -->
+
+        <section class="info-panel">
+
+            <div class="info-content">
+
+                <div class="eyebrow">
+                    Reviewer Portal
+                </div>
+
+                <h1>
+                    Support rigorous research through peer review.
+                </h1>
+
+                <p>
+                    Access your reviewer workspace to manage invitations,
+                    review assigned manuscripts, submit recommendations and
+                    communicate editorial assessments.
+                </p>
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Assigned Reviews</h3>
+
+                            <p>
+                                View manuscripts assigned to you and monitor
+                                review deadlines.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Secure Review Workspace</h3>
+
+                            <p>
+                                Review manuscript information and prepare
+                                confidential editorial recommendations.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Reviewer Guidelines</h3>
+
+                            <p>
+                                Follow peer-review, confidentiality and
+                                publication-ethics principles.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN -->
+
+        <section class="login-panel">
+
+            <div class="login-heading">
+
+                <h2>Reviewer Sign In</h2>
+
+                <p>
+                    Sign in to access your reviewer dashboard.
+                </p>
+
+            </div>
+
+
+            <div id="errorMessage" class="message error"></div>
+
+            <div id="successMessage" class="message success"></div>
+
+
+            <form id="reviewerLoginForm">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="reviewer@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-control password-input"
+                            placeholder="Enter your password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot"
+                        id="forgotPassword"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                    id="loginBtn"
+                >
+                    Sign In to Reviewer Portal
+                </button>
+
+            </form>
+
+
+            <div class="demo-notice">
+
+                <strong>Prototype Notice</strong>
+
+                This reviewer login is currently a frontend demonstration.
+                Authentication, passwords and reviewer accounts are not
+                connected to a live database or authentication service.
+                Do not enter real passwords or confidential information.
+
+            </div>
+
+
+            <div class="divider">
+                Reviewer Access
+            </div>
+
+
+            <div class="access-links">
+
+                <p>
+                    Already have reviewer access?
+                </p>
+
+                <a
+                    href="reviewer-portal.html"
+                    class="outline-btn"
+                >
+                    Open Reviewer Portal
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 Scopusixteen Publishing. Frontend prototype.
+    </div>
+
+    <div style="margin-top:10px;">
+
+        <a href="peer-review.html">
+            Peer Review
+        </a>
+
+        <a href="publication-ethics.html">
+            Publication Ethics
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   SHOW / HIDE PASSWORD
+========================= */
+
+const passwordInput =
+    document.getElementById("password");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+showPassword.addEventListener("click", function(){
+
+    if(passwordInput.type === "password"){
+
+        passwordInput.type = "text";
+        showPassword.textContent = "Hide";
+
+    }else{
+
+        passwordInput.type = "password";
+        showPassword.textContent = "Show";
+
+    }
+
+});
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+document
+.getElementById("forgotPassword")
+.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    alert(
+        "Password recovery is currently a prototype feature. " +
+        "A live version will send a secure password-reset email."
+    );
+
+});
+
+
+/* =========================
+   LOGIN
+========================= */
+
+const form =
+    document.getElementById("reviewerLoginForm");
+
+const loginBtn =
+    document.getElementById("loginBtn");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    errorMessage.style.display = "none";
+    successMessage.style.display = "none";
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const remember =
+        document.getElementById("remember").checked;
+
+
+    if(!email || !password){
+
+        errorMessage.textContent =
+            "Please enter your email address and password.";
+
+        errorMessage.style.display = "block";
+
+        return;
+    }
+
+
+    if(password.length < 6){
+
+        errorMessage.textContent =
+            "Password must contain at least 6 characters.";
+
+        errorMessage.style.display = "block";
+
+        return;
+    }
+
+
+    /* Demo reviewer session */
+
+    const reviewerSession = {
+
+        email: email,
+
+        role: "Reviewer",
+
+        loggedIn: true,
+
+        loginTime: new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenReviewerSession",
+        JSON.stringify(reviewerSession)
+    );
+
+
+    if(remember){
+
+        localStorage.setItem(
+            "scopusixteenReviewerRemember",
+            "true"
+        );
+
+    }else{
+
+        localStorage.removeItem(
+            "scopusixteenReviewerRemember"
+        );
+
+    }
+
+
+    loginBtn.disabled = true;
+
+    loginBtn.textContent = "Signing in...";
+
+
+    setTimeout(function(){
+
+        successMessage.textContent =
+            "Demo sign-in successful. Opening reviewer portal...";
+
+        successMessage.style.display = "block";
+
+
+        setTimeout(function(){
+
+            window.location.href =
+                "reviewer-portal.html";
+
+        },700);
+
+
+    },600);
+
+});
+
+
+/* =========================
+   RESTORE REMEMBERED EMAIL
+========================= */
+
+const remembered =
+    localStorage.getItem(
+        "scopusixteenReviewerRemember"
+    );
+
+if(remembered === "true"){
+
+    document.getElementById("remember").checked = true;
+
+}
+
+</script>
+
+</body>
+</html>
