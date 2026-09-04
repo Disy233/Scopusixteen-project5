@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviewer Profile | Scopusixteen Publishing</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#071b3a;
+    color:#fff;
+    padding:10px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.topbar a{
+    color:#dce8ff;
+    text-decoration:none;
+}
+
+/* HEADER */
+header{
+    background:#fff;
+    border-bottom:1px solid #e3e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#1677ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#344054;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#1677ff;
+}
+
+.nav-btn{
+    background:#071b3a;
+    color:#fff !important;
+    padding:10px 15px;
+    border-radius:7px;
+}
+
+/* LAYOUT */
+.layout{
+    width:90%;
+    max-width:1300px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:25px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    background:#071b3a;
+    border-radius:12px;
+    padding:20px 13px;
+    height:max-content;
+    position:sticky;
+    top:95px;
+}
+
+.sidebar-title{
+    color:#8da8ce;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    padding:8px 12px 13px;
+}
+
+.sidebar a{
+    display:block;
+    color:#d9e4f5;
+    text-decoration:none;
+    padding:11px 12px;
+    border-radius:7px;
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#12335f;
+    color:#fff;
+}
+
+.sidebar a.active{
+    border-left:3px solid #4b9aff;
+}
+
+/* MAIN */
+.main{
+    min-width:0;
+}
+
+.page-header{
+    margin-bottom:25px;
+}
+
+.page-header .eyebrow{
+    color:#1677ff;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.page-header h1{
+    font-size:31px;
+    color:#071b3a;
+    margin-bottom:8px;
+}
+
+.page-header p{
+    color:#667085;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* PROFILE HEADER */
+.profile-header{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:12px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:22px;
+}
+
+.profile-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.avatar{
+    width:76px;
+    height:76px;
+    border-radius:50%;
+    background:#e9f2ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    font-weight:800;
+}
+
+.profile-name h2{
+    font-size:22px;
+    color:#071b3a;
+    margin-bottom:6px;
+}
+
+.profile-name p{
+    color:#667085;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.status{
+    background:#edf9f1;
+    color:#176b36;
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* CARDS */
+.card{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:22px;
+}
+
+.card-header{
+    margin-bottom:20px;
+}
+
+.card-header h2{
+    color:#071b3a;
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.card-header p{
+    color:#667085;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* FORM */
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:2px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    display:block;
+    color:#344054;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    border:1px solid #d5dce7;
+    border-radius:7px;
+    outline:none;
+    font-family:inherit;
+    font-size:13px;
+    color:#172033;
+    background:#fff;
+}
+
+input,
+select{
+    height:45px;
+    padding:0 12px;
+}
+
+textarea{
+    min-height:110px;
+    padding:12px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#1677ff;
+    box-shadow:0 0 0 3px rgba(22,119,255,.08);
+}
+
+/* TAGS */
+.tag-input{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:9px;
+    border:1px solid #d5dce7;
+    border-radius:7px;
+    min-height:45px;
+}
+
+.tag{
+    background:#eaf2ff;
+    color:#145bb5;
+    padding:6px 9px;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    gap:6px;
+    align-items:center;
+}
+
+.tag button{
+    border:0;
+    background:none;
+    color:#145bb5;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.tag-entry{
+    border:0 !important;
+    box-shadow:none !important;
+    outline:none !important;
+    height:27px !important;
+    flex:1;
+    min-width:130px;
+    padding:0 4px !important;
+}
+
+/* CHECKBOXES */
+.checkbox-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
+}
+
+.checkbox-item{
+    border:1px solid #e1e7ef;
+    padding:11px;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:12px;
+    color:#475467;
+}
+
+.checkbox-item input{
+    width:auto;
+    height:auto;
+    accent-color:#1677ff;
+}
+
+/* SWITCH */
+.preference{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:15px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.preference:last-child{
+    border-bottom:0;
+}
+
+.preference h3{
+    font-size:13px;
+    color:#344054;
+    margin-bottom:4px;
+}
+
+.preference p{
+    font-size:11px;
+    color:#667085;
+    line-height:1.5;
+}
+
+.switch{
+    position:relative;
+    width:45px;
+    height:24px;
+    flex-shrink:0;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    inset:0;
+    background:#cbd5e1;
+    border-radius:30px;
+    transition:.2s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    left:3px;
+    top:3px;
+    background:#fff;
+    border-radius:50%;
+    transition:.2s;
+}
+
+.switch input:checked + .slider{
+    background:#1677ff;
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(21px);
+}
+
+/* COMPLETION */
+.completion{
+    margin-top:15px;
+}
+
+.completion-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+}
+
+.completion-top span{
+    font-size:11px;
+    color:#667085;
+}
+
+.progress{
+    height:8px;
+    background:#e8edf4;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:75%;
+    background:#1677ff;
+    border-radius:20px;
+    transition:.3s;
+}
+
+/* BUTTONS */
+.actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:5px;
+}
+
+.btn{
+    border:0;
+    border-radius:7px;
+    padding:12px 18px;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:#1677ff;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#0e63d7;
+}
+
+.btn-secondary{
+    background:#eef2f7;
+    color:#344054;
+}
+
+.btn-secondary:hover{
+    background:#e1e7ef;
+}
+
+/* NOTICE */
+.notice{
+    background:#fff8e6;
+    border:1px solid #f1dda3;
+    color:#765b08;
+    padding:14px;
+    border-radius:8px;
+    font-size:11px;
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.notice strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+/* ETHICS */
+.ethics-box{
+    background:#f7f9fc;
+    border:1px solid #e5eaf1;
+    border-radius:8px;
+    padding:15px;
+    margin-top:18px;
+}
+
+.ethics-box label{
+    display:flex;
+    gap:9px;
+    align-items:flex-start;
+    font-size:11px;
+    color:#475467;
+    line-height:1.6;
+}
+
+.ethics-box input{
+    width:auto;
+    height:auto;
+    margin-top:3px;
+    accent-color:#1677ff;
+}
+
+/* FOOTER */
+footer{
+    background:#071b3a;
+    color:#aebbd0;
+    padding:25px 5%;
+    text-align:center;
+    font-size:11px;
+    margin-top:35px;
+}
+
+footer a{
+    color:#cbd9ee;
+    text-decoration:none;
+    margin:0 7px;
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#071b3a;
+    color:#fff;
+    padding:14px 18px;
+    border-radius:8px;
+    font-size:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    transform:translateY(100px);
+    opacity:0;
+    transition:.3s;
+    z-index:500;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:950px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        position:static;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:3px;
+    }
+
+    .sidebar-title{
+        grid-column:1/-1;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        justify-content:center;
+    }
+
+    .topbar span{
+        display:none;
+    }
+
+    .nav{
+        width:94%;
+    }
+
+    .nav-links a:not(.nav-btn){
+        display:none;
+    }
+
+    .layout{
+        width:94%;
+        margin:20px auto;
+    }
+
+    .profile-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .checkbox-list{
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .sidebar{
+        grid-template-columns:1fr;
+    }
+
+    .profile-left{
+        align-items:flex-start;
+    }
+
+    .avatar{
+        width:60px;
+        height:60px;
+        font-size:21px;
+    }
+
+    .profile-name h2{
+        font-size:18px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .page-header h1{
+        font-size:25px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <span>Scopusixteen Publishing — Reviewer Services</span>
+    <a href="contact.html">Reviewer Support</a>
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+        <a href="administration.html" class="nav-btn">
+            Administration
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- LAYOUT -->
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+        Reviewer Workspace
+    </div>
+
+    <a href="reviewer-portal.html">
+        Reviewer Dashboard
+    </a>
+
+    <a href="reviewer-portal.html">
+        Assigned Reviews
+    </a>
+
+    <a href="reviewer-portal.html">
+        Invitations
+    </a>
+
+    <a href="reviewer-portal.html">
+        Active Reviews
+    </a>
+
+    <a href="reviewer-portal.html">
+        Completed Reviews
+    </a>
+
+    <a href="reviewer-profile.html" class="active">
+        Reviewer Profile
+    </a>
+
+    <a href="reviewer-guidelines.html">
+        Reviewer Guidelines
+    </a>
+
+    <a href="peer-review.html">
+        Peer Review Policy
+    </a>
+
+    <a href="publication-ethics.html">
+        Publication Ethics
+    </a>
+
+    <a href="ai-assistant.html">
+        AI Assistant
+    </a>
+
+    <a href="contact.html">
+        Support
+    </a>
+
+    <a href="index.html">
+        View Website
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <div class="page-header">
+
+        <div class="eyebrow">
+            Reviewer Services
+        </div>
+
+        <h1>Reviewer Profile</h1>
+
+        <p>
+            Maintain your academic profile, expertise and reviewer
+            preferences to help editors identify suitable manuscripts.
+        </p>
+
+    </div>
+
+
+    <!-- PROFILE HEADER -->
+
+    <section class="profile-header">
+
+        <div class="profile-left">
+
+            <div class="avatar" id="avatar">
+                DR
+            </div>
+
+            <div class="profile-name">
+
+                <h2 id="profileName">
+                    Dr. David Reviewer
+                </h2>
+
+                <p id="profileInstitution">
+                    Senior Lecturer · Example University
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="status">
+            Reviewer Profile
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Prototype Notice</strong>
+
+        This profile is part of the Scopusixteen frontend prototype.
+        Profile information is currently stored locally in this browser
+        only. It is not connected to a live reviewer database,
+        authentication system or editorial management system.
+
+    </div>
+
+
+    <!-- PERSONAL INFORMATION -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Personal & Academic Information</h2>
+
+            <p>
+                Provide information that may help editors understand
+                your academic background.
+            </p>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>First Name</label>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    value="David"
+                    placeholder="First name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Last Name</label>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    value="Reviewer"
+                    placeholder="Last name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Academic Position</label>
+
+                <select id="position">
+
+                    <option>Professor</option>
+                    <option>Associate Professor</option>
+                    <option>Senior Lecturer</option>
+                    <option>Lecturer</option>
+                    <option>Research Fellow</option>
+                    <option>Postdoctoral Researcher</option>
+                    <option>Researcher</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Institution</label>
+
+                <input
+                    type="text"
+                    id="institution"
+                    value="Example University"
+                    placeholder="University or organisation"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Department / Faculty</label>
+
+                <input
+                    type="text"
+                    id="department"
+                    value="Department of Digital Education"
+                    placeholder="Department or faculty"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Country</label>
+
+                <input
+                    type="text"
+                    id="country"
+                    value="Nigeria"
+                    placeholder="Country"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>ORCID iD</label>
+
+                <input
+                    type="text"
+                    id="orcid"
+                    placeholder="0000-0000-0000-0000"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Professional Website</label>
+
+                <input
+                    type="url"
+                    id="website"
+                    placeholder="https://example.com"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERTISE -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Areas of Expertise</h2>
+
+            <p>
+                Add the subjects and disciplines in which you can
+                confidently evaluate manuscripts.
+            </p>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Expertise Areas</label>
+
+            <div class="tag-input" id="expertiseTags">
+
+                <div class="tag">
+                    Digital Education
+                    <button type="button" onclick="removeTag(this)">
+                        ×
+                    </button>
+                </div>
+
+                <div class="tag">
+                    Artificial Intelligence
+                    <button type="button" onclick="removeTag(this)">
+                        ×
+                    </button>
+                </div>
+
+                <input
+                    class="tag-entry"
+                    id="expertiseInput"
+                    placeholder="Type expertise and press Enter"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group" style="margin-top:18px;">
+
+            <label>Research Interests</label>
+
+            <textarea
+                id="researchInterests"
+                placeholder="Describe your research interests..."
+            >Artificial intelligence, digital learning, educational technology and technology-enhanced teaching.</textarea>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIOGRAPHY -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Reviewer Biography</h2>
+
+            <p>
+                A short professional biography may help editors
+                understand your research background.
+            </p>
+
+        </div>
+
+        <textarea
+            id="biography"
+            placeholder="Write a short professional biography..."
+        >Dr. David Reviewer is an academic researcher specialising in digital education, artificial intelligence and educational technology. His research focuses on the use of emerging technologies to improve teaching, learning and academic decision-making.</textarea>
+
+    </section>
+
+
+    <!-- JOURNAL PREFERENCES -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Preferred Review Areas</h2>
+
+            <p>
+                Select the broad subject areas in which you are willing
+                to review manuscripts.
+            </p>
+
+        </div>
+
+
+        <div class="checkbox-list">
+
+            <label class="checkbox-item">
+                <input type="checkbox" checked>
+                Business & Management
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox" checked>
+                Computer Science & Technology
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Education
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Environmental Studies
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Economics & Finance
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Social Sciences
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Engineering
+            </label>
+
+            <label class="checkbox-item">
+                <input type="checkbox">
+                Health & Medicine
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- AVAILABILITY -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Reviewer Availability</h2>
+
+            <p>
+                Let editors know whether you are currently available
+                to receive review invitations.
+            </p>
+
+        </div>
+
+
+        <div class="preference">
+
+            <div>
+
+                <h3>Available for Peer Review</h3>
+
+                <p>
+                    Allow the editorial team to consider you for
+                    suitable review assignments.
+                </p>
+
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="available"
+                    checked
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="preference">
+
+            <div>
+
+                <h3>Review Invitations</h3>
+
+                <p>
+                    Receive notifications when a manuscript is
+                    assigned or offered for review.
+                </p>
+
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="invitations"
+                    checked
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="preference">
+
+            <div>
+
+                <h3>Reviewer Reminders</h3>
+
+                <p>
+                    Receive reminder notifications about approaching
+                    review deadlines.
+                </p>
+
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="reminders"
+                    checked
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETHICS -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Confidentiality & Reviewer Ethics</h2>
+
+            <p>
+                Reviewer participation should follow the applicable
+                peer-review and publication-ethics policies.
+            </p>
+
+        </div>
+
+
+        <div class="ethics-box">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="ethics"
+                >
+
+                <span>
+                    I acknowledge that manuscripts and review materials
+                    should be treated as confidential, that I should
+                    disclose relevant conflicts of interest, and that
+                    reviewer recommendations should be objective,
+                    professional and evidence-based.
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <div style="margin-top:15px;">
+
+            <a
+                href="publication-ethics.html"
+                style="color:#1677ff;font-size:12px;font-weight:700;text-decoration:none;"
+            >
+                Read Publication Ethics
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a
+                href="peer-review.html"
+                style="color:#1677ff;font-size:12px;font-weight:700;text-decoration:none;"
+            >
+                Read Peer Review Policy
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE COMPLETION -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <h2>Profile Completion</h2>
+
+            <p>
+                Complete additional profile fields to provide editors
+                with more useful reviewer information.
+            </p>
+
+        </div>
+
+
+        <div class="completion">
+
+            <div class="completion-top">
+
+                <span>Profile completion</span>
+
+                <span id="completionText">75%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIONS -->
+
+    <div class="actions">
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="resetProfile()"
+        >
+            Reset Demo
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            onclick="saveProfile()"
+        >
+            Save Reviewer Profile
+        </button>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 Scopusixteen Publishing. Frontend prototype.
+    </div>
+
+    <div style="margin-top:10px;">
+
+        <a href="peer-review.html">Peer Review</a>
+        <a href="publication-ethics.html">Publication Ethics</a>
+        <a href="reviewer-guidelines.html">Reviewer Guidelines</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    Profile saved successfully.
+</div>
+
+
+<script>
+
+/* =========================
+   TAG MANAGEMENT
+========================= */
+
+const expertiseInput =
+    document.getElementById("expertiseInput");
+
+expertiseInput.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        e.preventDefault();
+
+        const value = this.value.trim();
+
+        if(!value) return;
+
+        const tag = document.createElement("div");
+
+        tag.className = "tag";
+
+        tag.innerHTML =
+            escapeHtml(value) +
+            ' <button type="button" onclick="removeTag(this)">×</button>';
+
+        document
+            .getElementById("expertiseTags")
+            .insertBefore(tag, this);
+
+        this.value = "";
+
+        updateCompletion();
+
+    }
+
+});
+
+
+function removeTag(button){
+
+    button.parentElement.remove();
+
+    updateCompletion();
+
+}
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHtml(text){
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   SAVE PROFILE
+========================= */
+
+function saveProfile(){
+
+    const firstName =
+        document.getElementById("firstName").value.trim();
+
+    const lastName =
+        document.getElementById("lastName").value.trim();
+
+    const institution =
+        document.getElementById("institution").value.trim();
+
+    if(!firstName || !lastName || !institution){
+
+        showToast(
+            "Please complete your name and institution first."
+        );
+
+        return;
+
+    }
+
+
+    if(!document.getElementById("ethics").checked){
+
+        showToast(
+            "Please acknowledge the reviewer confidentiality and ethics statement."
+        );
+
+        return;
+
+    }
+
+
+    const profile = {
+
+        firstName:firstName,
+
+        lastName:lastName,
+
+        position:
+            document.getElementById("position").value,
+
+        institution:institution,
+
+        department:
+            document.getElementById("department").value,
+
+        country:
+            document.getElementById("country").value,
+
+        orcid:
+            document.getElementById("orcid").value,
+
+        website:
+            document.getElementById("website").value,
+
+        researchInterests:
+            document.getElementById("researchInterests").value,
+
+        biography:
+            document.getElementById("biography").value,
+
+        available:
+            document.getElementById("available").checked,
+
+        invitations:
+            document.getElementById("invitations").checked,
+
+        reminders:
+            document.getElementById("reminders").checked,
+
+        savedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenReviewerProfile",
+        JSON.stringify(profile)
+    );
+
+
+    updateHeader(profile);
+
+    updateCompletion();
+
+    showToast(
+        "Reviewer profile saved locally for this prototype."
+    );
+
+}
+
+
+/* =========================
+   LOAD PROFILE
+========================= */
+
+function loadProfile(){
+
+    const saved =
+        localStorage.getItem(
+            "scopusixteenReviewerProfile"
+        );
+
+    if(!saved){
+
+        updateCompletion();
+
+        return;
+
+    }
+
+
+    try{
+
+        const profile = JSON.parse(saved);
+
+        document.getElementById("firstName").value =
+            profile.firstName || "";
+
+        document.getElementById("lastName").value =
+            profile.lastName || "";
+
+        document.getElementById("position").value =
+            profile.position || "Researcher";
+
+        document.getElementById("institution").value =
+            profile.institution || "";
+
+        document.getElementById("department").value =
+            profile.department || "";
+
+        document.getElementById("country").value =
+            profile.country || "";
+
+        document.getElementById("orcid").value =
+            profile.orcid || "";
+
+        document.getElementById("website").value =
+            profile.website || "";
+
+        document.getElementById("researchInterests").value =
+            profile.researchInterests || "";
+
+        document.getElementById("biography").value =
+            profile.biography || "";
+
+        document.getElementById("available").checked =
+            profile.available !== false;
+
+        document.getElementById("invitations").checked =
+            profile.invitations !== false;
+
+        document.getElementById("reminders").checked =
+            profile.reminders !== false;
+
+
+        updateHeader(profile);
+
+    }catch(error){
+
+        console.log(
+            "Could not load demo profile.",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+function updateHeader(profile){
+
+    const fullName =
+        (
+            profile.firstName +
+            " " +
+            profile.lastName
+        ).trim();
+
+    if(fullName){
+
+        document.getElementById("profileName")
+            .textContent = "Dr. " + fullName;
+
+        const initials =
+            (
+                profile.firstName.charAt(0) +
+                profile.lastName.charAt(0)
+            ).toUpperCase();
+
+        document.getElementById("avatar")
+            .textContent = initials;
+
+    }
+
+
+    document.getElementById("profileInstitution")
+        .textContent =
+            (
+                profile.position || "Reviewer"
+            ) +
+            " · " +
+            (
+                profile.institution ||
+                "Academic Institution"
+            );
+
+}
+
+
+/* =========================
+   COMPLETION
+========================= */
+
+function updateCompletion(){
+
+    let completed = 0;
+
+    const fields = [
+
+        document.getElementById("firstName").value.trim(),
+
+        document.getElementById("lastName").value.trim(),
+
+        document.getElementById("institution").value.trim(),
+
+        document.getElementById("department").value.trim(),
+
+        document.getElementById("country").value.trim(),
+
+        document.getElementById("orcid").value.trim(),
+
+        document.getElementById("researchInterests").value.trim(),
+
+        document.getElementById("biography").value.trim()
+
+    ];
+
+
+    fields.forEach(function(field){
+
+        if(field) completed++;
+
+    });
+
+
+    const tagCount =
+        document
+        .querySelectorAll("#expertiseTags .tag")
+        .length;
+
+    if(tagCount > 0){
+
+        completed++;
+
+    }
+
+
+    let percentage =
+        Math.round(
+            (completed / 9) * 100
+        );
+
+    percentage =
+        Math.min(100,percentage);
+
+
+    document.getElementById("completionText")
+        .textContent = percentage + "%";
+
+    document.getElementById("progressBar")
+        .style.width = percentage + "%";
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+function resetProfile(){
+
+    if(!confirm(
+        "Reset the reviewer profile to the demo information?"
+    )){
+
+        return;
+
+    }
+
+    localStorage.removeItem(
+        "scopusixteenReviewerProfile"
+    );
+
+    location.reload();
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   LIVE COMPLETION
+========================= */
+
+document
+.querySelectorAll(
+    "input, textarea, select"
+)
+.forEach(function(element){
+
+    element.addEventListener(
+        "input",
+        updateCompletion
+    );
+
+    element.addEventListener(
+        "change",
+        updateCompletion
+    );
+
+});
+
+
+/* =========================
+   START
+========================= */
+
+loadProfile();
+
+updateCompletion();
+
+</script>
+
+</body>
+</html>
