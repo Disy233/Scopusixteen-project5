@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Author Account | Scopusixteen Publishing</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --navy:#071b3a;
+    --blue:#1769e0;
+    --light:#f4f7fb;
+    --border:#dfe6ef;
+    --text:#172033;
+    --muted:#667085;
+    --white:#fff;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+a{
+    text-decoration:none;
+}
+
+.topbar{
+    background:var(--navy);
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.topbar a{
+    color:#dce7f7;
+    margin-left:18px;
+}
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:17px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:var(--navy);
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+.navlinks{
+    display:flex;
+    gap:24px;
+}
+
+.navlinks a{
+    color:#344054;
+    font-size:14px;
+    font-weight:600;
+}
+
+.page{
+    padding:45px 20px;
+}
+
+.auth-box{
+    max-width:720px;
+    margin:auto;
+}
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(7,27,58,.07);
+}
+
+h1{
+    color:var(--navy);
+    font-size:28px;
+    margin-bottom:9px;
+}
+
+.intro{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:22px;
+}
+
+.notice{
+    background:#fff8e8;
+    border:1px solid #efd48b;
+    color:#75530c;
+    padding:14px;
+    border-radius:8px;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.section-title{
+    font-size:17px;
+    color:var(--navy);
+    margin:25px 0 15px;
+    padding-bottom:9px;
+    border-bottom:1px solid #edf1f5;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+.form-group{
+    margin-bottom:3px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:#344054;
+    margin-bottom:7px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #cfd7e3;
+    border-radius:7px;
+    outline:none;
+    background:#fff;
+    font-size:14px;
+}
+
+input:focus,
+select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(23,105,224,.1);
+}
+
+.password-wrap{
+    position:relative;
+}
+
+.password-wrap input{
+    padding-right:70px;
+}
+
+.show{
+    position:absolute;
+    right:10px;
+    top:9px;
+    border:0;
+    background:none;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.check{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin-top:18px;
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.check input{
+    width:auto;
+    margin-top:3px;
+}
+
+.check a{
+    color:var(--blue);
+}
+
+.btn{
+    width:100%;
+    border:0;
+    border-radius:7px;
+    padding:13px;
+    margin-top:22px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#0e58c4;
+}
+
+.login{
+    text-align:center;
+    margin-top:22px;
+    font-size:14px;
+    color:var(--muted);
+}
+
+.login a{
+    color:var(--blue);
+    font-weight:700;
+}
+
+.success{
+    display:none;
+    background:#eaf8f1;
+    border:1px solid #b7e3cc;
+    color:#176b48;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+    line-height:1.6;
+    font-size:13px;
+}
+
+.password-strength{
+    margin-top:7px;
+    font-size:12px;
+    color:var(--muted);
+}
+
+footer{
+    background:var(--navy);
+    color:#aebdd3;
+    text-align:center;
+    padding:22px;
+    font-size:12px;
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navlinks{
+        display:none;
+    }
+
+    .page{
+        padding:25px 15px;
+    }
+
+    .card{
+        padding:23px 18px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div>Scopusixteen Publishing</div>
+
+    <div>
+        <a href="contact.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+
+</div>
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-login.html">Author Login</a>
+    </div>
+
+</nav>
+
+</header>
+
+<main class="page">
+
+<div class="auth-box">
+
+<div class="card">
+
+    <h1>Create Author Account</h1>
+
+    <p class="intro">
+        Create an author profile to manage manuscript submissions,
+        revisions, editorial correspondence and publication information.
+    </p>
+
+    <div class="notice">
+
+        <strong>Prototype account registration:</strong>
+        This form demonstrates the registration experience.
+        It does not currently create a real account or transmit
+        your personal information to a server.
+
+    </div>
+
+    <div class="success" id="success">
+
+        <strong>Demo account created.</strong><br>
+
+        Your author profile has been created for this prototype.
+        You can now continue to the Author Dashboard.
+
+    </div>
+
+    <form id="registrationForm">
+
+        <div class="section-title">
+            Personal Information
+        </div>
+
+        <div class="grid">
+
+            <div class="form-group">
+
+                <label>First Name</label>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="First name"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Last Name</label>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Last name"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Country / Region</label>
+
+                <select id="country" required>
+
+                    <option value="">
+                        Select country
+                    </option>
+
+                    <option>Nigeria</option>
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                    <option>Germany</option>
+                    <option>India</option>
+                    <option>Canada</option>
+                    <option>Australia</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-title">
+            Academic Information
+        </div>
+
+        <div class="grid">
+
+            <div class="form-group">
+
+                <label>Institution / Organisation</label>
+
+                <input
+                    type="text"
+                    id="institution"
+                    placeholder="University, organisation or company"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Department / Faculty</label>
+
+                <input
+                    type="text"
+                    placeholder="Department or faculty"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Academic Position</label>
+
+                <select>
+
+                    <option value="">
+                        Select position
+                    </option>
+
+                    <option>Professor</option>
+                    <option>Associate Professor</option>
+                    <option>Assistant Professor</option>
+                    <option>Lecturer</option>
+                    <option>Researcher</option>
+                    <option>Graduate Student</option>
+                    <option>Doctoral Researcher</option>
+                    <option>Independent Researcher</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>ORCID iD</label>
+
+                <input
+                    type="text"
+                    placeholder="Optional"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="section-title">
+            Account Security
+        </div>
+
+        <div class="grid">
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <div class="password-wrap">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show"
+                        onclick="togglePassword('password',this)"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+                <div class="password-strength" id="strength">
+                    Use at least 8 characters.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Confirm Password</label>
+
+                <div class="password-wrap">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show"
+                        onclick="togglePassword('confirmPassword',this)"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <label class="check">
+
+            <input type="checkbox" id="termsCheck" required>
+
+            <span>
+                I agree to the
+                <a href="terms.html">Terms & Conditions</a>
+                and acknowledge the
+                <a href="privacy.html">Privacy Policy</a>.
+            </span>
+
+        </label>
+
+
+        <label class="check">
+
+            <input type="checkbox">
+
+            <span>
+                I would like to receive relevant publishing,
+                journal and platform updates.
+            </span>
+
+        </label>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Create Author Account
+        </button>
+
+    </form>
+
+
+    <div class="login">
+
+        Already have an account?
+
+        <a href="author-login.html">
+            Sign in
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+    © 2026 Scopusixteen Publishing.
+    Prototype platform.
+
+</footer>
+
+<script>
+
+function togglePassword(id,button){
+
+    const field =
+        document.getElementById(id);
+
+    if(field.type === "password"){
+
+        field.type = "text";
+        button.textContent = "Hide";
+
+    }else{
+
+        field.type = "password";
+        button.textContent = "Show";
+
+    }
+
+}
+
+
+document
+.getElementById("password")
+.addEventListener("input", function(){
+
+    const value = this.value;
+
+    const strength =
+        document.getElementById("strength");
+
+    if(value.length === 0){
+
+        strength.textContent =
+            "Use at least 8 characters.";
+
+    }else if(value.length < 8){
+
+        strength.textContent =
+            "Password is too short.";
+
+    }else if(value.length < 12){
+
+        strength.textContent =
+            "Password strength: acceptable.";
+
+    }else{
+
+        strength.textContent =
+            "Password strength: strong.";
+
+    }
+
+});
+
+
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    if(password.length < 8){
+
+        alert(
+            "Please use a password with at least 8 characters."
+        );
+
+        return;
+
+    }
+
+    if(password !== confirmPassword){
+
+        alert(
+            "The passwords do not match."
+        );
+
+        return;
+
+    }
+
+    document.getElementById("success").style.display =
+        "block";
+
+    document
+        .getElementById("success")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    setTimeout(function(){
+
+        window.location.href =
+            "author-dashboard.html";
+
+    },1800);
+
+});
+
+</script>
+
+</body>
+</html>
