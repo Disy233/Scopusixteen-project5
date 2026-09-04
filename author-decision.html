@@ -1,0 +1,2631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editorial Decision | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#18243a;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+    height:68px;
+    background:#071b3a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#4ea1ff;
+}
+
+.top-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-size:14px;
+}
+
+.top-links a{
+    color:#dce7f5;
+}
+
+.top-links a:hover{
+    color:#fff;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:25px;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    max-width:1350px;
+    margin:auto;
+    padding:28px;
+}
+
+.breadcrumb{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    color:#8793a5;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:#1677ff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:#071b3a;
+    color:#fff;
+    border-radius:13px;
+    padding:28px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.hero p{
+    color:#cbd8e8;
+    max-width:850px;
+    font-size:13px;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #efd58f;
+    color:#73591d;
+    padding:13px 16px;
+    border-radius:9px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.main-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+    gap:20px;
+    align-items:start;
+}
+
+.sticky{
+    position:sticky;
+    top:88px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:#fff;
+    border:1px solid #e1e8f0;
+    border-radius:11px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(20,40,70,.035);
+}
+
+.card-header{
+    padding:17px 20px;
+    border-bottom:1px solid #e5ebf2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.card-header h2{
+    color:#071b3a;
+    font-size:16px;
+}
+
+.card-header p{
+    color:#8491a5;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+/* =========================
+   DECISION BANNER
+========================= */
+
+.decision-banner{
+    border:1px solid #f0d58e;
+    background:#fff9e9;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.decision-label{
+    color:#8b6a19;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.6px;
+    margin-bottom:5px;
+}
+
+.decision-title{
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+}
+
+.decision-description{
+    color:#6d6245;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+    display:inline-flex;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.badge.revision{
+    background:#fff1dc;
+    color:#9b6208;
+}
+
+.badge.accept{
+    background:#e8f8ef;
+    color:#20814b;
+}
+
+.badge.reject{
+    background:#ffecec;
+    color:#ba3939;
+}
+
+.badge.info{
+    background:#e9f3ff;
+    color:#1767d5;
+}
+
+/* =========================
+   MANUSCRIPT INFORMATION
+========================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.info-item{
+    background:#f8fafc;
+    border:1px solid #e3e9f0;
+    border-radius:8px;
+    padding:12px;
+}
+
+.info-label{
+    color:#8995a7;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+}
+
+.info-value{
+    color:#26364e;
+    font-size:12px;
+    font-weight:700;
+    margin-top:3px;
+}
+
+/* =========================
+   SECTION TEXT
+========================= */
+
+.section{
+    margin-bottom:22px;
+}
+
+.section:last-child{
+    margin-bottom:0;
+}
+
+.section h3{
+    color:#071b3a;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.section p{
+    color:#59687d;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* =========================
+   REVIEW COMMENTS
+========================= */
+
+.reviewer-report{
+    border:1px solid #e0e7ef;
+    border-radius:9px;
+    margin-bottom:12px;
+    overflow:hidden;
+}
+
+.reviewer-report:last-child{
+    margin-bottom:0;
+}
+
+.report-head{
+    padding:13px 15px;
+    background:#f8fafc;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.report-head strong{
+    color:#26364e;
+    font-size:12px;
+}
+
+.report-body{
+    padding:15px;
+}
+
+.report-body p{
+    color:#5d6c81;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================
+   REVISION ITEMS
+========================= */
+
+.revision-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.revision-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:12px;
+    background:#f8fafc;
+    border:1px solid #e1e8ef;
+    border-radius:8px;
+}
+
+.revision-number{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#e9f3ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:800;
+    flex-shrink:0;
+}
+
+.revision-item strong{
+    display:block;
+    color:#26364e;
+    font-size:11px;
+}
+
+.revision-item p{
+    color:#7a8798;
+    font-size:10px;
+    margin-top:2px;
+}
+
+/* =========================
+   DEADLINE
+========================= */
+
+.deadline-box{
+    background:#eef6ff;
+    border:1px solid #cfe3fb;
+    border-radius:9px;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.deadline-label{
+    color:#657890;
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.deadline-date{
+    color:#1677ff;
+    font-size:20px;
+    font-weight:800;
+    margin-top:2px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress{
+    margin:10px 0 17px;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:6px;
+}
+
+.progress-top span{
+    color:#68768a;
+    font-size:10px;
+}
+
+.progress-top strong{
+    color:#1677ff;
+    font-size:10px;
+}
+
+.progress-bar{
+    height:8px;
+    background:#e9eef4;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:35%;
+    background:#1677ff;
+    border-radius:10px;
+}
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+.upload-area{
+    border:2px dashed #c7d5e4;
+    background:#f9fbfd;
+    border-radius:10px;
+    padding:25px 18px;
+    text-align:center;
+    transition:.2s;
+}
+
+.upload-area:hover{
+    border-color:#1677ff;
+    background:#f5f9ff;
+}
+
+.upload-icon{
+    font-size:30px;
+    margin-bottom:7px;
+}
+
+.upload-area strong{
+    display:block;
+    color:#26364e;
+    font-size:13px;
+}
+
+.upload-area p{
+    color:#8a96a7;
+    font-size:10px;
+    margin:5px 0 12px;
+}
+
+.file-input{
+    display:none;
+}
+
+.upload-btn{
+    display:inline-block;
+    background:#1677ff;
+    color:#fff;
+    padding:9px 14px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* =========================
+   FILE LIST
+========================= */
+
+.file-list{
+    margin-top:12px;
+}
+
+.file-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    border:1px solid #e1e8ef;
+    border-radius:8px;
+    margin-bottom:8px;
+}
+
+.file-type{
+    width:36px;
+    height:36px;
+    border-radius:7px;
+    background:#eef5ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    font-weight:800;
+}
+
+.file-info{
+    flex:1;
+}
+
+.file-name{
+    color:#26364e;
+    font-size:11px;
+    font-weight:700;
+}
+
+.file-size{
+    color:#8a96a7;
+    font-size:9px;
+}
+
+.remove-file{
+    border:0;
+    background:none;
+    color:#c34343;
+    font-size:11px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    color:#26364e;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.form-control{
+    width:100%;
+    border:1px solid #d4deea;
+    background:#fff;
+    border-radius:8px;
+    padding:10px 11px;
+    color:#26364e;
+    font-size:11px;
+    outline:none;
+}
+
+.form-control:focus{
+    border-color:#1677ff;
+}
+
+textarea.form-control{
+    resize:vertical;
+    line-height:1.6;
+}
+
+.help{
+    color:#8995a7;
+    font-size:9px;
+    margin-top:5px;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.check-row{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    color:#5c6b80;
+    font-size:10px;
+    margin-bottom:9px;
+}
+
+.check-row input{
+    margin-top:3px;
+    accent-color:#1677ff;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn{
+    border:0;
+    background:#1677ff;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.primary-btn:hover{
+    background:#0d64dc;
+}
+
+.secondary-btn{
+    border:1px solid #d2dce8;
+    background:#fff;
+    color:#1677ff;
+    padding:9px 13px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.secondary-btn:hover{
+    background:#f2f7ff;
+}
+
+/* =========================
+   ACTION BAR
+========================= */
+
+.action-bar{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    border-top:1px solid #e4eaf1;
+    padding-top:17px;
+    margin-top:5px;
+}
+
+.action-group{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.timeline-item{
+    display:flex;
+    gap:10px;
+}
+
+.timeline-dot{
+    width:9px;
+    height:9px;
+    background:#1677ff;
+    border-radius:50%;
+    margin-top:5px;
+    flex-shrink:0;
+}
+
+.timeline-item strong{
+    display:block;
+    color:#26364e;
+    font-size:11px;
+}
+
+.timeline-item span{
+    display:block;
+    color:#8a96a7;
+    font-size:9px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(4,15,34,.58);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:#fff;
+    border-radius:13px;
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
+}
+
+.modal-header{
+    padding:18px 21px;
+    border-bottom:1px solid #e4eaf1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.modal-header h3{
+    color:#071b3a;
+    font-size:17px;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#8793a5;
+    font-size:25px;
+}
+
+.modal-body{
+    padding:21px;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:9px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    background:#071b3a;
+    color:#fff;
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:12px;
+    display:none;
+    z-index:3000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#bdc9da;
+    padding:26px 30px;
+    margin-top:25px;
+    font-size:12px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer a{
+    color:#dce7f5;
+    margin-right:14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .main-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sticky{
+        position:static;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .top-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .topbar{
+        padding:0 16px;
+    }
+
+    .page{
+        padding:20px 14px;
+    }
+
+    .hero{
+        padding:22px;
+    }
+
+    .hero h1{
+        font-size:23px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card-body{
+        padding:16px;
+    }
+
+    .card-header{
+        padding:15px 16px;
+    }
+
+    .decision-title{
+        font-size:21px;
+    }
+
+    .action-bar{
+        flex-direction:column;
+    }
+
+    .action-group{
+        width:100%;
+    }
+
+    .action-group button{
+        flex:1;
+    }
+
+    footer{
+        padding:22px 16px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     TOPBAR
+========================= -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <nav class="top-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="journals.html">
+            Journals
+        </a>
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <a href="reviewer-portal.html">
+            Reviewers
+        </a>
+
+        <a href="editorial-dashboard.html">
+            Editorial
+        </a>
+
+        <a href="contact.html">
+            Support
+        </a>
+
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="showToast('Use the Author Portal to access account navigation.')"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+<main class="page">
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="author-dashboard.html">
+            Author Portal
+        </a>
+
+        <span>›</span>
+
+        <span>
+            Editorial Decision
+        </span>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Editorial Decision
+        </h1>
+
+        <p>
+            Review the editorial decision, read reviewer feedback,
+            address requested revisions and prepare a revised
+            manuscript where applicable.
+        </p>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Prototype notice:</strong>
+        This page contains demonstration manuscript, reviewer and
+        editorial information. Decision letters, revision uploads
+        and status changes are stored locally in this browser only.
+        No information is transmitted to a live editorial system.
+
+    </div>
+
+
+    <div class="main-grid">
+
+
+        <!-- =========================
+             LEFT COLUMN
+        ========================= -->
+
+        <section>
+
+
+            <!-- DECISION -->
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <div class="decision-banner">
+
+                        <div class="decision-label">
+                            Editorial Decision
+                        </div>
+
+                        <div
+                            class="decision-title"
+                            id="decisionTitle"
+                        >
+                            Major Revision
+                        </div>
+
+                        <div
+                            class="decision-description"
+                            id="decisionDescription"
+                        >
+                            The editor has requested substantial
+                            revisions before the manuscript can be
+                            considered for a further decision.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Manuscript ID
+                            </div>
+
+                            <div class="info-value">
+                                MS-2026-00124
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Journal
+                            </div>
+
+                            <div class="info-value">
+                                Journal of Digital Education
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Article Type
+                            </div>
+
+                            <div class="info-value">
+                                Research Article
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Decision Date
+                            </div>
+
+                            <div class="info-value">
+                                4 September 2026
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DECISION LETTER -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Decision Letter
+                        </h2>
+
+                        <p>
+                            Editorial communication
+                        </p>
+
+                    </div>
+
+                    <span class="badge revision">
+                        Major Revision
+                    </span>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="section">
+
+                        <h3>
+                            Dear Author,
+                        </h3>
+
+                        <p>
+
+                            Thank you for submitting your manuscript,
+                            "Artificial Intelligence and Digital Learning:
+                            Opportunities, Challenges and Emerging Research
+                            Directions", to the Journal of Digital Education.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="section">
+
+                        <p>
+
+                            Following editorial assessment and peer review,
+                            the manuscript requires substantial revision
+                            before a further editorial decision can be made.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="section">
+
+                        <p>
+
+                            Please carefully consider the reviewer comments
+                            and provide a clear response explaining how
+                            each substantive point has been addressed.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="section">
+
+                        <p>
+
+                            A revised submission may be subject to further
+                            editorial assessment or peer review. Revision
+                            does not guarantee acceptance or publication.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="section">
+
+                        <p>
+                            Kind regards,<br>
+                            Editorial Office<br>
+                            Journal of Digital Education
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEWER FEEDBACK -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Reviewer Feedback
+                        </h2>
+
+                        <p>
+                            Comments requiring author attention
+                        </p>
+
+                    </div>
+
+                    <span class="badge info">
+                        2 Reports
+                    </span>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="reviewer-report">
+
+                        <div class="report-head">
+
+                            <strong>
+                                Reviewer 1
+                            </strong>
+
+                            <span class="badge revision">
+                                Major Revision
+                            </span>
+
+                        </div>
+
+
+                        <div class="report-body">
+
+                            <p>
+
+                                The manuscript addresses a relevant area
+                                of digital education. The methodology
+                                requires additional explanation,
+                                particularly regarding the criteria used
+                                to identify and organise the reviewed
+                                literature.
+
+                            </p>
+
+
+                            <p style="margin-top:9px;">
+
+                                The discussion should also provide a
+                                stronger connection between the identified
+                                challenges and the proposed implications
+                                for educational institutions.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reviewer-report">
+
+                        <div class="report-head">
+
+                            <strong>
+                                Reviewer 2
+                            </strong>
+
+                            <span class="badge revision">
+                                Major Revision
+                            </span>
+
+                        </div>
+
+
+                        <div class="report-body">
+
+                            <p>
+
+                                The manuscript has potential, but the
+                                contribution should be more clearly
+                                distinguished from existing research.
+
+                                Additional explanation of limitations
+                                would strengthen the paper.
+
+                            </p>
+
+
+                            <p style="margin-top:9px;">
+
+                                Please revise the conclusion so that
+                                the claims are directly supported by
+                                the evidence discussed in the manuscript.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVISION REQUIREMENTS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revision Requirements
+                        </h2>
+
+                        <p>
+                            Suggested areas to address before resubmission
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="revision-list">
+
+
+                        <div class="revision-item">
+
+                            <div class="revision-number">
+                                1
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Strengthen the methodology section
+                                </strong>
+
+                                <p>
+                                    Provide clearer information about
+                                    the research or review procedure.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="revision-item">
+
+                            <div class="revision-number">
+                                2
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Clarify the research contribution
+                                </strong>
+
+                                <p>
+                                    Explain how the manuscript extends,
+                                    synthesises or contributes to existing
+                                    knowledge.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="revision-item">
+
+                            <div class="revision-number">
+                                3
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Expand the limitations
+                                </strong>
+
+                                <p>
+                                    Identify important limitations and
+                                    explain their implications.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="revision-item">
+
+                            <div class="revision-number">
+                                4
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Revise the conclusion
+                                </strong>
+
+                                <p>
+                                    Ensure that the conclusion reflects
+                                    the evidence presented in the paper.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTHOR RESPONSE -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Response to Reviewers
+                        </h2>
+
+                        <p>
+                            Explain how the requested revisions were addressed
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="form-group">
+
+                        <label>
+                            Response Letter
+                        </label>
+
+                        <textarea
+                            id="responseLetter"
+                            class="form-control"
+                            rows="10"
+                            placeholder="Enter your point-by-point response to the reviewers..."
+                        ></textarea>
+
+                        <div class="help">
+
+                            A detailed response letter can help editors
+                            and reviewers identify the changes made to
+                            the revised manuscript.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVISED MANUSCRIPT -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revised Manuscript
+                        </h2>
+
+                        <p>
+                            Upload the revised version for demonstration
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="upload-area">
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <strong>
+                            Upload Revised Manuscript
+                        </strong>
+
+                        <p>
+                            PDF, DOC or DOCX · Demonstration only
+                        </p>
+
+                        <label
+                            for="revisionFile"
+                            class="upload-btn"
+                        >
+                            Choose File
+                        </label>
+
+                        <input
+                            type="file"
+                            id="revisionFile"
+                            class="file-input"
+                            accept=".pdf,.doc,.docx"
+                            onchange="handleFile(this)"
+                        >
+
+                    </div>
+
+
+                    <div
+                        class="file-list"
+                        id="fileList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <div class="action-bar">
+
+                        <div class="action-group">
+
+                            <button
+                                class="secondary-btn"
+                                onclick="saveRevisionDraft()"
+                            >
+                                Save Draft
+                            </button>
+
+                            <button
+                                class="secondary-btn"
+                                onclick="clearRevisionForm()"
+                            >
+                                Clear
+                            </button>
+
+                        </div>
+
+
+                        <div class="action-group">
+
+                            <button
+                                class="primary-btn"
+                                onclick="submitRevision()"
+                            >
+                                Submit Revision
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RIGHT SIDEBAR
+        ========================= -->
+
+        <aside class="sticky">
+
+
+            <!-- DEADLINE -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revision Deadline
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="deadline-box">
+
+                        <div class="deadline-label">
+                            Submit revised manuscript by
+                        </div>
+
+                        <div class="deadline-date">
+                            4 October 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-top">
+
+                            <span>
+                                Revision progress
+                            </span>
+
+                            <strong id="progressText">
+                                35%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressFill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        style="font-size:10px;color:#8793a5;line-height:1.6;"
+                    >
+
+                        This deadline is demonstration data.
+                        A live platform should calculate deadlines
+                        from the actual editorial record.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBMISSION INFORMATION -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Submission Status
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Status
+                            </div>
+
+                            <div class="info-value">
+                                Revision Required
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Reviews
+                            </div>
+
+                            <div class="info-value">
+                                2 Completed
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Revision
+                            </div>
+
+                            <div class="info-value">
+                                Round 1
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                Decision
+                            </div>
+
+                            <div class="info-value">
+                                Major Revision
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WORKFLOW -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revision Workflow
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="timeline">
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div>
+
+                                <strong>
+                                    Editorial decision issued
+                                </strong>
+
+                                <span>
+                                    4 September 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div>
+
+                                <strong>
+                                    Author prepares revision
+                                </strong>
+
+                                <span>
+                                    Current stage
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div>
+
+                                <strong>
+                                    Revised manuscript submitted
+                                </strong>
+
+                                <span>
+                                    Next stage
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div>
+
+                                <strong>
+                                    Editorial assessment
+                                </strong>
+
+                                <span>
+                                    Following resubmission
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div>
+
+                                <strong>
+                                    Further peer review if required
+                                </strong>
+
+                                <span>
+                                    Determined by editorial process
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESOURCES -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Author Resources
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <a
+                        href="author-guidelines.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:11px;"
+                    >
+                        Author Guidelines →
+                    </a>
+
+
+                    <a
+                        href="publication-ethics.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:11px;"
+                    >
+                        Publication Ethics →
+                    </a>
+
+
+                    <a
+                        href="peer-review.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:11px;"
+                    >
+                        Peer Review Policy →
+                    </a>
+
+
+                    <a
+                        href="ai-assistant.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:11px;"
+                    >
+                        AI Assistant →
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;"
+                    >
+                        Contact Support →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     SUBMISSION MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="submissionModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>
+                Submit Revised Manuscript
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p
+                style="font-size:12px;color:#59687d;line-height:1.7;"
+            >
+
+                You are about to submit the revised manuscript for
+                <strong>MS-2026-00124</strong>.
+
+                Please ensure that your revised manuscript and response
+                letter are complete before continuing.
+
+            </p>
+
+
+            <div class="notice" style="margin-top:15px;margin-bottom:0;">
+
+                Prototype mode: this submission will only be stored
+                locally in this browser. It will not be delivered to
+                the journal's editorial office.
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="confirmRevision()"
+                >
+                    Confirm Submission
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Demo action completed.
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Scopusixteen Publishing · Prototype Platform
+        </div>
+
+        <div>
+
+            <a href="author-dashboard.html">
+                Author Portal
+            </a>
+
+            <a href="author-guidelines.html">
+                Guidelines
+            </a>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="publication-ethics.html">
+                Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   VARIABLES
+========================= */
+
+let selectedFile = null;
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   FILE HANDLING
+========================= */
+
+function handleFile(input){
+
+    if(!input.files || !input.files[0]){
+
+        return;
+
+    }
+
+
+    selectedFile =
+        input.files[0];
+
+
+    renderFile();
+
+    updateProgress(65);
+
+
+    showToast(
+        "Revision file selected in demo mode."
+    );
+
+}
+
+
+function renderFile(){
+
+    const list =
+        document.getElementById("fileList");
+
+
+    if(!selectedFile){
+
+        list.innerHTML = "";
+
+        return;
+
+    }
+
+
+    let type =
+        selectedFile.name
+        .split(".")
+        .pop()
+        .toUpperCase();
+
+
+    list.innerHTML = `
+
+        <div class="file-row">
+
+            <div class="file-type">
+                ${type}
+            </div>
+
+            <div class="file-info">
+
+                <div class="file-name">
+                    ${escapeHtml(selectedFile.name)}
+                </div>
+
+                <div class="file-size">
+                    ${formatBytes(selectedFile.size)}
+                </div>
+
+            </div>
+
+            <button
+                class="remove-file"
+                onclick="removeFile()"
+            >
+                Remove
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+function removeFile(){
+
+    selectedFile = null;
+
+    document.getElementById(
+        "revisionFile"
+    ).value = "";
+
+    renderFile();
+
+    updateProgress(35);
+
+    showToast(
+        "Selected file removed."
+    );
+
+}
+
+
+/* =========================
+   FORMAT FILE SIZE
+========================= */
+
+function formatBytes(bytes){
+
+    if(bytes === 0){
+
+        return "0 Bytes";
+
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    index
+                )
+            ).toFixed(2)
+        ) +
+        " " +
+        units[index]
+    );
+
+}
+
+
+/* =========================
+   HTML ESCAPE
+========================= */
+
+function escapeHtml(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+function updateProgress(value){
+
+    document
+        .getElementById("progressFill")
+        .style.width =
+        value + "%";
+
+
+    document
+        .getElementById("progressText")
+        .textContent =
+        value + "%";
+
+}
+
+
+/* =========================
+   SAVE DRAFT
+========================= */
+
+function saveRevisionDraft(){
+
+    const data = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        responseLetter:
+            document
+            .getElementById("responseLetter")
+            .value,
+
+        fileName:
+            selectedFile
+            ? selectedFile.name
+            : "",
+
+        savedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenAuthorRevisionDraft_MS-2026-00124",
+        JSON.stringify(data)
+    );
+
+
+    showToast(
+        "Revision draft saved locally."
+    );
+
+}
+
+
+/* =========================
+   LOAD DRAFT
+========================= */
+
+function loadRevisionDraft(){
+
+    const saved =
+        localStorage.getItem(
+            "scopusixteenAuthorRevisionDraft_MS-2026-00124"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        document
+            .getElementById("responseLetter")
+            .value =
+            data.responseLetter || "";
+
+
+        if(
+            data.responseLetter ||
+            data.fileName
+        ){
+
+            updateProgress(65);
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Unable to load revision draft."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearRevisionForm(){
+
+    const confirmed =
+        confirm(
+            "Clear the revision response form?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("responseLetter")
+        .value = "";
+
+
+    removeFile();
+
+    localStorage.removeItem(
+        "scopusixteenAuthorRevisionDraft_MS-2026-00124"
+    );
+
+
+    updateProgress(35);
+
+
+    showToast(
+        "Revision form cleared."
+    );
+
+}
+
+
+/* =========================
+   SUBMIT REVISION
+========================= */
+
+function submitRevision(){
+
+    const response =
+        document
+        .getElementById("responseLetter")
+        .value
+        .trim();
+
+
+    if(response.length < 30){
+
+        showToast(
+            "Please provide a detailed response to the reviewers."
+        );
+
+        return;
+
+    }
+
+
+    if(!selectedFile){
+
+        showToast(
+            "Please select a revised manuscript file."
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("submissionModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   CONFIRM REVISION
+========================= */
+
+function confirmRevision(){
+
+    const record = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        responseLetter:
+            document
+            .getElementById("responseLetter")
+            .value,
+
+        fileName:
+            selectedFile
+            ? selectedFile.name
+            : "",
+
+        status:
+            "Revision Submitted",
+
+        submittedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenAuthorRevision_MS-2026-00124",
+        JSON.stringify(record)
+    );
+
+
+    localStorage.removeItem(
+        "scopusixteenAuthorRevisionDraft_MS-2026-00124"
+    );
+
+
+    closeModal();
+
+
+    updateProgress(100);
+
+
+    document
+        .getElementById("decisionTitle")
+        .textContent =
+        "Revision Submitted";
+
+
+    document
+        .getElementById("decisionDescription")
+        .textContent =
+        "Your revised manuscript has been recorded in the prototype and is ready for the next demonstration workflow stage.";
+
+
+    showToast(
+        "Revision submitted in demo mode."
+    );
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeModal(){
+
+    document
+        .getElementById("submissionModal")
+        .classList
+        .remove("show");
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document
+    .getElementById("submissionModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target === this
+            ){
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+/* =========================
+   ESCAPE
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LOAD
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadRevisionDraft();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
