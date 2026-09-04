@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviewer Assignment | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+.topbar{
+    background:#071b3a;
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+}
+
+.topbar a{
+    color:#dce8ff;
+    text-decoration:none;
+}
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav{
+    width:90%;
+    max-width:1350px;
+    margin:auto;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#1677ff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:21px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#344054;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav-links a:hover{
+    color:#1677ff;
+}
+
+.nav-btn{
+    background:#071b3a;
+    color:#fff !important;
+    padding:10px 15px;
+    border-radius:7px;
+}
+
+.layout{
+    width:90%;
+    max-width:1350px;
+    margin:28px auto;
+    display:grid;
+    grid-template-columns:235px 1fr;
+    gap:25px;
+}
+
+.sidebar{
+    background:#071b3a;
+    border-radius:12px;
+    padding:18px 12px;
+    height:max-content;
+    position:sticky;
+    top:95px;
+}
+
+.sidebar-title{
+    color:#8da8ce;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    padding:8px 12px 13px;
+}
+
+.sidebar a{
+    display:block;
+    color:#d9e4f5;
+    text-decoration:none;
+    padding:10px 12px;
+    border-radius:7px;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#12335f;
+    color:#fff;
+}
+
+.sidebar a.active{
+    border-left:3px solid #4b9aff;
+}
+
+.main{
+    min-width:0;
+}
+
+.page-header{
+    margin-bottom:22px;
+}
+
+.eyebrow{
+    color:#1677ff;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.page-header h1{
+    color:#071b3a;
+    font-size:31px;
+    margin-bottom:7px;
+}
+
+.page-header p{
+    color:#667085;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f1dda3;
+    color:#765b08;
+    padding:13px 15px;
+    border-radius:8px;
+    font-size:11px;
+    line-height:1.6;
+    margin-bottom:21px;
+}
+
+.notice strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:22px;
+}
+
+.stat{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:10px;
+    padding:18px;
+}
+
+.stat-label{
+    color:#667085;
+    font-size:10px;
+    margin-bottom:8px;
+}
+
+.stat-value{
+    color:#071b3a;
+    font-size:25px;
+    font-weight:800;
+}
+
+.stat-note{
+    color:#98a2b3;
+    font-size:9px;
+    margin-top:5px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:11px;
+    padding:21px;
+    margin-bottom:21px;
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.card-header h2{
+    color:#071b3a;
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.card-header p{
+    color:#667085;
+    font-size:11px;
+}
+
+.toolbar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+}
+
+.search{
+    flex:1;
+    min-width:210px;
+}
+
+.search input,
+.toolbar select{
+    width:100%;
+    height:42px;
+    border:1px solid #d5dce7;
+    border-radius:7px;
+    padding:0 12px;
+    outline:none;
+    font-size:12px;
+    background:#fff;
+}
+
+.search input:focus,
+.toolbar select:focus{
+    border-color:#1677ff;
+    box-shadow:0 0 0 3px rgba(22,119,255,.08);
+}
+
+.filter{
+    width:170px;
+}
+
+.btn{
+    border:0;
+    border-radius:7px;
+    padding:10px 13px;
+    cursor:pointer;
+    font-size:10px;
+    font-weight:800;
+}
+
+.btn-primary{
+    background:#1677ff;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#0e63d7;
+}
+
+.btn-secondary{
+    background:#eef2f7;
+    color:#344054;
+}
+
+.btn-success{
+    background:#edf9f1;
+    color:#176b36;
+}
+
+.btn-danger{
+    background:#fff0f0;
+    color:#a12626;
+}
+
+.btn-warning{
+    background:#fff8e6;
+    color:#765b08;
+}
+
+.manuscript-list{
+    display:grid;
+    gap:10px;
+}
+
+.manuscript-card{
+    border:1px solid #e1e7ef;
+    border-radius:9px;
+    padding:15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.manuscript-card:hover,
+.manuscript-card.selected{
+    border-color:#1677ff;
+    background:#f9fbff;
+}
+
+.manuscript-card h3{
+    color:#071b3a;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.manuscript-card p{
+    color:#667085;
+    font-size:10px;
+    line-height:1.5;
+}
+
+.manuscript-meta{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin-top:9px;
+}
+
+.meta{
+    background:#f1f4f8;
+    color:#667085;
+    padding:5px 7px;
+    border-radius:5px;
+    font-size:8px;
+}
+
+.assignment-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:20px;
+}
+
+.selected-manuscript{
+    background:#071b3a;
+    color:#fff;
+    border-radius:9px;
+    padding:18px;
+    margin-bottom:18px;
+}
+
+.selected-manuscript .label{
+    color:#8da8ce;
+    text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:.8px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.selected-manuscript h3{
+    font-size:14px;
+    line-height:1.45;
+    margin-bottom:8px;
+}
+
+.selected-manuscript p{
+    color:#cbd9ee;
+    font-size:10px;
+    line-height:1.5;
+}
+
+.reviewer-list{
+    display:grid;
+    gap:10px;
+}
+
+.reviewer-card{
+    border:1px solid #e1e7ef;
+    border-radius:9px;
+    padding:15px;
+}
+
+.reviewer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.reviewer-card h3{
+    color:#071b3a;
+    font-size:12px;
+}
+
+.reviewer-card p{
+    color:#667085;
+    font-size:9px;
+    margin-top:3px;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 7px;
+    border-radius:20px;
+    font-size:8px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.available{
+    background:#edf9f1;
+    color:#176b36;
+}
+
+.busy{
+    background:#fff8e6;
+    color:#765b08;
+}
+
+.unavailable{
+    background:#f1f3f5;
+    color:#667085;
+}
+
+.expertise{
+    margin-top:10px;
+    color:#475467;
+    font-size:9px;
+    line-height:1.5;
+}
+
+.reviewer-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    margin-top:11px;
+}
+
+.reviewer-stat{
+    background:#f8fafc;
+    border-radius:6px;
+    padding:8px;
+    text-align:center;
+}
+
+.reviewer-stat strong{
+    display:block;
+    color:#071b3a;
+    font-size:12px;
+}
+
+.reviewer-stat span{
+    color:#98a2b3;
+    font-size:7px;
+}
+
+.reviewer-actions{
+    margin-top:12px;
+    display:flex;
+    gap:7px;
+}
+
+.reviewer-actions .btn{
+    flex:1;
+}
+
+.conflict{
+    margin-top:10px;
+    padding:8px;
+    background:#fff8e6;
+    border-radius:6px;
+    color:#765b08;
+    font-size:8px;
+    line-height:1.4;
+}
+
+.progress{
+    margin-top:9px;
+    height:6px;
+    background:#edf0f4;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:#1677ff;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    color:#667085;
+    background:#f8fafc;
+    border-bottom:1px solid #e1e7ef;
+    padding:11px;
+    font-size:9px;
+    text-transform:uppercase;
+}
+
+td{
+    padding:13px 11px;
+    border-bottom:1px solid #edf0f4;
+    font-size:10px;
+    color:#475467;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 8px;
+    border-radius:20px;
+    font-size:8px;
+    font-weight:800;
+}
+
+.pending{
+    background:#fff8e6;
+    color:#765b08;
+}
+
+.accepted{
+    background:#edf9f1;
+    color:#176b36;
+}
+
+.declined{
+    background:#fff0f0;
+    color:#a12626;
+}
+
+.completed{
+    background:#eaf2ff;
+    color:#145bb5;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    color:#344054;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.form-control{
+    width:100%;
+    height:43px;
+    border:1px solid #d5dce7;
+    border-radius:7px;
+    padding:0 11px;
+    outline:none;
+    font-size:12px;
+    font-family:inherit;
+    background:#fff;
+}
+
+textarea.form-control{
+    height:95px;
+    padding:10px;
+    resize:vertical;
+}
+
+.form-control:focus{
+    border-color:#1677ff;
+}
+
+.check{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    margin:10px 0;
+}
+
+.check input{
+    margin-top:2px;
+}
+
+.check label{
+    color:#667085;
+    font-size:10px;
+    line-height:1.5;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(7,27,58,.58);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:500;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:#fff;
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:13px;
+}
+
+.modal-header{
+    padding:20px;
+    border-bottom:1px solid #e5eaf1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-header h2{
+    color:#071b3a;
+    font-size:18px;
+}
+
+.close{
+    border:0;
+    background:#eef2f7;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.modal-body{
+    padding:21px;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    padding-top:17px;
+    border-top:1px solid #e5eaf1;
+}
+
+.activity{
+    display:grid;
+}
+
+.activity-item{
+    display:flex;
+    gap:12px;
+    padding:13px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.activity-item:last-child{
+    border-bottom:0;
+}
+
+.activity-icon{
+    width:30px;
+    height:30px;
+    min-width:30px;
+    border-radius:50%;
+    background:#eaf2ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:800;
+}
+
+.activity-text strong{
+    color:#344054;
+    font-size:11px;
+}
+
+.activity-text p{
+    color:#667085;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.activity-time{
+    color:#98a2b3;
+    font-size:9px;
+    margin-top:3px;
+}
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#071b3a;
+    color:#fff;
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:11px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    transform:translateY(100px);
+    opacity:0;
+    transition:.3s;
+    z-index:700;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+footer{
+    background:#071b3a;
+    color:#aebbd0;
+    padding:25px 5%;
+    text-align:center;
+    font-size:11px;
+    margin-top:35px;
+}
+
+footer a{
+    color:#cbd9ee;
+    text-decoration:none;
+    margin:0 7px;
+}
+
+@media(max-width:1100px){
+
+    .assignment-layout{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:1050px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        position:static;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:3px;
+    }
+
+    .sidebar-title{
+        grid-column:1/-1;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .nav{
+        width:94%;
+    }
+
+    .nav-links a:not(.nav-btn){
+        display:none;
+    }
+
+    .layout{
+        width:94%;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        grid-template-columns:1fr;
+    }
+
+    .toolbar{
+        flex-direction:column;
+    }
+
+    .filter{
+        width:100%;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .reviewer-stats{
+        grid-template-columns:1fr;
+    }
+
+    .reviewer-actions{
+        flex-direction:column;
+    }
+
+    .modal-actions{
+        flex-direction:column;
+    }
+
+    .modal-actions .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="topbar">
+
+    <span>
+        Scopusixteen Publishing — Editorial Workspace
+    </span>
+
+    <a href="contact.html">
+        Support
+    </a>
+
+</div>
+
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+        <a href="administration.html" class="nav-btn">
+            Administration
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<div class="layout">
+
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+        Editorial Management
+    </div>
+
+    <a href="administration.html">
+        Administration
+    </a>
+
+    <a href="editorial-dashboard.html">
+        Editorial Dashboard
+    </a>
+
+    <a href="manuscript-management.html">
+        Manuscripts
+    </a>
+
+    <a href="reviewer-management.html">
+        Reviewer Management
+    </a>
+
+    <a href="reviewer-assignment.html" class="active">
+        Reviewer Assignment
+    </a>
+
+    <a href="reviewer-portal.html">
+        Review Tracking
+    </a>
+
+    <a href="peer-review.html">
+        Peer Review Policy
+    </a>
+
+    <a href="publication-ethics.html">
+        Publication Ethics
+    </a>
+
+    <a href="author-guidelines.html">
+        Author Guidelines
+    </a>
+
+    <a href="production-dashboard.html">
+        Production
+    </a>
+
+    <a href="publisher-settings.html">
+        Publisher Settings
+    </a>
+
+    <a href="ai-assistant.html">
+        AI Assistant
+    </a>
+
+    <a href="contact.html">
+        Support
+    </a>
+
+    <a href="index.html">
+        View Website
+    </a>
+
+</aside>
+
+
+<main class="main">
+
+
+<section class="page-header">
+
+    <div class="eyebrow">
+        Peer Review Administration
+    </div>
+
+    <h1>
+        Reviewer Assignment
+    </h1>
+
+    <p>
+        Match manuscripts with appropriate reviewers while
+        considering expertise, availability, workload and
+        potential conflicts of interest.
+    </p>
+
+</section>
+
+
+<div class="notice">
+
+    <strong>Prototype Notice</strong>
+
+    This reviewer-assignment workspace contains demonstration
+    records only. Assignments, invitations and status changes
+    are local frontend demonstrations and are not connected to
+    a live editorial or reviewer database.
+
+</div>
+
+
+<section class="stats">
+
+    <div class="stat">
+
+        <div class="stat-label">
+            Awaiting Assignment
+        </div>
+
+        <div class="stat-value">
+            7
+        </div>
+
+        <div class="stat-note">
+            Demo manuscripts
+        </div>
+
+    </div>
+
+    <div class="stat">
+
+        <div class="stat-label">
+            Pending Invitations
+        </div>
+
+        <div class="stat-value">
+            9
+        </div>
+
+        <div class="stat-note">
+            Demonstration invitations
+        </div>
+
+    </div>
+
+    <div class="stat">
+
+        <div class="stat-label">
+            Accepted Assignments
+        </div>
+
+        <div class="stat-value">
+            21
+        </div>
+
+        <div class="stat-note">
+            Active review assignments
+        </div>
+
+    </div>
+
+    <div class="stat">
+
+        <div class="stat-label">
+            Reviews Completed
+        </div>
+
+        <div class="stat-value">
+            46
+        </div>
+
+        <div class="stat-note">
+            Demonstration records
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                Select Manuscript
+            </h2>
+
+            <p>
+                Choose a manuscript requiring reviewer assignment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="toolbar">
+
+        <div class="search">
+
+            <input
+                id="manuscriptSearch"
+                type="text"
+                placeholder="Search manuscript title, ID or journal..."
+            >
+
+        </div>
+
+        <div class="filter">
+
+            <select id="manuscriptStatus">
+
+                <option value="all">
+                    All Assignment Statuses
+                </option>
+
+                <option value="Awaiting Assignment">
+                    Awaiting Assignment
+                </option>
+
+                <option value="Partially Assigned">
+                    Partially Assigned
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div class="manuscript-list" id="manuscriptList">
+
+
+        <div
+            class="manuscript-card selected"
+            data-title="Artificial Intelligence and Digital Learning"
+            data-id="MS-2026-00124"
+            data-journal="Journal of Digital Education"
+            data-status="Partially Assigned"
+            onclick="selectManuscript(this)"
+        >
+
+            <h3>
+                Artificial Intelligence and Digital Learning
+            </h3>
+
+            <p>
+                Opportunities, Challenges and Emerging Research Directions
+            </p>
+
+            <div class="manuscript-meta">
+
+                <span class="meta">
+                    MS-2026-00124
+                </span>
+
+                <span class="meta">
+                    Journal of Digital Education
+                </span>
+
+                <span class="meta">
+                    1 of 2 reviewers
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="manuscript-card"
+            data-title="Data Analytics for Academic Decision Making"
+            data-id="MS-2026-00081"
+            data-journal="Journal of Digital Education"
+            data-status="Awaiting Assignment"
+            onclick="selectManuscript(this)"
+        >
+
+            <h3>
+                Data Analytics for Academic Decision Making
+            </h3>
+
+            <p>
+                A framework for evidence-based academic administration
+            </p>
+
+            <div class="manuscript-meta">
+
+                <span class="meta">
+                    MS-2026-00081
+                </span>
+
+                <span class="meta">
+                    Journal of Digital Education
+                </span>
+
+                <span class="meta">
+                    No reviewers
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="manuscript-card"
+            data-title="Organisational Resilience and Technology"
+            data-id="MS-2026-00061"
+            data-journal="Global Management Review"
+            data-status="Awaiting Assignment"
+            onclick="selectManuscript(this)"
+        >
+
+            <h3>
+                Organisational Resilience and Technology
+            </h3>
+
+            <p>
+                Technology adoption and organisational resilience
+            </p>
+
+            <div class="manuscript-meta">
+
+                <span class="meta">
+                    MS-2026-00061
+                </span>
+
+                <span class="meta">
+                    Global Management Review
+                </span>
+
+                <span class="meta">
+                    No reviewers
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="manuscript-card"
+            data-title="Sustainable Waste Management Practices"
+            data-id="MS-2026-00108"
+            data-journal="Environmental Studies Journal"
+            data-status="Partially Assigned"
+            onclick="selectManuscript(this)"
+        >
+
+            <h3>
+                Sustainable Waste Management Practices
+            </h3>
+
+            <p>
+                Sustainable waste management practices in urban communities
+            </p>
+
+            <div class="manuscript-meta">
+
+                <span class="meta">
+                    MS-2026-00108
+                </span>
+
+                <span class="meta">
+                    Environmental Studies Journal
+                </span>
+
+                <span class="meta">
+                    1 of 2 reviewers
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                Reviewer Matching Workspace
+            </h2>
+
+            <p>
+                Suggested reviewers for the selected manuscript.
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-secondary"
+            onclick="showToast('Demo reviewer matching refreshed.')"
+        >
+            Refresh Matching
+        </button>
+
+    </div>
+
+
+    <div class="assignment-layout">
+
+
+        <div>
+
+            <div class="selected-manuscript">
+
+                <div class="label">
+                    Selected Manuscript
+                </div>
+
+                <h3 id="selectedTitle">
+                    Artificial Intelligence and Digital Learning
+                </h3>
+
+                <p id="selectedInfo">
+                    MS-2026-00124 · Journal of Digital Education
+                </p>
+
+            </div>
+
+
+            <div class="notice">
+
+                <strong>Matching Guidance</strong>
+
+                Reviewer selection should be based on relevant
+                expertise, availability, workload, independence
+                and applicable conflict-of-interest policies.
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="toolbar">
+
+                <div class="search">
+
+                    <input
+                        id="reviewerSearch"
+                        type="text"
+                        placeholder="Search reviewer or expertise..."
+                    >
+
+                </div>
+
+                <div class="filter">
+
+                    <select id="reviewerAvailability">
+
+                        <option value="all">
+                            All Availability
+                        </option>
+
+                        <option value="Available">
+                            Available
+                        </option>
+
+                        <option value="Busy">
+                            Busy
+                        </option>
+
+                        <option value="Unavailable">
+                            Unavailable
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="reviewer-list" id="reviewerList">
+
+
+                <div
+                    class="reviewer-card"
+                    data-reviewer="Dr. David Reviewer"
+                    data-expertise="Artificial Intelligence Digital Education Technology"
+                    data-availability="Available"
+                >
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <h3>
+                                Dr. David Reviewer
+                            </h3>
+
+                            <p>
+                                Example University
+                            </p>
+
+                        </div>
+
+                        <span class="status available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="expertise">
+
+                        Artificial Intelligence ·
+                        Digital Education ·
+                        Educational Technology
+
+                    </div>
+
+
+                    <div class="reviewer-stats">
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                2
+                            </strong>
+
+                            <span>
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                18
+                            </strong>
+
+                            <span>
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                94%
+                            </strong>
+
+                            <span>
+                                On-time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:35%"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="reviewer-actions">
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="viewReviewer(this)"
+                        >
+                            Profile
+                        </button>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openAssignModal(this)"
+                        >
+                            Assign
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reviewer-card"
+                    data-reviewer="Dr. Anita Sharma"
+                    data-expertise="Education Digital Learning Higher Education"
+                    data-availability="Available"
+                >
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <h3>
+                                Dr. Anita Sharma
+                            </h3>
+
+                            <p>
+                                Example University of Education
+                            </p>
+
+                        </div>
+
+                        <span class="status available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="expertise">
+
+                        Higher Education ·
+                        Digital Learning ·
+                        Educational Policy
+
+                    </div>
+
+
+                    <div class="reviewer-stats">
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                1
+                            </strong>
+
+                            <span>
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                22
+                            </strong>
+
+                            <span>
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                97%
+                            </strong>
+
+                            <span>
+                                On-time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reviewer-actions">
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="viewReviewer(this)"
+                        >
+                            Profile
+                        </button>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openAssignModal(this)"
+                        >
+                            Assign
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reviewer-card"
+                    data-reviewer="Dr. Michael Okoro"
+                    data-expertise="Computer Science Software Engineering Data Analytics Artificial Intelligence"
+                    data-availability="Busy"
+                >
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <h3>
+                                Dr. Michael Okoro
+                            </h3>
+
+                            <p>
+                                Example Technology University
+                            </p>
+
+                        </div>
+
+                        <span class="status busy">
+                            Busy
+                        </span>
+
+                    </div>
+
+
+                    <div class="expertise">
+
+                        Computer Science ·
+                        Software Engineering ·
+                        Data Analytics ·
+                        Artificial Intelligence
+
+                    </div>
+
+
+                    <div class="reviewer-stats">
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                5
+                            </strong>
+
+                            <span>
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                31
+                            </strong>
+
+                            <span>
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                90%
+                            </strong>
+
+                            <span>
+                                On-time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="conflict">
+
+                        Workload consideration:
+                        reviewer currently has several active assignments.
+
+                    </div>
+
+
+                    <div class="reviewer-actions">
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="viewReviewer(this)"
+                        >
+                            Profile
+                        </button>
+
+                        <button
+                            class="btn btn-warning"
+                            onclick="showToast('Reviewer is currently busy.')"
+                        >
+                            Review
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reviewer-card"
+                    data-reviewer="Prof. Sarah Mensah"
+                    data-expertise="Management Leadership Organisational Behaviour Business"
+                    data-availability="Available"
+                >
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <h3>
+                                Prof. Sarah Mensah
+                            </h3>
+
+                            <p>
+                                Example Institute of Management
+                            </p>
+
+                        </div>
+
+                        <span class="status available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="expertise">
+
+                        Strategic Management ·
+                        Leadership ·
+                        Organisational Behaviour
+
+                    </div>
+
+
+                    <div class="reviewer-stats">
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                2
+                            </strong>
+
+                            <span>
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                26
+                            </strong>
+
+                            <span>
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <div class="reviewer-stat">
+
+                            <strong>
+                                96%
+                            </strong>
+
+                            <span>
+                                On-time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reviewer-actions">
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="viewReviewer(this)"
+                        >
+                            Profile
+                        </button>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openAssignModal(this)"
+                        >
+                            Assign
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                Assignment History
+            </h2>
+
+            <p>
+                Recent demonstration reviewer assignments.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Manuscript
+                    </th>
+
+                    <th>
+                        Reviewer
+                    </th>
+
+                    <th>
+                        Assigned
+                    </th>
+
+                    <th>
+                        Deadline
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Progress
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        MS-2026-00124
+                    </td>
+
+                    <td>
+                        Dr. David Reviewer
+                    </td>
+
+                    <td>
+                        29 Aug 2026
+                    </td>
+
+                    <td>
+                        12 Sep 2026
+                    </td>
+
+                    <td>
+
+                        <span class="badge accepted">
+                            Accepted
+                        </span>
+
+                    </td>
+
+                    <td>
+                        65%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        MS-2026-00119
+                    </td>
+
+                    <td>
+                        Prof. Sarah Mensah
+                    </td>
+
+                    <td>
+                        27 Aug 2026
+                    </td>
+
+                    <td>
+                        10 Sep 2026
+                    </td>
+
+                    <td>
+
+                        <span class="badge pending">
+                            Pending
+                        </span>
+
+                    </td>
+
+                    <td>
+                        0%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        MS-2026-00108
+                    </td>
+
+                    <td>
+                        Dr. Anita Sharma
+                    </td>
+
+                    <td>
+                        23 Aug 2026
+                    </td>
+
+                    <td>
+                        06 Sep 2026
+                    </td>
+
+                    <td>
+
+                        <span class="badge completed">
+                            Completed
+                        </span>
+
+                    </td>
+
+                    <td>
+                        100%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        MS-2026-00081
+                    </td>
+
+                    <td>
+                        —
+                    </td>
+
+                    <td>
+                        —
+                    </td>
+
+                    <td>
+                        —
+                    </td>
+
+                    <td>
+
+                        <span class="badge pending">
+                            Awaiting Assignment
+                        </span>
+
+                    </td>
+
+                    <td>
+                        0%
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                Assignment Activity
+            </h2>
+
+            <p>
+                Recent activity in the demonstration assignment workspace.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="activity">
+
+        <div class="activity-item">
+
+            <div class="activity-icon">
+                A
+            </div>
+
+            <div class="activity-text">
+
+                <strong>
+                    Reviewer assignment accepted
+                </strong>
+
+                <p>
+                    Dr. David Reviewer accepted MS-2026-00124.
+                </p>
+
+                <div class="activity-time">
+                    2 hours ago · Demo activity
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-item">
+
+            <div class="activity-icon">
+                I
+            </div>
+
+            <div class="activity-text">
+
+                <strong>
+                    Reviewer invitation created
+                </strong>
+
+                <p>
+                    Demonstration invitation for MS-2026-00119.
+                </p>
+
+                <div class="activity-time">
+                    Yesterday · Demo activity
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-item">
+
+            <div class="activity-icon">
+                C
+            </div>
+
+            <div class="activity-text">
+
+                <strong>
+                    Reviewer completed a report
+                </strong>
+
+                <p>
+                    Review completed for MS-2026-00108.
+                </p>
+
+                <div class="activity-time">
+                    2 days ago · Demo activity
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<!-- ASSIGN MODAL -->
+
+<div
+    class="modal"
+    id="assignModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                Assign Reviewer
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeAssignModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+
+            <div class="notice">
+
+                <strong>Demo Assignment</strong>
+
+                This action creates a local demonstration
+                assignment. It does not send a real invitation
+                or create a live reviewer assignment.
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Manuscript
+                </label>
+
+                <input
+                    id="assignManuscript"
+                    class="form-control"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Reviewer
+                </label>
+
+                <input
+                    id="assignReviewer"
+                    class="form-control"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Review Deadline
+                </label>
+
+                <input
+                    type="date"
+                    id="reviewDeadline"
+                    class="form-control"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Review Type
+                </label>
+
+                <select
+                    id="reviewType"
+                    class="form-control"
+                >
+
+                    <option>
+                        Single-Blind Review
+                    </option>
+
+                    <option>
+                        Double-Blind Review
+                    </option>
+
+                    <option>
+                        Open Review
+                    </option>
+
+                    <option>
+                        Editorial Review
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="check">
+
+                <input
+                    type="checkbox"
+                    id="conflictCheck"
+                >
+
+                <label for="conflictCheck">
+
+                    I confirm that the reviewer should be checked
+                    for applicable conflicts of interest before a
+                    real assignment is made.
+
+                </label>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Assignment Note
+                </label>
+
+                <textarea
+                    id="assignmentNote"
+                    class="form-control"
+                    placeholder="Optional demonstration note..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="closeAssignModal()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="saveAssignment()"
+                >
+                    Create Demo Assignment
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- REVIEWER PROFILE MODAL -->
+
+<div
+    class="modal"
+    id="profileModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                Reviewer Profile
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeProfileModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="selected-manuscript">
+
+                <div class="label">
+                    Reviewer
+                </div>
+
+                <h3 id="profileName">
+                    Reviewer
+                </h3>
+
+                <p id="profileInstitution">
+                    Institution
+                </p>
+
+            </div>
+
+
+            <div class="detail-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+                <div class="detail" style="border:1px solid #e1e7ef;border-radius:7px;padding:12px;">
+
+                    <div class="detail-label" style="color:#98a2b3;font-size:8px;font-weight:800;text-transform:uppercase;margin-bottom:5px;">
+                        Expertise
+                    </div>
+
+                    <div
+                        class="detail-value"
+                        id="profileExpertise"
+                        style="font-size:11px;color:#344054;line-height:1.5;"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail" style="border:1px solid #e1e7ef;border-radius:7px;padding:12px;">
+
+                    <div class="detail-label" style="color:#98a2b3;font-size:8px;font-weight:800;text-transform:uppercase;margin-bottom:5px;">
+                        Availability
+                    </div>
+
+                    <div
+                        class="detail-value"
+                        id="profileAvailability"
+                        style="font-size:11px;color:#344054;"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detail" style="border:1px solid #e1e7ef;border-radius:7px;padding:12px;">
+
+                    <div class="detail-label" style="color:#98a2b3;font-size:8px;font-weight:800;text-transform:uppercase;margin-bottom:5px;">
+                        Active Reviews
+                    </div>
+
+                    <div style="font-size:18px;font-weight:800;color:#071b3a;">
+                        2
+                    </div>
+
+                </div>
+
+
+                <div class="detail" style="border:1px solid #e1e7ef;border-radius:7px;padding:12px;">
+
+                    <div class="detail-label" style="color:#98a2b3;font-size:8px;font-weight:800;text-transform:uppercase;margin-bottom:5px;">
+                        Completed
+                    </div>
+
+                    <div style="font-size:18px;font-weight:800;color:#071b3a;">
+                        18
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="closeProfileModal()"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Action completed.
+</div>
+
+
+<footer>
+
+    <div>
+        © 2026 Scopusixteen Publishing. Frontend prototype.
+    </div>
+
+    <div style="margin-top:10px;">
+
+        <a href="administration.html">
+            Administration
+        </a>
+
+        <a href="manuscript-management.html">
+            Manuscripts
+        </a>
+
+        <a href="reviewer-management.html">
+            Reviewers
+        </a>
+
+        <a href="reviewer-assignment.html">
+            Assignments
+        </a>
+
+        <a href="editorial-dashboard.html">
+            Editorial
+        </a>
+
+        <a href="production-dashboard.html">
+            Production
+        </a>
+
+        <a href="peer-review.html">
+            Peer Review
+        </a>
+
+        <a href="publication-ethics.html">
+            Ethics
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MANUSCRIPT SELECTION
+========================= */
+
+let selectedManuscript =
+    document.querySelector(".manuscript-card.selected");
+
+
+function selectManuscript(card){
+
+    document
+        .querySelectorAll(".manuscript-card")
+        .forEach(function(item){
+
+            item.classList.remove("selected");
+
+        });
+
+
+    card.classList.add("selected");
+
+    selectedManuscript = card;
+
+
+    document.getElementById(
+        "selectedTitle"
+    ).textContent =
+        card.dataset.title;
+
+
+    document.getElementById(
+        "selectedInfo"
+    ).textContent =
+        card.dataset.id +
+        " · " +
+        card.dataset.journal;
+
+
+    showToast(
+        "Manuscript selected."
+    );
+
+}
+
+
+/* =========================
+   MANUSCRIPT SEARCH
+========================= */
+
+const manuscriptSearch =
+    document.getElementById(
+        "manuscriptSearch"
+    );
+
+const manuscriptStatus =
+    document.getElementById(
+        "manuscriptStatus"
+    );
+
+
+function filterManuscripts(){
+
+    const query =
+        manuscriptSearch.value
+        .toLowerCase()
+        .trim();
+
+    const status =
+        manuscriptStatus.value;
+
+
+    document
+    .querySelectorAll(".manuscript-card")
+    .forEach(function(card){
+
+        const searchable =
+            (
+                card.dataset.title +
+                " " +
+                card.dataset.id +
+                " " +
+                card.dataset.journal
+            )
+            .toLowerCase();
+
+
+        const statusMatch =
+            status === "all" ||
+            card.dataset.status === status;
+
+
+        const searchMatch =
+            !query ||
+            searchable.includes(query);
+
+
+        card.style.display =
+            searchMatch && statusMatch
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+manuscriptSearch.addEventListener(
+    "input",
+    filterManuscripts
+);
+
+manuscriptStatus.addEventListener(
+    "change",
+    filterManuscripts
+);
+
+
+/* =========================
+   REVIEWER SEARCH
+========================= */
+
+const reviewerSearch =
+    document.getElementById(
+        "reviewerSearch"
+    );
+
+const reviewerAvailability =
+    document.getElementById(
+        "reviewerAvailability"
+    );
+
+
+function filterReviewers(){
+
+    const query =
+        reviewerSearch.value
+        .toLowerCase()
+        .trim();
+
+    const availability =
+        reviewerAvailability.value;
+
+
+    document
+    .querySelectorAll(".reviewer-card")
+    .forEach(function(card){
+
+        const searchable =
+            (
+                card.dataset.reviewer +
+                " " +
+                card.dataset.expertise
+            )
+            .toLowerCase();
+
+
+        const availabilityMatch =
+            availability === "all" ||
+            card.dataset.availability === availability;
+
+
+        const searchMatch =
+            !query ||
+            searchable.includes(query);
+
+
+        card.style.display =
+            searchMatch && availabilityMatch
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+reviewerSearch.addEventListener(
+    "input",
+    filterReviewers
+);
+
+reviewerAvailability.addEventListener(
+    "change",
+    filterReviewers
+);
+
+
+/* =========================
+   ASSIGN MODAL
+========================= */
+
+let selectedReviewer = null;
+
+
+function openAssignModal(button){
+
+    selectedReviewer =
+        button.closest(".reviewer-card");
+
+
+    if(!selectedManuscript){
+
+        showToast(
+            "Please select a manuscript first."
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "assignManuscript"
+    ).value =
+        selectedManuscript.dataset.id +
+        " — " +
+        selectedManuscript.dataset.title;
+
+
+    document.getElementById(
+        "assignReviewer"
+    ).value =
+        selectedReviewer.dataset.reviewer;
+
+
+    const today =
+        new Date();
+
+    today.setDate(
+        today.getDate() + 14
+    );
+
+
+    document.getElementById(
+        "reviewDeadline"
+    ).value =
+        today.toISOString()
+        .split("T")[0];
+
+
+    document
+        .getElementById("assignModal")
+        .classList.add("show");
+
+}
+
+
+function closeAssignModal(){
+
+    document
+        .getElementById("assignModal")
+        .classList.remove("show");
+
+}
+
+
+function saveAssignment(){
+
+    const deadline =
+        document.getElementById(
+            "reviewDeadline"
+        ).value;
+
+
+    const conflict =
+        document.getElementById(
+            "conflictCheck"
+        ).checked;
+
+
+    if(!deadline){
+
+        showToast(
+            "Please select a review deadline."
+        );
+
+        return;
+
+    }
+
+
+    if(!conflict){
+
+        showToast(
+            "Please confirm the conflict-of-interest check."
+        );
+
+        return;
+
+    }
+
+
+    const assignment = {
+
+        manuscript:
+            selectedManuscript.dataset.id,
+
+        title:
+            selectedManuscript.dataset.title,
+
+        reviewer:
+            selectedReviewer.dataset.reviewer,
+
+        deadline:
+            deadline,
+
+        reviewType:
+            document.getElementById(
+                "reviewType"
+            ).value,
+
+        note:
+            document.getElementById(
+                "assignmentNote"
+            ).value,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+
+        "scopusixteenLastReviewerAssignment",
+
+        JSON.stringify(assignment)
+
+    );
+
+
+    closeAssignModal();
+
+
+    showToast(
+        "Demo reviewer assignment saved locally."
+    );
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function viewReviewer(button){
+
+    const card =
+        button.closest(".reviewer-card");
+
+
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        card.dataset.reviewer;
+
+
+    document.getElementById(
+        "profileInstitution"
+    ).textContent =
+        "Demonstration academic institution";
+
+
+    document.getElementById(
+        "profileExpertise"
+    ).textContent =
+        card.dataset.expertise;
+
+
+    document.getElementById(
+        "profileAvailability"
+    ).textContent =
+        card.dataset.availability;
+
+
+    document
+        .getElementById("profileModal")
+        .classList.add("show");
+
+}
+
+
+function closeProfileModal(){
+
+    document
+        .getElementById("profileModal")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent =
+        message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   MODAL OUTSIDE CLICK
+========================= */
+
+document
+.getElementById("assignModal")
+.addEventListener("click",function(e){
+
+    if(e.target === this){
+
+        closeAssignModal();
+
+    }
+
+});
+
+
+document
+.getElementById("profileModal")
+.addEventListener("click",function(e){
+
+    if(e.target === this){
+
+        closeProfileModal();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
