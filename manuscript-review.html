@@ -1,0 +1,2963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manuscript Review | Scopusixteen Publishing</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#18243a;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    height:68px;
+    background:#071b3a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#4ea1ff;
+}
+
+.top-links{
+    display:flex;
+    align-items:center;
+    gap:21px;
+    font-size:14px;
+}
+
+.top-links a{
+    color:#dce7f5;
+}
+
+.top-links a:hover{
+    color:#fff;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:25px;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    max-width:1450px;
+    margin:auto;
+    padding:28px;
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    align-items:center;
+    color:#7c899c;
+    font-size:12px;
+    margin-bottom:17px;
+}
+
+.breadcrumb a{
+    color:#1677ff;
+}
+
+.breadcrumb span{
+    color:#a1acba;
+}
+
+/* =========================
+   MANUSCRIPT HEADER
+========================= */
+
+.manuscript-header{
+    background:#fff;
+    border:1px solid #e0e7ef;
+    border-radius:12px;
+    padding:23px;
+    margin-bottom:20px;
+    box-shadow:0 2px 9px rgba(20,40,70,.035);
+}
+
+.header-layout{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:25px;
+}
+
+.header-main{
+    flex:1;
+}
+
+.status-row{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.badge.review{
+    background:#eee9ff;
+    color:#6047bd;
+}
+
+.badge.blind{
+    background:#e9f3ff;
+    color:#1767d5;
+}
+
+.manuscript-header h1{
+    font-size:25px;
+    color:#071b3a;
+    line-height:1.4;
+    margin-bottom:9px;
+}
+
+.journal-name{
+    color:#1677ff;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.meta-item{
+    min-width:120px;
+}
+
+.meta-label{
+    color:#8793a5;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin-bottom:3px;
+}
+
+.meta-value{
+    color:#26364e;
+    font-size:12px;
+    font-weight:700;
+}
+
+.header-actions{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:150px;
+}
+
+.primary-btn{
+    border:0;
+    background:#1677ff;
+    color:#fff;
+    padding:11px 16px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.primary-btn:hover{
+    background:#0d64dc;
+}
+
+.secondary-btn{
+    border:1px solid #d1dce9;
+    background:#fff;
+    color:#1677ff;
+    padding:10px 15px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.secondary-btn:hover{
+    background:#f3f8ff;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #efd58f;
+    color:#725719;
+    padding:13px 16px;
+    border-radius:9px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace{
+    display:grid;
+    grid-template-columns:minmax(0,1.65fr) minmax(310px,.8fr);
+    gap:20px;
+    align-items:start;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:#fff;
+    border:1px solid #e1e8f0;
+    border-radius:11px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(20,40,70,.035);
+}
+
+.card-header{
+    padding:17px 20px;
+    border-bottom:1px solid #e5ebf2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.card-header h2{
+    color:#071b3a;
+    font-size:16px;
+}
+
+.card-header p{
+    color:#8491a5;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+/* =========================
+   MANUSCRIPT CONTENT
+========================= */
+
+.article-title{
+    font-size:23px;
+    line-height:1.45;
+    color:#071b3a;
+    margin-bottom:15px;
+}
+
+.author-line{
+    color:#69778d;
+    font-size:12px;
+    margin-bottom:19px;
+}
+
+.author-line.blind-author{
+    color:#1677ff;
+    font-weight:700;
+}
+
+.section-title{
+    color:#071b3a;
+    font-size:17px;
+    margin:24px 0 9px;
+}
+
+.section-title:first-child{
+    margin-top:0;
+}
+
+.article-text{
+    color:#526177;
+    font-size:13px;
+    line-height:1.85;
+}
+
+.keywords{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:10px;
+}
+
+.keyword{
+    background:#eef5ff;
+    color:#2166b6;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:10px;
+    font-weight:600;
+}
+
+/* =========================
+   FIGURE / TABLE DEMO
+========================= */
+
+.figure-placeholder{
+    min-height:180px;
+    border:1px dashed #b9c8d9;
+    background:#f8fafc;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    margin:17px 0;
+    color:#8290a3;
+    font-size:12px;
+}
+
+.demo-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:17px 0;
+    font-size:11px;
+}
+
+.demo-table th{
+    background:#f7f9fc;
+    color:#66758a;
+    text-align:left;
+    padding:9px;
+    border:1px solid #e0e7ef;
+}
+
+.demo-table td{
+    padding:9px;
+    border:1px solid #e0e7ef;
+    color:#58677c;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sticky-sidebar{
+    position:sticky;
+    top:88px;
+}
+
+.info-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:11px 0;
+    border-bottom:1px solid #edf1f5;
+    font-size:11px;
+}
+
+.info-row:last-child{
+    border-bottom:0;
+}
+
+.info-label{
+    color:#8592a4;
+}
+
+.info-value{
+    color:#26364e;
+    font-weight:700;
+    text-align:right;
+}
+
+/* =========================
+   REVIEW PROGRESS
+========================= */
+
+.progress{
+    margin-bottom:17px;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:7px;
+}
+
+.progress-top span{
+    font-size:11px;
+    color:#64738a;
+}
+
+.progress-top strong{
+    color:#1677ff;
+    font-size:11px;
+}
+
+.progress-bar{
+    height:8px;
+    background:#edf1f5;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:65%;
+    background:#1677ff;
+    border-radius:10px;
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.check-item{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:11px;
+    color:#59687d;
+}
+
+.check-item input{
+    margin-top:3px;
+    accent-color:#1677ff;
+}
+
+/* =========================
+   REVIEW FORM
+========================= */
+
+.review-form label{
+    display:block;
+    color:#26364e;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-control{
+    width:100%;
+    border:1px solid #d4deea;
+    border-radius:8px;
+    background:#fff;
+    color:#26364e;
+    padding:10px 11px;
+    font-size:12px;
+    outline:none;
+}
+
+.form-control:focus{
+    border-color:#1677ff;
+}
+
+textarea.form-control{
+    resize:vertical;
+    line-height:1.6;
+}
+
+.help{
+    color:#8995a7;
+    font-size:10px;
+    margin-top:5px;
+    line-height:1.5;
+}
+
+/* =========================
+   CRITERIA
+========================= */
+
+.criteria{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.criteria-item{
+    border:1px solid #e1e8f0;
+    background:#f8fafc;
+    border-radius:8px;
+    padding:12px;
+}
+
+.criteria-item label{
+    font-size:11px;
+    margin-bottom:7px;
+}
+
+/* =========================
+   CONFLICT
+========================= */
+
+.conflict-box{
+    border:1px solid #efd58f;
+    background:#fff8e6;
+    border-radius:9px;
+    padding:13px;
+    margin-bottom:18px;
+}
+
+.conflict-title{
+    color:#735719;
+    font-weight:700;
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+.conflict-text{
+    color:#79632d;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.radio-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:10px;
+}
+
+.radio-row label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin:0;
+    font-weight:500;
+    font-size:11px;
+}
+
+.radio-row input{
+    accent-color:#1677ff;
+}
+
+/* =========================
+   ACTION BAR
+========================= */
+
+.review-actions{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    border-top:1px solid #e6ebf1;
+    padding-top:18px;
+    margin-top:10px;
+}
+
+.action-left,
+.action-right{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   FILE AREA
+========================= */
+
+.file-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border:1px solid #e0e7ef;
+    border-radius:9px;
+    padding:13px;
+    margin-bottom:10px;
+}
+
+.file-icon{
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    background:#eef5ff;
+    color:#1677ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    font-weight:800;
+}
+
+.file-info{
+    flex:1;
+}
+
+.file-name{
+    font-size:12px;
+    font-weight:700;
+    color:#26364e;
+}
+
+.file-meta{
+    color:#8a96a7;
+    font-size:10px;
+    margin-top:2px;
+}
+
+/* =========================
+   ETHICS
+========================= */
+
+.ethics-list{
+    padding-left:18px;
+}
+
+.ethics-list li{
+    color:#59687d;
+    font-size:11px;
+    margin-bottom:7px;
+    line-height:1.6;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(4,15,34,.58);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    background:#fff;
+    width:100%;
+    max-width:650px;
+    border-radius:13px;
+    max-height:90vh;
+    overflow-y:auto;
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
+}
+
+.modal-header{
+    padding:18px 21px;
+    border-bottom:1px solid #e4eaf1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.modal-header h3{
+    color:#071b3a;
+    font-size:17px;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#8491a5;
+    font-size:25px;
+}
+
+.modal-body{
+    padding:21px;
+}
+
+.modal-body p{
+    color:#59687d;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:9px;
+    margin-top:20px;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    background:#071b3a;
+    color:#fff;
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:12px;
+    display:none;
+    z-index:3000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071b3a;
+    color:#bdc9da;
+    padding:25px 30px;
+    margin-top:20px;
+    font-size:12px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer a{
+    color:#d8e5f5;
+    margin-right:14px;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .workspace{
+        grid-template-columns:1fr;
+    }
+
+    .sticky-sidebar{
+        position:static;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .top-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .page{
+        padding:20px 15px;
+    }
+
+    .header-layout{
+        flex-direction:column;
+    }
+
+    .header-actions{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        padding:0 16px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .manuscript-header h1{
+        font-size:21px;
+    }
+
+    .criteria{
+        grid-template-columns:1fr;
+    }
+
+    .meta-row{
+        gap:12px;
+    }
+
+    .card-body{
+        padding:16px;
+    }
+
+    .card-header{
+        padding:15px 16px;
+    }
+
+    .article-title{
+        font-size:20px;
+    }
+
+    .review-actions{
+        flex-direction:column;
+    }
+
+    .action-left,
+    .action-right{
+        width:100%;
+    }
+
+    .action-left button,
+    .action-right button{
+        flex:1;
+    }
+
+    footer{
+        padding:22px 16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <nav class="top-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="journals.html">Journals</a>
+
+        <a href="author-dashboard.html">Authors</a>
+
+        <a href="reviewer-portal.html">Reviewers</a>
+
+        <a href="editorial-dashboard.html">Editorial</a>
+
+        <a href="administration.html">Administration</a>
+
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="showToast('Navigation menu is available through the main portal pages.')"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+<main class="page">
+
+    <!-- =========================
+         BREADCRUMB
+    ========================= -->
+
+    <div class="breadcrumb">
+
+        <a href="reviewer-portal.html">
+            Reviewer Portal
+        </a>
+
+        <span>›</span>
+
+        <span>
+            Manuscript Review
+        </span>
+
+    </div>
+
+
+    <!-- =========================
+         MANUSCRIPT HEADER
+    ========================= -->
+
+    <section class="manuscript-header">
+
+        <div class="header-layout">
+
+            <div class="header-main">
+
+                <div class="status-row">
+
+                    <span class="badge review">
+                        REVIEW IN PROGRESS
+                    </span>
+
+                    <span class="badge blind">
+                        DOUBLE-BLIND REVIEW
+                    </span>
+
+                </div>
+
+
+                <h1>
+                    Artificial Intelligence and Digital Learning:
+                    Opportunities, Challenges and Emerging Research Directions
+                </h1>
+
+
+                <div class="journal-name">
+                    Journal of Digital Education
+                </div>
+
+
+                <div class="meta-row">
+
+                    <div class="meta-item">
+
+                        <div class="meta-label">
+                            Manuscript ID
+                        </div>
+
+                        <div class="meta-value">
+                            MS-2026-00124
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-label">
+                            Article Type
+                        </div>
+
+                        <div class="meta-value">
+                            Research Article
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-label">
+                            Review Deadline
+                        </div>
+
+                        <div class="meta-value">
+                            10 September 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-label">
+                            Submitted
+                        </div>
+
+                        <div class="meta-value">
+                            26 August 2026
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="window.print()"
+                >
+                    Print Review
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="downloadDemo()"
+                >
+                    Download Manuscript
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="scrollToReview()"
+                >
+                    Review Report
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="notice">
+
+        <strong>Confidential reviewer workspace:</strong>
+        This manuscript is demonstration content for the Scopusixteen
+        prototype. In a live peer-review system, unpublished manuscript
+        materials and reviewer reports should only be accessed through
+        authorised systems and must be treated as confidential.
+
+    </div>
+
+
+    <!-- =========================
+         WORKSPACE
+    ========================= -->
+
+    <div class="workspace">
+
+
+        <!-- =========================
+             MANUSCRIPT
+        ========================= -->
+
+        <section>
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Manuscript
+                        </h2>
+
+                        <p>
+                            Demonstration manuscript reading area
+                        </p>
+
+                    </div>
+
+                    <span class="badge blind">
+                        Author identities concealed
+                    </span>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <h2 class="article-title">
+
+                        Artificial Intelligence and Digital Learning:
+                        Opportunities, Challenges and Emerging Research Directions
+
+                    </h2>
+
+
+                    <div class="author-line blind-author">
+
+                        Author information concealed under the selected
+                        double-blind review model.
+
+                    </div>
+
+
+                    <h3 class="section-title">
+                        Abstract
+                    </h3>
+
+                    <p class="article-text">
+
+                        Artificial intelligence is increasingly influencing
+                        the design, delivery and evaluation of digital
+                        learning. This demonstration manuscript examines
+                        emerging opportunities and challenges associated
+                        with artificial intelligence in educational
+                        environments. It considers adaptive learning,
+                        automated feedback, learning analytics and
+                        intelligent educational support while also
+                        discussing concerns relating to privacy,
+                        transparency, bias, academic integrity and
+                        responsible implementation.
+
+                    </p>
+
+
+                    <div class="keywords">
+
+                        <span class="keyword">
+                            Artificial Intelligence
+                        </span>
+
+                        <span class="keyword">
+                            Digital Learning
+                        </span>
+
+                        <span class="keyword">
+                            Learning Analytics
+                        </span>
+
+                        <span class="keyword">
+                            Educational Technology
+                        </span>
+
+                        <span class="keyword">
+                            Responsible AI
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="section-title">
+                        1. Introduction
+                    </h3>
+
+                    <p class="article-text">
+
+                        The rapid development of artificial intelligence
+                        technologies has created new possibilities for
+                        educational institutions. Digital learning
+                        environments can use intelligent systems to
+                        support personalised learning pathways, identify
+                        patterns in learner engagement and provide
+                        automated forms of formative feedback.
+
+                    </p>
+
+                    <p
+                        class="article-text"
+                        style="margin-top:12px;"
+                    >
+
+                        However, the adoption of artificial intelligence
+                        also creates important questions regarding
+                        educational quality, transparency, data governance
+                        and the role of human educators. Institutions
+                        therefore need to evaluate both the potential
+                        benefits and the risks associated with AI-supported
+                        educational practices.
+
+                    </p>
+
+
+                    <h3 class="section-title">
+                        2. Literature Review
+                    </h3>
+
+                    <p class="article-text">
+
+                        Previous research has examined artificial intelligence
+                        from several perspectives, including intelligent
+                        tutoring systems, adaptive learning, predictive
+                        analytics and automated assessment. The literature
+                        generally indicates that technology can support
+                        learning when it is aligned with pedagogical goals
+                        and appropriately implemented.
+
+                    </p>
+
+                    <p
+                        class="article-text"
+                        style="margin-top:12px;"
+                    >
+
+                        At the same time, researchers have highlighted
+                        concerns concerning algorithmic bias, data privacy,
+                        unequal access to digital infrastructure and
+                        potential over-reliance on automated systems.
+                        These concerns suggest that successful implementation
+                        requires both technical capability and institutional
+                        governance.
+
+                    </p>
+
+
+                    <h3 class="section-title">
+                        3. Methodology
+                    </h3>
+
+                    <p class="article-text">
+
+                        The demonstration study adopts a structured review
+                        approach to examine published research on artificial
+                        intelligence and digital learning. Relevant themes
+                        are organised around educational applications,
+                        institutional implementation, learner outcomes and
+                        responsible AI considerations.
+
+                    </p>
+
+
+                    <div class="figure-placeholder">
+
+                        Demonstration Figure 1<br>
+                        Conceptual framework linking AI technologies,
+                        educational implementation and learning outcomes.
+
+                    </div>
+
+
+                    <h3 class="section-title">
+                        4. Results
+                    </h3>
+
+                    <p class="article-text">
+
+                        The thematic analysis identifies four broad areas:
+                        personalised learning, intelligent assessment,
+                        learning analytics and academic support. The
+                        findings also indicate that implementation outcomes
+                        may depend on institutional readiness, educator
+                        training, digital infrastructure and governance
+                        arrangements.
+
+                    </p>
+
+
+                    <table class="demo-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Research Theme
+                                </th>
+
+                                <th>
+                                    Potential Benefit
+                                </th>
+
+                                <th>
+                                    Key Concern
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Personalised Learning
+                                </td>
+
+                                <td>
+                                    Adaptive support
+                                </td>
+
+                                <td>
+                                    Data privacy
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Automated Feedback
+                                </td>
+
+                                <td>
+                                    Faster formative support
+                                </td>
+
+                                <td>
+                                    Accuracy
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Learning Analytics
+                                </td>
+
+                                <td>
+                                    Learner insights
+                                </td>
+
+                                <td>
+                                    Algorithmic bias
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    AI Assistance
+                                </td>
+
+                                <td>
+                                    Research support
+                                </td>
+
+                                <td>
+                                    Academic integrity
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <h3 class="section-title">
+                        5. Discussion
+                    </h3>
+
+                    <p class="article-text">
+
+                        The findings suggest that artificial intelligence
+                        should be viewed as a supporting technology rather
+                        than a replacement for educational expertise.
+                        Effective implementation requires meaningful
+                        interaction between technological systems,
+                        educators, learners and institutional policies.
+
+                    </p>
+
+                    <p
+                        class="article-text"
+                        style="margin-top:12px;"
+                    >
+
+                        The review further suggests that responsible
+                        implementation should incorporate transparency,
+                        appropriate human oversight, privacy safeguards
+                        and mechanisms for evaluating the quality of
+                        AI-generated outputs.
+
+                    </p>
+
+
+                    <h3 class="section-title">
+                        6. Conclusion
+                    </h3>
+
+                    <p class="article-text">
+
+                        Artificial intelligence presents significant
+                        opportunities for digital education, but its
+                        adoption should be guided by educational objectives,
+                        research evidence and responsible governance.
+                        Future research may examine long-term learning
+                        outcomes, institutional implementation models and
+                        approaches for improving transparency and equity.
+
+                    </p>
+
+
+                    <h3 class="section-title">
+                        References
+                    </h3>
+
+                    <p class="article-text">
+
+                        Demonstration references are provided for interface
+                        purposes only. A live manuscript would contain the
+                        complete reference list supplied by the authors and
+                        evaluated under the journal's applicable requirements.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 REVIEW FORM
+            ========================= -->
+
+            <div
+                class="card"
+                id="reviewReport"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Reviewer Report
+                        </h2>
+
+                        <p>
+                            Complete the evaluation before submitting your report.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <form
+                        class="review-form"
+                        id="reviewForm"
+                        onsubmit="submitFinalReview(event)"
+                    >
+
+
+                        <!-- CONFLICT -->
+
+                        <div class="conflict-box">
+
+                            <div class="conflict-title">
+                                Conflict of Interest Declaration
+                            </div>
+
+                            <div class="conflict-text">
+
+                                Please indicate whether you have any
+                                conflict of interest that could affect
+                                your impartial assessment of this manuscript.
+
+                            </div>
+
+
+                            <div class="radio-row">
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="conflict"
+                                        value="No conflict"
+                                    >
+
+                                    No conflict of interest
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="conflict"
+                                        value="Potential conflict"
+                                    >
+
+                                    Potential conflict
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CRITERIA -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Manuscript Evaluation
+                            </label>
+
+
+                            <div class="criteria">
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Originality
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Originality"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Research Contribution
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Research Contribution"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Methodology
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Methodology"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Results
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Results"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Discussion
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Discussion"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="criteria-item">
+
+                                    <label>
+                                        Clarity & Presentation
+                                    </label>
+
+                                    <select
+                                        class="form-control criterion"
+                                        data-name="Clarity & Presentation"
+                                    >
+
+                                        <option value="">
+                                            Select rating
+                                        </option>
+
+                                        <option>
+                                            Excellent
+                                        </option>
+
+                                        <option>
+                                            Good
+                                        </option>
+
+                                        <option>
+                                            Fair
+                                        </option>
+
+                                        <option>
+                                            Needs Improvement
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RECOMMENDATION -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Overall Recommendation
+                            </label>
+
+                            <select
+                                class="form-control"
+                                id="recommendation"
+                            >
+
+                                <option value="">
+                                    Select recommendation
+                                </option>
+
+                                <option>
+                                    Accept
+                                </option>
+
+                                <option>
+                                    Minor Revision
+                                </option>
+
+                                <option>
+                                    Major Revision
+                                </option>
+
+                                <option>
+                                    Reject and Resubmit
+                                </option>
+
+                                <option>
+                                    Reject
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AUTHOR COMMENTS -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Comments to the Author
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="authorComments"
+                                rows="8"
+                                placeholder="Write constructive comments for the author..."
+                            ></textarea>
+
+                            <div class="help">
+
+                                Comments should be professional,
+                                specific and constructive. Avoid
+                                identifying yourself if the review model
+                                requires reviewer anonymity.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EDITOR COMMENTS -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Confidential Comments to the Editor
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="editorComments"
+                                rows="6"
+                                placeholder="Comments intended only for the editor..."
+                            ></textarea>
+
+                            <div class="help">
+
+                                These comments are intended for editorial
+                                communication and should not disclose
+                                information outside the authorised review process.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CHECKLIST -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Final Reviewer Checklist
+                            </label>
+
+
+                            <div class="checklist">
+
+                                <label class="check-item">
+
+                                    <input
+                                        type="checkbox"
+                                        class="check"
+                                    >
+
+                                    I have assessed the manuscript objectively.
+
+                                </label>
+
+
+                                <label class="check-item">
+
+                                    <input
+                                        type="checkbox"
+                                        class="check"
+                                    >
+
+                                    My comments are constructive and professional.
+
+                                </label>
+
+
+                                <label class="check-item">
+
+                                    <input
+                                        type="checkbox"
+                                        class="check"
+                                    >
+
+                                    I have considered methodological and
+                                    ethical concerns where relevant.
+
+                                </label>
+
+
+                                <label class="check-item">
+
+                                    <input
+                                        type="checkbox"
+                                        class="check"
+                                    >
+
+                                    I have maintained manuscript confidentiality.
+
+                                </label>
+
+
+                                <label class="check-item">
+
+                                    <input
+                                        type="checkbox"
+                                        class="check"
+                                    >
+
+                                    I have disclosed any potential conflict
+                                    of interest.
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIONS -->
+
+                        <div class="review-actions">
+
+                            <div class="action-left">
+
+                                <button
+                                    type="button"
+                                    class="secondary-btn"
+                                    onclick="saveDraft()"
+                                >
+                                    Save Draft
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="secondary-btn"
+                                    onclick="clearReview()"
+                                >
+                                    Clear Form
+                                </button>
+
+                            </div>
+
+
+                            <div class="action-right">
+
+                                <button
+                                    type="submit"
+                                    class="primary-btn"
+                                >
+                                    Submit Final Review
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================= -->
+
+        <aside class="sticky-sidebar">
+
+
+            <!-- REVIEW STATUS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Review Status
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="progress">
+
+                        <div class="progress-top">
+
+                            <span>
+                                Review progress
+                            </span>
+
+                            <strong>
+                                65%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-list">
+
+                        <div class="info-row">
+
+                            <span class="info-label">
+                                Status
+                            </span>
+
+                            <span class="info-value">
+                                In Progress
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span class="info-label">
+                                Deadline
+                            </span>
+
+                            <span class="info-value">
+                                10 Sep 2026
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span class="info-label">
+                                Review Model
+                            </span>
+
+                            <span class="info-value">
+                                Double-Blind
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span class="info-label">
+                                Manuscript
+                            </span>
+
+                            <span class="info-value">
+                                MS-2026-00124
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILES -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Manuscript Files
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="file-card">
+
+                        <div class="file-icon">
+                            PDF
+                        </div>
+
+                        <div class="file-info">
+
+                            <div class="file-name">
+                                Manuscript.pdf
+                            </div>
+
+                            <div class="file-meta">
+                                Demonstration file · 2.4 MB
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="action-btn"
+                            onclick="downloadDemo()"
+                        >
+                            Open
+                        </button>
+
+                    </div>
+
+
+                    <div class="file-card">
+
+                        <div class="file-icon">
+                            DOC
+                        </div>
+
+                        <div class="file-info">
+
+                            <div class="file-name">
+                                Supplementary.docx
+                            </div>
+
+                            <div class="file-meta">
+                                Demonstration file · 480 KB
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="action-btn"
+                            onclick="downloadDemo()"
+                        >
+                            Open
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW GUIDELINES -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Review Guidance
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <ul class="ethics-list">
+
+                        <li>
+                            Evaluate the research question and contribution.
+                        </li>
+
+                        <li>
+                            Assess the appropriateness of the methodology.
+                        </li>
+
+                        <li>
+                            Consider whether the results support the conclusions.
+                        </li>
+
+                        <li>
+                            Provide specific and constructive feedback.
+                        </li>
+
+                        <li>
+                            Maintain confidentiality throughout the review.
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        href="reviewer-guidelines.html"
+                        class="profile-link"
+                        style="display:inline-block;margin-top:8px;color:#1677ff;font-size:11px;font-weight:700;"
+                    >
+                        Read Full Reviewer Guidelines →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ETHICS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Confidentiality
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <p
+                        style="font-size:11px;color:#69778d;line-height:1.7;"
+                    >
+
+                        Do not share unpublished manuscript content,
+                        reviewer reports or confidential editorial
+                        correspondence with unauthorised persons.
+
+                    </p>
+
+
+                    <a
+                        href="publication-ethics.html"
+                        style="display:inline-block;margin-top:9px;color:#1677ff;font-size:11px;font-weight:700;"
+                    >
+                        Publication Ethics →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Scopusixteen Publishing · Prototype Platform
+        </div>
+
+        <div>
+
+            <a href="peer-review.html">
+                Peer Review
+            </a>
+
+            <a href="reviewer-guidelines.html">
+                Reviewer Guidelines
+            </a>
+
+            <a href="publication-ethics.html">
+                Publication Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     CONFIRMATION MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="confirmationModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>
+                Submit Reviewer Report
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeConfirmation()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p>
+
+                You are about to submit your reviewer report for
+                <strong>
+                    MS-2026-00124
+                </strong>.
+
+                After submission, the report should be considered final
+                unless the applicable editorial process permits further
+                changes.
+
+            </p>
+
+
+            <div class="notice" style="margin-top:15px;margin-bottom:0;">
+
+                This is a prototype. The report will only be stored in
+                this browser's localStorage and will not be sent to an
+                editor or publisher.
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeConfirmation()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="confirmSubmission()"
+                >
+                    Confirm Submission
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Demo action completed.
+</div>
+
+
+<script>
+
+/* =========================
+   STATE
+========================= */
+
+let pendingSubmission = null;
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   SCROLL TO REVIEW
+========================= */
+
+function scrollToReview(){
+
+    document
+        .getElementById("reviewReport")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   DOWNLOAD DEMO
+========================= */
+
+function downloadDemo(){
+
+    showToast(
+        "Manuscript file access is demonstration-only."
+    );
+
+}
+
+
+/* =========================
+   SAVE DRAFT
+========================= */
+
+function saveDraft(){
+
+    const conflict =
+        document.querySelector(
+            'input[name="conflict"]:checked'
+        );
+
+
+    const criteria = {};
+
+    document
+        .querySelectorAll(".criterion")
+        .forEach(function(select){
+
+            criteria[
+                select.dataset.name
+            ] = select.value;
+
+        });
+
+
+    const draft = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        conflict:
+            conflict ? conflict.value : "",
+
+        criteria:
+            criteria,
+
+        recommendation:
+            document.getElementById(
+                "recommendation"
+            ).value,
+
+        authorComments:
+            document.getElementById(
+                "authorComments"
+            ).value,
+
+        editorComments:
+            document.getElementById(
+                "editorComments"
+            ).value,
+
+        savedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenManuscriptReviewDraft_MS-2026-00124",
+        JSON.stringify(draft)
+    );
+
+
+    showToast(
+        "Review draft saved locally in demo mode."
+    );
+
+}
+
+
+/* =========================
+   LOAD DRAFT
+========================= */
+
+function loadDraft(){
+
+    const saved =
+        localStorage.getItem(
+            "scopusixteenManuscriptReviewDraft_MS-2026-00124"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const draft =
+            JSON.parse(saved);
+
+
+        if(draft.conflict){
+
+            const radio =
+                document.querySelector(
+                    'input[name="conflict"][value="' +
+                    draft.conflict +
+                    '"]'
+                );
+
+            if(radio){
+
+                radio.checked = true;
+
+            }
+
+        }
+
+
+        if(draft.criteria){
+
+            document
+                .querySelectorAll(".criterion")
+                .forEach(function(select){
+
+                    if(
+                        draft.criteria[
+                            select.dataset.name
+                        ]
+                    ){
+
+                        select.value =
+                            draft.criteria[
+                                select.dataset.name
+                            ];
+
+                    }
+
+                });
+
+        }
+
+
+        document
+            .getElementById("recommendation")
+            .value =
+            draft.recommendation || "";
+
+
+        document
+            .getElementById("authorComments")
+            .value =
+            draft.authorComments || "";
+
+
+        document
+            .getElementById("editorComments")
+            .value =
+            draft.editorComments || "";
+
+
+        console.log(
+            "Demo review draft loaded."
+        );
+
+    }catch(error){
+
+        console.log(
+            "Unable to load demo draft."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CLEAR FORM
+========================= */
+
+function clearReview(){
+
+    const confirmed =
+        confirm(
+            "Clear the current review form?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("reviewForm")
+        .reset();
+
+
+    showToast(
+        "Review form cleared."
+    );
+
+}
+
+
+/* =========================
+   SUBMIT REVIEW
+========================= */
+
+function submitFinalReview(event){
+
+    event.preventDefault();
+
+
+    const conflict =
+        document.querySelector(
+            'input[name="conflict"]:checked'
+        );
+
+
+    if(!conflict){
+
+        showToast(
+            "Please complete the conflict-of-interest declaration."
+        );
+
+        return;
+
+    }
+
+
+    const criteria =
+        document.querySelectorAll(
+            ".criterion"
+        );
+
+
+    for(
+        let i = 0;
+        i < criteria.length;
+        i++
+    ){
+
+        if(!criteria[i].value){
+
+            showToast(
+                "Please complete all manuscript evaluation criteria."
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    const recommendation =
+        document
+            .getElementById("recommendation")
+            .value;
+
+
+    if(!recommendation){
+
+        showToast(
+            "Please select an overall recommendation."
+        );
+
+        return;
+
+    }
+
+
+    const authorComments =
+        document
+            .getElementById("authorComments")
+            .value
+            .trim();
+
+
+    if(authorComments.length < 20){
+
+        showToast(
+            "Please provide more detailed comments to the author."
+        );
+
+        return;
+
+    }
+
+
+    const checks =
+        document.querySelectorAll(
+            ".check"
+        );
+
+
+    for(
+        let i = 0;
+        i < checks.length;
+        i++
+    ){
+
+        if(!checks[i].checked){
+
+            showToast(
+                "Please complete the final reviewer checklist."
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    pendingSubmission = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        conflict:
+            conflict.value,
+
+        recommendation:
+            recommendation,
+
+        authorComments:
+            authorComments,
+
+        editorComments:
+            document
+                .getElementById("editorComments")
+                .value
+                .trim(),
+
+        submittedAt:
+            new Date().toISOString()
+
+    };
+
+
+    document
+        .getElementById("confirmationModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   CONFIRM SUBMISSION
+========================= */
+
+function confirmSubmission(){
+
+    if(!pendingSubmission){
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "scopusixteenManuscriptReviewSubmitted_MS-2026-00124",
+        JSON.stringify(
+            pendingSubmission
+        )
+    );
+
+
+    localStorage.removeItem(
+        "scopusixteenManuscriptReviewDraft_MS-2026-00124"
+    );
+
+
+    closeConfirmation();
+
+
+    showToast(
+        "Reviewer report submitted in demo mode."
+    );
+
+
+    setTimeout(function(){
+
+        document
+            .querySelector(".badge.review")
+            .textContent =
+            "REVIEW SUBMITTED";
+
+
+        document
+            .querySelector(".progress-fill")
+            .style.width = "100%";
+
+
+        const progressText =
+            document.querySelector(
+                ".progress-top strong"
+            );
+
+        if(progressText){
+
+            progressText.textContent =
+                "100%";
+
+        }
+
+    },500);
+
+}
+
+
+/* =========================
+   CLOSE CONFIRMATION
+========================= */
+
+function closeConfirmation(){
+
+    document
+        .getElementById("confirmationModal")
+        .classList
+        .remove("show");
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document
+    .getElementById("confirmationModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target === this
+            ){
+
+                closeConfirmation();
+
+            }
+
+        }
+    );
+
+
+/* =========================
+   ESCAPE
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeConfirmation();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LOAD SAVED DRAFT
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadDraft();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
