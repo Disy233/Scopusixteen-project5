@@ -1,0 +1,3156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editorial Decisions | Scopusixteen Publishing</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#18243a;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* TOPBAR */
+.topbar{
+    height:68px;
+    background:#071b3a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#4ea1ff;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    font-size:14px;
+}
+
+.top-links a{
+    color:#dce7f5;
+}
+
+.top-links a:hover{
+    color:#fff;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:25px;
+}
+
+/* PAGE */
+.page{
+    max-width:1450px;
+    margin:auto;
+    padding:28px;
+}
+
+.breadcrumb{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    color:#8793a5;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:#1677ff;
+}
+
+/* HERO */
+.hero{
+    background:#071b3a;
+    color:#fff;
+    border-radius:13px;
+    padding:28px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.hero p{
+    color:#cbd8e8;
+    font-size:13px;
+    max-width:850px;
+}
+
+/* NOTICE */
+.notice{
+    background:#fff8e6;
+    border:1px solid #efd58f;
+    color:#73591d;
+    padding:13px 16px;
+    border-radius:9px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.stat{
+    background:#fff;
+    border:1px solid #e0e7ef;
+    border-radius:10px;
+    padding:17px;
+}
+
+.stat-number{
+    font-size:25px;
+    font-weight:800;
+    color:#071b3a;
+}
+
+.stat-label{
+    font-size:10px;
+    color:#8491a5;
+    margin-top:3px;
+}
+
+/* CARD */
+.card{
+    background:#fff;
+    border:1px solid #e1e8f0;
+    border-radius:11px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(20,40,70,.035);
+}
+
+.card-header{
+    padding:17px 20px;
+    border-bottom:1px solid #e5ebf2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.card-header h2{
+    color:#071b3a;
+    font-size:16px;
+}
+
+.card-header p{
+    color:#8491a5;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+/* FILTERS */
+.filters{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr auto;
+    gap:10px;
+}
+
+.form-control{
+    width:100%;
+    border:1px solid #d3deea;
+    background:#fff;
+    border-radius:8px;
+    padding:10px 11px;
+    color:#26364e;
+    font-size:12px;
+    outline:none;
+}
+
+.form-control:focus{
+    border-color:#1677ff;
+}
+
+/* BUTTONS */
+.primary-btn{
+    border:0;
+    background:#1677ff;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.primary-btn:hover{
+    background:#0d64dc;
+}
+
+.secondary-btn{
+    border:1px solid #d2dce8;
+    background:#fff;
+    color:#1677ff;
+    padding:9px 13px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.secondary-btn:hover{
+    background:#f2f7ff;
+}
+
+.danger-btn{
+    border:1px solid #f0c5c5;
+    background:#fff;
+    color:#c43c3c;
+    padding:9px 13px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* TABLE */
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:950px;
+}
+
+th{
+    background:#f7f9fc;
+    color:#718096;
+    text-align:left;
+    padding:11px 12px;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    border-bottom:1px solid #e3e9f0;
+}
+
+td{
+    padding:13px 12px;
+    border-bottom:1px solid #edf1f5;
+    font-size:11px;
+    color:#4f5f75;
+    vertical-align:middle;
+}
+
+tr:hover td{
+    background:#fbfcfe;
+}
+
+.title-cell{
+    min-width:240px;
+}
+
+.title-cell strong{
+    display:block;
+    color:#26364e;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.subtext{
+    font-size:10px;
+    color:#8a96a8;
+}
+
+.badge{
+    display:inline-flex;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.badge.pending{
+    background:#fff5dc;
+    color:#9a6d09;
+}
+
+.badge.submitted{
+    background:#e9f3ff;
+    color:#1767d5;
+}
+
+.badge.accept{
+    background:#e8f8ef;
+    color:#20814b;
+}
+
+.badge.revision{
+    background:#fff1dc;
+    color:#9b6208;
+}
+
+.badge.reject{
+    background:#ffecec;
+    color:#ba3939;
+}
+
+.badge.review{
+    background:#eee9ff;
+    color:#6047bd;
+}
+
+/* REVIEWER SUMMARY */
+.reviewer-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+}
+
+.reviewer-card{
+    border:1px solid #e0e7ef;
+    border-radius:9px;
+    padding:15px;
+}
+
+.reviewer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:flex-start;
+    margin-bottom:10px;
+}
+
+.reviewer-name{
+    color:#071b3a;
+    font-size:13px;
+    font-weight:700;
+}
+
+.reviewer-meta{
+    color:#8a96a7;
+    font-size:10px;
+    margin-top:2px;
+}
+
+.score-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.score{
+    background:#f7f9fc;
+    border-radius:7px;
+    padding:8px;
+}
+
+.score-label{
+    color:#8995a6;
+    font-size:9px;
+}
+
+.score-value{
+    color:#26364e;
+    font-weight:700;
+    font-size:11px;
+    margin-top:2px;
+}
+
+/* DECISION WORKSPACE */
+.workspace{
+    display:grid;
+    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+    gap:20px;
+    align-items:start;
+}
+
+.sticky{
+    position:sticky;
+    top:88px;
+}
+
+/* MANUSCRIPT */
+.manuscript-box{
+    border:1px solid #e0e7ef;
+    border-radius:9px;
+    padding:17px;
+    margin-bottom:15px;
+}
+
+.manuscript-box h3{
+    color:#071b3a;
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.manuscript-box p{
+    color:#617087;
+    font-size:12px;
+    line-height:1.75;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:10px 0;
+    border-bottom:1px solid #edf1f5;
+    font-size:11px;
+}
+
+.info-row:last-child{
+    border-bottom:0;
+}
+
+.info-label{
+    color:#8793a5;
+}
+
+.info-value{
+    color:#26364e;
+    font-weight:700;
+    text-align:right;
+}
+
+/* DECISION FORM */
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    color:#26364e;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+textarea.form-control{
+    resize:vertical;
+    line-height:1.6;
+}
+
+.help{
+    color:#8b97a8;
+    font-size:10px;
+    margin-top:5px;
+    line-height:1.5;
+}
+
+.decision-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.decision-option{
+    position:relative;
+}
+
+.decision-option input{
+    position:absolute;
+    opacity:0;
+}
+
+.decision-option label{
+    display:block;
+    border:1px solid #d9e2ec;
+    border-radius:8px;
+    padding:11px;
+    cursor:pointer;
+    background:#fff;
+    transition:.2s;
+}
+
+.decision-option label strong{
+    display:block;
+    font-size:11px;
+    color:#26364e;
+}
+
+.decision-option label span{
+    display:block;
+    font-size:9px;
+    color:#8995a6;
+    margin-top:3px;
+}
+
+.decision-option input:checked + label{
+    border-color:#1677ff;
+    background:#eef6ff;
+}
+
+/* AUTHOR LETTER */
+.letter-preview{
+    background:#f8fafc;
+    border:1px solid #e0e7ef;
+    border-radius:8px;
+    padding:14px;
+    font-size:11px;
+    color:#5d6c81;
+    line-height:1.7;
+    white-space:pre-line;
+}
+
+/* TIMELINE */
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+}
+
+.timeline-item{
+    display:flex;
+    gap:11px;
+}
+
+.timeline-dot{
+    width:9px;
+    height:9px;
+    background:#1677ff;
+    border-radius:50%;
+    margin-top:5px;
+    flex-shrink:0;
+}
+
+.timeline-content strong{
+    display:block;
+    color:#26364e;
+    font-size:11px;
+}
+
+.timeline-content span{
+    display:block;
+    color:#8995a7;
+    font-size:10px;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(4,15,34,.58);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    width:100%;
+    max-width:720px;
+    background:#fff;
+    border-radius:13px;
+    max-height:90vh;
+    overflow-y:auto;
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
+}
+
+.modal-header{
+    padding:18px 21px;
+    border-bottom:1px solid #e3e9f0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-header h3{
+    color:#071b3a;
+    font-size:17px;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#8995a7;
+    font-size:25px;
+}
+
+.modal-body{
+    padding:21px;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:9px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    background:#071b3a;
+    color:#fff;
+    padding:13px 17px;
+    border-radius:8px;
+    font-size:12px;
+    display:none;
+    z-index:3000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* FOOTER */
+footer{
+    background:#071b3a;
+    color:#bdc9da;
+    padding:26px 30px;
+    margin-top:25px;
+    font-size:12px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer a{
+    color:#dce7f5;
+    margin-right:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .workspace{
+        grid-template-columns:1fr;
+    }
+
+    .sticky{
+        position:static;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .top-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .reviewer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .topbar{
+        padding:0 16px;
+    }
+
+    .page{
+        padding:20px 14px;
+    }
+
+    .hero{
+        padding:22px;
+    }
+
+    .hero h1{
+        font-size:22px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .decision-options{
+        grid-template-columns:1fr;
+    }
+
+    .card-body{
+        padding:16px;
+    }
+
+    .card-header{
+        padding:15px 16px;
+    }
+
+    footer{
+        padding:22px 16px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        Scopus<span>ixteen</span>
+    </a>
+
+    <nav class="top-links">
+
+        <a href="index.html">Home</a>
+        <a href="journals.html">Journals</a>
+        <a href="author-dashboard.html">Authors</a>
+        <a href="reviewer-portal.html">Reviewers</a>
+        <a href="editorial-dashboard.html">Editorial</a>
+        <a href="administration.html">Administration</a>
+
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="showToast('Use the dashboard pages to access platform modules.')"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+<main class="page">
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="editorial-dashboard.html">
+            Editorial Dashboard
+        </a>
+
+        <span>›</span>
+
+        <span>
+            Editorial Decisions
+        </span>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Editorial Decisions
+        </h1>
+
+        <p>
+            Review submitted peer-review reports, assess the manuscript,
+            record an editorial recommendation and prepare a decision
+            communication for the author.
+        </p>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Prototype notice:</strong>
+        All manuscripts, reviewer reports, scores, decisions and
+        correspondence displayed on this page are demonstration data.
+        This frontend prototype does not send decisions to authors,
+        reviewers or editors and does not connect to a live editorial
+        database.
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <div class="stat-number" id="pendingCount">5</div>
+            <div class="stat-label">Decisions Pending</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">19</div>
+            <div class="stat-label">Under Review</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Accepted</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Revisions</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Decisions Due</div>
+        </div>
+
+    </section>
+
+
+    <!-- DECISION QUEUE -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Editorial Decision Queue
+                </h2>
+
+                <p>
+                    Manuscripts requiring an editorial assessment
+                </p>
+
+            </div>
+
+            <button
+                class="secondary-btn"
+                onclick="refreshQueue()"
+            >
+                Refresh Queue
+            </button>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="filters">
+
+                <input
+                    class="form-control"
+                    id="searchInput"
+                    placeholder="Search manuscript title or ID..."
+                    oninput="filterTable()"
+                >
+
+
+                <select
+                    class="form-control"
+                    id="statusFilter"
+                    onchange="filterTable()"
+                >
+
+                    <option value="all">
+                        All Statuses
+                    </option>
+
+                    <option value="submitted">
+                        Reports Submitted
+                    </option>
+
+                    <option value="pending">
+                        Decision Pending
+                    </option>
+
+                    <option value="revision">
+                        Revision
+                    </option>
+
+                </select>
+
+
+                <select
+                    class="form-control"
+                    id="journalFilter"
+                    onchange="filterTable()"
+                >
+
+                    <option value="all">
+                        All Journals
+                    </option>
+
+                    <option>
+                        Journal of Digital Education
+                    </option>
+
+                    <option>
+                        Global Management Review
+                    </option>
+
+                    <option>
+                        Environmental Studies Journal
+                    </option>
+
+                    <option>
+                        International Review of Higher Education
+                    </option>
+
+                </select>
+
+
+                <select
+                    class="form-control"
+                    id="recommendationFilter"
+                    onchange="filterTable()"
+                >
+
+                    <option value="all">
+                        All Recommendations
+                    </option>
+
+                    <option>
+                        Accept
+                    </option>
+
+                    <option>
+                        Minor Revision
+                    </option>
+
+                    <option>
+                        Major Revision
+                    </option>
+
+                    <option>
+                        Reject
+                    </option>
+
+                </select>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="resetFilters()"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table id="decisionTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Manuscript
+                        </th>
+
+                        <th>
+                            Journal
+                        </th>
+
+                        <th>
+                            Reviewers
+                        </th>
+
+                        <th>
+                            Recommendations
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr
+                        data-title="Artificial Intelligence and Digital Learning"
+                        data-id="MS-2026-00124"
+                        data-status="submitted"
+                        data-journal="Journal of Digital Education"
+                        data-recommendation="Minor Revision"
+                    >
+
+                        <td class="title-cell">
+
+                            <strong>
+                                Artificial Intelligence and Digital Learning
+                            </strong>
+
+                            <span class="subtext">
+                                MS-2026-00124 · Research Article
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Journal of Digital Education
+                        </td>
+
+                        <td>
+                            2 / 2
+                        </td>
+
+                        <td>
+                            2 Minor Revision
+                        </td>
+
+                        <td>
+
+                            <span class="badge submitted">
+                                Reports Submitted
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="primary-btn"
+                                onclick="openDecision('MS-2026-00124')"
+                            >
+                                Assess
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        data-title="Strategic Leadership in Digital Organisations"
+                        data-id="MS-2026-00119"
+                        data-status="submitted"
+                        data-journal="Global Management Review"
+                        data-recommendation="Major Revision"
+                    >
+
+                        <td class="title-cell">
+
+                            <strong>
+                                Strategic Leadership in Digital Organisations
+                            </strong>
+
+                            <span class="subtext">
+                                MS-2026-00119 · Research Article
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Global Management Review
+                        </td>
+
+                        <td>
+                            2 / 2
+                        </td>
+
+                        <td>
+                            1 Major · 1 Minor
+                        </td>
+
+                        <td>
+
+                            <span class="badge submitted">
+                                Reports Submitted
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="primary-btn"
+                                onclick="openDecision('MS-2026-00119')"
+                            >
+                                Assess
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        data-title="Sustainable Waste Management Practices"
+                        data-id="MS-2026-00108"
+                        data-status="revision"
+                        data-journal="Environmental Studies Journal"
+                        data-recommendation="Major Revision"
+                    >
+
+                        <td class="title-cell">
+
+                            <strong>
+                                Sustainable Waste Management Practices
+                            </strong>
+
+                            <span class="subtext">
+                                MS-2026-00108 · Research Article
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Environmental Studies Journal
+                        </td>
+
+                        <td>
+                            2 / 2
+                        </td>
+
+                        <td>
+                            2 Major Revision
+                        </td>
+
+                        <td>
+
+                            <span class="badge revision">
+                                Revision Required
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="primary-btn"
+                                onclick="openDecision('MS-2026-00108')"
+                            >
+                                Assess
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        data-title="Digital Transformation in Higher Education"
+                        data-id="MS-2026-00094"
+                        data-status="pending"
+                        data-journal="International Review of Higher Education"
+                        data-recommendation="Accept"
+                    >
+
+                        <td class="title-cell">
+
+                            <strong>
+                                Digital Transformation in Higher Education
+                            </strong>
+
+                            <span class="subtext">
+                                MS-2026-00094 · Review Article
+                            </span>
+
+                        </td>
+
+                        <td>
+                            International Review of Higher Education
+                        </td>
+
+                        <td>
+                            2 / 2
+                        </td>
+
+                        <td>
+                            2 Accept
+                        </td>
+
+                        <td>
+
+                            <span class="badge pending">
+                                Decision Pending
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="primary-btn"
+                                onclick="openDecision('MS-2026-00094')"
+                            >
+                                Assess
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        data-title="Data Analytics for Academic Decision Making"
+                        data-id="MS-2026-00081"
+                        data-status="pending"
+                        data-journal="Journal of Digital Education"
+                        data-recommendation="Minor Revision"
+                    >
+
+                        <td class="title-cell">
+
+                            <strong>
+                                Data Analytics for Academic Decision Making
+                            </strong>
+
+                            <span class="subtext">
+                                MS-2026-00081 · Research Article
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Journal of Digital Education
+                        </td>
+
+                        <td>
+                            2 / 2
+                        </td>
+
+                        <td>
+                            1 Minor · 1 Accept
+                        </td>
+
+                        <td>
+
+                            <span class="badge pending">
+                                Decision Pending
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="primary-btn"
+                                onclick="openDecision('MS-2026-00081')"
+                            >
+                                Assess
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEW COMPARISON -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Reviewer Assessment Summary
+                </h2>
+
+                <p>
+                    Example comparison for the selected manuscript
+                </p>
+
+            </div>
+
+            <span class="badge review">
+                MS-2026-00124
+            </span>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="reviewer-grid">
+
+
+                <div class="reviewer-card">
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <div class="reviewer-name">
+                                Reviewer 1
+                            </div>
+
+                            <div class="reviewer-meta">
+                                Anonymous · Double-Blind Review
+                            </div>
+
+                        </div>
+
+                        <span class="badge revision">
+                            Minor Revision
+                        </span>
+
+                    </div>
+
+
+                    <div class="score-grid">
+
+                        <div class="score">
+                            <div class="score-label">
+                                Originality
+                            </div>
+                            <div class="score-value">
+                                Good
+                            </div>
+                        </div>
+
+                        <div class="score">
+                            <div class="score-label">
+                                Methodology
+                            </div>
+                            <div class="score-value">
+                                Good
+                            </div>
+                        </div>
+
+                        <div class="score">
+                            <div class="score-label">
+                                Results
+                            </div>
+                            <div class="score-value">
+                                Good
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reviewer-card">
+
+                    <div class="reviewer-top">
+
+                        <div>
+
+                            <div class="reviewer-name">
+                                Reviewer 2
+                            </div>
+
+                            <div class="reviewer-meta">
+                                Anonymous · Double-Blind Review
+                            </div>
+
+                        </div>
+
+                        <span class="badge revision">
+                            Minor Revision
+                        </span>
+
+                    </div>
+
+
+                    <div class="score-grid">
+
+                        <div class="score">
+                            <div class="score-label">
+                                Originality
+                            </div>
+                            <div class="score-value">
+                                Excellent
+                            </div>
+                        </div>
+
+                        <div class="score">
+                            <div class="score-label">
+                                Methodology
+                            </div>
+                            <div class="score-value">
+                                Good
+                            </div>
+                        </div>
+
+                        <div class="score">
+                            <div class="score-label">
+                                Results
+                            </div>
+                            <div class="score-value">
+                                Good
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DECISION WORKSPACE -->
+
+    <div
+        class="workspace"
+        id="decisionWorkspace"
+    >
+
+
+        <!-- LEFT -->
+
+        <section>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Editorial Assessment
+                        </h2>
+
+                        <p>
+                            Selected manuscript: MS-2026-00124
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="manuscript-box">
+
+                        <h3>
+                            Artificial Intelligence and Digital Learning
+                        </h3>
+
+                        <p>
+
+                            This demonstration manuscript examines
+                            opportunities and challenges associated with
+                            artificial intelligence in digital learning,
+                            including personalised learning, learning
+                            analytics, automated feedback and responsible
+                            implementation.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Journal
+                        </span>
+
+                        <span class="info-value">
+                            Journal of Digital Education
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Manuscript ID
+                        </span>
+
+                        <span class="info-value">
+                            MS-2026-00124
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Article Type
+                        </span>
+
+                        <span class="info-value">
+                            Research Article
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Peer Review
+                        </span>
+
+                        <span class="info-value">
+                            Double-Blind
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Reviewer Reports
+                        </span>
+
+                        <span class="info-value">
+                            2 Submitted
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Current Recommendation
+                        </span>
+
+                        <span class="info-value">
+                            Minor Revision
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW COMMENTS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Reviewer Reports
+                        </h2>
+
+                        <p>
+                            Demonstration summaries
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="manuscript-box">
+
+                        <h3>
+                            Reviewer 1 — Recommendation: Minor Revision
+                        </h3>
+
+                        <p>
+
+                            The manuscript addresses a relevant topic and
+                            provides a useful overview of AI applications
+                            in digital learning. The reviewer recommends
+                            strengthening the methodological explanation,
+                            clarifying the research contribution and
+                            expanding discussion of limitations.
+
+                        </p>
+
+                        <button
+                            class="secondary-btn"
+                            style="margin-top:10px;"
+                            onclick="viewReport('Reviewer 1')"
+                        >
+                            View Full Report
+                        </button>
+
+                    </div>
+
+
+                    <div class="manuscript-box">
+
+                        <h3>
+                            Reviewer 2 — Recommendation: Minor Revision
+                        </h3>
+
+                        <p>
+
+                            The manuscript is clearly structured and
+                            discusses several important dimensions of
+                            responsible AI adoption. The reviewer suggests
+                            improving the connection between the literature
+                            review and the conclusions.
+
+                        </p>
+
+                        <button
+                            class="secondary-btn"
+                            style="margin-top:10px;"
+                            onclick="viewReport('Reviewer 2')"
+                        >
+                            View Full Report
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDITOR TIMELINE -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Editorial History
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div class="timeline-content">
+
+                                <strong>
+                                    Manuscript submitted
+                                </strong>
+
+                                <span>
+                                    26 August 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div class="timeline-content">
+
+                                <strong>
+                                    Initial editorial screening completed
+                                </strong>
+
+                                <span>
+                                    27 August 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div class="timeline-content">
+
+                                <strong>
+                                    Reviewers assigned
+                                </strong>
+
+                                <span>
+                                    28 August 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div class="timeline-content">
+
+                                <strong>
+                                    Reviewer reports submitted
+                                </strong>
+
+                                <span>
+                                    3 September 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="timeline-dot"></div>
+
+                            <div class="timeline-content">
+
+                                <strong>
+                                    Editorial decision pending
+                                </strong>
+
+                                <span>
+                                    Current stage
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT -->
+
+        <aside class="sticky">
+
+
+            <!-- DECISION FORM -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Record Decision
+                        </h2>
+
+                        <p>
+                            Editor-only workspace
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <form
+                        id="decisionForm"
+                        onsubmit="saveDecision(event)"
+                    >
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Editorial Decision
+                            </label>
+
+
+                            <div class="decision-options">
+
+
+                                <div class="decision-option">
+
+                                    <input
+                                        type="radio"
+                                        name="decision"
+                                        id="accept"
+                                        value="Accept"
+                                    >
+
+                                    <label for="accept">
+
+                                        <strong>
+                                            Accept
+                                        </strong>
+
+                                        <span>
+                                            Proceed to production.
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="decision-option">
+
+                                    <input
+                                        type="radio"
+                                        name="decision"
+                                        id="minor"
+                                        value="Minor Revision"
+                                    >
+
+                                    <label for="minor">
+
+                                        <strong>
+                                            Minor Revision
+                                        </strong>
+
+                                        <span>
+                                            Limited revisions required.
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="decision-option">
+
+                                    <input
+                                        type="radio"
+                                        name="decision"
+                                        id="major"
+                                        value="Major Revision"
+                                    >
+
+                                    <label for="major">
+
+                                        <strong>
+                                            Major Revision
+                                        </strong>
+
+                                        <span>
+                                            Substantial revision required.
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="decision-option">
+
+                                    <input
+                                        type="radio"
+                                        name="decision"
+                                        id="resubmit"
+                                        value="Reject and Resubmit"
+                                    >
+
+                                    <label for="resubmit">
+
+                                        <strong>
+                                            Reject & Resubmit
+                                        </strong>
+
+                                        <span>
+                                            New submission may be considered.
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="decision-option">
+
+                                    <input
+                                        type="radio"
+                                        name="decision"
+                                        id="reject"
+                                        value="Reject"
+                                    >
+
+                                    <label for="reject">
+
+                                        <strong>
+                                            Reject
+                                        </strong>
+
+                                        <span>
+                                            Manuscript will not proceed.
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Revision Deadline
+                            </label>
+
+                            <input
+                                type="date"
+                                id="revisionDeadline"
+                                class="form-control"
+                            >
+
+                            <div class="help">
+                                Use this only where a revision is requested.
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Confidential Editor Notes
+                            </label>
+
+                            <textarea
+                                id="editorNotes"
+                                class="form-control"
+                                rows="6"
+                                placeholder="Internal notes for the editorial record..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Decision Letter to Author
+                            </label>
+
+                            <textarea
+                                id="decisionLetter"
+                                class="form-control"
+                                rows="9"
+                                placeholder="Write the decision communication..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Editorial Confirmation
+                            </label>
+
+                            <label
+                                style="display:flex;gap:8px;align-items:flex-start;font-weight:500;color:#59687d;font-size:11px;"
+                            >
+
+                                <input
+                                    type="checkbox"
+                                    id="editorConfirm"
+                                    style="margin-top:3px;accent-color:#1677ff;"
+                                >
+
+                                I confirm that the decision has been
+                                considered against the available reviewer
+                                reports and the journal's applicable
+                                editorial policy.
+
+                            </label>
+
+                        </div>
+
+
+                        <div
+                            style="display:flex;gap:8px;flex-wrap:wrap;"
+                        >
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                onclick="saveDecisionDraft()"
+                            >
+                                Save Draft
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                onclick="previewLetter()"
+                            >
+                                Preview Letter
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                            >
+                                Confirm Decision
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- WORKFLOW -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            After Decision
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Accept
+                        </span>
+
+                        <span class="info-value">
+                            → Production
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Minor Revision
+                        </span>
+
+                        <span class="info-value">
+                            → Author Revision
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Major Revision
+                        </span>
+
+                        <span class="info-value">
+                            → Author Revision
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Reject & Resubmit
+                        </span>
+
+                        <span class="info-value">
+                            → New Submission
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            Reject
+                        </span>
+
+                        <span class="info-value">
+                            → Closed
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Editorial Resources
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <a
+                        href="peer-review.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:10px;"
+                    >
+                        Peer Review Policy →
+                    </a>
+
+
+                    <a
+                        href="publication-ethics.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:10px;"
+                    >
+                        Publication Ethics →
+                    </a>
+
+
+                    <a
+                        href="author-guidelines.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;margin-bottom:10px;"
+                    >
+                        Author Guidelines →
+                    </a>
+
+
+                    <a
+                        href="production-dashboard.html"
+                        style="display:block;color:#1677ff;font-size:11px;font-weight:700;"
+                    >
+                        Production Dashboard →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- REVIEW REPORT MODAL -->
+
+<div
+    class="modal"
+    id="reportModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3 id="reportTitle">
+                Reviewer Report
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal('reportModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="manuscript-box">
+
+                <h3>
+                    Recommendation
+                </h3>
+
+                <p id="reportRecommendation">
+                    Minor Revision
+                </p>
+
+            </div>
+
+
+            <div class="manuscript-box">
+
+                <h3>
+                    Reviewer Comments
+                </h3>
+
+                <p id="reportText">
+
+                    The manuscript addresses an important subject and
+                    provides a useful contribution. The reviewer recommends
+                    several revisions to improve methodological clarity,
+                    strengthen the discussion and clarify the manuscript's
+                    contribution.
+
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal('reportModal')"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LETTER PREVIEW MODAL -->
+
+<div
+    class="modal"
+    id="letterModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>
+                Decision Letter Preview
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal('letterModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div
+                class="letter-preview"
+                id="letterPreview"
+            >
+                No decision letter has been entered yet.
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal('letterModal')"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CONFIRMATION MODAL -->
+
+<div
+    class="modal"
+    id="confirmModal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h3>
+                Confirm Editorial Decision
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeModal('confirmModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p
+                style="font-size:12px;color:#59687d;line-height:1.7;"
+            >
+
+                You are about to record the selected editorial decision
+                for manuscript <strong>MS-2026-00124</strong>.
+
+                In this prototype, the decision will be saved only in
+                this browser and will not be transmitted to an author.
+
+            </p>
+
+
+            <div
+                class="notice"
+                style="margin-top:15px;margin-bottom:0;"
+            >
+
+                Live editorial communication, email delivery,
+                authentication and database storage are not connected.
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeModal('confirmModal')"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="confirmDecision()"
+                >
+                    Confirm & Save
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Demo action completed.
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Scopusixteen Publishing · Prototype Platform
+        </div>
+
+        <div>
+
+            <a href="editorial-dashboard.html">
+                Editorial Dashboard
+            </a>
+
+            <a href="reviewer-management.html">
+                Reviewer Management
+            </a>
+
+            <a href="production-dashboard.html">
+                Production
+            </a>
+
+            <a href="publication-ethics.html">
+                Ethics
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================
+   FILTER TABLE
+========================= */
+
+function filterTable(){
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const status =
+        document
+        .getElementById("statusFilter")
+        .value;
+
+    const journal =
+        document
+        .getElementById("journalFilter")
+        .value;
+
+    const recommendation =
+        document
+        .getElementById("recommendationFilter")
+        .value;
+
+
+    const rows =
+        document.querySelectorAll(
+            "#decisionTable tbody tr"
+        );
+
+
+    rows.forEach(function(row){
+
+        const title =
+            row.dataset.title.toLowerCase();
+
+        const id =
+            row.dataset.id.toLowerCase();
+
+        const rowStatus =
+            row.dataset.status;
+
+        const rowJournal =
+            row.dataset.journal;
+
+        const rowRecommendation =
+            row.dataset.recommendation;
+
+
+        const matchesSearch =
+            title.includes(search) ||
+            id.includes(search);
+
+        const matchesStatus =
+            status === "all" ||
+            rowStatus === status;
+
+        const matchesJournal =
+            journal === "all" ||
+            rowJournal === journal;
+
+        const matchesRecommendation =
+            recommendation === "all" ||
+            rowRecommendation === recommendation;
+
+
+        row.style.display =
+            matchesSearch &&
+            matchesStatus &&
+            matchesJournal &&
+            matchesRecommendation
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+/* =========================
+   RESET FILTERS
+========================= */
+
+function resetFilters(){
+
+    document.getElementById(
+        "searchInput"
+    ).value = "";
+
+    document.getElementById(
+        "statusFilter"
+    ).value = "all";
+
+    document.getElementById(
+        "journalFilter"
+    ).value = "all";
+
+    document.getElementById(
+        "recommendationFilter"
+    ).value = "all";
+
+
+    filterTable();
+
+}
+
+
+/* =========================
+   REFRESH
+========================= */
+
+function refreshQueue(){
+
+    showToast(
+        "Editorial queue refreshed in demo mode."
+    );
+
+}
+
+
+/* =========================
+   OPEN DECISION
+========================= */
+
+function openDecision(id){
+
+    showToast(
+        "Loaded manuscript " + id + " for editorial assessment."
+    );
+
+
+    document
+        .getElementById("decisionWorkspace")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   VIEW REPORT
+========================= */
+
+function viewReport(reviewer){
+
+    document
+        .getElementById("reportTitle")
+        .textContent =
+        reviewer + " — Reviewer Report";
+
+
+    if(reviewer === "Reviewer 1"){
+
+        document
+            .getElementById("reportRecommendation")
+            .textContent =
+            "Minor Revision";
+
+
+        document
+            .getElementById("reportText")
+            .textContent =
+            "The manuscript addresses a relevant topic and provides a useful overview of AI applications in digital learning. The reviewer recommends strengthening the methodological explanation, clarifying the research contribution and expanding the discussion of limitations.";
+
+    }else{
+
+        document
+            .getElementById("reportRecommendation")
+            .textContent =
+            "Minor Revision";
+
+
+        document
+            .getElementById("reportText")
+            .textContent =
+            "The manuscript is clearly structured and discusses several important dimensions of responsible AI adoption. The reviewer suggests improving the connection between the literature review and the conclusions.";
+
+    }
+
+
+    document
+        .getElementById("reportModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   SAVE DRAFT
+========================= */
+
+function saveDecisionDraft(){
+
+    const selected =
+        document.querySelector(
+            'input[name="decision"]:checked'
+        );
+
+
+    const draft = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        decision:
+            selected
+            ? selected.value
+            : "",
+
+        deadline:
+            document.getElementById(
+                "revisionDeadline"
+            ).value,
+
+        editorNotes:
+            document.getElementById(
+                "editorNotes"
+            ).value,
+
+        decisionLetter:
+            document.getElementById(
+                "decisionLetter"
+            ).value,
+
+        savedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenEditorialDecisionDraft_MS-2026-00124",
+        JSON.stringify(draft)
+    );
+
+
+    showToast(
+        "Editorial decision draft saved locally."
+    );
+
+}
+
+
+/* =========================
+   LOAD DRAFT
+========================= */
+
+function loadDecisionDraft(){
+
+    const saved =
+        localStorage.getItem(
+            "scopusixteenEditorialDecisionDraft_MS-2026-00124"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const draft =
+            JSON.parse(saved);
+
+
+        if(draft.decision){
+
+            const radio =
+                document.querySelector(
+                    'input[name="decision"][value="' +
+                    draft.decision +
+                    '"]'
+                );
+
+            if(radio){
+
+                radio.checked = true;
+
+            }
+
+        }
+
+
+        document
+            .getElementById("revisionDeadline")
+            .value =
+            draft.deadline || "";
+
+
+        document
+            .getElementById("editorNotes")
+            .value =
+            draft.editorNotes || "";
+
+
+        document
+            .getElementById("decisionLetter")
+            .value =
+            draft.decisionLetter || "";
+
+    }catch(error){
+
+        console.log(
+            "Unable to load editorial draft."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   SAVE DECISION FORM
+========================= */
+
+function saveDecision(event){
+
+    event.preventDefault();
+
+
+    const selected =
+        document.querySelector(
+            'input[name="decision"]:checked'
+        );
+
+
+    if(!selected){
+
+        showToast(
+            "Please select an editorial decision."
+        );
+
+        return;
+
+    }
+
+
+    const confirmation =
+        document.getElementById(
+            "editorConfirm"
+        );
+
+
+    if(!confirmation.checked){
+
+        showToast(
+            "Please confirm the editorial assessment."
+        );
+
+        return;
+
+    }
+
+
+    const letter =
+        document
+        .getElementById("decisionLetter")
+        .value
+        .trim();
+
+
+    if(letter.length < 30){
+
+        showToast(
+            "Please provide a decision letter."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        (
+            selected.value === "Minor Revision" ||
+            selected.value === "Major Revision"
+        ) &&
+        !document
+            .getElementById("revisionDeadline")
+            .value
+    ){
+
+        showToast(
+            "Please set a revision deadline."
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("confirmModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   CONFIRM DECISION
+========================= */
+
+function confirmDecision(){
+
+    const selected =
+        document.querySelector(
+            'input[name="decision"]:checked'
+        );
+
+
+    if(!selected){
+
+        closeModal("confirmModal");
+
+        return;
+
+    }
+
+
+    const record = {
+
+        manuscriptId:
+            "MS-2026-00124",
+
+        manuscriptTitle:
+            "Artificial Intelligence and Digital Learning",
+
+        decision:
+            selected.value,
+
+        revisionDeadline:
+            document
+            .getElementById(
+                "revisionDeadline"
+            )
+            .value,
+
+        editorNotes:
+            document
+            .getElementById(
+                "editorNotes"
+            )
+            .value,
+
+        decisionLetter:
+            document
+            .getElementById(
+                "decisionLetter"
+            )
+            .value,
+
+        recordedAt:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "scopusixteenEditorialDecision_MS-2026-00124",
+        JSON.stringify(record)
+    );
+
+
+    localStorage.removeItem(
+        "scopusixteenEditorialDecisionDraft_MS-2026-00124"
+    );
+
+
+    closeModal("confirmModal");
+
+
+    showToast(
+        "Editorial decision saved in demo mode."
+    );
+
+
+    setTimeout(function(){
+
+        if(
+            selected.value === "Accept"
+        ){
+
+            showToast(
+                "Demo workflow: manuscript can now move to Production."
+            );
+
+        }else if(
+            selected.value === "Minor Revision" ||
+            selected.value === "Major Revision"
+        ){
+
+            showToast(
+                "Demo workflow: manuscript moves to Author Revision."
+            );
+
+        }
+
+    },3200);
+
+}
+
+
+/* =========================
+   PREVIEW LETTER
+========================= */
+
+function previewLetter(){
+
+    const letter =
+        document
+        .getElementById("decisionLetter")
+        .value
+        .trim();
+
+
+    document
+        .getElementById("letterPreview")
+        .textContent =
+        letter ||
+        "No decision letter has been entered yet.";
+
+
+    document
+        .getElementById("letterModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList
+        .remove("show");
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document
+    .querySelectorAll(".modal")
+    .forEach(function(modal){
+
+        modal.addEventListener(
+            "click",
+            function(event){
+
+                if(
+                    event.target === modal
+                ){
+
+                    modal.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================
+   ESCAPE
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            document
+                .querySelectorAll(".modal")
+                .forEach(function(modal){
+
+                    modal.classList.remove(
+                        "show"
+                    );
+
+                });
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LOAD
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadDecisionDraft();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
